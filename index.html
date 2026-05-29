@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Promise — Abraham, the Living God, and the Story That Never Ended</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=Cormorant+SC:wght@300;400;500;600&display=swap');
+:root{
+  --gold:#c9a84c;--gold-light:#e8d090;--gold-dim:#8a6420;--gold-glow:rgba(201,168,76,0.12);
+  --bg:#02030a;--bg2:#060810;--bg3:#090c14;--bg4:#0d1018;
+  --text:#f0f0f8;--text-mid:#b8bcd4;--text-dim:#6a6e8a;
+  --red:#c0392b;--blue:#4a90d9;--green:#1e8449;--purple:#9b59b6;
+  --orange:#d35400;--teal:#1abc9c;--sand:#d4a853;
+  --spirit:#4a90d9;--spirit-light:#85bef0;
+  --c0:#4a90d9;
+  --cI:#c9a84c;
+  --cII:#e07b3a;
+  --cIII:#c0392b;
+  --cIV:#9b59b6;
+  --cV:#4a90d9;
+  --cVI:#1abc9c;
+  --cVII:#2980b9;
+  --cVIII:#c9a84c;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);font-family:"Lora",serif;color:var(--text);line-height:1.75;overflow-x:hidden;position:relative;z-index:0;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(2,3,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 16px;height:56px;display:flex;align-items:center;gap:2px;justify-content:center;flex-wrap:wrap;}
+.nav a{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.16em;color:rgba(255,255,255,.65);text-decoration:none;padding:4px 9px;border-radius:2px;transition:all .2s;white-space:nowrap;}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;overflow:hidden;--act-color:#4a90d9;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(74,144,217,.09) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 15% 100%,rgba(27,188,156,.05) 0%,transparent 50%),radial-gradient(ellipse 35% 55% at 85% 80%,rgba(155,89,182,.06) 0%,transparent 50%);}
+.hero-stars{position:absolute;inset:0;overflow:hidden;}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d,3s) ease-in-out infinite;animation-delay:var(--delay,0s);opacity:var(--o,.4);}
+@keyframes twinkle{0%,100%{opacity:var(--o,.4);transform:scale(1);}50%{opacity:.04;transform:scale(.3);}}
+.hero-shema{font-family:"Cinzel",serif;font-size:clamp(.6rem,1.3vw,.75rem);letter-spacing:.4em;color:rgba(255,255,255,.65);margin-bottom:40px;position:relative;}
+.hero-shema::before,.hero-shema::after{content:"✦";margin:0 14px;color:rgba(74,144,217,.4);}
+.hero h1{font-family:"Cormorant SC",serif;font-weight:300;font-size:clamp(2.8rem,9vw,6.5rem);letter-spacing:.04em;line-height:1.05;margin-bottom:14px;position:relative;background:linear-gradient(90deg,#4a90d9 0%,#ffffff 50%,#4a90d9 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:clamp(1.1rem,2.4vw,1.5rem);font-style:italic;color:rgba(255,255,255,.75);max-width:580px;margin:0 auto 36px;position:relative;}
+.hero-message{max-width:700px;margin:0 auto 48px;font-size:clamp(1rem,1.8vw,1.15rem);color:rgba(255,255,255,.6);line-height:1.9;border-top:1px solid rgba(74,144,217,.2);border-bottom:1px solid rgba(74,144,217,.2);padding:28px 0;position:relative;}
+.hero-message em{color:var(--act-color,#4a90d9);font-style:normal;}
+.scroll-hint{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.3em;color:var(--act-color,rgba(255,255,255,.25));animation:pulse 2.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.3;}50%{opacity:.9;}}
+.page{max-width:920px;margin:0 auto;padding:0 24px;position:relative;z-index:2;}
+.act-header{padding:100px 0 20px;}
+.act-label{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.4em;color:var(--text-dim);margin-bottom:8px;text-align:center;}
+.act-title{font-family:"Cormorant SC",serif;font-weight:300;font-size:clamp(2rem,5.5vw,3.6rem);color:#ffffff;line-height:1.1;margin-bottom:16px;text-align:center;}
+section[id] .act-title{background:linear-gradient(90deg,var(--act-color,#fff) 0%,#ffffff 50%,var(--act-color,#fff) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.act-intro{font-size:clamp(1rem,2vw,1.2rem);font-style:italic;color:rgba(255,255,255,.55);max-width:660px;border-left:2px solid var(--act-color,rgba(255,255,255,.15));padding-left:20px;margin-bottom:48px;margin-left:auto;margin-right:auto;}
+.prose{font-size:clamp(1rem,1.8vw,1.15rem);line-height:1.9;color:var(--text);margin-bottom:28px;}
+.prose em{color:var(--act-color,#7eb8f7);font-style:italic;}
+.scripture{margin:36px 0;padding:24px 32px;background:transparent;border-left:3px solid var(--act-color,#c9a84c);position:relative;}
+.scripture::before{content:"\"";position:absolute;top:-14px;left:18px;font-family:"Lora",serif;font-size:5rem;color:var(--act-color,rgba(201,168,76,.3));opacity:.35;line-height:1;}
+.scripture-text{font-size:1.08rem;font-style:italic;color:#ffffff;line-height:1.75;padding-top:10px;}
+.scripture-ref{margin-top:10px;font-family:"Cinzel",serif;font-size:.6rem;letter-spacing:.15em;color:var(--act-color,rgba(255,255,255,.6));opacity:.8;}
+.callout{margin:40px 0;padding:28px 32px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:4px;position:relative;overflow:hidden;backdrop-filter:blur(16px);}
+.callout::after{content:"";position:absolute;top:0;right:0;width:220px;height:220px;background:radial-gradient(circle,var(--act-color,rgba(201,168,76,.06)),transparent 70%);opacity:.12;pointer-events:none;}
+.callout-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;color:var(--act-color,#c9a84c);margin-bottom:12px;}
+.callout-text{font-size:1.02rem;color:rgba(255,255,255,.65);line-height:1.75;}
+.callout-text strong{color:var(--act-color,#ffffff);}
+.spirit-box{margin:40px 0;padding:28px 32px;background:rgba(74,144,217,0.04);border:1px solid rgba(74,144,217,.15);border-radius:4px;position:relative;overflow:hidden;backdrop-filter:blur(16px);}
+.spirit-box::after{content:"";position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(74,144,217,.05),transparent 70%);pointer-events:none;}
+.spirit-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;color:var(--spirit-light);margin-bottom:12px;}
+.spirit-text{font-size:1.02rem;color:rgba(197,218,240,.85);line-height:1.75;}
+.spirit-text strong{color:#ffffff;}
+.spirit-text em{color:var(--act-color,#85bef0);font-style:italic;}
+.ref{display:inline-block;font-family:"Cinzel",serif;font-size:.56rem;letter-spacing:.08em;color:var(--act-color,#c9a84c);margin-left:3px;vertical-align:middle;cursor:help;}
+.divider{display:flex;align-items:center;gap:16px;margin:52px 0;color:var(--act-color,rgba(255,255,255,.2));}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(to right,transparent,var(--act-color,rgba(255,255,255,.15)),transparent);}
+.divider span{font-family:"Cinzel",serif;font-size:.56rem;letter-spacing:.3em;white-space:nowrap;background:linear-gradient(90deg,var(--act-color,rgba(255,255,255,.3)) 0%,#ffffff 50%,var(--act-color,rgba(255,255,255,.3)) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.closing{padding:80px 0 100px;text-align:center;}
+.closing-verse{font-family:"Cormorant SC",serif;font-weight:300;font-size:clamp(1.3rem,3.5vw,2.2rem);color:#ffffff;line-height:1.6;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;}
+.prayer-box{max-width:560px;margin:0 auto 48px;padding:36px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);}
+.prayer-label{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.3em;color:var(--act-color,#c9a84c);margin-bottom:18px;}
+.prayer-text{font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.65);line-height:1.9;}
+.final-msg{font-family:"Cinzel",serif;font-size:clamp(.7rem,1.8vw,.9rem);letter-spacing:.18em;color:var(--act-color,#c9a84c);margin-top:48px;}
+
+/* Component 9 — Pattern Grid */
+.sum9-wrapper{margin:48px 0;background:rgba(2,3,10,.85);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:40px 32px;box-shadow:0 20px 40px rgba(212,163,89,0.02);}
+.sum9-label{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.3em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:6px;}
+.sum9-title{font-family:"Cormorant SC",serif;font-size:1.3rem;background:linear-gradient(90deg,var(--act-color,#d4a359) 0%,#ffffff 50%,var(--act-color,#d4a359) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:28px;}
+.sum9-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.sum9-item{padding:22px 24px;background:rgba(13,13,13,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:4px;border-left:3px solid var(--act-color,rgba(201,168,76,0.5));backdrop-filter:blur(20px);transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s ease,box-shadow .4s ease;}
+.sum9-item:hover{transform:translateY(-4px);border-color:rgba(212,163,89,0.3);box-shadow:0 12px 24px rgba(212,163,89,0.03);}
+.sum9-item--teal{border-left-color:#1abc9c;}
+.sum9-item--orange{border-left-color:#e07b3a;}
+.sum9-item--blue{border-left-color:#4a90d9;}
+.sum9-item--purple{border-left-color:#9b59b6;}
+.sum9-item--red{border-left-color:#c0392b;}
+.sum9-who{font-family:"Cinzel",serif;font-size:.68rem;letter-spacing:.08em;color:var(--act-color,#d4a359);text-transform:uppercase;margin-bottom:10px;}
+.sum9-who--teal{color:#1abc9c;}
+.sum9-who--orange{color:#e07b3a;}
+.sum9-who--blue{color:#4a90d9;}
+.sum9-who--purple{color:#9b59b6;}
+.sum9-who--red{color:#c0392b;}
+.sum9-what{font-family:"Lora",serif;font-size:1rem;color:#ffffff;line-height:1.7;}
+.sum9-what em{color:var(--act-color,#7eb8f7);font-style:italic;}
+@media(max-width:900px){.sum9-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){.sum9-grid{grid-template-columns:1fr;}.sum9-item:hover{transform:none;}}
+
+/* Component 2 — Isaac/Jesus Grid */
+.sac2-wrapper{margin:52px 0;background:rgba(2,3,10,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:40px 32px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.sac2-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;background:linear-gradient(90deg,var(--act-color,#d4a359) 0%,#ffffff 50%,var(--act-color,#d4a359) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:36px;text-transform:uppercase;}
+.sac2-container{display:grid;grid-template-columns:1fr;gap:24px;}
+@media(min-width:768px){.sac2-container{grid-template-columns:1fr 1fr;gap:40px;}}
+.sac2-card{background:rgba(13,13,13,0.7);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:28px 24px;box-shadow:0 20px 40px rgba(212,163,89,0.02);transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1);}
+.sac2-card:hover{transform:translateY(-4px);box-shadow:0 28px 56px rgba(212,163,89,0.07);}
+.sac2-card--purple:hover{box-shadow:0 28px 56px rgba(195,155,211,0.07);}
+.sac2-head{font-family:"Cinzel",serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;text-align:center;margin-bottom:20px;padding-bottom:14px;}
+.sac2-head--gold{color:var(--act-color,#d4a359);border-bottom:1px solid var(--act-color,rgba(201,168,76,0.2));}
+.sac2-head--purple{color:#c39bd3;border-bottom:1px solid rgba(125,60,152,0.3);}
+.sac2-item{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.7;padding:10px 0 10px 16px;border-left:2px solid var(--act-color,rgba(201,168,76,0.35));}
+.sac2-card--purple .sac2-item{border-left-color:rgba(125,60,152,0.45);}
+.sac2-item+.sac2-item{margin-top:8px;}
+.sac2-footer{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.14em;color:rgba(201,168,76,0.45);text-align:center;margin-top:28px;text-transform:uppercase;}
+
+/* Component 3 — Tabernacle Progression */
+.tab3-wrapper{margin:52px 0;background:rgba(2,3,10,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:40px 32px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.tab3-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;background:linear-gradient(90deg,var(--act-color,#d4a359) 0%,#ffffff 50%,var(--act-color,#d4a359) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:36px;text-transform:uppercase;}
+.tab3-steps{display:flex;flex-direction:column;}
+.tab3-step{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid rgba(255,255,255,0.05);transition:transform .5s cubic-bezier(.16,1,.3,1),background .5s ease,box-shadow .5s ease;}
+.tab3-step:last-child{border-bottom:none;}
+.tab3-step:hover{transform:translateY(-4px);background:rgba(18,18,18,0.8);box-shadow:0 12px 24px rgba(212,163,89,0.03);}
+.tab3-era{padding:20px 16px;display:flex;align-items:center;border-right:1px solid rgba(255,255,255,0.05);font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.1em;color:var(--act-color,#d4a359);text-transform:uppercase;line-height:1.4;}
+.tab3-content{padding:20px 24px;}
+.tab3-step-title{font-family:"Cinzel",serif;font-size:.72rem;letter-spacing:.08em;color:#e5e5e5;margin-bottom:6px;text-transform:uppercase;}
+.tab3-step-note{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.7;}
+.tab3-step-note em{color:var(--act-color,#c8b47a);font-style:italic;}
+@media(max-width:768px){
+  .tab3-step{grid-template-columns:1fr;}
+  .tab3-step:hover{transform:none;}
+  .tab3-era{border-right:none;border-bottom:1px solid rgba(255,255,255,0.05);padding:12px 16px;}
+}
+
+/* Component 4 — Ethiopia Timeline */
+.eth4-wrapper{margin:52px 0;background:rgba(2,3,10,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:40px 32px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.eth4-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;background:linear-gradient(90deg,var(--act-color,#d4a359) 0%,#ffffff 50%,var(--act-color,#d4a359) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:40px;text-transform:uppercase;}
+.eth4-tl{position:relative;padding-left:48px;}
+.eth4-tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:linear-gradient(to bottom,rgba(201,168,76,0.6),rgba(201,168,76,0.15),transparent);}
+.eth4-item{position:relative;margin-bottom:36px;}
+.eth4-item:last-child{margin-bottom:0;}
+.eth4-item::before{content:"";position:absolute;left:-44px;top:5px;width:10px;height:10px;border-radius:50%;border:1px solid var(--act-color,#d4a359);background:#000;box-shadow:0 0 8px var(--act-color,rgba(212,163,89,0.25));}
+.eth4-year{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.12em;color:var(--act-color,#d4a359);text-transform:uppercase;margin-bottom:4px;}
+.eth4-heading{font-family:"Cinzel",serif;font-size:.72rem;letter-spacing:.08em;color:#e5e5e5;text-transform:uppercase;margin-bottom:8px;}
+.eth4-note{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.7;padding:16px 20px;background:rgba(13,13,13,0.7);border:1px solid rgba(255,255,255,0.06);border-radius:4px;backdrop-filter:blur(20px);}
+@media(max-width:768px){.eth4-tl{padding-left:32px;}.eth4-item::before{left:-28px;}}
+
+/* Component 5 — Geo Grid */
+.geo5-wrapper{margin:32px 0;}
+.geo5-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.geo5-card{background:rgba(18,18,18,0.6);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:24px;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s ease,box-shadow .4s ease;}
+.geo5-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.12);box-shadow:0 12px 24px rgba(212,163,89,0.03);}
+.geo5-where{font-family:"Cinzel",serif;font-size:.65rem;letter-spacing:.1em;color:var(--act-color,#d4a359);text-transform:uppercase;margin-bottom:4px;}
+.geo5-when{font-family:"Lora",serif;font-style:italic;font-size:.88rem;color:#6a5835;margin-bottom:12px;}
+.geo5-note{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.6;}
+@media(max-width:900px){.geo5-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){.geo5-grid{grid-template-columns:1fr;}.geo5-card:hover{transform:none;}}
+
+/* Component 6 — Fractures Timeline */
+.frac6-wrapper{margin:52px 0;background:rgba(2,3,10,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:40px 32px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.frac6-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;background:linear-gradient(90deg,var(--act-color,#d4a359) 0%,#ffffff 50%,var(--act-color,#d4a359) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:40px;text-transform:uppercase;}
+.frac6-tl{position:relative;padding-left:48px;}
+.frac6-tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:linear-gradient(to bottom,rgba(201,168,76,0.6),rgba(201,168,76,0.15),transparent);}
+.frac6-item{position:relative;margin-bottom:36px;}
+.frac6-item:last-child{margin-bottom:0;}
+.frac6-item::before{content:"";position:absolute;left:-44px;top:5px;width:10px;height:10px;border-radius:50%;border:1px solid var(--act-color,#d4a359);background:#000;box-shadow:0 0 8px var(--act-color,rgba(212,163,89,0.25));}
+.frac6-year{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.12em;color:var(--act-color,#d4a359);text-transform:uppercase;margin-bottom:4px;}
+.frac6-heading{font-family:"Cinzel",serif;font-size:.72rem;letter-spacing:.08em;color:#e5e5e5;text-transform:uppercase;margin-bottom:8px;}
+.frac6-note{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.7;padding:16px 20px;background:rgba(13,13,13,0.7);border:1px solid rgba(255,255,255,0.06);border-radius:4px;backdrop-filter:blur(20px);}
+@media(max-width:768px){.frac6-tl{padding-left:32px;}.frac6-item::before{left:-28px;}}
+
+/* Component 7 — Five Pillars */
+.pil7-wrapper{margin:52px 0;background:rgba(2,3,10,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.pil7-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;background:linear-gradient(90deg,var(--act-color,#d4a359) 0%,#ffffff 50%,var(--act-color,#d4a359) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;padding:32px 32px 28px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.06);}
+.pil7-table{width:100%;border-collapse:collapse;}
+.pil7-thead th{font-family:"Cinzel",serif;font-size:.6rem;letter-spacing:.14em;color:var(--act-color,#d4a359);text-transform:uppercase;padding:14px 20px;border-bottom:1px solid var(--act-color,rgba(201,168,76,0.2));text-align:left;}
+.pil7-row{border-bottom:1px solid rgba(255,255,255,0.04);transition:background .3s ease;}
+.pil7-row:last-child{border-bottom:none;}
+.pil7-row:hover{background:rgba(18,18,18,0.5);}
+.pil7-pillar{font-family:"Cinzel",serif;font-size:.68rem;letter-spacing:.08em;color:var(--act-color,#d4a359);text-transform:uppercase;padding:18px 20px;vertical-align:top;white-space:nowrap;}
+.pil7-practice{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.6;padding:18px 20px;vertical-align:top;}
+.pil7-root{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.6;padding:18px 20px;vertical-align:top;}
+@media(max-width:768px){
+  .pil7-thead{display:none;}
+  .pil7-row{display:block;padding:20px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .pil7-pillar,.pil7-practice,.pil7-root{display:block;padding:4px 0;}
+  .pil7-pillar{padding-bottom:8px;}
+  .pil7-root{color:rgba(255,255,255,.6);}
+}
+
+/* Component 8 — Religion Cards */
+.rel8-wrapper{margin:52px 0;background:rgba(2,3,10,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:40px 32px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.rel8-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;background:linear-gradient(90deg,var(--act-color,#d4a359) 0%,#ffffff 50%,var(--act-color,#d4a359) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:36px;text-transform:uppercase;}
+.rel8-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+.rel8-card{background:rgba(18,18,18,0.6);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:28px;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s ease,box-shadow .4s ease;}
+.rel8-card:hover{transform:translateY(-4px);border-color:rgba(212,163,89,0.3);box-shadow:0 12px 24px rgba(212,163,89,0.03);}
+.rel8-name{font-family:"Cinzel",serif;font-size:.75rem;letter-spacing:.1em;color:var(--act-color,#d4a359);text-transform:uppercase;margin-bottom:6px;}
+.rel8-line{font-family:"Lora",serif;font-style:italic;font-size:.88rem;color:#6a5835;margin-bottom:14px;line-height:1.5;}
+.rel8-note{font-family:"Lora",serif;font-size:.95rem;color:#e5e5e5;line-height:1.6;margin-bottom:14px;}
+.rel8-abe{font-family:"Lora",serif;font-size:.88rem;font-style:italic;color:#b0a070;line-height:1.5;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);}
+@media(max-width:768px){.rel8-grid{grid-template-columns:1fr;}.rel8-card:hover{transform:none;}}
+
+/* Component 1 — Covenant SVG */
+.coven1-wrapper{margin:48px 0;background:rgba(2,3,10,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:40px 20px;}
+.coven1-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.25em;color:var(--act-color,#d4a359);text-align:center;margin-bottom:32px;text-transform:uppercase;}
+.coven1-svg{width:100%;height:auto;display:block;}
+
+/* Act watermark */
+.act-header{position:relative;}
+.act-label::before{
+  content:attr(data-num);
+  position:absolute;right:0;top:60px;
+  font-family:"Cormorant SC",serif;font-weight:300;
+  font-size:clamp(5rem,12vw,9rem);
+  color:rgba(201,168,76,0.04);
+  line-height:1;pointer-events:none;letter-spacing:-.02em;
+  user-select:none;
+}
+
+/* Story box */
+.story-box{margin:40px 0;padding:32px 36px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-left:3px solid var(--act-color,#1abc9c);border-radius:3px;position:relative;overflow:hidden;backdrop-filter:blur(16px);}
+.story-box::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--act-color,#1abc9c),transparent);}
+.story-title{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.28em;color:var(--sand);margin-bottom:16px;}
+.story-text{font-size:1.05rem;color:rgba(255,255,255,.8);line-height:1.85;}
+.story-text em{color:var(--act-color,#7eb8f7);font-style:italic;}
+.story-text strong{color:#ffffff;}
+
+/* Questions */
+.questions-section{margin:64px 0 48px;}
+.questions-label{font-family:"Cinzel",serif;font-size:.6rem;letter-spacing:.35em;color:var(--gold-dim);text-align:center;margin-bottom:40px;}
+.question-item{margin-bottom:36px;padding-left:28px;border-left:1px solid var(--gold-dim);}
+.question-lead{font-family:"Cormorant SC",serif;font-size:clamp(1.1rem,2.2vw,1.4rem);color:#ffffff;margin-bottom:10px;line-height:1.2;}
+.question-body{font-size:clamp(.95rem,1.7vw,1.08rem);color:var(--text-mid);line-height:1.85;font-style:italic;}
+
+/* Wimber */
+.wimber-quote{margin:48px auto;max-width:620px;text-align:center;}
+.wimber-text{font-family:"Lora",serif;font-size:clamp(1.15rem,2.5vw,1.5rem);font-style:italic;color:rgba(255,255,255,.85);line-height:1.65;}
+.wimber-attr{margin-top:12px;font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.2em;color:var(--text-dim);}
+
+/* Fleming poem */
+.poem-box{margin:40px auto;max-width:520px;padding:32px 36px;background:rgba(255,255,255,.025);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.07);text-align:center;}
+.poem-label{font-family:"Cinzel",serif;font-size:.56rem;letter-spacing:.28em;color:var(--text-dim);margin-bottom:18px;}
+.poem-text{font-family:"Lora",serif;font-size:1.05rem;font-style:italic;color:var(--text-mid);line-height:2;}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* Progress bar */
+#progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(to right,#4a90d9,#c9a84c,#e07b3a,#c0392b,#9b59b6,#4a90d9,#1abc9c,#2980b9,#c9a84c);background-size:100% 100%;z-index:1000;transition:width .1s linear;pointer-events:none;}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px;}
+
+/* Act title shimmer */
+
+@keyframes shimmer{to{background-position:200% center;}}
+
+/* Drop caps */
+.act-opener::first-letter{font-family:"Cormorant SC",serif;font-weight:300;font-size:4.2em;line-height:.75;float:left;margin:0 8px 0 0;color:var(--act-color,#ffffff);-webkit-text-fill-color:var(--act-color,#ffffff);}
+
+/* Scripture pulse */
+.scripture{transition:box-shadow .4s;}.scripture:hover{box-shadow:-4px 0 32px var(--act-color,rgba(201,168,76,.25));}
+
+
+
+/* Closing verse glow */
+.closing-verse{position:relative;}
+
+/* Mobile */
+@media(max-width:640px){
+  .nav a{font-size:.46rem;padding:3px 5px;}
+}
+@media(max-width:480px){
+  .callout{padding:20px 18px;}
+  .scripture{padding:18px 20px;}
+  .act-header{padding:70px 0 16px;}
+  .hero h1{font-size:clamp(2rem,12vw,4rem);}
+  .prose{font-size:1rem;}
+}
+
+/* ── PER-ACT COLOR ACCENTS ── */
+
+/* Act label color */
+[data-num="0"]~.act-title,[data-num="0"]{color:var(--c0);}
+[data-num="I"]~.act-title,[data-num="I"]{color:var(--cI);}
+[data-num="II"]~.act-title,[data-num="II"]{color:var(--cII);}
+[data-num="III"]~.act-title,[data-num="III"]{color:var(--cIII);}
+[data-num="IV"]~.act-title,[data-num="IV"]{color:var(--cIV);}
+[data-num="V"]~.act-title,[data-num="V"]{color:var(--cV);}
+[data-num="VI"]~.act-title,[data-num="VI"]{color:var(--cVI);}
+[data-num="VII"]~.act-title,[data-num="VII"]{color:var(--cVII);}
+[data-num="VIII"]~.act-title,[data-num="VIII"]{color:var(--cVIII);}
+
+/* Section dividers and act-intro border inherit from JS-applied CSS var on section */
+#spirit   {--act-color:var(--c0);}
+#promise  {--act-color:var(--cI);}
+#mistake  {--act-color:var(--cII);}
+#test     {--act-color:var(--cIII);}
+#fulfillment{--act-color:var(--cIV);}
+#expansion{--act-color:var(--cV);}
+#wildfire {--act-color:var(--cVI);}
+#fractures{--act-color:var(--cVII);}
+#unfinished{--act-color:var(--cVIII);}
+
+section[id] .divider{color:var(--act-color,var(--gold-dim));}
+section[id] .divider::before,
+section[id] .divider::after{background:linear-gradient(to right,transparent,var(--act-color,var(--gold-dim)),transparent);}
+section[id] .act-intro{border-left-color:var(--act-color,var(--gold-dim));}
+section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;letter-spacing:.45em;}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav class="nav">
+  <a href="#spirit">The Spirit</a>
+  <a href="#promise">The Promise</a>
+  <a href="#mistake">The Mistake</a>
+  <a href="#test">The Test</a>
+  <a href="#fulfillment">The Fulfillment</a>
+  <a href="#expansion">The Expansion</a>
+  <a href="#wildfire">The Wildfire</a>
+  <a href="#fractures">The Fractures</a>
+  <a href="#unfinished">Unfinished</a>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stars" id="stars"></div>
+  <div class="hero-shema">HEAR O ISRAEL — THE LORD OUR GOD — THE LORD IS ONE — DEUTERONOMY 6:4</div>
+  <h1>One Promise</h1>
+  <p class="hero-sub">Abraham, the living God, and the story that never ended</p>
+  <div class="hero-message">
+    Before the law. Before the temple. Before the church.<br>
+    God made a promise to one seeking man under stars he couldn't count.<br>
+    He signed it alone — so no human failure could ever break it.<br><br>
+    That promise has survived Ishmael's expulsion. Isaac's near-death on a mountain.<br>Egypt's slavery. Babylon's exile. Rome's cross. A thousand years of church fracture.<br><br>
+    <em>The Spirit was given to carry it to every nation.</em><br>
+    Ethiopia heard it within a generation of the resurrection.<br>
+    The Muslim world is dreaming of Jesus tonight.<br><br>
+    <em>You are not reading about this story. You are in it.</em>
+  </div>
+  <div class="scroll-hint">✦ &nbsp; BEGIN &nbsp; ✦</div>
+</section>
+<div class="page">
+
+<section class="reveal" id="spirit">
+  <!-- ============================================================
+       STRUCTURAL STRATEGIST — FULL ARC VERDICT (≈14k words, 8 acts)
+       The progression holds: Spirit (frame) → Promise → Mistake →
+       Test → Fulfillment → Expansion → Fractures → Unfinished (payoff).
+       The unbreakable-covenant thesis (Act I) and "you are in the story"
+       (Hebrews 11:39-40) bookend cleanly — strong spine.
+       Two load-bearing risks:
+       1. PACING — Act 0 (Spirit) runs long BEFORE the title subject
+          (Abraham) appears. A reader who came for "One Promise / Abraham"
+          waits ~1,400 words. Defensible as setup, but biggest bounce risk.
+       2. BLOAT — Act V (Expansion) is the densest act. Candidate for split.
+       Do NOT cut the SVG, the tabernacle table, or the Neato Burrito story.
+       ============================================================ -->
+  <div class="act-header">
+    <div class="act-label" data-num="0">BEFORE WE EMBARK</div>
+    <div class="act-title">The Spirit</div>
+    <div class="act-intro">This story has a protagonist you have not been introduced to. He has a name. He is not a force. He is not a feeling. And he was here long before Abraham.</div>
+    <!-- PACING: longest setup in the piece; delays Abraham. Defensible. -->
+    <!-- POWER STATEMENT — punchier alternates for this intro's closing line:
+         <power>(a) "He was hovering over the dark before the first word of scripture existed — and he has never once left the room."</power>
+         <power>(b) "Every miracle in this book has the same fingerprint. His."</power>
+         <power>(c) "You cannot understand the promise until you meet the Person who has kept it for four thousand years."</power> -->
+  </div>
+
+  <div class="scripture">
+    <div class="scripture-text">"In the beginning God created the heavens and the earth. Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters."</div>
+    <div class="scripture-ref">Genesis 1:1-2</div>
+  </div>
+
+  <p class="prose">The first image the Bible gives us is darkness. Chaos. Nothing formed. Nothing named. And hovering over all of it — <em>the Spirit of God.</em></p>
+  <p class="prose">The Hebrew word is <em>merachefet.</em> It appears only twice in scripture. Here — and in Deuteronomy 32, where Moses describes an eagle hovering over her young. Protective. Attentive. <em>Present over what has not yet become what it will be.</em></p>
+  <p class="prose">Before Abraham. Before Israel. Before the law, the temple, the church, the cross. Before a single word of scripture existed — the Spirit was already there, hovering over the dark, waiting to bring forth life.</p>
+  <p class="prose">That is where this story begins. Not with a patriarch. Not with a promise. With a Person — moving over the face of the deep, full of purpose, before anything had a name.</p>
+
+  <p class="prose"><em>Hevel</em> — the Hebrew name Eve gave Abel, the first righteous man on earth — means breath. Vapor. Mist. The same word Ecclesiastes uses thirty-eight times for everything that passes. The first righteous life on earth was named Breath, and his brother killed him. The breath ended. And the Spirit — the breath of God — kept hovering over what humanity had broken. He has been hovering ever since. There is a life you were made for that you are only <em>able</em> to live by leaning on him. Not your strength. His.</p>
+
+  <div class="divider"><span>WHO HE IS</span></div>
+
+  <p class="prose">The Holy Spirit is not a doctrine to debate or a feeling you chase at a revival meeting. He is the third person of the Trinity — co-equal, co-eternal, fully God — and he has been the active agent of every miracle, every prophecy, every impossible birth, every burning bush, every road-to-Damascus moment in this entire story.</p>
+  <p class="prose">When scripture says God spoke — the Spirit carried the word. <span class="ref" title="2 Peter 1:21">2 Pet 1:21</span> When prophets saw visions — the Spirit opened the eyes. When the dry bones rattled in Ezekiel's valley — the Spirit breathed. When Mary conceived — the Spirit overshadowed. When Jesus was baptized — the Spirit descended. When the disciples preached in languages they had never learned — the Spirit spoke through them.</p>
+  <p class="prose"><em>He is the agent. Every time. Without exception.</em></p>
+  <p class="prose">You can trace the genealogy, map the geography, memorize the facts — and miss the whole thing. Why God chose this man, why Hagar was found in the desert, why Philip ran to a chariot, why people in Iran are dreaming of Jesus tonight — none of it reads as anything but coincidence until you see the Spirit as the living protagonist moving through all of it.</p>
+
+  <div class="divider"><span>HE WAS ALWAYS MOVING</span></div>
+
+  <p class="prose">The Spirit didn't arrive at Pentecost. Pentecost changed where he lived — from upon to within. But he was always present. Always moving. Always carrying the covenant forward.</p>
+
+  <div class="sum9-wrapper">
+    <div class="sum9-label">THE SPIRIT MOVING — BEFORE PENTECOST</div>
+    <div class="sum9-title">Every Hinge Moment. Every Time.</div>
+    <div class="sum9-grid">
+      <div class="sum9-item">
+        <div class="sum9-who">Creation — Genesis 1:2</div>
+        <div class="sum9-what">Hovering over the waters. Present before anything existed. The first thing scripture tells us about God's activity is the Spirit — moving.</div>
+      </div>
+      <div class="sum9-item sum9-item--teal">
+        <div class="sum9-who sum9-who--teal">Joseph — Genesis 41:38</div>
+        <div class="sum9-what">Pharaoh — a pagan king — looked at Joseph and said: <em>"Can we find anyone like this man, one in whom is the Spirit of God?"</em> The gift of dream interpretation. Operating in a foreign prison. Centuries before Pentecost.</div>
+      </div>
+      <div class="sum9-item sum9-item--orange">
+        <div class="sum9-who sum9-who--orange">Bezalel — Exodus 31:3</div>
+        <div class="sum9-what">The first person in all of scripture explicitly described as <em>filled with the Holy Spirit</em> was not a prophet. Not a priest. Not a king. He was an artisan. A craftsman. Called to build the tabernacle — God's dwelling place. The Spirit fills makers.</div>
+      </div>
+      <div class="sum9-item sum9-item--blue">
+        <div class="sum9-who sum9-who--blue">Moses — Numbers 11:29</div>
+        <div class="sum9-what">Standing in the desert, watching two men prophesy outside the camp, Moses said: <em>"I wish that all the LORD's people were prophets and that the LORD would put his Spirit on them."</em> He was describing Pentecost. 1,400 years before it happened.</div>
+      </div>
+      <div class="sum9-item sum9-item--purple">
+        <div class="sum9-who sum9-who--purple">Joel — c. 800 BC</div>
+        <div class="sum9-what"><em>"I will pour out my Spirit on all people. Your sons and daughters will prophesy. Your young men will see visions. Your old men will dream dreams."</em> Not Israel only — <em>all people.</em> Every nation. Peter stood up the morning of Pentecost and said: <em>this is that.</em></div>
+      </div>
+      <div class="sum9-item sum9-item--red">
+        <div class="sum9-who sum9-who--red">Ezekiel — 597 BC</div>
+        <div class="sum9-what"><em>"I will give you a new heart. I will put my Spirit in you."</em> Not upon. <em>In.</em> Written from Babylon, in exile, when the temple had fallen and God seemed absent. The darkest moment — and God promised the most intimate nearness. This is the new covenant. Written on hearts, not stone.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="prose">Every one of these moments carries the same signature. An impossible situation. A person who could not do what needed to be done in their own strength. And the Spirit — moving. Equipping. Speaking. Providing what was humanly unavailable.</p>
+  <p class="prose"><em>That has always been the pattern. It still is.</em></p>
+
+  <div class="divider"><span>FROM UPON TO WITHIN — EVERYTHING CHANGED</span></div>
+
+  <p class="prose">In the Old Testament, the Spirit came <em>upon</em> people. Selectively. Temporarily. For a task. He rested on the judges when battle required it. He came upon Saul when he was made king — and departed when Saul's heart turned. He filled Bezalel to build the tabernacle, then the work was done. He could be asked for, sought, grieved away. He was never guaranteed.</p>
+  <p class="prose">David knew this firsthand. After his worst sin, his deepest prayer was not for forgiveness alone but for presence: <em>"Do not cast me from your presence or take your Holy Spirit from me."</em> <span class="ref" title="Psalm 51:11">Psalm 51:11</span> He had watched the Spirit leave Saul. He knew it could happen to him.</p>
+  <p class="prose">And then Jesus said something that changed everything.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"I will ask the Father, and he will give you another advocate to help you and be with you forever — the Spirit of truth. The world cannot accept him, because it neither sees him nor knows him. But you know him, for he lives with you and will be in you."</div>
+    <div class="scripture-ref">John 14:16-17</div>
+  </div>
+
+  <p class="prose"><em>Forever.</em> Not for a task. Not for a season. Forever. And not just <em>with</em> you — <em>in</em> you. The distinction Ezekiel had prophesied. The shift from upon to within. The God who created the universe choosing to make his permanent dwelling not in a temple of stone but inside the people who love him.</p>
+  <p class="prose">Every other faith in the world places God above, beyond, outside — requiring you to reach up, journey toward, perform enough to approach. Jesus said: <em>he is coming to live inside you. Permanently. Starting soon.</em> Not a temple. Not a mountain. You. That is the whole new covenant in one word.</p>
+  <!-- POWER STATEMENT — "the most staggering statement in the history of religion"
+       is the thesis of this act. Three punchier framings:
+       <power>(a) "Every other religion tells you to climb. This one says: stay still — he is coming down to live in you."</power>
+       <power>(b) "Not a temple. Not a mountain. You. That is the whole new covenant in one word."</power>
+       <power>(c) "The God who built the universe asked for one address. Yours."</power> -->
+
+  <div class="divider"><span>WAIT. YOU'RE NOT READY YET.</span></div>
+
+  <p class="prose">Jesus died. Rose. Appeared to 500 people over 40 days. <span class="ref" title="1 Corinthians 15:6">1 Cor 15:6</span> And then — before he ascended — he told the people who had believed in him, walked with him, died for him, and seen him resurrected — to stop. Wait. Don't move yet.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"Do not leave Jerusalem, but wait for the gift my Father promised... You will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth."</div>
+    <div class="scripture-ref">Acts 1:4, 8</div>
+  </div>
+
+  <p class="prose">These were not new converts. They had seen every miracle, heard every sermon, watched the crucifixion, touched the resurrection wounds. And Jesus told them it wasn't enough. Not without the power.</p>
+  <p class="prose">The Greek word for power is <em>dunamis.</em> It is the root of the English word dynamite. Not persuasion. Not good theology. Not organizational skill. <em>Dunamis.</em> Supernatural enabling. The kind of power that makes a fisherman stand in front of thousands and turn them inside out with a single speech. The kind of power that makes a persecutor of Christians become the greatest missionary in history the moment a light knocks him off his horse.</p>
+  <p class="prose">Without it, they were just people with a story. With it — they were witnesses to the ends of the earth.</p>
+
+  <div class="spirit-box">
+    <div class="spirit-title">THE CONDITION THAT CHANGES EVERYTHING</div>
+    <div class="spirit-text">
+      120 people. An upper room. Ten days of waiting. And one thing that had to happen before the fire fell:<br><br>
+      <em>"They all joined together constantly in prayer."</em> Acts 1:14<br>
+      <em>"When the day of Pentecost came, they were all together in one place."</em> Acts 2:1<br><br>
+      Together. United. One accord. Not in perfect theological agreement — these were people who had been arguing about who was greatest in the kingdom weeks earlier. <span class="ref" title="Luke 22:24">Luke 22:24</span> But they had stayed. They had chosen each other over their disagreements. And in the choosing — the fire fell.<br><br>
+      Jesus had prayed for exactly this, the night before he died: <em>"That all of them may be one, Father, just as you are in me and I am in you — so that the world may believe that you have sent me."</em> <span class="ref" title="John 17:21">John 17:21</span><br><br>
+      <strong>Unity is the condition. Not uniformity — they didn't all think the same. Not hierarchy — no one was in charge of the Spirit. Unity. The decision to stay together, stay in prayer, stay in the room — until the promise came.</strong><br><br>
+      This is not ancient history. Every denomination that has split, every congregation that has fractured over worship style or politics or personality — is a closed door. The same Spirit who fell when 120 stayed together is still looking for people willing to stay together long enough for the fire to fall again.
+    </div>
+  </div>
+
+  <p class="prose">And if you want what fell in that upper room — Jesus said it simply: <em>"How much more will your Father in heaven give the Holy Spirit to those who ask him."</em> <span class="ref" title="Luke 11:13">Luke 11:13</span> You can ask. Right now. That's all.</p>
+  <p class="prose"><em>He has been waiting for you to ask. That was always the only thing he wanted.</em></p>
+
+</section>
+
+<section class="reveal" id="promise">
+  <div class="act-header">
+    <div class="act-label" data-num="I">ACT ONE</div>
+    <div class="act-title">The Promise</div>
+    <div class="act-intro">Before God made the promise, he chose the man. And the man he chose was already looking for him.</div>
+  </div>
+
+  <div class="divider"><span>THE SCATTERING — AND GOD'S ANSWER</span></div>
+
+  <p class="prose">Genesis 11 ends with a scattering. The entire human race — one language, one community, one place — divided and dispersed at Babel. What had been unified was broken into pieces. What could communicate fell silent across its own divisions. <span class="ref" title="Genesis 11:1-9">Gen 11:1-9</span></p>
+  <p class="prose">Genesis 12 opens with God calling one man.</p>
+  <p class="prose">The call of Abraham is God's direct response to the wound of Babel — not a unilateral repair from the top down, but a seed planted in a single man's obedience that would, over millennia, regather every nation that had been scattered. <em>"All peoples on earth will be blessed through you."</em> <span class="ref" title="Genesis 12:3">Gen 12:3</span> Every people. The ones scattered at Babel. The ones divided by language and culture and geography. Through one man's faith — brought back.</p>
+
+  <div class="callout">
+    <div class="callout-title">GENESIS 10:10 — THE COUNTERFEIT KINGDOM</div>
+    <div class="callout-text">Before God calls Abraham in Genesis 12, Scripture gives you the villain. <strong>Genesis 10:10 — "The first centers of his kingdom were Babylon, Uruk, Akkad and Kalneh, in Shinar."</strong> This is Nimrod — whose name in Hebrew means <em>rebellion</em>. He built the first human government, the first empire, the first organized system of power with himself at the top. Babel was his capital. The tower of Genesis 11 was his project. Man reaching up to God on his own terms, by his own power, for his own glory.<br><br>
+    God's answer was not a counter-empire. It was one man. The tenth descendant from Noah — selected at the precise generation God ordained, not the ninth, not the eleventh. Abraham was not random. He was the kingdom answer to the kingdom problem.<br><br>
+    The rabbinical tradition preserved in <em>Pirkei Avot</em> 5:3 records that Abraham was tested ten times — and passed every one. God does not hand his purposes to an unproven man. Ten trials forged the vessel the promise required. Moriah was the tenth — the crowning qualification, the finish line, the moment God swore by himself because there was no one greater to swear by. A kingdom oath. On a mountain that would one day be Calvary.
+    <br><br>
+    <table style="width:100%;border-collapse:collapse;margin-top:20px;font-size:1rem;text-align:center;">
+      <tr>
+        <td style="width:50%;padding:16px 20px;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.8);vertical-align:top;line-height:1.9;"><strong style="background:linear-gradient(90deg,var(--act-color,#c9a84c) 0%,#fff 50%,var(--act-color,#c9a84c) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;display:block;margin-bottom:12px;">NIMROD'S KINGDOM</strong>
+        Babel — man reaching up to God<br>Built by pride and rebellion<br>First kingdom — Genesis 10:10<br>Scattered at Babel<br>Counterfeit throne</td>
+        <td style="width:50%;padding:16px 20px;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.8);vertical-align:top;line-height:1.9;"><strong style="background:linear-gradient(90deg,var(--act-color,#c9a84c) 0%,#fff 50%,var(--act-color,#c9a84c) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;display:block;margin-bottom:12px;">GOD'S KINGDOM</strong>
+        Moriah — God coming down to man<br>Built through surrender and faith<br>True kingdom launched — Genesis 12<br>Gathered through Abraham's seed<br>Eternal throne</td>
+      </tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="divider"><span>THE MAN IN THE IDOL SHOP</span></div>
+
+  <p class="prose">The city of Ur sat on the banks of the Euphrates in what is now southern Iraq — around 2000 BC one of the most sophisticated cities on earth. Massive ziggurat temples. A thriving economy. A literate class. And a marketplace full of gods carved from wood and stone, sold by a man named Terah to a city that believed them. <span class="ref" title="Joshua 24:2">Joshua 24:2</span></p>
+  <p class="prose">Terah's son Abram grew up in the shop. He knew every idol by name, knew what each one was supposed to do, knew the prayers and the rituals and the offerings. And somewhere in his childhood or his youth, he started watching the sky instead.</p>
+  <p class="prose">The <em>Book of Jubilees</em> — found among the Dead Sea Scrolls, used as scripture by the Ethiopian Orthodox Church, cited with authority in ancient Jewish tradition — preserves what the rabbis remembered about that watching. <span class="ref" title="Book of Jubilees 12:1-8">Jubilees 12:1-8</span> Young Abram looked at the sun and reasoned: <em>something made that.</em> He looked at the moon and the stars: <em>something made those too. And whatever made all of this cannot be made of wood.</em> He worked his way through every created thing — fire, water, clouds, wind — and arrived at the uncreated Creator by logic. Not by revelation. Not yet. By paying attention to what was in front of him and following the reasoning wherever it went.</p>
+  <p class="prose">One night he burned his father's idol house to the ground.</p>
+  <p class="prose">Not out of rebellion. Not out of anger. Out of the same conviction Paul would later articulate in Romans 1:20 — that the invisible qualities of God are clearly seen through what he has made, so that people are without excuse. Abram had seen them. He couldn't unsee them. The idols were not merely wrong theology — they were an insult to the God who had made the sun and the moon and the stars and was being represented by something a craftsman had shaped with his hands.</p>
+  <p class="prose">He was seventeen years old, according to some traditions. He had no community of faith. No scripture. No priest. No tradition. Just eyes that had been watching the sky and a mind that had followed the evidence to its logical conclusion — <em>there is a God, and none of these are him.</em></p>
+  <p class="prose"><em>He found God by paying attention to a sky everyone else slept under. The seeking was never the hard part. The looking up was.</em></p>
+
+  <div class="callout">
+    <div class="callout-title">THE FIRST PATTERN — SEEKING BEFORE FOUND</div>
+    <div class="callout-text">Abraham was moving toward God before God spoke to him. This pattern will repeat through the entire story — the Ethiopian eunuch reading Isaiah on his chariot, Cornelius praying before Peter arrived, the Magi following a star no one else was following, the Iranian engineer who dreamed of Jesus before he had ever heard the gospel. The Book of Jubilees preserves Abraham as the clearest example: <strong>genuine seeking is never ignored.</strong> "Draw near to God and he will draw near to you." <span class="ref" title="James 4:8">James 4:8</span></div>
+  </div>
+
+  <div class="divider"><span>GO. I'LL SHOW YOU WHEN YOU GET THERE.</span></div>
+  <!-- TITLE: "THE CALL" -> "ONE WORD — GO" (generic noun replaced with the active
+       command that defines the section). NOTE: the eight ACT titles (The Spirit,
+       Promise, Mistake, Test, Fulfillment, Expansion, Wildfire, Fractures,
+       Unfinished) are a deliberate parallel "The ___" set — left intact on
+       purpose. Title sharpening was aimed at dividers/diagram, not that system. -->
+
+  <p class="prose">Abram was seventy-five when God spoke in Haran — halfway between Ur and Canaan, where his father Terah had stopped, settled, and died. <span class="ref" title="Genesis 12:4">Gen 12:4</span> Thirty years of seeking. Then — a voice.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"Leave your country, your people, your father's household — and go to a land I will show you."</div>
+    <div class="scripture-ref">Genesis 12:1</div>
+  </div>
+
+  <p class="prose">No map. No destination. Just — <em>go.</em> To a land I will show you. Present tense. As you travel. One step at a time.</p>
+  <p class="prose">Hebrews 11:8 says he left <em>"not knowing where he was going."</em> That is what faith actually is — not certainty, not a feeling. He was seventy-five. His wife was barren. He was leaving everyone he knew. Faith is movement toward a voice you trust before the destination exists.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"I will make you into a great nation and I will bless you; I will make your name great, and you will be a blessing. I will bless those who bless you, and whoever curses you I will curse; and all peoples on earth will be blessed through you."</div>
+    <div class="scripture-ref">Genesis 12:2-3</div>
+  </div>
+
+  <p class="prose">Not one family. Not one nation. <em>All peoples on earth.</em> Paul identifies this moment explicitly as the gospel preached in advance: <em>"Scripture foresaw that God would justify the Gentiles by faith, and announced the gospel in advance to Abraham: All nations will be blessed through you."</em> <span class="ref" title="Galatians 3:8">Gal 3:8</span></p>
+  <p class="prose">The gospel was not invented at Calvary. It was not launched at Pentecost. It was announced in Haran to a seventy-five-year-old man with a barren wife and no children, as the reason to pack his bags. Everything since has been the delivery of what was promised that morning.</p>
+
+  <div class="divider"><span>THE NIGHT GOD SIGNED ALONE</span></div>
+
+  <p class="prose">Years passed. Abram reached Canaan, survived a famine in Egypt, parted from Lot, fought a war to rescue him — and on the way back was blessed by Melchizedek, a priest-king with no genealogy, no beginning and no end in the text, serving bread and wine in the name of <em>God Most High, Creator of heaven and earth.</em> <span class="ref" title="Genesis 14:18-20">Gen 14:18-20</span> Christ himself would later be called a priest in this order — not Aaron's, not the Levites' — because the priesthood was universal before Israel existed, and would be again. Remember that priest-king. He returns at the end of this story. <span class="ref" title="Hebrews 7:17">Heb 7:17</span></p>
+  <p class="prose">And still — no child.</p>
+  <p class="prose">God spoke again and Abram answered honestly: <em>"What can you give me since I remain childless?"</em> <span class="ref" title="Genesis 15:2">Gen 15:2</span> Not faithless — honest. The man who had walked from Haran on a word was now naming the gap between the promise and the reality, out loud, to God's face. And God did not rebuke him. He took him outside.</p>
+  <p class="prose"><em>"Look up at the sky and count the stars — if indeed you can count them. So shall your offspring be."</em> <span class="ref" title="Genesis 15:5">Gen 15:5</span></p>
+  <p class="prose">And Abram believed. That single sentence — <em>"Abram believed God, and it was credited to him as righteousness"</em> <span class="ref" title="Genesis 15:6">Gen 15:6</span> — is the verse Paul builds his entire theology of grace upon in Romans 4. A man got declared right with God for <em>trusting him</em> — before circumcision, before the law, before a single rule existed to keep or break. No performance. No religious system. He looked up at stars he couldn't count and decided the voice was telling the truth. God called that righteousness.</p>
+  <p class="prose">Then came the ceremony. God told Abram to cut animals in half and lay them in two rows. <span class="ref" title="Genesis 15:9-10">Gen 15:9-10</span> Every ancient Near Eastern reader would have recognized what this meant — the covenant ritual, where both parties walk between the pieces and say in effect: <em>may what happened to these animals happen to me if I break this promise.</em> Abram prepared everything. Split the heifer, the goat, the ram. Laid the dove and the pigeon. Drove away the birds of prey that descended on the carcasses. And waited.</p>
+  <p class="prose">As the sun was setting, a deep sleep fell on him. A thick and dreadful darkness. <span class="ref" title="Genesis 15:12">Gen 15:12</span> And then — only God moved. A smoking firepot and a blazing torch — the presence of God — passed between the pieces alone. <span class="ref" title="Genesis 15:17">Gen 15:17</span></p>
+  <p class="prose">Abram never walked through. Only God moved. In the one ceremony where Abram should have sworn <em>let me die if I break this</em> — God put himself under the knife instead. He swore to die before he would let the promise fail.</p>
+
+  <div class="coven1-wrapper">
+    <div class="coven1-title">✦ GOD SIGNED IT ALONE — GENESIS 15 ✦</div>
+    <!-- TITLE: "THE UNILATERAL COVENANT" -> "GOD SIGNED IT ALONE" (concrete, active, names the agency). -->
+    <!-- DIAGRAM REBUILT: replaced the two-sided "path between the pieces" graphic
+         (which read as a meeting of two parties) with a one-directional Flow of
+         Agency — God initiates at top, the covenant descends as a single thick
+         arrow, the people receive at bottom. No upward arrow, no second party. -->
+    <svg class="coven1-svg" viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="God initiates the covenant; it flows downward to the people, who receive it.">
+      <!-- GOD — the initiator -->
+      <text x="350" y="56" text-anchor="middle" font-family="Cinzel" font-size="30" fill="#d4a359" letter-spacing="6">GOD</text>
+      <text x="350" y="82" text-anchor="middle" font-family="Lora" font-style="italic" font-size="14" fill="#b0a070">THE INITIATOR — he binds himself, alone</text>
+      <!-- the covenant as a single downward force -->
+      <rect x="343" y="104" width="14" height="150" fill="#d4a359"/>
+      <path d="M322,250 L378,250 L350,288 Z" fill="#d4a359"/>
+      <rect x="256" y="158" width="188" height="48" rx="3" fill="#000" stroke="#d4a359" stroke-width="0.8"/>
+      <text x="350" y="180" text-anchor="middle" font-family="Cinzel" font-size="12" fill="#d4a359" letter-spacing="3">THE COVENANT</text>
+      <text x="350" y="197" text-anchor="middle" font-family="Lora" font-style="italic" font-size="11.5" fill="#e5e5e5">done to them — not agreed with them</text>
+      <!-- THE PEOPLE — the receivers -->
+      <text x="350" y="320" text-anchor="middle" font-family="Cinzel" font-size="22" fill="#e5e5e5" letter-spacing="4">THE PEOPLE</text>
+      <text x="350" y="344" text-anchor="middle" font-family="Lora" font-style="italic" font-size="14" fill="#b0a070">THE RECEIVERS — they sign nothing</text>
+      <text x="350" y="372" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#d4a359" letter-spacing="2" opacity="0.6">GENESIS 15 — GOD PASSED BETWEEN THE PIECES ALONE</text>
+    </svg>
+  </div>
+
+  <p class="prose">This is the foundation of everything that follows. God bound only himself. The covenant's validity depends entirely on God's faithfulness — not Abraham's, not Israel's, not the church's, not yours. You cannot perform your way out of it. You cannot sin your way out of it. The fractures, the failures, the schisms, the darkest moments in your own story — none of it touches what was signed alone by the smoking firepot in Canaan. The covenant is only as breakable as God is breakable.</p>
+  <p class="prose">Which is to say: it is unbreakable.</p>
+  <p class="prose"><em>Whatever you have done. Whatever has been done to you. The smoking firepot moved. The promise stands.</em></p>
+
+  <div class="callout">
+    <div class="callout-title">WHAT ARCHAEOLOGY CONFIRMED — THE WORLD WAS REAL</div>
+    <div class="callout-text">Josephus — the first-century Jewish historian writing with no Christian agenda — records Abraham as a historical figure who reasoned toward monotheism by studying astronomy, independently corroborating the <em>Book of Jubilees</em> tradition. <em>Jewish Antiquities</em> 1.7.1, c. 93 AD.<br><br>In 1974, excavators at Tell Mardikh in northern Syria unearthed the royal archives of ancient Ebla — 15,000 clay tablets dated to 2400 BC. Among them: a geographic atlas listing the five cities of the plain by name — Sodom, Gomorrah, Admah, Zeboiim, Zoar. These cities appear together in only one chapter of the Bible: Genesis 14. Long dismissed as legendary, they were real enough to appear in a Syrian trade archive a thousand years before Moses wrote them down. <em>Paolo Matthiae, University of Rome, excavation reports 1975–1976.</em><br><br>The Nuzi Tablets — 5,000 cuneiform documents excavated from northern Iraq, 1925–1931 — independently confirm that the surrogate wife arrangement Sarah proposed to Abraham was standard Bronze Age legal contract, not desperation. The tablets document identical arrangements: a barren wife was legally required to provide her husband a slave woman as surrogate, with any child legally belonging to the wife. Genesis wasn't recording a scandal. It was recording a real legal world, with precision. <em>American Schools of Oriental Research, excavation reports 1925–1931.</em></div>
+  </div>
+  <!-- POWER STATEMENT — strongest mic-drop in Act I. The two-line build
+       ("only as breakable as God is breakable" -> "it is unbreakable") already
+       lands hard; leave it. If you ever want a single-line pull-quote for
+       social/marketing, these stand alone:
+       <power>(a) "Your failures don't get a vote. God signed it alone."</power>
+       <power>(b) "A promise no human hand helped write is a promise no human hand can tear up."</power>
+       <power>(c) "The only way out of this covenant is for God to break — and he won't."</power> -->
+
+  <div class="divider"><span>THE STARS AND THE SAND</span></div>
+
+  <p class="prose">God gave Abraham the promise in two images — and they may not be pointing at the same thing.</p>
+  <p class="prose">Genesis 15:5 — at night, looking up: <em>"Count the stars — so shall your offspring be."</em> Stars. Heavenly. Uncountable only because of distance. You are looking up to find them.</p>
+  <p class="prose">Genesis 22:17 — after Moriah, after the knife was raised and the ram was provided: <em>"I will make your descendants as numerous as the stars in the sky and as the sand on the seashore."</em> Both. Stars <em>and</em> sand. Heavenly and earthly. Spiritual and physical.</p>
+  <p class="prose">Bible teachers including Derek Prince have taught this dual image as two tracks running simultaneously through the whole covenant story: a physical track — Israel, the Arab nations, the biological descendants — and a spiritual track — everyone who believes as Abraham believed, from every nation, in every generation. Paul confirms: <em>"He is the father of us all."</em> <span class="ref" title="Romans 4:16">Rom 4:16</span> Not just the Jews. Not just the church. The father of everyone who has ever looked at the stars and decided to trust the voice they could not quite explain.</p>
+  <p class="prose">When you stand before the throne in Revelation 7:9 — every nation, tribe, people, and language — you are one of those stars. You were in this promise the night Abraham stood in Canaan and couldn't count them. <em>Before your parents met. Before your name existed. You were already counted.</em></p>
+
+  <div class="callout">
+    <div class="callout-title">THE HALL OF FAME — HEBREWS 11</div>
+    <div class="callout-text">
+      The New Testament's retrospective on everything that follows. What was actually happening the whole time, seen from the other side.<br><br>
+      <strong>Enoch</strong> — walked with God so closely that death was not required of him. The earliest picture of what a Spirit-filled life produces. <em>By faith.</em><br>
+      <strong>Noah</strong> — warned about things not yet seen. Built an ark on dry land. <em>By faith.</em><br>
+      <strong>Abraham</strong> — left, not knowing where he was going. Believed the stars. Raised the knife. Reasoned resurrection on the road. <em>By faith.</em><br>
+      <strong>Sarah</strong> — received strength to conceive past all biological possibility. <em>By faith — judging him faithful who had promised.</em><br><br>
+      And then the writer says something that should change how you understand your place in this story:<br><br>
+      <em>"These were all commended for their faith, yet none of them received what had been promised — since God had planned something better for us, so that only together with us would they be made perfect."</em> <span class="ref" title="Hebrews 11:39-40">Heb 11:39-40</span><br><br>
+      The Hall of Fame is not closed. It was never meant to be a museum. <strong>You are in this story — and Abraham's faith is not complete without yours.</strong>
+    </div>
+  </div>
+
+</section>
+
+<section class="reveal" id="mistake">
+  <div class="act-header">
+    <div class="act-label" data-num="II">ACT TWO</div>
+    <div class="act-title">The Mistake</div>
+    <div class="act-intro">God made the promise. Now came the waiting. And the waiting revealed everything about what happens when a man of faith decides to help God keep his own word.</div>
+  </div>
+
+  <p class="prose">A year passed. Then five. Then ten. The stars Abraham had counted that night in Canaan still hung in the sky — but the tent was empty. Sarai was still barren. The promise had not arrived. And the man who had walked away from everything he knew on a single word from God began to wonder if God needed a little help.</p>
+
+  <p class="prose">He had already failed in the exact place God was asking him to trust. Twice he had handed Sarai to other men to save his own skin — once to Pharaoh in Egypt, once to Abimelech in Gerar. <span class="ref" title="Genesis 12:13-20; 20:1-18">Gen 12; 20</span> Each time God rescued her. Each time Abraham walked away richer than he arrived, with a wife he had been willing to lose. The covenant was not carried by a hero. It was carried by a man who, in his fear, had thrown away the very person the promise was supposed to come through — and God had given her back to him both times anyway.</p>
+  <p class="prose">Sarai had an Egyptian servant named Hagar — likely acquired years earlier during the disastrous detour through Egypt when Abraham, afraid for his life, had told Pharaoh she was his sister. <span class="ref" title="Genesis 12:15-16">Gen 12:15-16</span> Now Sarai came to her husband with a plan that was entirely legal, culturally accepted, and practically reasonable: give Hagar to Abraham as a secondary wife. Any child born would legally be Sarai's. The covenant heir would exist. The promise would be fulfilled.</p>
+  <p class="prose">It was the most sophisticated act of unbelief in the Bible — not a crude rejection of God, but a careful, culturally competent attempt to accomplish what God promised by means God never prescribed. The Nuzi tablets and the Code of Hammurabi both document this exact arrangement as standard practice. What Sarai proposed wasn't scandalous. It was the reasonable thing to do.</p>
+  <p class="prose">God had not called Abraham to reasonable solutions. He had called him to impossible faith — faith in a God who specializes in the biologically impossible, who signed the covenant alone so that human failure and human cleverness alike could never claim credit for the outcome. The moment Abraham and Sarai reached for what was possible, they stepped outside the promise.</p>
+
+  <div class="callout">
+    <div class="callout-title">GALATIANS 4 — PAUL'S INTERPRETATION</div>
+    <div class="callout-text">Paul is not gentle about this in Galatians. He calls Hagar "the covenant from Mount Sinai — born into slavery." <span class="ref" title="Galatians 4:24">Gal 4:24</span> He is not condemning Hagar as a person — he is identifying what her son represents: <strong>everything produced by human effort to fulfill what only God can fulfill.</strong> Every time the church has tried to build the kingdom through political power, or through the right strategy, or through its own moral performance — it has produced an Ishmael. Something real, something alive, even something loved — but not the thing God promised. And the consequences, as always, travel for generations.</div>
+  </div>
+
+  <div class="divider"><span>HAGAR — EL ROI</span></div>
+
+  <p class="prose">Hagar conceived. The moment she did, something shifted between the two women — as it always does when status changes inside a house. Hagar looked at Sarai differently. Sarai felt it, and answered with cruelty. The wound was real: the covenant family turning on the very outsider God was about to honor. And Hagar — pregnant, alone, foreign, legally a possession with no recourse — did the only thing she could do.</p>
+  <p class="prose">She ran.</p>
+  <p class="prose">She ran into the desert. Toward Egypt, the scripture implies — toward home, toward something familiar, toward anything that wasn't this tent and this woman and this child growing inside her that had become the source of her suffering instead of her salvation. <span class="ref" title="Genesis 16:6-7">Gen 16:6-7</span></p>
+  <p class="prose">An angel found her at a spring on the way to Shur. The desert. Alone. Pregnant. No water, no shelter, no protection, no legal standing, no one in the world who would have noticed if she simply disappeared.</p>
+  <p class="prose">The angel spoke to her by name.</p>
+  <p class="prose"><em>"Hagar, servant of Sarai — where have you come from, and where are you going?"</em> <span class="ref" title="Genesis 16:8">Gen 16:8</span></p>
+  <p class="prose">He already knew the answers. He asked anyway — not for information. To address her. By name. Treating her as a person with a story that mattered, not as a servant whose movements required no explanation.</p>
+  <p class="prose">Then he made her a promise that sounds almost identical to the one he had made to Abraham:</p>
+  <p class="prose"><em>"I will increase your descendants so much that they will be too numerous to count."</em> <span class="ref" title="Genesis 16:10">Gen 16:10</span></p>
+  <p class="prose">The same language. Too numerous to count. Stars you cannot count. This is not a consolation prize. This is covenant language — the language God used with the man he called his friend. Used now with a slave woman at a desert spring, addressed to a child who had not yet been born.</p>
+  <p class="prose"><em>"You are now pregnant and you will give birth to a son. You shall name him Ishmael — God hears — because the LORD has heard of your misery."</em> <span class="ref" title="Genesis 16:11">Gen 16:11</span></p>
+  <p class="prose">And then Hagar did something no one else in the entire Bible does.</p>
+  <p class="prose">She named God.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"You are the God who sees me — El Roi. I have now seen the One who sees me."</div>
+    <div class="scripture-ref">Genesis 16:13</div>
+  </div>
+
+  <p class="prose">Not Abraham. Not Sarah. Not Moses. Not any of the patriarchs whose names fill page after page of the covenant story. An Egyptian slave woman — the lowest person in the household, legally a possession, carrying a child she had not chosen to carry for a man she had not chosen to serve — looked up from a desert spring and gave the living God a name.</p>
+  <p class="prose"><em>El Roi. The God who sees me.</em></p>
+  <p class="prose">She had not prayed. She had not fasted. She had performed no religious act at all. She had simply been seen — truly seen, by someone who knew exactly where she had come from and exactly where she was going — and the only response she had left was to give him a name for what he had done.</p>
+  <p class="prose">Four thousand years later, 2-3 million Muslims performing Hajj walk between the hills of Safa and Marwa to commemorate the moment this woman ran through the desert looking for water. The ritual is called <em>Sa'i</em> — the running — and it re-enacts Hagar's desperate search for life in the wilderness. The Zamzam well she found still flows in Mecca today, beneath the Grand Mosque, producing thousands of liters of water per hour. The well that God opened for a desperate woman in the desert is still flowing, 4,000 years later, in the holiest site in Islam.</p>
+  <p class="prose">God heard the misery of a slave woman. He has not stopped hearing.</p>
+  <p class="prose"><em>A slave nobody counted gave God a name. What makes you think you're the one He overlooks?</em></p>
+
+  <div class="divider"><span>ISHMAEL — BLESSED AND EXPELLED</span></div>
+
+  <p class="prose">Hagar returned. Ishmael was born. Abraham held his firstborn son — the son he had waited for, the son he had loved before he existed — and named him exactly as the angel had instructed. <em>God hears.</em></p>
+  <p class="prose">For thirteen years, Ishmael was everything. The heir. The proof that Abraham's line would continue. The boy who rode with his father, who learned from him, who was circumcised at thirteen with the covenant sign — old enough to understand what he was receiving, old enough to have made his own choice about it. <span class="ref" title="Genesis 17:25">Gen 17:25</span></p>
+  <p class="prose">Then God appeared to Abraham again and told him that the covenant heir — the one through whom the promise would flow — would be a son born to Sarah. Not Ishmael.</p>
+  <p class="prose">Abraham's response tells you everything about who he had become:</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"If only Ishmael might live under your blessing!"</div>
+    <div class="scripture-ref">Genesis 17:18</div>
+  </div>
+
+  <p class="prose">Not — <em>why not Ishmael?</em> Not — <em>after everything I've done, after the waiting, after the covenant ceremony, after following you from Ur to Canaan, is this really necessary?</em> Just — <em>please, let him be blessed.</em> A father's prayer for the son he loves, offered at the exact moment he learns that son will not be the one he hoped.</p>
+  <p class="prose">God answered the prayer. Every word of it. <em>"As for Ishmael, I have heard you. I will surely bless him — I will make him fruitful and greatly increase his numbers. He will be the father of twelve rulers, and I will make him into a great nation."</em> <span class="ref" title="Genesis 17:20">Gen 17:20</span> The word is <em>barak</em> — the covenant word, the blessing word, the same word that runs like a thread through every promise God has ever made in this story. Ishmael received it. The covenant would pass through Isaac. But Ishmael was never abandoned — and the invitation Paul would later make explicit was already true here: <em>"everyone who calls on the name of the Lord will be saved."</em> <span class="ref" title="Romans 10:13">Rom 10:13</span> The covenant ran through Isaac. The door would open for the whole family.</p>
+  <p class="prose">The covenant would pass through Isaac. But Ishmael was never abandoned. That distinction matters enormously — it is the theological key to understanding Islam, to understanding the hostility and the longing and the 1.8 billion people who call Abraham their father and mean it — and it will matter again at the end of this story in ways that Isaiah could see and we are only beginning to see.</p>
+  <p class="prose">Josephus — writing in the first century from Jerusalem, obtaining his information directly from Arab contemporaries — identified the Nabataean Kingdom as the descendants of Ishmael's firstborn son Nebaioth, and said they "occupied the whole country from the Euphrates to the Red Sea." <span class="ref" title="Jewish Antiquities 1.12.4">Josephus, Ant. 1.12.4</span> Their capital was Petra — a city carved into red rock in what is now Jordan, one of the architectural wonders of the ancient world, a trading empire that connected Rome to India and resisted Roman conquest for four centuries. God promised Ishmael would become a great nation. Petra is that promise carved in stone.</p>
+
+  <p class="prose">Isaac was born. Sarah's laughter — the laughter she had hidden when the angels told her, the laughter God had called her on <span class="ref" title="Genesis 18:15">Gen 18:15</span> — became real. The impossible had happened. And Sarah, holding her son, looked at Ishmael differently than she ever had before.</p>
+  <p class="prose">At Isaac's weaning feast she saw Ishmael mocking her son — the Hebrew word <em>metzachek</em> is related to Isaac's own name, a bitter wordplay — and something broke in her. She went to Abraham: <em>"Get rid of that slave woman and her son, for that woman's son will never share in the inheritance with my son Isaac."</em> <span class="ref" title="Genesis 21:10">Gen 21:10</span></p>
+  <p class="prose">The text says Abraham was <em>greatly distressed.</em> <span class="ref" title="Genesis 21:11">Gen 21:11</span> Two words in the English. In the Hebrew it is the word for evil — <em>ra</em> — something against the nature of things. Obeying God meant doing the thing that felt wrong in his bones. This was his son. His firstborn. The boy he had named and circumcised and loved for thirteen years — and God was telling him to send him into the desert.</p>
+  <p class="prose">God told him to listen to Sarah. He sent Hagar and Ishmael into the desert of Beersheba with bread and a single skin of water. <span class="ref" title="Genesis 21:14">Gen 21:14</span></p>
+  <p class="prose">A skin of water. For a woman and a teenage boy. In the desert.</p>
+  <p class="prose">The water ran out. Hagar did what a mother does when she has nothing left to give — she put Ishmael under a bush, in whatever shade the desert offered, and walked away. About a bowshot's distance. Just far enough that she would not have to watch him die.</p>
+  <p class="prose">She sat down and wept.</p>
+  <p class="prose">And then — the most quietly devastating verse in the story of Ishmael:</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"God heard the boy crying."</div>
+    <div class="scripture-ref">Genesis 21:17</div>
+  </div>
+
+  <p class="prose">Not Hagar. The text says she wept — but God heard <em>the boy.</em> The boy who was silent to his mother. The boy lying under a bush in the Beersheba desert with no water and no hope, whose mother had walked away because she could not watch. That boy made a sound — not a sound anyone around him could hear, not a sound the text tells us was audible — and God heard it.</p>
+  <p class="prose">The angel of God called to Hagar from heaven: <em>"What is the matter, Hagar? Do not be afraid — God has heard the boy crying as he lies there."</em> <span class="ref" title="Genesis 21:17">Gen 21:17</span> Then: <em>"Lift the boy up and take him by the hand."</em></p>
+  <p class="prose">God opened her eyes. She saw a well of water. She filled the skin. She gave the boy a drink.</p>
+  <p class="prose"><em>"God was with the boy as he grew up."</em> <span class="ref" title="Genesis 21:20">Gen 21:20</span></p>
+  <p class="prose">Five words. The entire inheritance of Ishmael contained in five words. Not the covenant. Not the temple. Not the promise through which the Messiah would come. But — <em>God was with the boy.</em> El Roi, the God who had seen Hagar at the desert spring, was with her son in the wilderness. And he never stopped being with him.</p>
+  <p class="prose"><em>His mother walked away so she wouldn't have to watch. God walked toward the sound she couldn't hear.</em></p>
+
+  <!-- RESOLVED (was PACING/STRUCTURAL): Option 1 applied — the five-woman sweep
+       now opens by nesting directly into Hagar's thread ("the first... not the
+       last"), so it reads as payoff of the outsider pattern, not a detour.
+       Divider title sharpened to carry that link. Net prose change ~flat. -->
+  <div class="divider"><span>THE WOMEN WHO CARRIED THE COVENANT</span></div>
+
+  <p class="prose">Hagar was the first woman to carry the promise — slave, foreigner, chosen at a desert spring. She was not the last. The covenant story is told through the names of men, but at every hinge moment, when it was about to slip away, a woman caught it.</p>
+  <p class="prose"><em>Rebekah</em> heard God speak before she married Isaac, before she had children. <em>"Two nations are in your womb,"</em> God told her. <em>"The older will serve the younger."</em> <span class="ref" title="Genesis 25:23">Gen 25:23</span> Years later, when Isaac lay dying and prepared to give his blessing to the wrong son — the son who had despised his birthright, who had married Canaanite women who were a grief to his parents <span class="ref" title="Genesis 26:35">Gen 26:35</span> — Rebekah acted. She devised the disguise. She prepared the food. She dressed Jacob in goatskins. And when Jacob said <em>what if my father discovers the deception and curses me?</em> she answered: <em>"Let the curse fall on me, my son."</em> <span class="ref" title="Genesis 27:13">Gen 27:13</span> She paid everything to ensure the covenant landed where God had said it would land. She never saw Jacob again. He fled that night and she died before his return.</p>
+  <p class="prose"><em>Tamar</em> — Judah's twice-widowed daughter-in-law, denied what she was owed by law, left in slow destitution with no recourse. She took matters into her own hands in a way scripture does not soften. When Judah discovered it, he stopped cold: <em>"She is more righteous than I."</em> <span class="ref" title="Genesis 38:26">Gen 38:26</span> Matthew put her in the genealogy of Jesus by name. <span class="ref" title="Matthew 1:3">Matt 1:3</span> An act of desperation held the covenant line together.</p>
+  <p class="prose"><em>Ruth</em> was a Moabite — excluded by law to the tenth generation. <span class="ref" title="Deuteronomy 23:3">Deut 23:3</span> Her husband dead. Every cultural expectation pointing home. Instead she said to Naomi: <em>"Where you die I will die. Your God will be my God."</em> <span class="ref" title="Ruth 1:16">Ruth 1:16</span> That declaration of covenant loyalty by a foreigner on a road in Moab became the great-grandmother of David. The covenant ran through her refusal to leave.</p>
+  <p class="prose"><em>Mary of Nazareth</em> was a teenager in a Roman-occupied village with no power, no status, and nothing to recommend her to history. When Gabriel appeared and told her what was about to happen to her body and her reputation and her life, she asked one practical question — <em>how?</em> — and then said: <em>"I am the Lord's servant. May it be to me as you have said."</em> <span class="ref" title="Luke 1:38">Luke 1:38</span> A teenage girl from Nazareth understood exactly what was happening inside her — her Magnificat reaches all the way back to Abraham: <em>"He has helped his servant Israel, remembering to be merciful to Abraham and his descendants forever, just as he promised our ancestors."</em> <span class="ref" title="Luke 1:54-55">Luke 1:54-55</span> She had been paying attention to the covenant her whole life.</p>
+  <p class="prose">And <em>Mary Magdalene</em> — in a culture where a woman's testimony was inadmissible in court, where female witnesses did not count — was chosen by God to be the first person to see the risen Christ. <span class="ref" title="John 20:16">John 20:16</span> The first herald of the most important event in human history. Not Peter. Not John. Not any of the eleven who had followed Jesus for three years. A woman. The one the world would have dismissed. The one God trusted first.</p>
+  <p class="prose">The outsider. The excluded. The one with no legal standing. <em>Always the pattern. Always the one God chooses.</em></p>
+  <p class="prose"><em>Every one of them was disqualified by someone. Not one of them was disqualified by God.</em></p>
+
+</section>
+
+<section class="reveal" id="test">
+  <div class="act-header">
+    <div class="act-label" data-num="III">ACT THREE</div>
+    <div class="act-title">The Test</div>
+    <div class="act-intro">Everything Abraham had waited for finally existed. The son. The laughter. The future. And then God spoke again.</div>
+  </div>
+
+  <p class="prose">The rabbis say Abraham's greatest test was not Moriah. It was the twenty-five years before Moriah — the decades of waiting with an empty tent, the years of watching Sarai's face when she thought no one was looking, the slow erosion of a promise that hadn't arrived yet. The test of Moriah, they say, was only the final one. There had been nine before it.</p>
+  <p class="prose">But Moriah was the one that broke all categories.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"Take your son, your only son, whom you love — Isaac — and go to the region of Moriah. Sacrifice him there as a burnt offering on a mountain I will show you."</div>
+    <div class="scripture-ref">Genesis 22:2</div>
+  </div>
+
+  <p class="prose"><em>Your son.</em> Singular. As if Ishmael — the teenage boy Abraham had loved for thirteen years, wept over when God told him to send him away, the boy he had watched walk into the desert with a single skin of water — as if Ishmael no longer existed. <em>Your only son.</em> The one you waited a century for. <em>Whom you love.</em> God named the love out loud. Not because he didn't know. Because he wanted Abraham to feel the full weight of what was being asked.</p>
+  <p class="prose">And then — three words in Hebrew:</p>
+  <p class="prose"><em>Vayashkem Avraham baboker.</em> And Abraham rose early in the morning.</p>
+  <p class="prose">He did not argue. He did not bargain — he had bargained with God over Sodom, pleading for the righteous, negotiating down from fifty to ten. <span class="ref" title="Genesis 18:23-32">Gen 18:23-32</span> He could have tried. He did not. He did not even weep in the text — whatever tears existed, scripture does not record them. In the darkness before dawn he saddled his donkey, split the wood for the offering, took two servants and his son, and set out. <span class="ref" title="Genesis 22:3">Gen 22:3</span></p>
+  <p class="prose">The man who had laughed when God said Sarah would conceive. The man who had tried to help God with Hagar. That man was gone. What remained was someone whose faith had been built through twenty-five years of impossible waiting into something unrecognizable — something that could move toward its own worst nightmare at dawn without hesitation, because it had learned that the God who asks can be trusted.</p>
+
+  <div class="divider"><span>THREE DAYS</span></div>
+
+  <p class="prose">The region of Moriah was three days' walk from Beersheba.</p>
+  <p class="prose">Three days of walking — three sunrises, three nights of camp, three days of watching his son walk beside him. Isaac, whose name means <em>laughter.</em> Isaac, who was conceived when the body said impossible and God said watch me. Isaac, who was the only reason any of this had meant anything — the proof that the covenant was real, the living embodiment of thirty years of promise.</p>
+  <p class="prose">For three days Abraham walked with him. And said nothing.</p>
+  <p class="prose">What did he think? Hebrews tells us: <em>"He reasoned that God could even raise the dead."</em> <span class="ref" title="Hebrews 11:19">Heb 11:19</span> Working through what he knew — the God who had given Isaac against all biology, who had bound himself in the covenant ceremony alone, who had promised that through Isaac his descendants would be counted — and arriving at a conclusion that would not be articulated clearly for another fifteen centuries: <em>if God promised through Isaac, and God is asking for Isaac, then God must be planning to raise him from the dead.</em></p>
+  <p class="prose">Abraham reasoned his way to resurrection faith in the middle of the hardest three days he would ever walk. Not in a theological library. Not in a time of peace. On a road. Walking toward the thing he feared most. With his son beside him.</p>
+  <p class="prose">On the third day he saw the mountain. He turned to his servants and said: <em>"Stay here with the donkey while I and the boy go over there. We will worship and then <strong>we will come back to you."</strong></em> <span class="ref" title="Genesis 22:5">Gen 22:5</span></p>
+  <p class="prose">We. Both of us. He did not know how. He simply believed that they would. He confessed resurrection before he climbed a single step of that mountain. Before the altar was built, before the wood was laid, before the knife was raised — Abraham was already speaking what he could not see. That is not wishful thinking. That is the prophetic gift operating under the most extreme conditions possible.</p>
+
+  <div class="callout">
+    <div class="callout-title">THE THIRD DAY — GOD'S SIGNATURE</div>
+    <div class="callout-text">The writer of Hebrews calls what happened with Isaac a <em>parabole</em> — the Greek word for parable, type, acted-out symbol. <span class="ref" title="Hebrews 11:19">Heb 11:19</span> God did not design the resurrection to fit a pre-existing story. He designed the Abraham and Isaac story to <em>announce</em> the resurrection before it happened — and then acted it out with two real people on a real mountain.<br><br>The three-day pattern is not incidental. It is God's recurring signature:<br><strong>Genesis 22</strong> — Isaac as good as dead from the moment God spoke, received back alive on the third day.<br><strong>Jonah</strong> — three days in the fish. Jesus connects this explicitly to his own burial. Matthew 12:40.<br><strong>Hosea 6:2</strong> — <em>"After two days he will revive us; on the third day he will restore us, that we may live in his presence."</em> Written 700 BC.<br><strong>Joseph</strong> — his brothers imprisoned three days before release. Genesis 42:17-18.<br><br>Every subsequent three-day resurrection pattern in the Old Testament is God repeating the word he first wrote on the road to Moriah. Abraham walked three days not knowing how the story ended. We read Genesis 22 knowing the ram is in the thicket. He didn't. <strong>His faith was not in an outcome he could see — it was in a God he knew. That is exactly the faith that justifies.</strong></div>
+  </div>
+
+  <div class="divider"><span>THE ASCENT</span></div>
+
+  <p class="prose">He gave Isaac the wood to carry. He kept the fire and the knife himself — the dangerous things, the things that could cut and burn. They walked up together.</p>
+  <p class="prose">Isaac asked the question that has haunted readers for four thousand years:</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"Father?"<br>"Yes, my son?"<br>"The fire and the wood are here — but where is the lamb for the burnt offering?"</div>
+    <div class="scripture-ref">Genesis 22:7</div>
+  </div>
+
+  <p class="prose">He knew. He must have known. He had seen sacrifices. He understood what the fire and wood were for. And yet — he asked. Maybe because he needed to hear his father say it. Maybe because he wanted to give Abraham a chance to explain. Maybe because a son, faced with the unthinkable, reaches for his father's voice the way we all reach for what we trust most when everything else stops making sense.</p>
+  <p class="prose"><em>He raised the knife on the only thing he loved. What are you still holding back with both hands?</em></p>
+  <p class="prose">Abraham answered: <em>"God himself will provide the lamb for the burnt offering, my son."</em> <span class="ref" title="Genesis 22:8">Gen 22:8</span></p>
+  <p class="prose">Whatever Isaac heard in that answer, he kept walking. The boy who had asked the question said nothing else.</p>
+  <p class="prose">And then the text says something that deserves to be read very slowly:</p>
+  <p class="prose"><em>And the two of them went on together.</em></p>
+  <p class="prose">That phrase — <em>yachdav</em> in Hebrew, together, as one — appears twice in this chapter. The first time before the question. The second time after it. After the question has been asked and answered. After Isaac has understood, or begun to understand, what is happening. After the father has given the only answer he had, which was not an answer at all but a statement of faith in the dark.</p>
+  <p class="prose">And they went on. Together. Still.</p>
+  <p class="prose">Whatever passed between them in those final steps up the mountain — whatever a father says to a son he is about to lay on an altar, whatever a son says to a father he has decided to trust even now — scripture does not record it. The text does not give us their conversation. It gives us only their movement. Together. Up the mountain. Toward the altar that Abraham would build with his own hands and lay his own son upon.</p>
+  <p class="prose">He built the altar. Arranged the wood. And then — bound his son. The Hebrew word is <em>akaydah.</em> The binding. It has a name in Jewish tradition. <em>The Akaydah.</em> Not the sacrifice of Isaac — because Isaac was not sacrificed. The binding. Because what happened on that mountain was that a father bound his son, and a son allowed himself to be bound, and the distance between that moment and the knife was closed by a voice from heaven.</p>
+  <p class="prose">Jewish tradition holds that Isaac was not a small child — that he was thirty-seven years old, a grown man who could have resisted. He did not resist. He lay down on the wood his own hands had carried up the mountain and let his father tie him to it. Two acts of surrender, happening simultaneously, on the same altar.</p>
+  <p class="prose">Abraham reached out his hand. Took the knife.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"But the angel of the LORD called out to him from heaven: 'Abraham! Abraham!'<br>'Here I am,' he replied.<br>'Do not lay a hand on the boy. Do not do anything to him. Now I know that you fear God, because you have not withheld from me your son, your only son.'"</div>
+    <div class="scripture-ref">Genesis 22:11-12</div>
+  </div>
+
+  <p class="prose">He looked up. A ram. Caught in a thicket by its horns. As if it had always been there. As if it had been placed there before the foundation of the world, waiting for this exact moment, this exact man, this exact mountain.</p>
+  <p class="prose"><em>"Now I know that you fear God."</em> Not terror — trust. Abraham had proved he trusted the Giver more than the gift. That is what the fear of the Lord is: loving God more than what God gives you, even when the gift is your only son.</p>
+  <p class="prose"><em>God stopped the knife at the last second — not because the cost didn't matter, but because he was going to pay it himself.</em></p>
+  <p class="prose">He named the place <em>Yahweh Yireh — The Lord Will Provide.</em> <span class="ref" title="Genesis 22:14">Gen 22:14</span> And the text says it became a saying: <em>"On the mountain of the LORD it will be provided."</em> A proverb born from the worst morning of one man's life. A truth that outlasted him by millennia — because the God who provided the ram in the thicket was not finished providing. Not by a long way.</p>
+
+  <div class="sac2-wrapper">
+    <div class="sac2-title">✦ THE SHADOW AND THE SUBSTANCE ✦</div>
+    <div class="sac2-container">
+      <div class="sac2-card">
+        <div class="sac2-head sac2-head--gold">ISAAC — GENESIS 22</div>
+        <div class="sac2-item">"Your son, your only son, whom you love"</div>
+        <div class="sac2-item">Carried the wood for his own sacrifice up the mountain</div>
+        <div class="sac2-item">Mount Moriah — where Solomon's Temple would stand. Where Jesus would die.</div>
+        <div class="sac2-item">The knife raised. Full obedience. Nothing held back.</div>
+        <div class="sac2-item">A substitute provided — the ram in the thicket. "God himself will provide the lamb."</div>
+        <div class="sac2-item">Received back alive — "in a manner of speaking, from death." Hebrews 11:19</div>
+        <div class="sac2-item">Never recorded speaking to his father again in Genesis. What cost that silence.</div>
+      </div>
+      <div class="sac2-card sac2-card--purple">
+        <div class="sac2-head sac2-head--purple">JESUS — THE CROSS</div>
+        <div class="sac2-item">"This is my Son, whom I love — with him I am well pleased." Matthew 3:17</div>
+        <div class="sac2-item">Carried his own cross up the hill to Golgotha — John 19:17</div>
+        <div class="sac2-item">Golgotha — the same region as Moriah. The shadow and the substance on the same mountain range.</div>
+        <div class="sac2-item">"Not my will but yours be done." Luke 22:42. Nothing held back.</div>
+        <div class="sac2-item">No substitute. "Behold the Lamb of God, who takes away the sin of the world." John 1:29</div>
+        <div class="sac2-item">Romans 8:32 — "He who did not spare his own Son" uses the same Greek verb (<em>pheidomai</em>) as the Septuagint of Genesis 22:16 — "you have not withheld your son." Paul is quoting Moriah deliberately. The contrast is the point: Abraham's hand was stopped. God's was not.</div>
+        <div class="sac2-item">Resurrection. "He is not here — he has risen." The ram was the preview. This was the reality.</div>
+        <div class="sac2-item">Sent the Holy Spirit. Still speaking. The silence broken forever.</div>
+      </div>
+    </div>
+    <p class="sac2-footer">ISAAC WALKED FREE BECAUSE SOMEONE WOULD ONE DAY TAKE HIS PLACE</p>
+  </div>
+
+  <p class="prose">Isaac asked his question — <em>"where is the lamb?"</em> — on the way up a mountain. It floated unanswered for roughly 2,000 years. Then John the Baptist saw Jesus approaching the Jordan and said: <em>"Behold the Lamb of God, who takes away the sin of the world."</em> <span class="ref" title="John 1:29">John 1:29</span> A son's question asked on the road to Moriah was finally answered by another Son walking toward his death. The question and the answer are separated by two millennia and connected by the same God.</p>
+
+  <div class="spirit-box">
+    <div class="spirit-title">THE PROPHETIC GIFT — OPERATING UNDER PRESSURE</div>
+    <div class="spirit-text">
+      <em>"God himself will provide the lamb."</em> Abraham said that before he saw the ram. Before he knew how it would end. He declared what he could not yet see — not as wishful thinking, not as emotional coping, but as a statement of prophetic faith that the Spirit then honored with an animal caught in a thicket at the exact moment it was needed.<br><br>
+      This is what scripture calls a word of knowledge or word of faith — the Spirit enabling a person to declare what God is about to do before the evidence exists. Abraham did not invent this on Moriah. But he demonstrated it at its most extreme: <strong>a knife in one hand and a promise in his mouth, both at the same time, on the same mountain.</strong><br><br>
+      The gifts of the Spirit are not for comfortable moments. They are for the mountain. For the moment when every natural fact says one thing and the Spirit says another — and you have to choose which voice you trust.
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">EID AL-ADHA — THE MOST RE-ENACTED MOMENT IN HISTORY</div>
+    <div class="callout-text">The Quran records this same test in Surah 37:100-111 but does not name the son. Classical Islamic scholarship identifies the son as Ishmael — the firstborn. His response in the Quran: <em>"Father, do what you are commanded. You will find me, God willing, of the steadfast."</em><br><br>
+    Every year at Eid al-Adha — the Feast of Sacrifice — 2-3 million Muslims at Hajj and hundreds of millions worldwide sacrifice an animal in memory of this moment. Every family. Every year. Across every culture and continent where Islam exists.<br><br>
+    Whether the son was Isaac or Ishmael — <strong>4.2 billion people, more than half the human race, still circle around the question of what a man did on a mountain with his son and a knife and a God he trusted.</strong> No other story in human history has generated more worship, more prayer, more sacrifice, more pilgrimage. The covenant moment on Moriah is the most re-enacted act of surrender in history. And it is not finished yet. That question is still open to every one of them. The God who provided the ram still provides.</div>
+  </div>
+
+  <div class="divider"><span>THE SILENCE AFTER</span></div>
+
+  <p class="prose">After the angel spoke, Abraham sacrificed the ram and named the place. God confirmed the promise again by oath — the strongest possible binding in the ancient world, God swearing by himself because there was no one greater to swear by. <span class="ref" title="Hebrews 6:13">Heb 6:13</span> And then Abraham returned to his servants.</p>
+  <p class="prose">Not Abraham and Isaac. Just Abraham.</p>
+  <p class="prose"><em>"Abraham returned to his servants."</em> <span class="ref" title="Genesis 22:19">Gen 22:19</span> The Hebrew is singular. They traveled back to Beersheba. And from that verse forward, Isaac and Abraham are never recorded speaking to each other again in Genesis.</p>
+  <p class="prose">The next time Isaac appears, he is in a field at evening, meditating, and he looks up and sees the camels of the servant Abraham has sent to find him a wife. <span class="ref" title="Genesis 24:63">Gen 24:63</span> He meets Rebekah. He brings her into his mother's tent. He loves her. <em>And he was comforted after his mother's death.</em> <span class="ref" title="Genesis 24:67">Gen 24:67</span></p>
+  <p class="prose">Sarah died in the chapter between the mountain and the field. Genesis 23 opens with her age and her death in the same breath — no transition, no recovery time. Abraham came down from Moriah having just passed the greatest test in human history, with God's kingdom oath still ringing in his ears, and walked home to an empty tent. No fanfare. No celebration. Just grief and a burial to arrange.</p>
+  <p class="prose">And then — the detail that undoes you. He had to negotiate with Hittites for a piece of ground to bury her. <span class="ref" title="Genesis 23:3-4">Gen 23:3-4</span> A foreigner. No land of his own. Despite thirty years of God promising him this entire territory. The man God had just sworn to by his own name could not bury his wife without asking permission from people who owned what God had promised him. <em>He wept. Then he got up and negotiated.</em> <span class="ref" title="Genesis 23:2-3">Gen 23:2-3</span> Two verses. The whole weight of a life of faith in two verses.</p>
+  <p class="prose">We don't know if Isaac was with her when she died. We don't know what he carried back down that mountain in the silence his father also carried. Scripture simply does not say. It only records that they returned — and then nothing. As if the only honest response to what God asked that day was silence.</p>
+  <p class="prose">That silence sits over the rest of Genesis. It is not answered until another Father leads another Son up the same mountain range — and that Son, after the grave, <em>keeps speaking.</em> The silence on Moriah is broken forever at the empty tomb.</p>
+  <p class="prose">Whatever it cost them both — <em>they gave it.</em> And God kept every word of what he swore.</p>
+  <p class="prose">Genesis 24 opens with a single verdict on Abraham's entire life: <em>"Abraham was old, well advanced in years, and the LORD had blessed Abraham in all things."</em> <span class="ref" title="Genesis 24:1">Gen 24:1</span> Not a trial. A testimony. The narrator steps back after everything — the waiting, the failures, the Hagar detour, the knife on Moriah — and says: look at this man's life in total. <em>Blessed in all things.</em> That is what is on the other side of the mountain.</p>
+  <p class="prose"><em>The address of your provision is the address of His presence — and His presence is always where He is establishing His kingdom.</em></p>
+  <p class="prose"><em>Some obedience leaves a mark that never fully heals on this side. He still asks. And he still keeps every word.</em></p>
+
+</section>
+
+<section class="reveal" id="fulfillment">
+  <div class="act-header">
+    <div class="act-label" data-num="IV">ACT FOUR</div>
+    <div class="act-title">The Fulfillment</div>
+    <div class="act-intro">The ram in the thicket was only the preview. Seven hundred years before it happened, a prophet described the real thing in language so precise that readers still debate whether it was written before or after the fact.</div>
+  </div>
+
+  <div class="scripture">
+    <div class="scripture-text">"He was despised and rejected by mankind, a man of suffering, and familiar with pain... He was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed... He was led like a lamb to the slaughter, and as a sheep before its shearers is silent, so he did not open his mouth."</div>
+    <div class="scripture-ref">Isaiah 53:3, 5, 7 — written c. 700 BC</div>
+  </div>
+
+  <p class="prose">This is the passage the Ethiopian eunuch was reading on his chariot when Philip ran to meet him. <span class="ref" title="Acts 8:32-33">Acts 8:32-33</span> Written seven centuries before the cross. <em>As a sheep before its shearers is silent, so he did not open his mouth.</em> The same silence Isaac carried down Moriah — now on the Lamb who would not be spared. Isaac was bound and walked free; the ram took his place. Isaiah saw the picture finished: the Lamb who would take away not just one son's death sentence but the sin of the world.</p>
+
+  <div class="callout">
+    <div class="callout-title">THE GREAT ISAIAH SCROLL — SEALED FOR 2,000 YEARS</div>
+    <div class="callout-text">In 1947, a Bedouin shepherd threw a rock into a cave near the Dead Sea and heard pottery break. Inside a clay jar: the Great Isaiah Scroll — all 66 chapters of Isaiah, including every word of Isaiah 53, carbon dated to <strong>125 BC</strong>. It is 1,000 years older than any previously known manuscript of Isaiah. When scholars compared it to modern Bibles, the texts were virtually word for word identical.<br><br>The prophecy the Ethiopian eunuch was reading had been sitting in a sealed clay jar in a desert cave for 2,000 years — and when it came out, it matched. Isaiah saw the crucifixion in 700 BC. The scroll that preserved his vision was hidden before Jesus was born and found after he rose. <em>Israel Museum, Jerusalem. Shrine of the Book.</em><br><br>Hosea saw the same pattern from a different angle, writing 700 BC: <em>"After two days he will revive us; on the third day he will restore us, that we may live in his presence."</em> <span class="ref" title="Hosea 6:2">Hosea 6:2</span> Two prophets. Same vision. One mountain. One tomb.</div>
+  </div>
+
+  <p class="prose">But Isaiah wasn't finished. Eight chapters later, he described what the Lamb would do after the suffering:</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"The Spirit of the Sovereign LORD is on me, because the LORD has anointed me to proclaim good news to the poor. He has sent me to bind up the brokenhearted, to proclaim freedom for the captives and release from darkness for the prisoners... to bestow on them a crown of beauty instead of ashes, the oil of joy instead of mourning, and a garment of praise instead of a spirit of despair."</div>
+    <div class="scripture-ref">Isaiah 61:1-3</div>
+  </div>
+
+  <p class="prose">Seven hundred years later, Jesus stood in a synagogue in Nazareth and read this passage out loud. He rolled the scroll closed. Sat down. The room went quiet the way rooms go quiet when something irreversible has just been said. Then seven words: <em>"Today this scripture is fulfilled in your hearing."</em> <span class="ref" title="Luke 4:21">Luke 4:21</span> Not someday. Not metaphorically. The man in front of them was the one Isaiah had seen. The Spirit he carried was about to be poured out on everyone who would receive him.</p>
+
+  <p class="prose">Every eye was on him.</p>
+
+  <p class="prose">Crown of beauty instead of ashes. Oil of joy instead of mourning. Garment of praise instead of despair. Not just a ticket out of judgment — a complete exchange. The old thing taken. The new thing given.</p>
+  <p class="prose"><em>He didn't promise to improve the old life. He promised to trade it. Most people are still negotiating to keep the ashes.</em></p>
+
+  <div class="divider"><span>THE NEW COVENANT — JEREMIAH 31</span></div>
+
+  <p class="prose">The most important pre-Pentecost promise was not a prediction of a person. It was a promise about a transformation:</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"This is the covenant I will make with the people of Israel after that time — I will put my law in their minds and write it on their hearts. I will be their God and they will be my people. No longer will they teach their neighbor, or say to one another, 'Know the LORD,' because they will all know me, from the least of them to the greatest."</div>
+    <div class="scripture-ref">Jeremiah 31:33-34</div>
+  </div>
+
+  <p class="prose">Not stone tablets — hearts. Not external law — internal transformation. Not learning about God — knowing him directly. Hebrews 8 quotes this passage in full as the centerpiece of its argument about Christ. <span class="ref" title="Hebrews 8:8-12">Heb 8:8-12</span> The new covenant was not a revision of the old. It was the fulfillment of what the Abrahamic promise was always pointing toward: God and his people in direct, personal, indwelling relationship.</p>
+  <p class="prose"><em>You were never meant to know about him secondhand. The whole promise was that you'd know him yourself.</em></p>
+
+  <div class="divider"><span>THE GOD WHO KEEPS MOVING CLOSER</span></div>
+
+  <p class="prose">The entire Bible is one story about God closing a distance. He walked with people in a garden, and that nearness was lost — and the ache you feel for something you can't name is the same ache the whole story is moving to heal. Every major movement in the covenant is God stepping closer.</p>
+
+  <div class="tab3-wrapper">
+    <div class="tab3-title">✦ THE TABERNACLE PROGRESSION — GOD MOVING CLOSER ✦</div>
+    <div class="tab3-steps">
+      <div class="tab3-step">
+        <div class="tab3-era">CREATION</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">The Garden — God walks with humanity directly</div>
+          <div class="tab3-step-note">No barrier. No veil. God and man in the same space at evening. Perfect nearness. Genesis 3:8</div>
+        </div>
+      </div>
+      <div class="tab3-step">
+        <div class="tab3-era">THE FALL</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">Separation — the wound that drives the whole story</div>
+          <div class="tab3-step-note">East of Eden. The cherubim and the flaming sword. Distance established. Everything since is God closing it.</div>
+        </div>
+      </div>
+      <div class="tab3-step">
+        <div class="tab3-era">EXODUS</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">The Tabernacle — God dwells <em>among</em> his people</div>
+          <div class="tab3-step-note">"Have them make a sanctuary for me that I may dwell among them." Exodus 25:8. The first person filled with the Holy Spirit in scripture was Bezalel — an artisan called to build this dwelling place. Exodus 31:3. God is present but still in a tent apart from the people. Among — not yet within.</div>
+        </div>
+      </div>
+      <div class="tab3-step">
+        <div class="tab3-era">EXILE</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">The Glory departs — the most heartbreaking moment in the Old Testament</div>
+          <div class="tab3-step-note">Ezekiel watches the glory of God lift from the temple and leave before Babylon destroys it. Ezekiel 10:18. The dwelling abandoned. God would not stay in a building that had become corrupt. He was already moving toward a better dwelling place — inside his people.</div>
+        </div>
+      </div>
+      <div class="tab3-step">
+        <div class="tab3-era">INCARNATION</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">Jesus — God tabernacling in human flesh</div>
+          <div class="tab3-step-note">"The Word became flesh and tabernacled among us." The Greek is eskēnōsen — pitched his tent. John 1:14. Not a building. A body. The infinite God in a human frame. Closer.</div>
+        </div>
+      </div>
+      <div class="tab3-step">
+        <div class="tab3-era">THE CROSS</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">The veil tears — from top to bottom</div>
+          <div class="tab3-step-note">The thick curtain separating the Holy of Holies torn from top to bottom the moment Jesus died. Matthew 27:51. God tore it from the top. The barrier removed. Access to the Most Holy Place opened to every person — forever.</div>
+        </div>
+      </div>
+      <div class="tab3-step">
+        <div class="tab3-era">PENTECOST</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">The Spirit <em>within</em> — God dwelling inside his people</div>
+          <div class="tab3-step-note">"I will put my Spirit in you." Ezekiel 36:27 — promised centuries before. At Pentecost the Spirit moved from among to within. Not a building. Not above. Inside every believer. The God who created the universe dwelling inside you. This is not metaphor. Acts 2:4</div>
+        </div>
+      </div>
+      <div class="tab3-step">
+        <div class="tab3-era">ETERNITY</div>
+        <div class="tab3-content">
+          <div class="tab3-step-title">New Jerusalem — the tabernacle finally complete</div>
+          <div class="tab3-step-note">"God's dwelling place is now among the people and he will dwell with them." Revelation 21:3. The wound of Genesis 3 healed. The garden restored at infinite scale. Walking together. This time forever.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">WHAT SECULAR HISTORY CONFIRMED — THE CROSS WAS REAL</div>
+    <div class="callout-text"><strong>The Pilate Stone.</strong> In June 1961, Italian archaeologist Antonio Frova excavating Caesarea Maritima found a limestone block repurposed as a stair step. Carved in Latin: <em>"Pontius Pilatus, Prefect of Judea."</em> Until that morning, Pilate's existence was literary only. Now it is carved in stone, in the Israel Museum. The man who signed the death warrant is confirmed in his own era. <em>Israel Museum, Jerusalem. AE 1963 no. 104.</em><br><br>
+    <strong>Yehohanan's heel bone.</strong> In 1968, archaeologists found a first-century ossuary containing the bones of a crucified man. An 11.5cm iron nail still through his heel bone — bent at the tip from hitting a knot in the wood. His family couldn't remove it, so they buried him with the nail still in place. The only known physical remains of a crucifixion victim ever found. <em>Israel Museum. Vassilios Tzaferis, excavation report 1968.</em><br><br>
+    <strong>Phlegon of Tralles.</strong> A Greek historian, no Christian agenda, recorded c. 137 AD: <em>"In the fourth year of the 202nd Olympiad</em> [= 33 AD] <em>there was the greatest eclipse of the sun — it became night at the sixth hour so that stars appeared. There was a great earthquake."</em> Exact year. Exact hour. Earthquake. NASA confirms no solar eclipse was possible on Passover — full moon, wrong side of the earth. His attempt to explain it rationally is the most powerful secular confirmation it happened.</div>
+  </div>
+
+  <div class="divider"><span>PENTECOST — BABEL REVERSED</span></div>
+
+  <p class="prose">Pentecost — Shavuot in Hebrew — was one of three mandatory pilgrimage festivals. <span class="ref" title="Deuteronomy 16:16">Deut 16:16</span> Every Jewish male was required to appear in Jerusalem. God used Israel's own calendar to ensure representatives from every nation were in the city on this day. He had commanded it for a thousand years. He planned the date. He filled the seats. Then the Spirit fell.</p>
+  <p class="prose">Shavuot also commemorated the giving of the Torah at Sinai — fifty days after the Passover that freed Israel from Egypt. Jesus died at Passover. The Spirit fell fifty days later, on the very festival that celebrated the old covenant's birth. Jeremiah's promise came true on its anniversary: <em>the stone tablets of Sinai replaced by the living Spirit, written now on hearts.</em> <span class="ref" title="Jeremiah 31:31-34">Jer 31:31-34</span></p>
+
+  <div class="scripture">
+    <div class="scripture-text">"When the day of Pentecost came, they were all together in one place. Suddenly a sound like the blowing of a violent wind came from heaven and filled the whole house... They saw what seemed to be tongues of fire that separated and came to rest on each of them. All of them were filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them."</div>
+    <div class="scripture-ref">Acts 2:1-4</div>
+  </div>
+
+  <p class="prose">Every nation under heaven in Jerusalem heard in their own language. Present that day: Parthians, Medes, Elamites — modern Iran and Iraq. <em>Egypt. Parts of Libya near Cyrene — North Africa.</em> Visitors from Rome. Cretans and Arabs. <span class="ref" title="Acts 2:9-11">Acts 2:9-11</span> <em>Africa was represented at Pentecost. The fire did not fall only on Europe.</em></p>
+  <p class="prose">This was Babel reversed. The Hebrew root of <em>Babel</em> is <em>balal</em> — to confuse, to mix, to muddle. Babel was confused noise. Scattered breath. At Pentecost the same Spirit who first hovered over the waters gathered every language into one understanding. Order out of confused noise. At Babel one language was divided into many and humanity was scattered. At Pentecost God spoke through many languages simultaneously and gathered them into one message. The wound of Genesis 11 healed in Acts 2. Abraham's calling — to be the agent of regathering all peoples — fulfilled in tongues of fire.</p>
+  <p class="prose"><em>What pride scattered, the Spirit gathered. The thing that divided the human race was undone in a single afternoon.</em></p>
+
+  <div class="spirit-box">
+    <div class="spirit-title">THE GIFTS AT PENTECOST — ON FULL DISPLAY</div>
+    <div class="spirit-text">
+      <strong>Tongues</strong> — speaking languages never learned. Babel reversed. Every nation included. Acts 2:4<br><br>
+      <strong>Prophecy</strong> — Peter declared what God was doing in their generation, not his own analysis. Interpreting current events through the Spirit. Acts 2:14-36<br><br>
+      <strong>Signs and wonders</strong> — the sound of violent wind, the visible fire, the immediate transformation of 3,000 people. Acts 2:43<br><br>
+      <em>This is the model. Not a one-time event to admire from a distance. A pattern to participate in. "The promise is for you and your children and for all who are far off — for all whom the Lord our God will call."</em> Acts 2:39
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">THE COVENANT OPEN TO EVERYONE — ROMANS 4</div>
+    <div class="callout-text">Paul's central argument in Romans 4: Abraham was justified by faith <em>before</em> circumcision, <em>before</em> the law existed. Therefore the promise comes by faith so it may be guaranteed to all Abraham's offspring — not only to those who are of the law but also to those who have the faith of Abraham. <em>"He is the father of us all."</em> <span class="ref" title="Romans 4:16">Rom 4:16</span><br><br>Not just the Jews. Not just the church. <strong>Everyone who believes as Abraham believed — moving toward God on a word, trusting what cannot yet be seen — is a child of Abraham. The covenant has always been this open.</strong> <span class="ref" title="Galatians 3:29">Gal 3:29</span></div>
+  </div>
+
+</section>
+
+<section class="reveal" id="expansion">
+  <div class="act-header">
+    <div class="act-label" data-num="V">ACT FIVE</div>
+    <div class="act-title">The Expansion</div>
+    <div class="act-intro">The Spirit sent Philip to a desert road. He interrupted a successful revival to reach one man. That is how much Ethiopia mattered. And Ethiopia was not the only destination.</div>
+    <!-- PACING / BLOAT: Act V carries the heaviest load in the piece — Stephen,
+         the eunuch, the 6-item Ethiopia timeline, the 8-card geo grid, Paul's
+         journeys, Simon of Cyrene, Cornelius, the Jerusalem Council, Stark's
+         growth math, the Sozo teaching, AND the Neato Burrito story. It is the
+         most likely place a reader fatigues. Recommend splitting at "THE GOSPEL
+         MOVES — PAUL AND THE NATIONS": everything before = "The Expansion,"
+         everything after = a short Act on how fast/how far it spread, climaxing
+         in the Burrito story. No content lost; you just give the reader a breath
+         and a fresh header. Confirm before any split — this restructures markup. -->
+    <!-- ADD: The Stark stat ("40% per decade... 33 million by 350 AD") is your
+         single most persuasive data point and it's buried late. Consider lifting
+         it into a styled callout box near the TOP of this act as a hook. -->
+    <!-- POWER STATEMENT — alts for the intro's "That is how much Ethiopia mattered":
+         <power>(a) "Heaven did the math and decided one man on an empty road outweighed a city full of miracles."</power>
+         <power>(b) "God pulled his best preacher out of a packed revival to talk to a single stranger. That is the arithmetic of heaven."</power>
+         <power>(c) "The Spirit doesn't count crowds. He counts the one."</power> -->
+  </div>
+
+  <div class="divider"><span>STEPHEN — THE FRACTURE THAT BECAME MISSION</span></div>
+
+  <p class="prose">Just before the church scattered from Jerusalem, Stephen stood before the Sanhedrin and gave the longest sermon in Acts. He retold the entire Abraham story — in precise detail — to the religious leaders who wanted to kill him. <span class="ref" title="Acts 7:2-53">Acts 7:2-53</span> His central point: <em>God's presence has never been tied to a location.</em> He was with Abraham in Ur. With Joseph in Egypt. With Moses in Midian. The temple was never meant to contain him. The Spirit moves with his people — not the other way around.</p>
+  <p class="prose">They stoned Stephen. He became the first martyr. The persecution that followed scattered believers throughout Judea and Samaria. <span class="ref" title="Acts 8:1">Acts 8:1</span> <em>"Those who had been scattered preached the word wherever they went."</em> <span class="ref" title="Acts 8:4">Acts 8:4</span> The first mission cost the first martyr his life. The fracture became the sending. The same pattern as Hagar and Ishmael. The same pattern as Joseph in the pit. What the enemy intended as destruction, God used as distribution.</p>
+  <p class="prose"><em>Every scattering in this book turned into a sending. The thing that broke your life apart may be the thing that carries it somewhere new.</em></p>
+
+  <div class="divider"><span>THE ETHIOPIAN EUNUCH — DIVINE CHOREOGRAPHY</span></div>
+
+  <p class="prose">Philip was in Samaria in the middle of a genuine revival. Not a manufactured one — <em>signs and wonders, great joy in the city.</em> <span class="ref" title="Acts 8:8">Acts 8:8</span> People were being healed. Evil spirits were leaving. It was everything a minister works for. And in the middle of it, an angel appeared and gave him the strangest instruction in the book of Acts:</p>
+  <p class="prose"><em>"Go south to the road — the desert road — that goes down from Jerusalem to Gaza."</em> <span class="ref" title="Acts 8:26">Acts 8:26</span></p>
+  <p class="prose">No name. No destination. No explanation. Just — the desert road. Leave the revival. Leave the crowds. Leave what is working. Go to the road that leads through empty land.</p>
+  <p class="prose">Philip went.</p>
+  <p class="prose">Then the Holy Spirit spoke again — a second divine intervention for the same assignment: <em>"Go to that chariot and stay near it."</em> <span class="ref" title="Acts 8:29">Acts 8:29</span> Two separate directions from two persons of the Trinity. For one man. On one road. In the middle of nowhere.</p>
+  <p class="prose">This is the arithmetic of heaven: <em>God pulled a revivalist out of a successful meeting to send him alone to a desert road for a single conversation with a single man.</em> It does not run on crowds. It runs on the one. The Ethiopian official was worth the whole of Samaria in that moment — not because Samaria didn't matter, but because the Spirit was doing two things at once, and Philip was only needed for one of them.</p>
+  <p class="prose">The man in the chariot was the treasurer of the Kandake — the queen mother of the Kushite Empire — and he had traveled hundreds of miles to worship in Jerusalem. He was a God-fearer, a Gentile drawn to the God of Israel. And yet when he reached the temple, the law was clear: <em>no one who has been emasculated shall enter the assembly of the LORD.</em> <span class="ref" title="Deuteronomy 23:1">Deut 23:1</span></p>
+  <p class="prose">He had crossed a desert and a lifetime to reach that gate. He stood at the threshold, close enough to hear the worship inside — and was turned away at the door.</p>
+  <p class="prose">So he bought a scroll of Isaiah and began reading on the way home. Specifically — he was reading Isaiah 53. The suffering servant. <em>He was led like a lamb to the slaughter. He was despised and rejected.</em> A man who had spent his whole life being excluded by religious law, reading a prophecy about someone else who was despised and rejected and led to slaughter — and asking, to no one in particular, who is this about?</p>
+  <p class="prose">Philip ran to the chariot. Literally ran — the Greek word is <em>prosdramon</em>, to run toward. <span class="ref" title="Acts 8:30">Acts 8:30</span> He heard the man reading aloud — ancient reading was done aloud — and called out: <em>"Do you understand what you are reading?"</em></p>
+  <p class="prose">The answer is one of the most honest sentences in scripture: <em>"How can I, unless someone guides me?"</em> <span class="ref" title="Acts 8:31">Acts 8:31</span></p>
+  <p class="prose">He invited Philip in. Philip sat beside him. And beginning with Isaiah 53 — the passage about a lamb led to slaughter, about wounds that heal, about a man despised and rejected — Philip told him the good news about Jesus. <span class="ref" title="Acts 8:35">Acts 8:35</span></p>
+  <p class="prose">The chariot rolled through the desert. Two men reading a scroll together. And Philip showed him the answer to the verse that had shut him out — Isaiah 56, where the same God who barred the eunuch in Deuteronomy overrules himself: <em>"Let no eunuch say, 'I am only a dry tree.' For I will give them a name better than sons and daughters — an everlasting name that will endure forever."</em> <span class="ref" title="Isaiah 56:3-5">Isa 56:3-5</span> The law that excluded him and the promise that welcomed him, from the same God, resolved on a desert road in a single afternoon.</p>
+  <p class="prose">Then the chariot passed water. And the man who had traveled hundreds of miles to stand outside a temple door looked up and said:</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"Look — here is water. What can stand in the way of my being baptized?"</div>
+    <div class="scripture-ref">Acts 8:36</div>
+  </div>
+
+  <p class="prose">Nothing. The law had said: you cannot enter. The temple had said: you do not qualify. The distance from Nubia to Jerusalem had said: this will cost you everything. And every one of those things had been wrong. <em>Nothing stood in the way.</em> Not his body. Not his nation. Not his excluded status. Not the thousands of miles of road between Ethiopia and the God he had traveled to find.</p>
+  <p class="prose">They went down into the water together. Philip baptized him. And when they came up out of the water, the Spirit of the Lord suddenly took Philip away — he was transported, the text implies supernaturally, to Azotus <span class="ref" title="Acts 8:39-40">Acts 8:39-40</span> — and the eunuch never saw him again.</p>
+  <p class="prose">He went on his way rejoicing.</p>
+  <p class="prose">Alone. On a desert road. Carrying in his chest the news that would reach a nation. A man who had gone to Jerusalem looking for God and come home having found him in a chariot on a desert road, through a running stranger, through a seven-hundred-year-old prophecy about a lamb that had finally been fulfilled. He went home to the court of the Kandake of Ethiopia and the tradition of the Ethiopian church holds that he began preaching that day — in the palace, in the market, in the streets — and that the fire never went out.</p>
+  <p class="prose">The Spirit had interrupted a revival to light a different one. One person at a time. One desert road. One impossible conversation.</p>
+  <p class="prose"><em>God pulled His best man out of a revival to find one stranger on an empty road. He has done that. For you. You just called it a coincidence.</em></p>
+
+  <div class="divider"><span>ETHIOPIA — 1,000 YEARS DEEPER THAN ACTS 8</span></div>
+
+  <p class="prose">The eunuch's encounter was not Ethiopia's first contact with the covenant. A thousand years before Philip ran to that chariot, the <em>Queen of Sheba</em> traveled to Jerusalem to test Solomon's wisdom. <span class="ref" title="1 Kings 10:1-13">1 Kings 10:1-13</span> After hearing his answers she said: <em>"The half was not told me."</em> Jesus cited her himself: <em>"The Queen of the South will rise at the judgment with this generation and condemn it — she came from the ends of the earth to listen to Solomon's wisdom, and now something greater than Solomon is here."</em> <span class="ref" title="Matthew 12:42">Matt 12:42</span> Jesus put her in his own teaching as a model of seeking wisdom at any cost.</p>
+  <p class="prose">Ethiopia's national epic — the <em>Kebra Nagast</em> — records that she returned carrying Solomon's son Menelik I, who later brought the Ark of the Covenant to Axum. The Ethiopian Orthodox Church claims to hold it today in the Chapel of the Tablet. Whether historically verifiable or not — <em>Ethiopia sees itself not as a late addition to the covenant story but as a covenant-carrying nation from Solomon's time forward.</em> The eunuch was a reconnection.</p>
+  <p class="prose">Psalm 68:31 — <em>"Ethiopia will stretch out her hands to God"</em> — has been cited by Ethiopian Christians for 1,700 years as their national prophetic calling. Written by David. Fulfilled by Philip on a desert road.</p>
+
+  <div class="eth4-wrapper">
+    <div class="eth4-title">✦ ETHIOPIA AND THE COVENANT — A TIMELINE ✦</div>
+    <div class="eth4-tl">
+      <div class="eth4-item">
+        <div class="eth4-year">c. 950 BC — Queen of Sheba</div>
+        <div class="eth4-heading">First covenant contact — "The half was not told me" — 1 Kings 10:7</div>
+        <div class="eth4-note">Jesus cited her as a model of seeking wisdom. Ethiopia's covenant roots go back to Solomon — 1,000 years before Acts 8.</div>
+      </div>
+      <div class="eth4-item">
+        <div class="eth4-year">c. 33 AD — Philip and the Eunuch</div>
+        <div class="eth4-heading">The gospel carried to the royal court — Acts 8</div>
+        <div class="eth4-note">Two divine interventions — angel and Holy Spirit — to reach one man. Ethiopia receives the covenant the same generation as the resurrection.</div>
+      </div>
+      <div class="eth4-item">
+        <div class="eth4-year">c. 316 AD — Frumentius</div>
+        <div class="eth4-heading">A shipwrecked Syrian boy becomes the father of Ethiopian Christianity</div>
+        <div class="eth4-note">Frumentius — young, Syrian, shipwrecked on the Ethiopian coast — was taken to the royal court, became secretary to King Ella Amida, tutored young Prince Ezana, and planted the first Christian community. Documented by Rufinus of Aquileia, Church History, c. 402 AD.</div>
+      </div>
+      <div class="eth4-item">
+        <div class="eth4-year">c. 328 AD — Athanasius Consecrates Frumentius</div>
+        <div class="eth4-heading">First Bishop of Ethiopia — Abba Salama — Father of Peace</div>
+        <div class="eth4-note">Athanasius of Alexandria — the African theologian who shaped the Nicene Creed — consecrates Frumentius. Africa ordaining Africa.</div>
+      </div>
+      <div class="eth4-item">
+        <div class="eth4-year">c. 330 AD — King Ezana</div>
+        <div class="eth4-heading">Ethiopia declared a Christian empire — before Rome</div>
+        <div class="eth4-note">The crescent moon on Ethiopian coins replaced by the Christian cross — confirmed by numismatic evidence in the British Museum. Aksum was the first civilization on earth to put the cross on its currency, before Rome, before Constantinople. Ethiopia becomes a Christian empire before Constantine's Rome fully converts.</div>
+      </div>
+      <div class="eth4-item">
+        <div class="eth4-year">356 AD — Emperor Constantius II</div>
+        <div class="eth4-heading">A hostile Roman emperor confirms the Ethiopian church in writing</div>
+        <div class="eth4-note">The pro-Arian Emperor Constantius II — who had just exiled Athanasius — wrote a letter to the rulers of Aksum demanding they hand over Frumentius for theological examination. They refused. A hostile Roman emperor's political correspondence is independent secular confirmation that Frumentius, King Ezana, and the Ethiopian church were real and significant enough to concern the most powerful man in the world. <em>Documented by Athanasius, Apologia ad Constantium, c. 357 AD.</em></div>
+      </div>
+      <div class="eth4-item">
+        <div class="eth4-year">1984–1991 — Operations Moses and Solomon</div>
+        <div class="eth4-heading">Israel airlifts Ethiopian Jews home</div>
+        <div class="eth4-note">The Beta Israel — Ethiopian Jews who preserved Jewish practice in isolation for 2,500 years — airlifted to Israel. DNA testing confirmed their Jewish ancestry. The covenant bloodline in Africa is documented genetic history.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="reveal" id="wildfire">
+  <div class="act-header">
+    <div class="act-label" data-num="VI">ACT SIX</div>
+    <div class="act-title">The Wildfire</div>
+    <div class="act-intro">The covenant did not spread by strategy. It spread like fire — Paul to Arabia, the gospel into every capital of the known world, and a rate of growth no empire could stop.</div>
+    <!-- ACT SPLIT applied: Act V was overloaded; split at the Paul pivot per audit.
+         "The Expansion" (Stephen/eunuch/Ethiopia) stays above; this act covers the
+         spread to the nations, the growth math, and the still-burning present
+         (Sozo, Neato Burrito). Keeps the parallel "The ___" act-title system. -->
+  </div>
+
+  <!-- STARK STAT SURFACED here as the act hook (was buried under "How Fast" below;
+       the duplicate paragraph there was deleted to avoid repeating the numbers). -->
+  <div class="callout">
+    <div class="callout-title">THE MATH OF AN UNSTOPPABLE FIRE</div>
+    <div class="callout-text">Rodney Stark calculated that Christianity grew at roughly <strong>40% per decade</strong> for three centuries. <strong>120 people</strong> in an upper room. By 300 AD — <strong>6 million</strong>. By 350 AD — <strong>33 million</strong>, more than half the Roman Empire. In three centuries. Starting from nothing.</div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">EVEN ROME'S ENEMIES CONFIRMED IT</div>
+    <div class="callout-text"><strong>Tacitus</strong> — Rome's most trusted historian, hostile to Christianity — recorded in <em>Annals</em> 15.44 (c. 116 AD) that "Christus suffered the extreme penalty under Pontius Pilatus" and that the movement "broke out not only in Judaea but even in Rome." An enemy of the faith documented both the crucifixion and the unstoppable spread.<br><br>
+    <strong>Pliny the Younger</strong> — Roman governor, writing to Emperor Trajan c. 112 AD — reported a legal crisis: Christians in his province had grown so numerous they were collapsing the market for sacrificial animals. Temples were going empty. He couldn't figure out how to prosecute them all. The expansion of the church was a Roman economic and administrative crisis within 80 years of the resurrection. <em>Pliny, Letters 10.96, c. 112 AD.</em></div>
+  </div>
+
+  <div class="divider"><span>PAUL — TO ISHMAEL FIRST</span></div>
+  <!-- TITLE: "THE GOSPEL MOVES — PAUL AND THE NATIONS" -> "PAUL — TO ISHMAEL FIRST" (sharper; names the surprise — the apostle to the Gentiles went to Arabia first). -->
+
+  <p class="prose">After Damascus, Paul withdrew to Arabia before returning — three years before his first Jerusalem visit. <span class="ref" title="Galatians 1:17">Gal 1:17</span> The apostle chosen to reach the Gentiles went first to Ishmael's territory. The Spirit was choreographing the same movement he had sent Philip on — covenant messengers to Ishmael's descendants first.</p>
+
+  <div class="geo5-wrapper">
+    <div class="geo5-grid">
+      <div class="geo5-card">
+        <div class="geo5-where">JERUSALEM — 33 AD</div>
+        <div class="geo5-when">Acts 2 — The Beginning</div>
+        <div class="geo5-note">120 people. One accord. 3,000 added in a day. Every nation under heaven hears in their own language. Babel reversed.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">SAMARIA — 33 AD</div>
+        <div class="geo5-when">Acts 8:4-8</div>
+        <div class="geo5-note">Philip preaches to the people the Jews despised. Signs and wonders. Great joy. The Spirit goes first to the excluded — the pattern never changes.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">ETHIOPIA — c. 33 AD</div>
+        <div class="geo5-when">Acts 8:26-39</div>
+        <div class="geo5-note">Two divine interventions for one man. Africa receives the covenant within the same generation as the resurrection.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">ANTIOCH — c. 40 AD</div>
+        <div class="geo5-when">Acts 11:19-26</div>
+        <div class="geo5-note">First Gentile church. First place followers of Jesus were called Christians. Paul and Barnabas based here for all three missionary journeys.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">GREECE — c. 50 AD</div>
+        <div class="geo5-when">Acts 16-18 — Paul's 2nd Journey</div>
+        <div class="geo5-note">Philippi, Thessalonica, Corinth, Athens. At the Areopagus Paul connects the unknown God to Abraham's God. Acts 17:23. Europe hears. The promise crosses the Aegean.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">ROME — c. 60 AD</div>
+        <div class="geo5-when">Acts 28 — Paul arrives in chains</div>
+        <div class="geo5-note">"Your faith is being reported all over the world." Romans 1:8. Paul under arrest. The word unchained. The capital of the known world hears the gospel.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">INDIA — 1st century</div>
+        <div class="geo5-when">Thomas Tradition</div>
+        <div class="geo5-note">Tradition documented by Origen, Eusebius, Ephrem the Syrian, Jerome, and Ambrose — five independent ancient sources — placing Thomas in India. Coins of King Gondophares, named in the Acts of Thomas as Thomas's patron, were excavated in northwestern India, confirming the king was historical. The Mar Thoma Church of Kerala traces its founding to 52 AD — 2,000 years of unbroken history.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">CHINA — 635 AD</div>
+        <div class="geo5-when">The Xi'an Stele</div>
+        <div class="geo5-note">A 9-foot limestone block carved in Chinese and Syriac, erected 781 AD, documents 150 years of Christianity inside the Tang Dynasty — the largest empire on earth. The gospel reached the imperial capital Chang'an by 635 AD. Buried during persecution in 845. Not found again until 1625. The inscription reads: "God sent an angel to announce the good news of a virgin giving birth to the Son." Carved in Chinese. In China. In 781 AD.</div>
+      </div>
+      <div class="geo5-card">
+        <div class="geo5-where">NORTH AFRICA — 1st–3rd century</div>
+        <div class="geo5-when">Alexandria and Carthage</div>
+        <div class="geo5-note">Alexandria Egypt — greatest center of Christian theology for three centuries. Origen, Clement, Athanasius — African theologians who shaped the doctrine the whole church still holds. The Nicene Creed was shaped by an African. African Christianity is not a product of European missionaries. It is older than European Christianity.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">SIMON OF CYRENE — AN AFRICAN CARRIED THE CROSS</div>
+    <div class="callout-text">Mark 15:21 — <em>"A certain man from Cyrene, Simon, the father of Alexander and Rufus, was passing by on his way in from the country, and they forced him to carry the cross."</em> Cyrene is modern Libya — North Africa. His sons are named because Mark's audience knew them. Romans 16:13 — Paul greets <em>"Rufus, chosen in the Lord, and his mother, who has been a mother to me too."</em> An African man carried the cross of the Son of God. His family may have been at the heart of the early church. The covenant story has an African fingerprint on its most sacred moment.</div>
+  </div>
+
+  <div class="divider"><span>CORNELIUS — THE SPIRIT AHEAD OF THE THEOLOGY</span></div>
+
+  <p class="prose">Acts 10 — a Roman centurion named Cornelius. Devout, God-fearing, generous to the poor, praying regularly. <span class="ref" title="Acts 10:2">Acts 10:2</span> An angel appeared: <em>"Your prayers and gifts to the poor have come up as a memorial offering before God."</em> <span class="ref" title="Acts 10:4">Acts 10:4</span> God gave Peter a vision simultaneously — a sheet with unclean animals: <em>"Do not call anything impure that God has made clean."</em> <span class="ref" title="Acts 10:15">Acts 10:15</span></p>
+  <p class="prose">Peter arrived and began preaching. Then — before he finished — <em>"the Holy Spirit came on all who heard the message."</em> <span class="ref" title="Acts 10:44">Acts 10:44</span> The Jewish believers with Peter were astonished. <em>"Can anyone keep these people from being baptized? They have received the Holy Spirit just as we have."</em> <span class="ref" title="Acts 10:47">Acts 10:47</span> <em>The Spirit moved before the theology caught up.</em> The Spirit goes first. Human understanding follows. Human institutions resist. Then — if willing — they catch up to what God has already done.</p>
+  <p class="prose"><em>God didn't wait for the room to approve him. He rarely does. He is usually already moving in the place you were taught he couldn't go.</em></p>
+
+  <div class="divider"><span>THE JERUSALEM COUNCIL — THE ABRAHAMIC PROMISE DEFENDED</span></div>
+
+  <p class="prose">Acts 15 — the first existential crisis of the church. Jewish Christians demanded Gentiles be circumcised before they could be saved. <span class="ref" title="Acts 15:1">Acts 15:1</span> If they ruled yes — Christianity becomes a sect of Judaism. The promise to <em>all nations</em> closes to anyone who does not first become Jewish.</p>
+  <p class="prose">Peter stood on what had happened at Cornelius' house: <em>"God made no distinction between us and them, purifying their hearts by faith. Why test God by putting on the Gentiles a yoke neither we nor our ancestors could bear?"</em> <span class="ref" title="Acts 15:9-10">Acts 15:9-10</span> James quoted Amos 9:11-12: <em>"so that the rest of mankind may seek the Lord, even all the Gentiles who bear my name."</em> An Old Testament prophecy tracing back to the Abrahamic promise was the deciding argument. <em>The promise to Abraham was always this big.</em> The Jerusalem Council was not a new decision. It was the recognition that Genesis 12:3 meant exactly what it said. If they had voted the other way, you would not be in this story.</p>
+
+  <div class="divider"><span>HOW FAST. HOW IMPOSSIBLE.</span></div>
+
+  <p class="prose">The empire that crucified Jesus became the empire that could not contain his followers. The harder Rome pushed, the further the gospel went. The same Spirit who gave Philip a word of knowledge on a desert road was equipping ordinary people across the empire to do exactly what Jesus had promised.</p>
+
+  <p class="prose">One discovery drove people toward a faith that cost them everything: the God they had been told was impersonal — distant, cosmic, unreachable — turned out to be personal. He knew their name. He saw their pain. He came close. He healed. He called her daughter. He ran to meet the prodigal son. He heard the crying of a boy under a bush in the desert. <em>That</em> God. That is what changed the world.</p>
+
+  <div class="divider"><span>SOZO — SAVED, HEALED, MADE WHOLE</span></div>
+
+  <div class="story-box">
+    <div class="story-title">NEATO BURRITO — A STORY ABOUT THE GOD WHO SEES</div>
+    <div class="story-text">
+      My friend Dimas, Jeff, and I were at Neato Burrito. Dimas — the kind of person who cannot walk past a human being without seeing them — spotted a man sitting alone with a full beard and a burrito he was clearly trying to enjoy in peace. I thought for a moment the man was about to politely — or not so politely — ask Dimas to leave.<br><br>
+      He didn't. He put his burrito down.<br><br>
+      His name was Ken. He told us about a recent stroke, high blood pressure, and migraines that had been crippling him every single day since he was six years old. I felt prompted to ask if he had lost a sibling. He said no.<br><br>
+      Then he told us about Lilly.<br><br>
+      His daughter. Born with a condition so rare she was only the 18th documented case in the world. She lived a few hours. Her birthday had just passed — she would have been seven. His last pastor had stood at that bedside with him. After that day, Ken stopped going. He just couldn't.<br><br>
+      Then something happened in the conversation. He went quiet for a moment. And he said — his brother. Born the same day as Ken. Didn't make it. Two children. Gone before he could know them. He had been carrying both his whole life without realizing the weight had two names.<br><br>
+      We prayed. We prophesied. We spoke life over a man who had been running on empty for years. I gave him my number.<br><br>
+      He called the next day.<br><br>
+      He had a dream about Lilly — but she wasn't a baby. She was the age she would have been that day. She looked strikingly like her mother. And she was with Jesus.<br><br>
+      Then he told me the other thing.<br><br>
+      <strong>No migraine. For the first time since he was six years old.</strong><br><br>
+      He never walked into a church. He sat down at Neato Burrito with a burrito he never finished. And he sat down with the One who sees him.<br><br>
+      <em>The Lord wants to remind you — he is there. If you listen closely, you might hear him in a still small voice, in a burning bush, or in the God-coincidence you almost explained away.</em>
+    </div>
+  </div>
+
+  <p class="prose">What happened to Ken has a name. It is the same God Hagar met at the spring — El Roi, the God who sees. Ken sat down with a burrito and was seen. Matthew uses the word when Jesus heals the woman who had bled for twelve years — excluded by law, untouchable, who fought through a crowd just to touch the hem of his robe. Jesus stopped. Turned. And called her daughter.</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"Daughter, take courage; your faith has made you well."</div>
+    <div class="scripture-ref">Matthew 9:22</div>
+  </div>
+
+  <p class="prose">The word translated <em>well</em> is <em>sozo.</em> Strong's defines it: to save, deliver, protect — to heal, preserve, make whole. Spirit, soul, and body. He didn't just stop her bleeding. He gave her back her name, her dignity, her place in the family. He didn't call her patient. He called her daughter. Ken didn't get a symptom removed — he got made whole. That is sozo. Not a doctrine received — a life put back together. Not just heaven secured — heaven brought near.</p>
+  <p class="prose"><em>Ken sat down to eat a burrito. He stood up having met the One who sees him — no church, no altar, no pastor. So what are you still waiting for a building to hand you?</em></p>
+
+  <p class="prose">That is still happening. In a burrito shop in our city. In a chariot on a desert road. In a dream in Tehran at three in the morning. The works have not stopped. The Spirit has not retired. <em>"The one who believes in me will do the works I have been doing — and greater works than these."</em> <span class="ref" title="John 14:12">John 14:12</span></p>
+
+
+</section>
+
+<section class="reveal" id="fractures">
+  <div class="act-header">
+    <div class="act-label" data-num="VII">ACT SEVEN</div>
+    <div class="act-title">The Fractures</div>
+    <div class="act-intro">The same night Jesus was betrayed he prayed for unity. It is the one prayer that has been hardest to answer — and the one the Spirit has been working to answer in every generation since.</div>
+  </div>
+
+  <div class="scripture">
+    <div class="scripture-text">"My prayer is not for them alone. I pray also for those who will believe in me through their message — that all of them may be one, Father, just as you are in me and I am in you. May they also be in us so that the world may believe that you have sent me."</div>
+    <div class="scripture-ref">John 17:20-21</div>
+  </div>
+
+  <p class="prose"><em>It was the last thing he asked for before he died. It is the one thing we have been worst at giving him.</em></p>
+
+  <div class="callout">
+    <div class="callout-title">THE FRACTURE PATTERN — IT NEVER CHANGES</div>
+    <div class="callout-text">
+      <strong>1.</strong> Spiritual life produces a movement.<br>
+      <strong>2.</strong> The movement becomes an institution.<br>
+      <strong>3.</strong> The institution hardens around truth — tradition replaces encounter.<br>
+      <strong>4.</strong> The Spirit drains. The form remains. The power diminishes.<br>
+      <strong>5.</strong> Reformers arise — usually Spirit-led, often charismatic.<br>
+      <strong>6.</strong> The institution resists and persecutes.<br>
+      <strong>7.</strong> A split. The new movement becomes an institution. Return to step 2.<br><br>
+      The only force that has ever broken this cycle is the Holy Spirit — poured out on people willing to stay together in one accord and wait. Acts 1:14
+    </div>
+  </div>
+
+  <p class="prose">William Seymour was forced by Jim Crow law to sit outside the classroom in Houston — learning the things of God through a crack in a door, because he wasn't allowed inside. The man God would use to launch a movement of 600 million was made to listen from the hallway. He went to Los Angeles anyway. What broke loose at Azusa Street is in the timeline below — but here is the thing worth stopping on: the fire fell on the man they shut out, and when it fell, it washed the color line away in a city that had drawn it everywhere.</p>
+  <p class="prose"><em>Every split in church history started with people who were sure they were right. The Spirit never fell on the ones who were right. He fell on the ones who stayed in the room.</em></p>
+
+  <div class="frac6-wrapper">
+    <div class="frac6-title">✦ THE FRACTURES AND REVIVALS — GOD ALWAYS RESPONDS ✦</div>
+    <div class="frac6-tl">
+      <div class="frac6-item">
+        <div class="frac6-year">325 AD — Council of Nicaea</div>
+        <div class="frac6-heading">The church unified under one creed</div>
+        <div class="frac6-note">The Nicene Creed produced — still recited by Orthodox, Catholic, and most Protestant churches today. The high-water mark of visible Christian unity. Its orthodox defense shaped for centuries by Athanasius of Alexandria — an African theologian whose life's work preserved what the whole church still confesses.</div>
+      </div>
+      <div class="frac6-item">
+        <div class="frac6-year">1054 — The Great Schism</div>
+        <div class="frac6-heading">East and West divide — 910 years of separation</div>
+        <div class="frac6-note">Cardinal Humbert placed a papal bull of excommunication on the altar of the Hagia Sophia during the liturgy. The issues: papal authority and the filioque clause — whether the Spirit proceeds from the Father alone or from Father and Son. Ironically, <em>Spirit theology</em> was the centerpiece of the argument that split the church. The mutual excommunications were not lifted until 1964 — 910 years later — when Pope Paul VI and Patriarch Athenagoras met in Jerusalem. Where it all began.</div>
+      </div>
+      <div class="frac6-item">
+        <div class="frac6-year">1517 — The Reformation</div>
+        <div class="frac6-heading">Luther's moral outrage becomes a theological earthquake</div>
+        <div class="frac6-note">Tetzel's indulgence sales pitch: "As soon as the coin in the coffer rings — the soul from purgatory springs." The selling of forgiveness to fund St. Peter's Basilica. Luther's 95 Theses were first a moral protest — then Scripture alone, Faith alone, Grace alone. Within 200 years: Lutheran, Reformed, Anglican, Baptist, Methodist, Presbyterian. The fracture that began in 1517 has never stopped fracturing. Today approximately 45,000 Protestant denominations.</div>
+      </div>
+      <div class="frac6-item">
+        <div class="frac6-year">1727 — The Moravians</div>
+        <div class="frac6-heading">The argument that became a prayer meeting that changed the world</div>
+        <div class="frac6-note">The Moravian community at Herrnhut, Germany had argued so bitterly over theology that they nearly split. Count Nicholas von Zinzendorf gathered them for a communion service. On August 13, 1727 the Holy Spirit fell — eyewitnesses described a Pentecost experience. The arguing stopped. They began a prayer chain that lasted 100 unbroken years — taking shifts around the clock.<br><br>From that prayer meeting came the first sustained Protestant missionary movement. The Moravians sent more missionaries per capita than any other church in history — to Greenland, the Caribbean, Africa, North America. They reached enslaved Black populations in the Caribbean when no other church would. John Wesley met Moravians crossing the Atlantic and his heart was "strangely warmed" — giving birth to Methodism and the first Great Awakening. <em>Modern global missions was born in a prayer meeting among people who had just stopped fighting.</em> — August Spangenberg, Life of Nicholas von Zinzendorf, 1838.</div>
+      </div>
+      <div class="frac6-item">
+        <div class="frac6-year">1906 — Azusa Street, Los Angeles</div>
+        <div class="frac6-heading">The color line washed away in the blood</div>
+        <div class="frac6-note">William Joseph Seymour — son of freed slaves from Louisiana — had studied under Charles Parham in Houston but was forced by Jim Crow laws to sit outside the classroom door and listen through a crack. He traveled to Los Angeles. April 9, 1906 — seven people spoke in tongues on Bonnie Brae Street. The revival moved to 312 Azusa Street and ran continuously for three years — three services a day, seven days a week.<br><br>In 1906 Jim Crow America — Black, white, Hispanic, and Asian believers worshipped together, wept together, received the Spirit together. Eyewitness Frank Bartleman wrote: "The color line was washed away in the blood." From Azusa Street the entire global Pentecostal movement was born — 500-600 million believers worldwide today. The Spirit did in one building in Los Angeles what Jesus had prayed for in the upper room. — Frank Bartleman, Azusa Street, 1925.</div>
+      </div>
+      <div class="frac6-item">
+        <div class="frac6-year">1967 — Catholic Charismatic Renewal</div>
+        <div class="frac6-heading">The Spirit crosses the Protestant-Catholic divide</div>
+        <div class="frac6-note">February 1967 — Duquesne University, Pittsburgh. Catholic professors and students on a weekend retreat, reading Acts 2. The Spirit fell. Speaking in tongues. Prophecy. Within months it spread to Notre Dame and across the world. By the 1970s millions of Catholics speaking in tongues. Pope Paul VI called it "a chance for renewal for the Church and for the world." The wall Luther nailed his theses to was crossed by the Spirit in 1967.</div>
+      </div>
+      <div class="frac6-item">
+        <div class="frac6-year">Today — The Global South</div>
+        <div class="frac6-heading">The center of Christianity has moved back toward where it began</div>
+        <div class="frac6-note">Philip Jenkins — The Next Christendom (2002, Oxford University Press): in 1900, 80% of Christians lived in Europe and North America. By 2050 projection: 75% will live in Africa, Latin America, and Asia. The average Christian on earth today is a young Nigerian woman — not an elderly European man. African Christianity is largely charismatic — signs, wonders, healing, and prophecy are normative. The gospel went from Jerusalem to the ends of the earth and is now coming back toward Jerusalem from the south and east. The circle is closing.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="reveal" id="unfinished">
+  <div class="act-header">
+    <div class="act-label" data-num="VIII">ACT EIGHT</div>
+    <div class="act-title">The Unfinished Story</div>
+    <div class="act-intro">The promise made to Abraham was never just for one people. The other half of his family has never been forgotten by God. And what is happening among them right now is one of the most remarkable movements of the Spirit in history.</div>
+    <!-- RESOLVED (was ADD): Garrison's headline fact now surfaced as the act's
+         lead-in callout below. Full sourced treatment still appears mid-act under
+         "What Is Happening Right Now" — the hook is phrased differently to avoid
+         repeating the body. -->
+    <!-- REFRAIN WATCH: "the same Spirit who sent Philip to a desert road" recurs
+         ~4x across the spread/present acts. Works as deliberate motif, but two
+         instances sit close together here. Flag only — text left as-is. -->
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">THE MOST UNDER-REPORTED STORY IN THE WORLD</div>
+    <div class="callout-text">More Muslims have turned to Jesus in the last <strong>40 years</strong> than in the previous <strong>1,400 combined.</strong> Not a projection — a documented finding across 30 countries. The other half of Abraham's family is coming home, and almost no one is reporting it.</div>
+  </div>
+
+  <div class="divider"><span>ISHMAEL'S BLESSING — NEVER REVOKED</span></div>
+
+  <p class="prose">God said to Abraham: <em>"As for Ishmael, I have heard you. I will surely bless him."</em> <span class="ref" title="Genesis 17:20">Gen 17:20</span> Between the 8th and 13th centuries the Islamic world produced one of the greatest civilizations in history — the Islamic Golden Age. Arab scholars preserved Greek philosophy, pioneered algebra and algorithms, advanced medicine and navigation while Europe was in its Dark Ages. The numerical system used globally today is Arabic. The word algebra comes from Arabic <em>al-jabr</em>. The blessing of fruitfulness and greatness God promised Ishmael — historically, visibly, documentably kept.</p>
+
+  <div class="divider"><span>WHAT ISLAM IS — AND WHERE IT COMES FROM</span></div>
+
+  <p class="prose">Muhammad was born around 570 AD in Mecca — into the Quraysh tribe, guardians of the Kaaba, which by his time had been filled with 360 idols. The original monotheistic shrine Abraham and Ishmael had built had become a polytheistic temple — the exact situation young Abraham had faced in Terah's idol shop 2,500 years earlier. Muhammad retreated annually to the cave of Hira to seek — alone, in the dark, watching something beyond the visible. The Abraham pattern repeating in Ishmael's descendant.</p>
+  <p class="prose">Muhammad understood his mission as restoration — not invention. The Quran calls Abraham <em>Khalilullah</em> — Friend of God — the same title used in James 2:23. Arabia was represented at Pentecost. <span class="ref" title="Acts 2:11">Acts 2:11</span> Paul spent three years in Arabia immediately after his conversion. <span class="ref" title="Galatians 1:17">Gal 1:17</span> The gospel reached Ishmael's territory within the first generation of the church. Islam arose 600 years after the gospel had already been present there. The question of what happened in those 600 years is one of the most sobering questions in church history.</p>
+
+  <div class="pil7-wrapper">
+    <div class="pil7-title">✦ THE FIVE PILLARS AS ABRAHAMIC RE-ENACTMENT ✦</div>
+    <table class="pil7-table">
+      <thead>
+        <tr>
+          <th class="pil7-thead">Pillar</th>
+          <th class="pil7-thead">Practice</th>
+          <th class="pil7-thead">Abrahamic Root</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pil7-row">
+          <td class="pil7-pillar">Shahada</td>
+          <td class="pil7-practice">Declaration of faith in one God</td>
+          <td class="pil7-root">Abraham's declaration of monotheism — burning the idols, reasoning toward the Creator</td>
+        </tr>
+        <tr class="pil7-row">
+          <td class="pil7-pillar">Salat</td>
+          <td class="pil7-practice">Prayer five times daily facing Mecca</td>
+          <td class="pil7-root">Abraham's posture of continual seeking and intercession before God</td>
+        </tr>
+        <tr class="pil7-row">
+          <td class="pil7-pillar">Zakat</td>
+          <td class="pil7-practice">Giving to the poor — 2.5% of wealth</td>
+          <td class="pil7-root">Abraham's generosity — hospitality to strangers, tithe to Melchizedek</td>
+        </tr>
+        <tr class="pil7-row">
+          <td class="pil7-pillar">Sawm</td>
+          <td class="pil7-practice">Fasting during Ramadan</td>
+          <td class="pil7-root">Spiritual discipline — drawing near to God as Abraham drew near</td>
+        </tr>
+        <tr class="pil7-row">
+          <td class="pil7-pillar">Hajj</td>
+          <td class="pil7-practice">Annual pilgrimage to Mecca</td>
+          <td class="pil7-root">Re-enacts Hagar running between Safa and Marwa, the Zamzam well God provided, Abraham's willingness to sacrifice his son. 2-3 million people performing the covenant narrative with their bodies annually. The Zamzam well still flows.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"><span>THE PERSONAL GOD — WHAT THE TABERNACLE REVEALS</span></div>
+
+  <p class="prose">Islam honors a transcendent God — vast, sovereign, holy beyond comprehension. This is true and right as far as it goes. But the tabernacle progression shows God was never satisfied with distance. He kept moving closer. At each step saying: <em>I want to be nearer than this.</em></p>
+  <p class="prose">The New Testament word for God is <em>Abba</em> — the Aramaic word a child uses for their father. Not distant. Not unknowable. Jesus taught his disciples to begin prayer this way. <span class="ref" title="Matthew 6:9">Matt 6:9</span> Paul writes: <em>"The Spirit you received does not make you slaves, so that you live in fear again; rather, the Spirit brought about your adoption to sonship. And by him we cry, 'Abba, Father.'"</em> <span class="ref" title="Romans 8:15">Rom 8:15</span></p>
+  <p class="prose">The covenant with Abraham promised not just greatness and numbers but relationship — <em>"I will be their God and they will be my people."</em> <span class="ref" title="Jeremiah 31:33">Jer 31:33</span> The indwelling Spirit — God living inside the believer, praying through the believer, speaking to the believer personally — is what the tabernacle progression was always moving toward. It is the nearness every child of Abraham was made for. And it is exactly what God is now offering the half of the family that has known him as far and high and holy: not a smaller God, but a nearer one — the Spirit of El Roi, the God who sees, the name Hagar gave him at a desert spring. The same God. Closer than they were told he could come.</p>
+
+  <div class="divider"><span>THE OTHER HALF OF THE FAMILY</span></div>
+
+  <p class="prose">This is not history. This is happening tonight.</p>
+
+  <p class="prose">Imagine you are a man in Tehran. You have never held a Bible. You have never spoken to a Christian. The government of your country makes it a crime to leave Islam. Your friends, your family, your job, your safety — everything depends on you staying exactly where you are.</p>
+
+  <p class="prose">And then you have a dream.</p>
+
+  <p class="prose">A man in white appears. He says your name. He says: <em>I love you.</em> He says: <em>follow me.</em> You wake up trembling. You do not know who he was. But you cannot stop thinking about it. You have the dream again. And again.</p>
+
+  <p class="prose">You start asking questions you are not supposed to ask.</p>
+
+  <p class="prose"><em>He crossed a closed border, a death sentence, and 1,400 years of history to say one name in a dream. No door you've locked is harder to reach than that one.</em></p>
+
+  <p class="prose">This is happening to thousands of Iranians every year. Not hundreds. Thousands. David Garrison — former Global Research Leader for the International Mission Board — conducted the most comprehensive academic study of Muslim conversions ever undertaken, documented in <em>A Wind in the House of Islam</em> (2014, WIGTake Resources). He interviewed over 1,000 former Muslims across 30 countries and found 69 separate movements of Muslims turning to Jesus since 1980. His conclusion: <em>more Muslims have come to Christ in the last 40 years than in the previous 1,400 combined.</em></p>
+  <p class="prose">The primary factor reported by converts across every culture and country: <em>dreams and visions of Jesus.</em> <span class="ref" title="Acts 2:17">Acts 2:17</span> — <em>"your young men will see visions, your old men will dream dreams."</em> The Spirit moving through the prophetic gift to reach people no missionary has been able to reach. Iran. Iraq. Algeria. Sudan. Indonesia. Bangladesh. Morocco.</p>
+  <p class="prose">Iran specifically: Open Doors, Elam Ministries, and Operation World independently estimate the Iranian church grew from essentially zero in 1979 to hundreds of thousands — some estimates exceeding 3 million believers. Under the most restrictive Islamic government on earth.</p>
+  <p class="prose">The wall that Babel built, that empires reinforced, that centuries of hostility hardened into stone — the Spirit is walking through it in dreams.</p>
+  <p class="prose">Isaiah 60:7 — <em>"All Kedar's flocks will be gathered to you."</em> Kedar was Ishmael's son. <span class="ref" title="Genesis 25:13">Gen 25:13</span> A prophecy that Ishmael's specific descendants would be gathered to God. Derek Prince — who lived in Jerusalem for years and taught extensively on the Arab-Israeli conflict — identified Genesis 16:12 not as a curse on Ishmael but as a consequence of expulsion — a wound that would be healed when the covenant love that should have been extended to him was finally extended through the gospel. The hostility is not a sentence. It is a season.</p>
+
+  <div class="spirit-box">
+    <div class="spirit-title">THE SPIRIT IS MOVING IN ISHMAEL'S TERRITORY</div>
+    <div class="spirit-text">
+      The same Spirit that sent Philip to a desert road for one Ethiopian eunuch is appearing to Muslims in dreams across Iran, Iraq, and North Africa tonight.<br><br>
+      The same Spirit that showed Hagar a well when she thought her son was dying is opening eyes to living water across the Islamic world.<br><br>
+      God heard the boy crying in the desert 4,000 years ago. <em>He has not stopped hearing.</em><br><br>
+      <strong>The largest turning of Muslims to Christ in history is happening right now. It is the most documented, least reported story in modern Christianity. And it is the Spirit of God keeping his promise to Abraham — that all peoples would be blessed through him.</strong>
+    </div>
+  </div>
+
+  <div class="divider"><span>THE ROOT THAT HOLDS EVERYTHING</span></div>
+
+  <div class="scripture">
+    <div class="scripture-text">"Did God reject his people? By no means!... The hardening in part has happened to Israel until the full number of the Gentiles has come in, and in this way all Israel will be saved."</div>
+    <div class="scripture-ref">Romans 11:1-2, 25-26</div>
+  </div>
+
+  <p class="prose">Paul's image: Israel is the cultivated olive tree. The Gentile church is wild branches grafted in. <em>The root supports the branches — not the other way around.</em> <span class="ref" title="Romans 11:18">Rom 11:18</span> The modern return of Jewish people to the land Abraham was promised — Israel reestablished 1948, Jerusalem reunified 1967, Ethiopian Jews airlifted home 1984 and 1991 — is cited by charismatic scholars including Derek Prince, David Pawson, and Lance Lambert as the most visible fulfillment of Ezekiel 37 in modern history. The valley of dry bones gathering. The covenant still active on both tracks simultaneously. <em>The story is not finished.</em></p>
+
+  <div class="divider"><span>ISAIAH'S VISION — THE END OF THE STORY</span></div>
+
+  <div class="scripture">
+    <div class="scripture-text">"In that day there will be a highway from Egypt to Assyria... The Egyptians and Assyrians will worship together. In that day Israel will be the third, along with Egypt and Assyria — a blessing on the earth. The LORD Almighty will bless them, saying, 'Blessed be Egypt my people, Assyria my handiwork, and Israel my inheritance.'"</div>
+    <div class="scripture-ref">Isaiah 19:23-25</div>
+  </div>
+
+  <p class="prose">Egypt — Africa. Assyria — modern Iraq, Syria, Iran — the heart of the Arab Muslim world. Israel — the Jewish covenant line. All three called God's people. In the same verse. By the same God. Abraham's prayer — <em>"If only Ishmael might live under your blessing"</em> — will be fully answered. Just not yet. And the church — Spirit-filled, unified, carrying the same power that fell at Pentecost — is supposed to be part of how it happens.</p>
+  <p class="prose">Remember the priest-king. Before Israel existed, before the law was given, before there was a temple or a tribe of Levi — Melchizedek met Abraham on a road, served him bread and wine, and blessed him in the name of <em>God Most High, Creator of heaven and earth.</em> <span class="ref" title="Genesis 14:18-20">Gen 14:18-20</span> A priest with no genealogy, serving the God of every nation, before any nation was chosen. That was the original picture — and it was always the ending too. Christ stands in Melchizedek's order, not Aaron's. <span class="ref" title="Hebrews 7:17">Heb 7:17</span> The bread and wine that started on a road in Canaan are the same bread and wine the church takes today from every nation, every tribe, every language. The priesthood that was universal before Israel was chosen becomes universal again when the full number of the nations comes in. The circle closes where it began.</p>
+
+  <div class="rel8-wrapper">
+    <div class="rel8-title">✦ THE ABRAHAMIC FAMILY — EVERY BRANCH FROM ONE ROOT ✦</div>
+    <div class="rel8-grid">
+      <div class="rel8-card">
+        <div class="rel8-name">✡ JUDAISM</div>
+        <div class="rel8-line">Abraham → Isaac → Jacob → Moses → David → the Torah</div>
+        <div class="rel8-note">The original covenant people. The root of the olive tree. 15 million people carrying the oldest continuous covenant in human history. Their fullness is still coming. Romans 11:12</div>
+        <div class="rel8-abe">Abraham is: The first Jew. Father of the nation. Friend of God. James 2:23</div>
+      </div>
+      <div class="rel8-card">
+        <div class="rel8-name">✝ CHRISTIANITY</div>
+        <div class="rel8-line">Abraham → Isaac → David → Jesus → every nation through faith</div>
+        <div class="rel8-note">2.4 billion people. The covenant fulfilled and opened to every nation — not through bloodline but through faith. Wild branches grafted into the original olive tree. "He is the father of us all." Romans 4:16</div>
+        <div class="rel8-abe">Abraham is: The father of faith. The model of salvation. The gospel preached in advance. Galatians 3:8</div>
+      </div>
+      <div class="rel8-card">
+        <div class="rel8-name">☪ ISLAM</div>
+        <div class="rel8-line">Abraham → Ishmael → Arab peoples → Muhammad → the Quran</div>
+        <div class="rel8-note">1.8 billion people. The Hajj re-enacts Abraham's story annually for 2-3 million pilgrims. The Zamzam well — God's provision to Hagar — still flows in Mecca. The dreams of Jesus are coming to his descendants now.</div>
+        <div class="rel8-abe">Abraham is: Ibrahim — the first Muslim. The model of surrender to God. Khalilullah — Friend of God.</div>
+      </div>
+      <div class="rel8-card">
+        <div class="rel8-name">🦁 RASTAFARIANISM</div>
+        <div class="rel8-line">Solomon → Queen of Sheba → Ethiopia → diaspora → Jamaica</div>
+        <div class="rel8-note">Born in Jamaica in the 1930s around Haile Selassie — who claimed descent from Solomon and the Queen of Sheba. Built entirely on the Ethiopian covenant thread and Psalm 68:31. Through Bob Marley's music the Abrahamic covenant story reached places no missionary ever went.</div>
+        <div class="rel8-abe">Abraham is: The patriarch whose promise flows through Solomon to Africa, to the Caribbean, and through reggae to the world.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span>EVERY NATION. EVERY TONGUE. EVERY STAR.</span></div>
+
+  <div class="scripture">
+    <div class="scripture-text">"After this I looked, and there before me was a great multitude that no one could count, from every nation, tribe, people and language, standing before the throne and before the Lamb."</div>
+    <div class="scripture-ref">Revelation 7:9</div>
+  </div>
+
+  <p class="prose">Abraham looked up at stars he couldn't count. God said: <em>that is how many.</em> John looked at a crowd he couldn't count. God said: <em>those are them.</em></p>
+  <p class="prose">Every nation. Every tongue. Ishmael's children there. Isaac's children there. The eunuch's descendants. The Moravian missionaries. The Iranian house church believers who met in secret. The Azusa Street worshippers who crossed the color line in 1906. The Ethiopian Orthodox who have carried the covenant since Solomon. The Muslim convert who saw Jesus in a dream last night in Tehran.</p>
+  <p class="prose">One promise. One Spirit. Every nation.</p>
+  <p class="prose">And the writer of Hebrews makes one final statement that changes everything about how you read your own life:</p>
+
+  <div class="scripture">
+    <div class="scripture-text">"These were all commended for their faith, yet none of them received what had been promised — since God had planned something better for us, so that only together with us would they be made perfect."</div>
+    <div class="scripture-ref">Hebrews 11:39-40</div>
+  </div>
+
+  <p class="prose">Abraham didn't see the fulfillment. Isaac didn't. The Ethiopian eunuch didn't. They saw it from a distance and welcomed it. <span class="ref" title="Hebrews 11:13">Heb 11:13</span> The Hall of Fame is not closed.</p>
+  <p class="prose"><em>You are one of those stars Abraham couldn't count. You were in this promise before you were born.</em></p>
+  <p class="prose">The same Spirit who hovered over the waters in Genesis 1, who spoke to Abraham in Ur, who fell at Pentecost, who sent Philip running to a chariot, who is appearing in dreams in Iran tonight — <em>is available to you. Right now. In this moment.</em></p>
+
+</section>
+
+<div class="closing" style="--act-color:#c9a84c;">
+
+  <div class="scripture" style="max-width:600px;margin:0 auto 56px;">
+    <div class="scripture-text">"Above all else, guard your heart, for everything you do flows from it."</div>
+    <div class="scripture-ref">Proverbs 4:23</div>
+  </div>
+
+  <p style="font-family:'Lora',serif;font-size:1rem;font-style:italic;color:var(--text-dim);text-align:center;margin-bottom:32px;">This is the story you just read.</p>
+
+  <div class="closing-verse">
+    From bondage to freedom.<br>
+    From freedom to promise.<br>
+    A smoking firepot in Canaan.<br>
+    A ram caught in the thicket.<br>
+    A eunuch going home rejoicing.<br>
+    A woman named at a desert spring.<br>
+    A dream in Tehran at three in the morning.<br>
+    One Spirit. Every nation.<br>
+    The story isn't finished.
+  </div>
+
+  <div class="questions-section" style="max-width:720px;margin:64px auto 56px;text-align:left;">
+    <div class="questions-label">THE STORY JUST BECAME YOURS</div>
+
+    <div class="question-item">
+      <div class="question-lead">Can you imagine yourself as Abraham?</div>
+      <div class="question-body">Seventy-five years old. Everything familiar — gone. No map. No destination. Just a voice and a direction. What would you have done? If God spoke to you the way he spoke to Abraham — not with certainty, not with a five-year plan, just a word and a road — would you go?</div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-lead">What is your Ishmael?</div>
+      <div class="question-body">The thing you built because you got tired of waiting for what God promised. The reasonable solution to the impossible situation. Something real. Something loved. But produced by your effort rather than his promise. What have you been carrying that you made — instead of received?</div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-lead">What is your Moriah?</div>
+      <div class="question-body">Abraham walked three days toward the thing he feared most — with the thing he loved most beside him — and he said nothing. He just kept walking. Is there something God has been asking you to lay down? Not because he wants to take it — but because he wants to give it back transformed, the way he gave Isaac back alive?</div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-lead">Do you believe El Roi sees you?</div>
+      <div class="question-body">Hagar named God from the lowest point of her life. Not from a sanctuary. From a desert. From abandonment. She simply sat down in her pain — and found that someone already knew where she had come from and where she was going. Do you believe the God who heard a boy crying under a bush in Beersheba can hear what you are carrying right now?</div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-lead">Who told you that you were outside this story?</div>
+      <div class="question-body">The eunuch had made the journey of a lifetime to stand outside a door. The law said he didn't qualify. He was heading home empty. And God sent someone running to him. Hagar was a slave with no legal standing. Ruth was a Moabite. Mary Magdalene was a woman in a culture that dismissed women's testimony. None of them were supposed to be part of this story. Every one of them was. Who told you that you were the exception? <strong>They were wrong.</strong></div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-lead">What is your faith asking you to do?</div>
+      <div class="question-body">Faith has an action. Abraham's faith looked like a packed bag and a road he had never walked. Philip's faith looked like running toward a stranger on a desert road. Dimas's faith looked like approaching a man trying to eat a burrito in peace and sitting down anyway. He didn't have a strategy. He just couldn't walk past a human being. What does yours look like today?</div>
+    </div>
+  </div>
+
+  <div class="poem-box">
+    <div class="poem-label">A POEM BY RONALD FLEMING</div>
+    <div class="poem-text">
+      And tell them what they are worth —<br>
+      So that Jesus' love will be reflected —<br>
+      And this love will give birth<br>
+      To many people being resurrected,<br>
+      Redirected and completely accepted<br>
+      To a wonderful and glorious rebirth.
+    </div>
+  </div>
+
+  <div class="prayer-box">
+    <div class="prayer-label">A RESPONSE</div>
+    <div class="prayer-text">
+      God of Abraham, Isaac, and Ishmael —<br>
+      You made a promise before I existed.<br>
+      You signed it alone so I could never break it.<br>
+      I come to you the way Abraham did —<br>
+      not with perfect understanding,<br>
+      not knowing where this goes,<br>
+      but moving toward your voice.<br><br>
+      Fill me with the same Spirit<br>
+      that fell at Pentecost,<br>
+      that sent Philip to a desert road,<br>
+      that is falling in Iran tonight.<br><br>
+      Make me part of what you are building.<br>
+      I am in this story.<br>
+      And the story isn't finished.
+    </div>
+  </div>
+  <div style="font-size:.85rem;color:var(--text-dim);max-width:640px;margin:60px auto 40px;font-style:italic;line-height:1.8;text-align:left;">
+    <strong style="color:var(--gold-dim);font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;display:block;margin-bottom:12px;text-align:center;">KEY SOURCES &amp; FURTHER READING</strong>
+    NT Wright — <em>Paul and the Faithfulness of God</em> (2013, Fortress Press) · Philip Jenkins — <em>The Next Christendom</em> (2002, Oxford University Press) · David Garrison — <em>A Wind in the House of Islam</em> (2014, WIGTake Resources) · Andrew Walls — <em>The Missionary Movement in Christian History</em> (1996, Orbis Books) · Rodney Stark — <em>The Rise of Christianity</em> (1996, Princeton University Press) · Frank Bartleman — <em>Azusa Street</em> (1925) · August Spangenberg — <em>Life of Nicholas von Zinzendorf</em> (1838) · Derek Prince — <em>The Arab-Israeli Conflict</em> · Eusebius — <em>Church History</em> (c. 313 AD) · Rufinus of Aquileia — <em>Church History</em> (c. 402 AD) · The Book of Jubilees (Dead Sea Scrolls) · The Book of Enoch (Ge'ez, Ethiopian canon) · The Kebra Nagast (13th century, Ethiopia)
+  </div>
+  <div class="final-msg">✦ &nbsp; HEBREWS 11:39-40 &nbsp; ✦</div>
+</div>
+
+</div><!-- /page -->
+
+<script>
+const container = document.getElementById("stars");
+const heroColors=["#ffffff","#ffffff","#ffffff","#c9a84c","#4a90d9","#1abc9c","#e8d090","#9b59b6"];
+for(let i=0;i<220;i++){
+  const s=document.createElement("div");
+  s.className="star";
+  const sz=Math.random()<0.08?3:Math.random()<0.2?2:1;
+  const col=heroColors[Math.floor(Math.random()*heroColors.length)];
+  const op=0.15+Math.random()*0.75;
+  s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*5}s;--delay:${Math.random()*8}s;--o:${op};width:${sz}px;height:${sz}px;background:${col};`;
+  container.appendChild(s);
+}
+
+// Page stars — same quality as hero, injected into body below all stacking contexts
+const pageCanvas=document.createElement("div");
+pageCanvas.style.cssText="position:fixed;inset:0;pointer-events:none;z-index:0;";
+for(let i=0;i<500;i++){
+  const s=document.createElement("div");
+  const sz=Math.random()<0.05?3:Math.random()<0.15?2:1;
+  const col=heroColors[Math.floor(Math.random()*heroColors.length)];
+  const op=0.08+Math.random()*0.45;
+  s.style.cssText=`position:absolute;border-radius:50%;left:${Math.random()*100}%;top:${Math.random()*100}%;width:${sz}px;height:${sz}px;background:${col};animation:twinkle ${3+Math.random()*7}s ease-in-out ${Math.random()*10}s infinite;--o:${op};opacity:${op};`;
+  pageCanvas.appendChild(s);
+}
+document.body.insertBefore(pageCanvas,document.body.firstChild);
+
+const prog=document.getElementById("progress");
+if(prog){
+  window.addEventListener("scroll",()=>{
+    const pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100).toFixed(1);
+    prog.style.width=pct+"%";
+  },{passive:true});
+}
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target);}});
+},{threshold:0.04,rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+requestAnimationFrame(()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.top<window.innerHeight)el.classList.add("visible");
+  });
+});
+</script>
+</body>
+</html>
