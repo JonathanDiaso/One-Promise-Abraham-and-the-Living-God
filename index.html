@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>One Promise — Abraham, the Living God, and the Story That Never Ended</title>
+<meta property="og:title" content="One Promise — Abraham, the Living God, and the Story That Never Ended">
+<meta property="og:description" content="A journey from Genesis to Pentecost — the covenant, the Spirit, and the story that includes you.">
+<meta property="og:image" content="https://i.ibb.co/Fqq8cws8/5-pics.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One Promise — Abraham, the Living God, and the Story That Never Ended">
+<meta name="twitter:description" content="A journey from Genesis to Pentecost — the covenant, the Spirit, and the story that includes you.">
+<meta name="twitter:image" content="https://i.ibb.co/Fqq8cws8/5-pics.jpg">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Cormorant+SC:wght@300;400;500;600&display=swap');
 :root{
@@ -24,14 +33,14 @@
   --cVIII:#c9a84c;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--text);line-height:1.75;overflow-x:hidden;position:relative;z-index:0;}
+html{scroll-behavior:smooth;scroll-padding-top:64px;}
+body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--text);line-height:1.75;overflow-x:hidden;position:relative;z-index:0;overscroll-behavior-y:none;}
 .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(2,3,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 16px;height:56px;display:flex;align-items:center;gap:2px;justify-content:center;flex-wrap:wrap;}
 .nav a{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.16em;color:rgba(255,255,255,.65);text-decoration:none;padding:4px 9px;border-radius:2px;transition:all .2s;white-space:nowrap;}
 .nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;overflow:hidden;--act-color:#4a90d9;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(74,144,217,.09) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 15% 100%,rgba(27,188,156,.05) 0%,transparent 50%),radial-gradient(ellipse 35% 55% at 85% 80%,rgba(155,89,182,.06) 0%,transparent 50%);}
-.hero-stars{position:absolute;inset:0;overflow:hidden;}
+.hero-stars{position:absolute;inset:0;overflow:hidden;will-change:transform;}
 .star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d,3s) ease-in-out infinite;animation-delay:var(--delay,0s);opacity:var(--o,.4);}
 @keyframes twinkle{0%,100%{opacity:var(--o,.4);transform:scale(1);}50%{opacity:.04;transform:scale(.3);}}
 .hero-shema{font-family:"Cinzel",serif;font-size:clamp(.6rem,1.3vw,.75rem);letter-spacing:.4em;color:rgba(255,255,255,.65);margin-bottom:40px;position:relative;}
@@ -251,7 +260,7 @@ section[id] .act-title{background:linear-gradient(90deg,var(--act-color,#fff) 0%
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 /* Progress bar */
-#progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(to right,#4a90d9,#c9a84c,#e07b3a,#c0392b,#9b59b6,#4a90d9,#1abc9c,#2980b9,#c9a84c);background-size:100% 100%;z-index:1000;transition:width .1s linear;pointer-events:none;}
+#progress{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(to right,#4a90d9,#c9a84c,#e07b3a,#c0392b,#9b59b6,#4a90d9,#1abc9c,#2980b9,#c9a84c);background-size:100% 100%;z-index:1000;transition:width .1s linear;pointer-events:none;box-shadow:0 0 10px 1px rgba(201,168,76,.45);}
 
 /* Scrollbar */
 ::-webkit-scrollbar{width:3px;}
@@ -314,6 +323,162 @@ section[id] .divider::before,
 section[id] .divider::after{background:linear-gradient(to right,transparent,var(--act-color,var(--gold-dim)),transparent);}
 section[id] .act-intro{border-left-color:var(--act-color,var(--gold-dim));}
 section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;letter-spacing:.45em;}
+
+.doc-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:36px auto;max-width:860px;}
+.doc-img-pair .doc-img{margin:0;width:100%;}
+@media(max-width:600px){.doc-img-pair{grid-template-columns:1fr;}}
+
+/* ── ENHANCEMENTS 1–6 ── */
+.fade-target{opacity:0;transition:opacity .7s ease;}
+.fade-target.revealed{opacity:1;}
+.doc-img{transition:transform .35s ease,filter .35s ease;}
+.doc-img:hover{transform:scale(1.013);filter:brightness(1.08);}
+.doc-img{max-height:580px;}
+.act-header{padding:72px 0 20px;}
+@media(max-width:640px){.act-header{padding:48px 0 12px;}}
+.nav a.nav-active{color:#fff !important;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+section[id]{position:relative;}
+section[id]::before{content:'';position:absolute;top:0;left:8%;right:8%;height:1px;background:linear-gradient(to right,transparent,var(--act-color,rgba(201,168,76,.35)),transparent);opacity:0;transition:opacity 1.4s ease .15s;pointer-events:none;}
+section[id].revealed::before{opacity:1;}
+
+/* ── LIGHTBOX ── */
+#lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+#lb-overlay.lb-open{opacity:1;pointer-events:all;}
+#lb-img-wrap{position:relative;max-width:92vw;max-height:90vh;}
+#lb-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:3px;transform:scale(.96);transition:transform .35s ease;display:block;}
+#lb-overlay.lb-open #lb-img{transform:scale(1);}
+#lb-close{position:absolute;top:-38px;right:0;background:none;border:none;color:rgba(255,255,255,.5);font-size:.9rem;cursor:pointer;font-family:"Cinzel",serif;letter-spacing:.15em;transition:color .2s;padding:4px 8px;}
+#lb-close:hover{color:var(--gold);}
+/* ── RESUME TOAST ── */
+#resume-toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:rgba(2,3,10,.96);border:1px solid rgba(201,168,76,.25);backdrop-filter:blur(20px);padding:12px 18px;display:flex;align-items:center;gap:14px;z-index:960;border-radius:3px;white-space:nowrap;animation:toastIn .4s ease;}
+@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(10px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+#resume-toast span{font-family:"Cinzel",serif;font-size:.52rem;letter-spacing:.18em;color:rgba(255,255,255,.6);}
+#resume-yes{background:none;border:1px solid rgba(201,168,76,.35);color:var(--gold);cursor:pointer;font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.14em;padding:5px 12px;border-radius:2px;transition:all .2s;}
+#resume-yes:hover{background:rgba(201,168,76,.1);border-color:var(--gold);}
+#resume-no{background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:.9rem;line-height:1;padding:2px 4px;transition:color .2s;}
+#resume-no:hover{color:rgba(255,255,255,.7);}
+
+/* ── WORD REVEAL ── */
+.w{display:inline;opacity:0;transition:opacity .4s ease;}
+.scripture--revealed .w{opacity:1;}
+/* ── ACT PILL ── */
+#act-pill{position:fixed;top:68px;right:18px;z-index:890;font-family:"Cinzel",serif;font-size:.42rem;letter-spacing:.22em;color:var(--gold);background:rgba(2,3,10,.82);border:1px solid rgba(201,168,76,.18);backdrop-filter:blur(14px);padding:6px 14px;border-radius:2px;opacity:0;transition:opacity .5s ease;pointer-events:none;max-width:220px;text-align:right;}
+#act-pill.visible{opacity:1;}
+@media(max-width:640px){#act-pill{display:none;}}
+/* ── SCROLL TO TOP ── */
+#back-top{position:fixed;bottom:100px;right:20px;z-index:955;width:36px;height:36px;background:rgba(2,3,10,.88);border:1px solid rgba(201,168,76,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .3s ease,border-color .2s,transform .2s;pointer-events:none;}
+#back-top.visible{opacity:1;pointer-events:all;}
+#back-top:hover{border-color:var(--gold);transform:translateY(-2px);}
+#back-top svg{width:11px;height:11px;fill:var(--gold);display:block;}
+/* ── TEXT SELECTION COPY ── */
+#sel-copy{position:absolute;z-index:1900;background:rgba(2,3,10,.96);border:1px solid rgba(201,168,76,.3);backdrop-filter:blur(16px);font-family:"Cinzel",serif;font-size:.44rem;letter-spacing:.16em;color:var(--gold);padding:5px 13px;border-radius:2px;cursor:pointer;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap;user-select:none;}
+#sel-copy.visible{opacity:1;pointer-events:all;}
+#sel-copy:hover{background:rgba(201,168,76,.08);}
+/* ── PREFERS REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  .fade-target,.fade-target.revealed{opacity:1!important;transform:none!important;transition:none!important;}
+  section[id]::before{transition:none!important;}
+  .w{opacity:1!important;transition:none!important;}
+  #lb-img{transition:none!important;}
+  #act-pill,#back-top,#resume-toast{transition:none!important;animation:none!important;}
+}
+
+/* ── AP: AUDIO PLAYER BAR ── */
+body{padding-bottom:88px;}
+@media(max-width:640px){body{padding-bottom:148px;}}
+@keyframes apIn{from{transform:translateY(100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+#ap-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:950;
+  background:rgba(2,3,10,.96);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-top:1px solid rgba(201,168,76,.15);
+  display:flex;align-items:stretch;
+  height:80px;padding:0;
+  animation:apIn .35s ease-out both;
+}
+.ap-panel{
+  flex:1;min-width:0;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:5px;padding:12px 18px;
+}
+#ap-music-panel{border-right:1px solid rgba(255,255,255,.05);}
+.ap-panel-row{display:flex;align-items:center;gap:10px;}
+.ap-seek-row{display:flex;align-items:center;gap:8px;}
+.ap-label{
+  font-family:"Cinzel",serif;font-size:.43rem;letter-spacing:.32em;
+  color:var(--gold-dim);white-space:nowrap;flex-shrink:0;
+}
+.ap-title{
+  font-family:"Cormorant Garamond",serif;font-size:.82rem;font-style:italic;
+  color:rgba(255,255,255,.32);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  flex:1;min-width:0;transition:color .4s;
+}
+.ap-title.ap-playing{color:rgba(255,255,255,.82);}
+.ap-duck{
+  width:5px;height:5px;border-radius:50%;background:var(--gold);
+  flex-shrink:0;opacity:0;transition:opacity .5s;align-self:center;
+}
+.ap-duck.active{opacity:.6;}
+.ap-btn{
+  flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  background:none;border:1px solid rgba(201,168,76,.25);
+  color:var(--gold);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;outline:none;
+}
+.ap-btn:hover{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.6);}
+.ap-btn.ap-playing{border-color:var(--gold);box-shadow:0 0 10px rgba(201,168,76,.2);}
+.ap-icon{width:9px;height:9px;display:block;flex-shrink:0;}
+.ap-icon-sm{width:14px;height:14px;display:block;}
+.ap-vol,.ap-seek{
+  -webkit-appearance:none;appearance:none;
+  height:3px;border-radius:2px;outline:none;cursor:pointer;border:none;
+}
+.ap-vol{width:72px;flex-shrink:0;}
+.ap-seek{flex:1;min-width:50px;}
+.ap-vol::-webkit-slider-thumb,.ap-seek::-webkit-slider-thumb{
+  -webkit-appearance:none;width:11px;height:11px;
+  background:var(--gold);border-radius:50%;cursor:pointer;
+  box-shadow:0 0 5px rgba(201,168,76,.45);transition:transform .15s;
+}
+.ap-vol::-webkit-slider-thumb:hover,.ap-seek::-webkit-slider-thumb:hover{transform:scale(1.4);}
+.ap-vol::-moz-range-thumb,.ap-seek::-moz-range-thumb{
+  width:11px;height:11px;background:var(--gold);border-radius:50%;border:none;cursor:pointer;
+}
+.ap-time{
+  font-family:"Cinzel",serif;font-size:.45rem;letter-spacing:.06em;
+  color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;
+}
+.ap-mute{
+  background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,.5);padding:3px;flex-shrink:0;
+  transition:opacity .2s;display:none;
+  align-items:center;justify-content:center;
+}
+.ap-mute.muted{opacity:.22;}
+.ap-warn{
+  font-family:"Cinzel",serif;font-size:.37rem;letter-spacing:.14em;
+  color:rgba(255,255,255,.16);display:none;
+  padding:0 14px 6px;text-align:center;
+}
+@media(min-width:641px){.ap-mobile{display:none!important;}}
+@media(max-width:640px){
+  .ap-desktop{display:none!important;}
+  #ap-bar{height:auto;flex-direction:column;align-items:stretch;padding:10px 14px 6px;gap:2px;}
+  #ap-music-panel{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);padding:8px 0 10px;}
+  #ap-narr-panel{padding:8px 0 4px;}
+  .ap-panel-row{gap:8px;}
+  .ap-title{font-size:.78rem;}
+  .ap-label{font-size:.4rem;}
+  .ap-time{font-size:.43rem;}
+  .ap-mute{display:flex!important;}
+  .ap-warn{display:block!important;}
+  .ap-seek{height:4px;}
+  .ap-seek::-webkit-slider-thumb{width:16px;height:16px;}
+  .ap-seek::-moz-range-thumb{width:16px;height:16px;}
+  .ap-seek-row{margin-top:3px;}
+}
 </style>
 </head>
 <body>
@@ -678,10 +843,10 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <div class="divider"><span>THE SCATTERING — AND GOD'S ANSWER</span></div>
-  <img src="https://i.ibb.co/GvNWBXRX/Babel.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">Genesis 11 ends with a scattering. The entire human race — one language, one community, one place — divided and dispersed at Babel. What had been unified was broken into pieces. What could communicate fell silent across its own divisions. <span class="ref" title="Genesis 11:1-9">Gen 11:1-9</span></p>
   <p class="prose">Genesis 12 opens with God calling one man.</p>
+  <img src="https://i.ibb.co/GvNWBXRX/Babel.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">The call of Abraham is God's direct response to the wound of Babel — not a unilateral repair from the top down, but a seed planted in a single man's obedience that would, over millennia, regather every nation that had been scattered. <em>"All peoples on earth will be blessed through you."</em> <span class="ref" title="Genesis 12:3">Gen 12:3</span> Every people. The ones scattered at Babel. The ones divided by language and culture and geography. Through one man's faith — brought back.</p>
 
   <div class="callout">
@@ -712,15 +877,15 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
     </div>
   </div>
 
-  <img src="https://i.ibb.co/4nx82cG7/Nimrod.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
+  <img src="https://i.ibb.co/4nx82cG7/Nimrod.jpg" alt="" class="doc-img" loading="lazy">
 
   <div class="divider"><span>THE MAN IN THE IDOL SHOP</span></div>
-  <img src="https://i.ibb.co/pjdPkqyZ/Zigurarat.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">The city of Ur sat on the banks of the Euphrates in what is now southern Iraq — around 2000 BC one of the most sophisticated cities on earth. Massive ziggurat temples. A thriving economy. A literate class. And a marketplace full of gods carved from wood and stone, sold by a man named Terah to a city that believed them. <span class="ref" title="Joshua 24:2">Joshua 24:2</span></p>
   <p class="prose">Terah's son Abram grew up in the shop. He knew every idol by name, knew what each one was supposed to do, knew the prayers and the rituals and the offerings. And somewhere in his childhood or his youth, he started watching the sky instead.</p>
   <p class="prose">The <em>Book of Jubilees</em> — found among the Dead Sea Scrolls, used as scripture by the Ethiopian Orthodox Church, cited with authority in ancient Jewish tradition — preserves what the rabbis remembered about that watching. <span class="ref" title="Book of Jubilees 12:1-8">Jubilees 12:1-8</span> Young Abram looked at the sun and reasoned: <em>something made that.</em> He looked at the moon and the stars: <em>something made those too. And whatever made all of this cannot be made of wood.</em> He worked his way through every created thing — fire, water, clouds, wind — and arrived at the uncreated Creator by logic. Not by revelation. Not yet. By paying attention to what was in front of him and following the reasoning wherever it went.</p>
   <p class="prose">One night he burned his father's idol house to the ground.</p>
+  <img src="https://i.ibb.co/pjdPkqyZ/Zigurarat.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">Not out of rebellion. Not out of anger. Out of the same conviction Paul would later articulate in Romans 1:20 — that the invisible qualities of God are clearly seen through what he has made, so that people are without excuse. Abram had seen them. He couldn't unsee them. The idols were not merely wrong theology — they were an insult to the God who had made the sun and the moon and the stars and was being represented by something a craftsman had shaped with his hands.</p>
   <p class="prose">He was seventeen years old, according to some traditions. He had no community of faith. No scripture. No priest. No tradition. Just eyes that had been watching the sky and a mind that had followed the evidence to its logical conclusion — <em>there is a God, and none of these are him.</em></p>
   <p class="prose"><em>He found God by paying attention to a sky everyone else slept under. The seeking was never the hard part. The looking up was.</em></p>
@@ -731,7 +896,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <div class="divider"><span>GO. I'LL SHOW YOU WHEN YOU GET THERE.</span></div>
-  <img src="https://i.ibb.co/13NgKRD/Abraham-s-Journey.jpg" alt="" class="doc-img" loading="lazy">
 
 
   <p class="prose">Abram was seventy-five when God spoke in Haran — halfway between Ur and Canaan, where his father Terah had stopped, settled, and died. <span class="ref" title="Genesis 12:4">Gen 12:4</span> Thirty years of seeking. Then — a voice.</p>
@@ -742,6 +906,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <p class="prose">No map. No destination. Just — <em>go.</em> To a land I will show you. Present tense. As you travel. One step at a time.</p>
+  <img src="https://i.ibb.co/13NgKRD/Abraham-s-Journey.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">Hebrews 11:8 says he left <em>"not knowing where he was going."</em> That is what faith actually is — not certainty, not a feeling. He was seventy-five. His wife was barren. He was leaving everyone he knew. Faith is movement toward a voice you trust before the destination exists.</p>
 
   <div class="scripture">
@@ -753,12 +918,12 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose">The gospel was not invented at Calvary. It was not launched at Pentecost. It was announced in Haran to a seventy-five-year-old man with a barren wife and no children, as the reason to pack his bags. Everything since has been the delivery of what was promised that morning.</p>
 
   <div class="divider"><span>THE NIGHT GOD SIGNED ALONE</span></div>
-  <img src="https://i.ibb.co/1fsF3Bys/Covenant.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">Years passed. Abram reached Canaan, survived a famine in Egypt, parted from Lot, fought a war to rescue him — and on the way back was blessed by Melchizedek, a priest-king with no genealogy, no beginning and no end in the text, serving bread and wine in the name of <em>God Most High, Creator of heaven and earth.</em> <span class="ref" title="Genesis 14:18-20">Gen 14:18-20</span> Christ himself would later be called a priest in this order — not Aaron's, not the Levites' — because the priesthood was universal before Israel existed, and would be again. Remember that priest-king. He returns at the end of this story. <span class="ref" title="Hebrews 7:17">Heb 7:17</span></p>
   <p class="prose">And still — no child.</p>
   <p class="prose">God spoke again and Abram answered honestly: <em>"What can you give me since I remain childless?"</em> <span class="ref" title="Genesis 15:2">Gen 15:2</span> Not faithless — honest. The man who had walked from Haran on a word was now naming the gap between the promise and the reality, out loud, to God's face. And God did not rebuke him. He took him outside.</p>
   <p class="prose"><em>"Look up at the sky and count the stars — if indeed you can count them. So shall your offspring be."</em> <span class="ref" title="Genesis 15:5">Gen 15:5</span></p>
+  <img src="https://i.ibb.co/PsN1Qvvy/Abraham-Stars.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">And Abram believed. That single sentence — <em>"Abram believed God, and it was credited to him as righteousness"</em> <span class="ref" title="Genesis 15:6">Gen 15:6</span> — is the verse Paul builds his entire theology of grace upon in Romans 4. A man got declared right with God for <em>trusting him</em> — before circumcision, before the law, before a single rule existed to keep or break. No performance. No religious system. He looked up at stars he couldn't count and decided the voice was telling the truth. God called that righteousness.</p>
 
   <div class="scripture">
@@ -769,26 +934,12 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose">One old man. A barren wife. The smallest of all nations — before a nation even existed. God did not choose Abraham because he was impressive. He chose him because He loved him and because He had decided to keep His word. That is the only explanation the Bible offers. Not merit. Not size. Not performance. Love and faithfulness. <em>The same reason He is still choosing you.</em></p>
   <p class="prose">Then came the ceremony. God told Abram to cut animals in half and lay them in two rows. <span class="ref" title="Genesis 15:9-10">Gen 15:9-10</span> Every ancient Near Eastern reader would have recognized what this meant — the covenant ritual, where both parties walk between the pieces and say in effect: <em>may what happened to these animals happen to me if I break this promise.</em> Abram prepared everything. Split the heifer, the goat, the ram. Laid the dove and the pigeon. Drove away the birds of prey that descended on the carcasses. And waited.</p>
   <p class="prose">As the sun was setting, a deep sleep fell on him. A thick and dreadful darkness. <span class="ref" title="Genesis 15:12">Gen 15:12</span> And then — only God moved. A smoking firepot and a blazing torch — the presence of God — passed between the pieces alone. <span class="ref" title="Genesis 15:17">Gen 15:17</span></p>
+  <img src="https://i.ibb.co/1fsF3Bys/Covenant.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">Abram never walked through. Only God moved. In the one ceremony where Abram should have sworn <em>let me die if I break this</em> — God put himself under the knife instead. He swore to die before he would let the promise fail.</p>
   <p class="prose">The Hebrew word woven through every covenant promise from this moment forward is <em>hesed</em> — translated variously as lovingkindness, steadfast love, mercy, loyalty. But no single English word holds it. <em>Hesed</em> is the love that does not leave when it has every right to. It is covenant loyalty that outlasts the failure of the other party. It is what God showed Abraham at this ceremony — binding himself to keep a promise to a man who would fail him repeatedly — and it is what runs like a thread through every page of this story. David sang it. Jeremiah wept it. Ruth embodied it toward Naomi. The entire Abrahamic covenant is built on it. <em>Hesed.</em> The love that does not count exits.</p>
 
   <div class="coven1-wrapper">
     <div class="coven1-title">✦ GOD SIGNED IT ALONE — GENESIS 15 ✦</div>
-    <svg class="coven1-svg" viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="God initiates the covenant; it flows downward to the people, who receive it.">
-      <!-- GOD — the initiator -->
-      <text x="350" y="56" text-anchor="middle" font-family="Cinzel" font-size="30" fill="#d4a359" letter-spacing="6">GOD</text>
-      <text x="350" y="82" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="14" fill="#b0a070">THE INITIATOR — he binds himself, alone</text>
-      <!-- the covenant as a single downward force -->
-      <rect x="343" y="104" width="14" height="150" fill="#d4a359"/>
-      <path d="M322,250 L378,250 L350,288 Z" fill="#d4a359"/>
-      <rect x="256" y="158" width="188" height="48" rx="3" fill="#000" stroke="#d4a359" stroke-width="0.8"/>
-      <text x="350" y="180" text-anchor="middle" font-family="Cinzel" font-size="12" fill="#d4a359" letter-spacing="3">THE COVENANT</text>
-      <text x="350" y="197" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="11.5" fill="#e5e5e5">done to them — not agreed with them</text>
-      <!-- THE PEOPLE — the receivers -->
-      <text x="350" y="320" text-anchor="middle" font-family="Cinzel" font-size="22" fill="#e5e5e5" letter-spacing="4">THE PEOPLE</text>
-      <text x="350" y="344" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="14" fill="#b0a070">THE RECEIVERS — they sign nothing</text>
-      <text x="350" y="372" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#d4a359" letter-spacing="2" opacity="0.6">GENESIS 15 — GOD PASSED BETWEEN THE PIECES ALONE</text>
-    </svg>
   </div>
 
   <p class="prose">This is the foundation of everything that follows. God bound only himself. The covenant's validity depends entirely on God's faithfulness — not Abraham's, not Israel's, not the church's, not yours. The fractures, the failures, the schisms, the darkest moments in your own story — none of it touches what was signed alone by the smoking firepot in Canaan. The covenant is only as breakable as God is breakable.</p>
@@ -802,7 +953,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <div class="divider"><span>THE STARS AND THE SAND</span></div>
-  <img src="https://i.ibb.co/PsN1Qvvy/Abraham-Stars.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">God gave Abraham the promise in two images — and they may not be pointing at the same thing.</p>
   <p class="prose">Genesis 15:5 — at night, looking up: <em>"Count the stars — so shall your offspring be."</em> Stars. Heavenly. Uncountable only because of distance. You are looking up to find them.</p>
@@ -823,7 +973,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
       The Hall of Fame is not closed. It was never meant to be a museum. <strong>You are in this story — and Abraham's faith is not complete without yours.</strong>
     </div>
   </div>
-  <img src="https://i.ibb.co/93GTP4vm/Promise.jpg" alt="" class="doc-img" loading="lazy">
+
 
 </section>
 
@@ -858,7 +1008,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <div class="divider"><span>HAGAR — EL ROI</span></div>
-  <img src="https://i.ibb.co/xKv8VkTd/Ishamel.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">Hagar conceived. The moment she did, something shifted between the two women — as it always does when status changes inside a house. Hagar looked at Sarai differently. Sarai felt it, and answered with cruelty. The wound was real: the covenant family turning on the very outsider God was about to honor. And Hagar — pregnant, alone, foreign, legally a possession with no recourse — did the only thing she could do.</p>
   <p class="prose">She ran.</p>
@@ -894,8 +1043,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
 
   <div class="divider"><span>ISHMAEL — BLESSED AND EXPELLED</span></div>
 
-  <img src="https://i.ibb.co/9915ky95/Isaac-and-Ishamel.jpg" alt="" class="doc-img" loading="lazy">
-
   <p class="prose">Hagar returned. Ishmael was born. Abraham held his firstborn son — the son he had waited for, the son he had loved before he existed — and named him exactly as the angel had instructed. <em>God hears.</em></p>
   <p class="prose">For thirteen years, Ishmael was everything. The heir. The proof that Abraham's line would continue. The boy who rode with his father, who learned from him, who was circumcised at thirteen with the covenant sign — old enough to understand what he was receiving, old enough to have made his own choice about it. <span class="ref" title="Genesis 17:25">Gen 17:25</span></p>
   <p class="prose">Then God appeared to Abraham again and told him that the covenant heir — the one through whom the promise would flow — would be a son born to Sarah. Not Ishmael.</p>
@@ -910,6 +1057,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose">God answered the prayer. Every word of it. <em>"As for Ishmael, I have heard you. I will surely bless him — I will make him fruitful and greatly increase his numbers. He will be the father of twelve rulers, and I will make him into a great nation."</em> <span class="ref" title="Genesis 17:20">Gen 17:20</span> The word is <em>barak</em> — the covenant word, the blessing word, the same word that runs like a thread through every promise God has ever made in this story. Ishmael received it. And the invitation Paul would later make explicit was already true here: <em>"everyone who calls on the name of the Lord will be saved."</em> <span class="ref" title="Romans 10:13">Rom 10:13</span> The covenant ran through Isaac — but the door would open for the whole family.</p>
   <p class="prose">The covenant would pass through Isaac. But Ishmael was never abandoned. That distinction matters enormously — it is the theological key to understanding Islam, to understanding the hostility and the longing and the 1.8 billion people who call Abraham their father and mean it — and it will matter again at the end of this story in ways that Isaiah could see and we are only beginning to see.</p>
   <p class="prose">Josephus — writing in the first century from Jerusalem, obtaining his information directly from Arab contemporaries — identified the Nabataean Kingdom as the descendants of Ishmael's firstborn son Nebaioth, and said they "occupied the whole country from the Euphrates to the Red Sea." <span class="ref" title="Jewish Antiquities 1.12.4">Josephus, Ant. 1.12.4</span> Their capital was Petra — a city carved into red rock in what is now Jordan, one of the architectural wonders of the ancient world, a trading empire that connected Rome to India and resisted Roman conquest for four centuries. God promised Ishmael would become a great nation. Petra is that promise carved in stone.</p>
+  <img src="https://i.ibb.co/0p7cHCq3/Ishmael.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">Isaac was born. Sarah's laughter — the laughter she had hidden when the angels told her, the laughter God had called her on <span class="ref" title="Genesis 18:15">Gen 18:15</span> — became real. The impossible had happened. And Sarah, holding her son, looked at Ishmael differently than she ever had before.</p>
   <p class="prose">At Isaac's weaning feast she saw Ishmael mocking her son — the Hebrew word <em>metzachek</em> is related to Isaac's own name, a bitter wordplay — and something broke in her. She went to Abraham: <em>"Get rid of that slave woman and her son, for that woman's son will never share in the inheritance with my son Isaac."</em> <span class="ref" title="Genesis 21:10">Gen 21:10</span></p>
@@ -918,6 +1066,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose">A skin of water. For a woman and a teenage boy. In the desert.</p>
   <p class="prose">The water ran out. Hagar did what a mother does when she has nothing left to give — she put Ishmael under a bush, in whatever shade the desert offered, and walked away. About a bowshot's distance. Just far enough that she would not have to watch him die.</p>
   <p class="prose">She sat down and wept.</p>
+  <img src="https://i.ibb.co/xKv8VkTd/Ishamel.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">And then — the most quietly devastating verse in the story of Ishmael:</p>
 
   <div class="scripture">
@@ -967,10 +1116,9 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose">The man who had laughed when God said Sarah would conceive. The man who had tried to help God with Hagar. That man was gone. What remained was someone whose faith had been built through twenty-five years of impossible waiting into something unrecognizable — something that could move toward its own worst nightmare at dawn without hesitation, because it had learned that the God who asks can be trusted.</p>
 
   <div class="divider"><span>THREE DAYS</span></div>
-  <img src="https://i.ibb.co/q3xMG9tf/Moriah-Mountain.jpg" alt="" class="doc-img" loading="lazy">
-  <img src="https://i.ibb.co/1JndhCNc/MOriah-x-3.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">The region of Moriah was three days' walk from Beersheba.</p>
+  <img src="https://i.ibb.co/1JndhCNc/MOriah-x-3.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">Three days of walking — three sunrises, three nights of camp, three days of watching his son walk beside him. Isaac, whose name means <em>laughter.</em> Isaac, who was conceived when the body said impossible and God said watch me. Isaac, who was the only reason any of this had meant anything — the proof that the covenant was real, the living embodiment of thirty years of promise.</p>
   <p class="prose">For three days Abraham walked with him. And said nothing.</p>
   <p class="prose">What did he think? Hebrews tells us: <em>"He reasoned that God could even raise the dead."</em> <span class="ref" title="Hebrews 11:19">Heb 11:19</span> Working through what he knew — the God who had given Isaac against all biology, who had bound himself in the covenant ceremony alone, who had promised that through Isaac his descendants would be counted — and arriving at a conclusion that would not be articulated clearly for another fifteen centuries: <em>if God promised through Isaac, and God is asking for Isaac, then God must be planning to raise him from the dead.</em></p>
@@ -1015,6 +1163,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose"><em>"Now I know that you fear God."</em> Not terror — trust. Abraham had proved he trusted the Giver more than the gift. That is what the fear of the Lord is: loving God more than what God gives you, even when the gift is your only son.</p>
   <p class="prose"><em>God stopped the knife at the last second — not because the cost didn't matter, but because he was going to pay it himself.</em></p>
   <p class="prose">He named the place <em>Yahweh Yireh — The Lord Will Provide.</em> <span class="ref" title="Genesis 22:14">Gen 22:14</span> And the text says it became a saying: <em>"On the mountain of the LORD it will be provided."</em> A proverb born from the worst morning of one man's life. A truth that outlasted him by millennia — because the God who provided the ram in the thicket was not finished providing. He was only just beginning.</p>
+  <img src="https://i.ibb.co/bMBc36kY/One-Ridge-Three-Alters.jpg" alt="" class="doc-img" loading="lazy">
 
   <div class="sac2-wrapper">
     <div class="sac2-title">✦ THE SHADOW AND THE SUBSTANCE ✦</div>
@@ -1043,6 +1192,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
     </div>
     <p class="sac2-footer">ISAAC WALKED FREE BECAUSE SOMEONE WOULD ONE DAY TAKE HIS PLACE</p>
   </div>
+  <img src="https://i.ibb.co/2YLfc2cg/Grave.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">Isaac asked his question — <em>"where is the lamb?"</em> — on the way up a mountain. It floated unanswered for roughly 2,000 years. Then John the Baptist saw Jesus approaching the Jordan and said: <em>"Behold the Lamb of God, who takes away the sin of the world."</em> <span class="ref" title="John 1:29">John 1:29</span> A son's question asked on the road to Moriah was finally answered by another Son walking toward his death. The question and the answer are separated by two millennia and connected by the same God.</p>
 
@@ -1063,7 +1213,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <div class="divider"><span>THE SILENCE AFTER</span></div>
-  <img src="https://i.ibb.co/bMBc36kY/One-Ridge-Three-Alters.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">After the angel spoke, Abraham sacrificed the ram and named the place. God confirmed the promise again by oath — the strongest possible binding in the ancient world, God swearing by himself because there was no one greater to swear by. <span class="ref" title="Hebrews 6:13">Heb 6:13</span> And then Abraham returned to his servants.</p>
   <p class="prose"><em>"Abraham returned to his servants."</em> <span class="ref" title="Genesis 22:19">Gen 22:19</span> The Hebrew is singular. They traveled back to Beersheba. And from that verse forward, Isaac and Abraham are never recorded speaking to each other again in Genesis.</p>
@@ -1101,8 +1250,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
     <div class="act-title">The Fulfillment</div>
     <div class="act-intro">The ram in the thicket was only the preview. Seven hundred years before it happened, a prophet described the real thing in language so precise that readers still debate whether it was written before or after the fact.</div>
   </div>
-  <img src="https://i.ibb.co/LDMTXRFv/Babe.jpg" alt="" class="doc-img" loading="lazy">
-
   <div class="scripture">
     <div class="scripture-text">"He was despised and rejected by mankind, a man of suffering, and familiar with pain... He was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed... He was led like a lamb to the slaughter, and as a sheep before its shearers is silent, so he did not open his mouth."</div>
     <div class="scripture-ref">Isaiah 53:3, 5, 7 — written c. 700 BC</div>
@@ -1217,21 +1364,16 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
     </div>
   </div>
 
-  <img src="https://i.ibb.co/MkSHz0pP/Babylon-Fall.jpg" alt="" class="doc-img" loading="lazy">
-
+  <img src="https://i.ibb.co/gLTjnBrb/Pont-Pilate.jpg" alt="" class="doc-img" loading="lazy">
   <div class="callout">
     <div class="callout-title">WHAT SECULAR HISTORY CONFIRMED — THE CROSS WAS REAL</div>
     <div class="callout-text"><strong>The Pilate Stone.</strong> In June 1961, Italian archaeologist Antonio Frova excavating Caesarea Maritima found a limestone block repurposed as a stair step. Carved in Latin: <em>"Pontius Pilatus, Prefect of Judea."</em> Until that morning, Pilate's existence was literary only. Now it is carved in stone, in the Israel Museum. The man who signed the death warrant is confirmed in his own era. <em>Israel Museum, Jerusalem. AE 1963 no. 104.</em><br><br>
-    <strong>The Alexamenos Graffito.</strong> Scratched into plaster on the Palatine Hill in Rome, discovered in 1857, dated to the late 1st or early 2nd century AD — the earliest known image of the crucifixion. A Roman soldier is depicted worshipping a crucified figure with the head of a donkey. Below it, in crude Greek: <em>"Alexamenos worships his God."</em> It was mockery. A Roman drew it to ridicule a fellow soldier for believing in a crucified man. But in doing so, he confirmed — from inside the Roman military, within living memory of the event — that Christians were known to worship a figure who had been crucified. The derision is the evidence. The earliest picture of the cross was drawn by an enemy who couldn't stop thinking about it. <em>Palatine Museum, Rome.</em><br><br> In 2002, a first-century limestone bone box surfaced bearing the Aramaic inscription: <em>"James, son of Joseph, brother of Jesus."</em> The Israel Geological Survey conducted isotopic analysis and confirmed the patina in the inscription grooves was consistent with a 2,000-year-old burial — not a forgery. James, the brother of Jesus, led the Jerusalem church for thirty years, was executed by the High Priest Ananus in 62 AD according to Josephus (<em>Antiquities</em> 20.9.1), and would have been buried in exactly this period. A man who watched his brother crucified and still went on to lead the movement that survived it. His bones may be in that box. His testimony is in every church that exists today. <em>André Lemaire, Biblical Archaeology Review, 2002. Israel Geological Survey analysis, 2002.</em><br><br>
+    <strong>The Alexamenos Graffito.</strong> Scratched into plaster on the Palatine Hill in Rome, discovered in 1857, dated to the late 1st or early 2nd century AD — the earliest known image of the crucifixion. A Roman soldier is depicted worshipping a crucified figure with the head of a donkey. Below it, in crude Greek: <em>"Alexamenos worships his God."</em> It was mockery. A Roman drew it to ridicule a fellow soldier for believing in a crucified man. But in doing so, he confirmed — from inside the Roman military, within living memory of the event — that Christians were known to worship a figure who had been crucified. The derision is the evidence. The earliest picture of the cross was drawn by an enemy who couldn't stop thinking about it. <em>Palatine Museum, Rome.</em><br><br>
     <strong>Phlegon of Tralles.</strong> A Greek historian, no Christian agenda, recorded c. 137 AD: <em>"In the fourth year of the 202nd Olympiad</em> [= 33 AD] <em>there was the greatest eclipse of the sun — it became night at the sixth hour so that stars appeared. There was a great earthquake."</em> Exact year. Exact hour. Earthquake. NASA confirms no solar eclipse was possible on Passover — full moon, wrong side of the earth. His attempt to explain it rationally is the most powerful secular confirmation it happened.</div>
   </div>
+  <img src="https://i.ibb.co/zWzFQ1Zg/Donkey.jpg" alt="" class="doc-img" loading="lazy">
 
   <div class="divider"><span>PENTECOST — BABEL REVERSED</span></div>
-  <img src="https://i.ibb.co/gLTjnBrb/Pont-Pilate.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
-  <img src="https://i.ibb.co/wGFyQL5/Artifact.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
-  <img src="https://i.ibb.co/zWzFQ1Zg/Donkey.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
-  <img src="https://i.ibb.co/2YLfc2cg/Grave.jpg" alt="" class="doc-img" loading="lazy">
-
   <p class="prose">Pentecost — Shavuot in Hebrew — was one of three mandatory pilgrimage festivals. <span class="ref" title="Deuteronomy 16:16">Deut 16:16</span> Every Jewish male was required to appear in Jerusalem. God used Israel's own calendar to ensure representatives from every nation were in the city on this day. He had commanded it for a thousand years. He planned the date. He filled the seats. Then the Spirit fell.</p>
   <p class="prose">Shavuot also commemorated the giving of the Torah at Sinai — fifty days after the Passover that freed Israel from Egypt. Jesus died at Passover. The Spirit fell fifty days later, on the very festival that celebrated the old covenant's birth. Jeremiah's promise came true on its anniversary: <em>the stone tablets of Sinai replaced by the living Spirit, written now on hearts.</em> <span class="ref" title="Jeremiah 31:31-34">Jer 31:31-34</span></p>
 
@@ -1244,7 +1386,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
 
   <div class="spirit-box">
     <div class="spirit-title">BABEL AND PENTECOST — THE EXACT REVERSAL</div>
-  <img src="https://i.ibb.co/N2YMFL4m/Babel-vs-Pent.jpg" alt="" class="doc-img" loading="lazy">
   <img src="https://i.ibb.co/ntWqyv3/Babel-vs-pentacost.jpg" alt="" class="doc-img" loading="lazy">
     <div class="spirit-text">
       Genesis 11 and Acts 2 are mirror images — one the wound, one the healing.<br><br>
@@ -1257,6 +1398,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <p class="prose"><em>What pride scattered, the Spirit gathered. The thing that divided the human race was undone in a single afternoon.</em></p>
+  <img src="https://i.ibb.co/Y72dkWJy/Pentacost.jpg" alt="" class="doc-img" loading="lazy">
 
   <div class="spirit-box">
     <div class="spirit-title">THE GIFTS AT PENTECOST — ON FULL DISPLAY</div>
@@ -1318,10 +1460,11 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose"><em>God pulled His best man out of a revival to find one stranger on an empty road. He has done that. For you. You just called it a coincidence.</em></p>
 
   <div class="divider"><span>THE WOMAN AT THE WELL — THE FIRST RECORDED MISSIONARY</span></div>
-  <img src="https://i.ibb.co/Y72dkWJy/Pentacost.jpg" alt="" class="doc-img" loading="lazy">
+  <div class="doc-img-pair">
+  <img src="https://i.ibb.co/CpBSS6P8/Samartian-Swoman.jpg" alt="" class="doc-img" loading="lazy">
+  <img src="https://i.ibb.co/ynP2kKv0/Samartian-Well-Run.jpg" alt="" class="doc-img" loading="lazy">
+  </div>
   <img src="https://i.ibb.co/ff7c2wf/Woman-at-the-well.jpg" alt="" class="doc-img" loading="lazy">
-  <img src="https://i.ibb.co/CpBSS6P8/Samartian-Swoman.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
-  <img src="https://i.ibb.co/ynP2kKv0/Samartian-Well-Run.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
 
   <p class="prose">Before Philip ran to the chariot, before the Spirit fell at Pentecost — Jesus himself had already done what Philip would do on that desert road. He did it at a well. With a woman. In Samaria. At noon.</p>
   <p class="prose">Jews did not travel through Samaria if they could help it. Samaritans were the half-breed remnant of the northern kingdom — intermarried with Assyrian settlers after the 722 BC conquest, holding a corrupted version of the Torah, worshipping on the wrong mountain. Centuries of contempt had calcified into law: a Jewish man did not speak to a Samaritan woman in public. Full stop.</p>
@@ -1407,10 +1550,10 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
 
   <div class="divider"><span>PAUL — TO ISHMAEL FIRST</span></div>
   <img src="https://i.ibb.co/TDfZcjWN/Damascus.jpg" alt="" class="doc-img" loading="lazy">
-  <img src="https://i.ibb.co/hF87Bs5B/Paul.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
   <img src="https://i.ibb.co/jPTVZVv5/Pauls-journey.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">After Damascus, Paul withdrew to Arabia before returning — three years before his first Jerusalem visit. <span class="ref" title="Galatians 1:17">Gal 1:17</span> The apostle chosen to reach the Gentiles went first to Ishmael's territory. The Spirit was choreographing the same movement he had sent Philip on — covenant messengers to Ishmael's descendants first.</p>
+  <img src="https://i.ibb.co/d0jS0tQM/Promise-Ismael-Map-Is-60.jpg" alt="" class="doc-img" loading="lazy">
 
   <div class="geo5-wrapper">
     <div class="geo5-grid">
@@ -1454,7 +1597,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
         <div class="geo5-when">The Xi'an Stele</div>
         <div class="geo5-note">A 9-foot limestone block carved in Chinese and Syriac, erected 781 AD, documents 150 years of Christianity inside the Tang Dynasty — the largest empire on earth. The gospel reached the imperial capital Chang'an by 635 AD. Buried during persecution in 845. Not found again until 1625. The inscription reads: "God sent an angel to announce the good news of a virgin giving birth to the Son." Carved in Chinese. In China. In 781 AD.</div>
       </div>
-      <img src="https://i.ibb.co/Kxd1fwYS/Chinese.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
       <div class="geo5-card">
         <div class="geo5-where">NORTH AFRICA — 1st–3rd century</div>
         <div class="geo5-when">Alexandria and Carthage</div>
@@ -1462,6 +1604,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
       </div>
     </div>
   </div>
+  <img src="https://i.ibb.co/Kxd1fwYS/Chinese.jpg" alt="" class="doc-img" style="max-height:560px;object-fit:cover;" loading="lazy">
 
   <div class="callout">
     <div class="callout-title">SIMON OF CYRENE — AN AFRICAN CARRIED THE CROSS</div>
@@ -1482,6 +1625,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <div class="divider"><span>HOW FAST. HOW IMPOSSIBLE.</span></div>
 
   <p class="prose">The empire that crucified Jesus became the empire that could not contain his followers. The harder Rome pushed, the further the gospel went. The same Spirit who gave Philip a word of knowledge on a desert road was equipping ordinary people across the empire to do exactly what Jesus had promised.</p>
+  <img src="https://i.ibb.co/93GTP4vm/Promise.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">One discovery drove people toward a faith that cost them everything: the God they had been told was impersonal — distant, cosmic, unreachable — turned out to be personal. He knew their name. He saw their pain. He came close. He healed. He called her daughter. He ran to meet the prodigal son. He heard the crying of a boy under a bush in the desert. <em>That</em> God. That is what changed the world.</p>
 
@@ -1489,7 +1633,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
 
   <div class="story-box">
     <div class="story-title">NEATO BURRITO — A STORY ABOUT THE GOD WHO SEES</div>
-  <img src="https://i.ibb.co/8LWwf8cV/Ken.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
+  <img src="https://i.ibb.co/8LWwf8cV/Ken.jpg" alt="" class="doc-img" loading="lazy">
     <div class="story-text">
       My friend Dimas, Jeff, and I were at Neato Burrito. Dimas — the kind of person who cannot walk past a human being without seeing them — spotted a man sitting alone with a full beard and a burrito he was clearly trying to enjoy in peace. I thought for a moment the man was about to politely — or not so politely — ask Dimas to leave.<br><br>
       He didn't. He put his burrito down.<br><br>
@@ -1550,8 +1694,9 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
     </div>
   </div>
 
-  <img src="https://i.ibb.co/zh5HzsyX/Seymour.jpg" alt="" class="doc-img doc-img--half" loading="lazy">
   <p class="prose">William Seymour was forced by Jim Crow law to sit outside the classroom in Houston — learning the things of God through a crack in a door, because he wasn't allowed inside. The man God would use to launch a movement of 600 million was made to listen from the hallway. He went to Los Angeles anyway. What broke loose at Azusa Street is in the timeline below — but here is the thing worth stopping on: the fire fell on the man they shut out, and when it fell, it washed the color line away in a city that had drawn it everywhere.</p>
+  <img src="https://i.ibb.co/MkSHz0pP/Babylon-Fall.jpg" alt="" class="doc-img" loading="lazy">
+  <img src="https://i.ibb.co/zh5HzsyX/Seymour.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose"><em>Every split in church history started with people who were sure they were right. The Spirit never fell on the ones who were right. He fell on the ones who stayed in the room.</em></p>
 
   <div class="frac6-wrapper">
@@ -1610,7 +1755,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   </div>
 
   <div class="divider"><span>ISHMAEL'S BLESSING — NEVER REVOKED</span></div>
-  <img src="https://i.ibb.co/0p7cHCq3/Ishmael.jpg" alt="" class="doc-img" loading="lazy">
 
   <p class="prose">God said to Abraham: <em>"As for Ishmael, I have heard you. I will surely bless him."</em> <span class="ref" title="Genesis 17:20">Gen 17:20</span> Between the 8th and 13th centuries the Islamic world produced one of the greatest civilizations in history — the Islamic Golden Age. Arab scholars preserved Greek philosophy, pioneered algebra and algorithms, advanced medicine and navigation while Europe was in its Dark Ages. The numerical system used globally today is Arabic. The word algebra comes from Arabic <em>al-jabr</em>. The blessing of fruitfulness and greatness God promised Ishmael — historically, visibly, documentably kept.</p>
 
@@ -1683,6 +1827,7 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose">The primary factor reported by converts across every culture and country: <em>dreams and visions of Jesus.</em> <span class="ref" title="Acts 2:17">Acts 2:17</span> — <em>"your young men will see visions, your old men will dream dreams."</em> The Spirit moving through the prophetic gift to reach people no missionary has been able to reach. Iran. Iraq. Algeria. Sudan. Indonesia. Bangladesh. Morocco.</p>
   <p class="prose">Iran specifically: Open Doors, Elam Ministries, and Operation World independently estimate the Iranian church grew from essentially zero in 1979 to hundreds of thousands — some estimates exceeding 3 million believers. Under the most restrictive Islamic government on earth.</p>
   <p class="prose">The wall that Babel built, that empires reinforced, that centuries of hostility hardened into stone — the Spirit is walking through it in dreams.</p>
+  <img src="https://i.ibb.co/9915ky95/Isaac-and-Ishamel.jpg" alt="" class="doc-img" loading="lazy">
   <p class="prose">Isaiah 60:7 — <em>"All Kedar's flocks will be gathered to you."</em> Kedar was Ishmael's son. <span class="ref" title="Genesis 25:13">Gen 25:13</span> A prophecy that Ishmael's specific descendants would be gathered to God. Derek Prince — who lived in Jerusalem for years and taught extensively on the Arab-Israeli conflict — identified Genesis 16:12 not as a curse on Ishmael but as a consequence of expulsion — a wound that would be healed when the covenant love that should have been extended to him was finally extended through the gospel. The hostility is not a sentence. It is a season.</p>
 
   <div class="spirit-box">
@@ -1705,7 +1850,6 @@ section[id] .act-label{color:var(--act-color,rgba(255,255,255,.3));opacity:1;let
   <p class="prose">Paul's image: Israel is the cultivated olive tree. The Gentile church is wild branches grafted in. <em>The root supports the branches — not the other way around.</em> <span class="ref" title="Romans 11:18">Rom 11:18</span> The modern return of Jewish people to the land Abraham was promised — Israel reestablished 1948, Jerusalem reunified 1967, Ethiopian Jews airlifted home 1984 and 1991 — is cited by charismatic scholars including Derek Prince, David Pawson, and Lance Lambert as the most visible fulfillment of Ezekiel 37 in modern history. The valley of dry bones gathering. The covenant still active on both tracks simultaneously. <em>The story is not finished.</em></p>
 
   <div class="divider"><span>ISAIAH'S VISION — THE END OF THE STORY</span></div>
-  <img src="https://i.ibb.co/d0jS0tQM/Promise-Ismael-Map-Is-60.jpg" alt="" class="doc-img" loading="lazy">
 
   <div class="scripture">
     <div class="scripture-text">"In that day there will be a highway from Egypt to Assyria... The Egyptians and Assyrians will worship together. In that day Israel will be the third, along with Egypt and Assyria — a blessing on the earth. The LORD Almighty will bless them, saying, 'Blessed be Egypt my people, Assyria my handiwork, and Israel my inheritance.'"</div>
@@ -1924,5 +2068,401 @@ requestAnimationFrame(()=>{
   });
 });
 </script>
+
+<div id="lb-overlay"><div id="lb-img-wrap"><img id="lb-img" alt=""><button id="lb-close">✕ CLOSE</button></div></div>
+
+<!-- ── AUDIO PLAYER BAR ── -->
+<div id="ap-bar">
+
+  <!-- MUSIC PANEL -->
+  <div class="ap-panel" id="ap-music-panel">
+    <div class="ap-panel-row">
+      <span class="ap-label">MUSIC</span>
+      <span class="ap-title" id="ap-music-title">Press play to begin</span>
+      <span class="ap-duck" id="ap-duck" title="Music ducked for narration"></span>
+      <button class="ap-btn" id="ap-music-btn" onclick="apMusicToggle()" aria-label="Toggle music">
+        <svg class="ap-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+      </button>
+      <input type="range" class="ap-vol ap-desktop" id="ap-music-vol" min="0" max="1" step="0.01" value="0.8" oninput="apSetMusicVol(this.value)" aria-label="Music volume">
+      <button class="ap-mute ap-mobile" id="ap-music-mute" onclick="apMuteToggle('music')" aria-label="Mute music">
+        <svg class="ap-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- NARRATION PANEL -->
+  <div class="ap-panel" id="ap-narr-panel">
+    <div class="ap-panel-row">
+      <span class="ap-label">AUDIO</span>
+      <span class="ap-title" id="ap-narr-title">Press play to begin</span>
+      <button class="ap-btn" id="ap-narr-btn" onclick="apNarrToggle()" aria-label="Toggle narration">
+        <svg class="ap-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+      </button>
+      <input type="range" class="ap-vol ap-desktop" id="ap-narr-vol" min="0" max="1" step="0.01" value="0.9" oninput="apSetNarrVol(this.value)" aria-label="Narration volume">
+      <button class="ap-mute ap-mobile" id="ap-narr-mute" onclick="apMuteToggle('narr')" aria-label="Mute narration">
+        <svg class="ap-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+      </button>
+    </div>
+    <div class="ap-seek-row">
+      <input type="range" class="ap-seek" id="ap-narr-seek" min="0" max="100" step="0.01" value="0" oninput="apSeekTo(this.value)" aria-label="Seek position">
+      <span class="ap-time" id="ap-narr-time">0:00:00</span>
+    </div>
+  </div>
+
+  <span class="ap-warn ap-mobile">Volume sliders unavailable on mobile</span>
+</div>
+
+<!-- Replace these src values with your hosted audio file URLs -->
+<audio id="ap-music-el" src="https://www.dropbox.com/scl/fi/qkg2w0ekahsg239cp8qx9/Music.mp3?rlkey=6qnbzs5q5abwzgpuvd3mqd7h2&st=i141w3sj&raw=1" loop preload="none"></audio>
+<audio id="ap-narr-el"  src="https://www.dropbox.com/scl/fi/1exhwsllzqc41aw8ohlze/book1111-6_3_26-2.45-AM.mp3?rlkey=c6394iob4jgaihbvb2ylhxdf1&st=fjjlxtz8&raw=1" preload="none"></audio>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const musicEl=  $('ap-music-el'), narrEl= $('ap-narr-el');
+  const musicBtn= $('ap-music-btn'),narrBtn=$('ap-narr-btn');
+  const musicTitle=$('ap-music-title'),narrTitle=$('ap-narr-title');
+  const musicVolEl=$('ap-music-vol'), narrVolEl=$('ap-narr-vol');
+  const narrSeek= $('ap-narr-seek'), narrTime=$('ap-narr-time');
+  const duckDot=  $('ap-duck');
+  const musicMuteBtn=$('ap-music-mute'),narrMuteBtn=$('ap-narr-mute');
+
+  // ← Set your track display names here
+  const MUSIC_NAME='Ambient Music';
+  const NARR_NAME ='One Promise — Full Narration';
+  const DUCK_VOL  = 0.30;  // 30% music volume when narration plays
+  const RAMP_MS   = 800;   // ms to fade in/out duck
+
+  let baseMusicVol=0.80, baseNarrVol=0.90;
+  let musicMuted=false, narrMuted=false;
+  let isSeeking=false, rampTimer=null;
+
+  const PLAY ='<polygon points="5,3 19,12 5,21"/>';
+  const PAUSE='<rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/>';
+  const SPK_ON ='<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>';
+  const SPK_OFF='<path d="M4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+
+  function setPlayIcon(btn,on){btn.querySelector('svg').innerHTML=on?PAUSE:PLAY;}
+  function setSpeakerIcon(btn,muted){btn.querySelector('svg').innerHTML=muted?SPK_OFF:SPK_ON;}
+
+  function fmt(s){
+    if(!isFinite(s)||isNaN(s))return'--:--:--';
+    const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=Math.floor(s%60);
+    return h+':'+String(m).padStart(2,'0')+':'+String(sc).padStart(2,'0');
+  }
+
+  function fill(el,pct){
+    if(!el)return;
+    const p=pct.toFixed(2);
+    el.style.background='linear-gradient(to right,var(--gold) 0%,var(--gold) '+p+'%,rgba(255,255,255,.1) '+p+'%,rgba(255,255,255,.1) 100%)';
+  }
+
+  function rampTo(target,ms){
+    if(rampTimer)clearInterval(rampTimer);
+    const from=musicEl.volume,steps=24,dt=ms/steps;let i=0;
+    rampTimer=setInterval(()=>{
+      i++;musicEl.volume=Math.min(1,Math.max(0,from+(target-from)*(i/steps)));
+      if(i>=steps){clearInterval(rampTimer);rampTimer=null;}
+    },dt);
+  }
+
+  window.apMusicToggle=function(){
+    if(musicEl.paused){
+      musicEl.volume=musicMuted?0:(narrEl.paused?baseMusicVol:DUCK_VOL);
+      musicEl.play().then(()=>{
+        musicTitle.textContent=MUSIC_NAME;
+        musicTitle.classList.add('ap-playing');
+        musicBtn.classList.add('ap-playing');
+        setPlayIcon(musicBtn,true);
+        if(!narrEl.paused)duckDot.classList.add('active');
+      }).catch(()=>{});
+    }else{
+      musicEl.pause();
+      musicTitle.classList.remove('ap-playing');
+      musicBtn.classList.remove('ap-playing');
+      setPlayIcon(musicBtn,false);
+      duckDot.classList.remove('active');
+    }
+  };
+
+  window.apSetMusicVol=function(v){
+    baseMusicVol=parseFloat(v);
+    if(!musicMuted&&narrEl.paused)musicEl.volume=baseMusicVol;
+    fill(musicVolEl,v*100);
+  };
+
+  window.apNarrToggle=function(){
+    if(narrEl.paused){
+      narrEl.play().then(()=>{
+        narrTitle.textContent=NARR_NAME;
+        narrTitle.classList.add('ap-playing');
+        narrBtn.classList.add('ap-playing');
+        setPlayIcon(narrBtn,true);
+        if(!musicEl.paused){rampTo(musicMuted?0:DUCK_VOL,RAMP_MS);duckDot.classList.add('active');}
+      }).catch(()=>{});
+    }else{
+      narrEl.pause();
+      narrTitle.classList.remove('ap-playing');
+      narrBtn.classList.remove('ap-playing');
+      setPlayIcon(narrBtn,false);
+      if(!musicEl.paused){rampTo(musicMuted?0:baseMusicVol,RAMP_MS);duckDot.classList.remove('active');}
+    }
+  };
+
+  window.apSetNarrVol=function(v){
+    baseNarrVol=parseFloat(v);
+    if(!narrMuted)narrEl.volume=baseNarrVol;
+    fill(narrVolEl,v*100);
+  };
+
+  window.apMuteToggle=function(track){
+    if(track==='music'){
+      musicMuted=!musicMuted;
+      if(rampTimer){clearInterval(rampTimer);rampTimer=null;}
+      musicEl.volume=musicMuted?0:(narrEl.paused?baseMusicVol:DUCK_VOL);
+      musicMuteBtn.classList.toggle('muted',musicMuted);
+      setSpeakerIcon(musicMuteBtn,musicMuted);
+    }else{
+      narrMuted=!narrMuted;
+      narrEl.volume=narrMuted?0:baseNarrVol;
+      narrMuteBtn.classList.toggle('muted',narrMuted);
+      setSpeakerIcon(narrMuteBtn,narrMuted);
+    }
+  };
+
+  window.apSeekTo=function(v){
+    isSeeking=true;
+    const pct=parseFloat(v);
+    if(narrEl.duration)narrEl.currentTime=(pct/100)*narrEl.duration;
+    fill(narrSeek,pct);
+    setTimeout(()=>{isSeeking=false;},150);
+  };
+
+  narrEl.addEventListener('timeupdate',()=>{
+    if(isSeeking||!narrEl.duration)return;
+    const pct=(narrEl.currentTime/narrEl.duration)*100;
+    narrSeek.value=pct;fill(narrSeek,pct);
+    narrTime.textContent=fmt(narrEl.currentTime)+' / '+fmt(narrEl.duration);
+  });
+
+  narrEl.addEventListener('loadedmetadata',()=>{
+    narrTime.textContent='0:00:00 / '+fmt(narrEl.duration);
+  });
+
+  narrEl.addEventListener('ended',()=>{
+    narrTitle.classList.remove('ap-playing');
+    narrBtn.classList.remove('ap-playing');
+    setPlayIcon(narrBtn,false);
+    if(!musicEl.paused){rampTo(musicMuted?0:baseMusicVol,RAMP_MS);duckDot.classList.remove('active');}
+  });
+
+  // Init slider fills
+  fill(narrSeek,0);fill(musicVolEl,80);fill(narrVolEl,90);
+})();
+</script>
+<script>
+(function(){
+  const revealObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed');});
+  },{threshold:0.06,rootMargin:'0px 0px -32px 0px'});
+  document.querySelectorAll('.doc-img,.doc-img-pair').forEach(el=>{
+    el.classList.add('fade-target');revealObs.observe(el);
+  });
+  document.querySelectorAll('section[id]').forEach(s=>revealObs.observe(s));
+  const navObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id=e.target.id;
+        document.querySelectorAll('.nav a').forEach(a=>{
+          a.classList.toggle('nav-active',a.getAttribute('href')==='#'+id);
+        });
+      }
+    });
+  },{rootMargin:'-25% 0px -65% 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>navObs.observe(s));
+})();
+</script>
+<script>
+(function(){
+  // ── READING PROGRESS ──
+  const prog = document.getElementById('progress');
+  window.addEventListener('scroll', ()=>{
+    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+    prog.style.width = Math.min(pct, 100) + '%';
+  }, {passive:true});
+
+  // ── LIGHTBOX ──
+  const overlay = document.getElementById('lb-overlay');
+  const lbImg   = document.getElementById('lb-img');
+  document.querySelectorAll('.doc-img').forEach(img=>{
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', ()=>{
+      lbImg.src = img.src;
+      overlay.classList.add('lb-open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb(){
+    overlay.classList.remove('lb-open');
+    document.body.style.overflow = '';
+  }
+  overlay.addEventListener('click', e=>{ if(e.target===overlay) closeLb(); });
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLb(); });
+
+  // ── SAVE & RESTORE POSITION ──
+  const POS_KEY = 'op_scroll_v1';
+  const saved = +(localStorage.getItem(POS_KEY) || 0);
+  if(saved > 400){
+    const toast = document.createElement('div');
+    toast.id = 'resume-toast';
+    toast.innerHTML = '<span>CONTINUE WHERE YOU LEFT OFF?</span><button id="resume-yes">RESUME</button><button id="resume-no">✕</button>';
+    document.body.appendChild(toast);
+    let td = setTimeout(()=>toast.remove(), 9000);
+    document.getElementById('resume-yes').addEventListener('click', ()=>{
+      window.scrollTo({top:saved, behavior:'smooth'});
+      toast.remove(); clearTimeout(td);
+    });
+    document.getElementById('resume-no').addEventListener('click', ()=>{
+      toast.remove(); clearTimeout(td);
+    });
+  }
+  const savePos = ()=> localStorage.setItem(POS_KEY, window.scrollY);
+  window.addEventListener('scroll', savePos, {passive:true});
+  window.addEventListener('beforeunload', savePos);
+})();
+</script>
+<script>
+(function(){
+
+  // ── MOUSE PARALLAX STARFIELD ──
+  const heroStars = document.querySelector('.hero-stars');
+  if(heroStars){
+    let rafPending = false;
+    let mx = 0, my = 0;
+    document.addEventListener('mousemove', e=>{
+      mx = e.clientX; my = e.clientY;
+      if(!rafPending){
+        rafPending = true;
+        requestAnimationFrame(()=>{
+          const x = (mx/window.innerWidth  - 0.5) * 14;
+          const y = (my/window.innerHeight - 0.5) * 9;
+          heroStars.style.transform = `translate(${x}px,${y}px)`;
+          rafPending = false;
+        });
+      }
+    }, {passive:true});
+  }
+
+  // ── WORD-BY-WORD SCRIPTURE REVEAL ──
+  function wrapWords(el){
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node=>{
+      const parts = node.textContent.split(/(\s+)/);
+      const frag = document.createDocumentFragment();
+      parts.forEach(p=>{
+        if(/^\s+$/.test(p)){ frag.appendChild(document.createTextNode(p)); }
+        else if(p){ const s=document.createElement('span'); s.className='w'; s.textContent=p; frag.appendChild(s); }
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+  let pageReady = false;
+  setTimeout(()=>{ pageReady=true; }, 600);
+  const wObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const spans = e.target.querySelectorAll('.w');
+      if(pageReady){
+        spans.forEach((s,i)=>{ s.style.transitionDelay=(i*0.042)+'s'; });
+      } else {
+        spans.forEach(s=>{ s.style.opacity='1'; s.style.transition='none'; });
+      }
+      e.target.classList.add('scripture--revealed');
+      wObs.unobserve(e.target);
+    });
+  },{threshold:0.25});
+  document.querySelectorAll('.scripture-text').forEach(el=>{
+    wrapWords(el); wObs.observe(el);
+  });
+
+  // ── FLOATING ACT INDICATOR ──
+  const pill = document.createElement('div');
+  pill.id = 'act-pill';
+  document.body.appendChild(pill);
+  let pillTimer;
+  const pillObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const label = e.target.querySelector('.act-label');
+      const title = e.target.querySelector('.act-title');
+      if(!label || !title) return;
+      pill.textContent = label.textContent.trim() + ' · ' + title.textContent.trim();
+      pill.classList.add('visible');
+      clearTimeout(pillTimer);
+      pillTimer = setTimeout(()=>pill.classList.remove('visible'), 3500);
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>pillObs.observe(s));
+
+  // ── SCROLL TO TOP ──
+  const topBtn = document.createElement('div');
+  topBtn.id = 'back-top';
+  topBtn.setAttribute('aria-label','Back to top');
+  topBtn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 5l-7 7h4.5v7h5v-7H19z"/></svg>';
+  document.body.appendChild(topBtn);
+  topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+  window.addEventListener('scroll', ()=>{
+    topBtn.classList.toggle('visible', window.scrollY > window.innerHeight*0.3);
+  },{passive:true});
+
+  // ── TEXT SELECTION COPY ──
+  const copyPill = document.createElement('div');
+  copyPill.id = 'sel-copy';
+  copyPill.textContent = '✦ COPY QUOTE';
+  document.body.appendChild(copyPill);
+  let copyTimer;
+  document.addEventListener('mouseup', ()=>{
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(()=>{
+      const sel = window.getSelection();
+      const txt = sel ? sel.toString().trim() : '';
+      if(txt.length > 12){
+        try{
+          const r = sel.getRangeAt(0).getBoundingClientRect();
+          const top = r.top + window.scrollY - 40;
+          const left = Math.max(8, Math.min(r.left + r.width/2 - 55, window.innerWidth - 170));
+          copyPill.style.top  = top  + 'px';
+          copyPill.style.left = left + 'px';
+          copyPill.classList.add('visible');
+          clearTimeout(copyTimer);
+          copyTimer = setTimeout(()=>copyPill.classList.remove('visible'), 4500);
+        }catch(e){}
+      } else {
+        copyPill.classList.remove('visible');
+      }
+    }, 15);
+  });
+  copyPill.addEventListener('mousedown', e=>e.preventDefault());
+  copyPill.addEventListener('click', ()=>{
+    const txt = window.getSelection()?.toString().trim();
+    if(txt){
+      navigator.clipboard.writeText(txt).then(()=>{
+        copyPill.textContent = '✦ COPIED';
+        clearTimeout(copyTimer);
+        copyTimer = setTimeout(()=>{
+          copyPill.textContent = '✦ COPY QUOTE';
+          copyPill.classList.remove('visible');
+        }, 1800);
+      }).catch(()=>{ copyPill.classList.remove('visible'); });
+    }
+  });
+  document.addEventListener('scroll', ()=>copyPill.classList.remove('visible'),{passive:true});
+
+})();
+</script>
+
 </body>
 </html>
