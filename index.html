@@ -4,15 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>One Promise — Abraham, the Living God, and the Story That Never Ended</title>
+<link rel="icon" id="favicon" type="image/png" href="">
+<script>
+(function(){
+  const c=document.createElement('canvas');
+  c.width=c.height=32;
+  const ctx=c.getContext('2d');
+  const stars=Array.from({length:12},()=>({
+    x:Math.random()*30+1,
+    y:Math.random()*30+1,
+    r:Math.random()*1.2+0.3,
+    phase:Math.random()*Math.PI*2,
+    speed:Math.random()*0.04+0.02
+  }));
+  function draw(){
+    ctx.clearRect(0,0,32,32);
+    ctx.fillStyle='#02030a';
+    ctx.fillRect(0,0,32,32);
+    const t=Date.now()/1000;
+    stars.forEach(s=>{
+      const alpha=0.4+0.6*Math.abs(Math.sin(s.phase+t*s.speed*Math.PI*2));
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(201,168,76,${alpha.toFixed(2)})`;
+      ctx.fill();
+    });
+    // gold center star
+    const a=0.7+0.3*Math.sin(t*1.8);
+    ctx.beginPath();
+    ctx.arc(16,16,1.8,0,Math.PI*2);
+    ctx.fillStyle=`rgba(232,208,144,${a.toFixed(2)})`;
+    ctx.fill();
+    document.getElementById('favicon').href=c.toDataURL('image/png');
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
 <meta property="og:title" content="One Promise — Abraham, the Living God, and the Story That Never Ended">
 <meta property="og:description" content="A journey from Genesis to Pentecost — the covenant, the Spirit, and the story that includes you.">
-<meta property="og:image" content="https://i.ibb.co/Fqq8cws8/5-pics.jpg">
+<meta property="og:image" content="https://i.ibb.co/PsN1Qvvy/Abraham-Stars.jpg">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="One Promise — Abraham, the Living God, and the Story That Never Ended">
 <meta name="twitter:description" content="A journey from Genesis to Pentecost — the covenant, the Spirit, and the story that includes you.">
-<meta name="twitter:image" content="https://i.ibb.co/Fqq8cws8/5-pics.jpg">
+<meta name="twitter:image" content="https://i.ibb.co/PsN1Qvvy/Abraham-Stars.jpg">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Cormorant+SC:wght@300;400;500;600&display=swap');
 :root{
@@ -478,6 +515,7 @@ body{padding-bottom:88px;}
   .ap-seek::-webkit-slider-thumb{width:16px;height:16px;}
   .ap-seek::-moz-range-thumb{width:16px;height:16px;}
   .ap-seek-row{margin-top:3px;}
+  .ap-btn{width:40px;height:40px;}
 }
 </style>
 </head>
@@ -2113,7 +2151,7 @@ requestAnimationFrame(()=>{
 </div>
 
 <!-- Replace these src values with your hosted audio file URLs -->
-<audio id="ap-music-el" src="https://www.dropbox.com/scl/fi/qkg2w0ekahsg239cp8qx9/Music.mp3?rlkey=6qnbzs5q5abwzgpuvd3mqd7h2&st=i141w3sj&raw=1" loop preload="none"></audio>
+<audio id="ap-music-el" src="https://www.dropbox.com/scl/fi/0qlwtc2v4izz08ju518j8/Music.mp3?rlkey=ct1o6fbqnvobe9zpn689ifkve&st=7hq0zxbj&raw=1" loop preload="none"></audio>
 <audio id="ap-narr-el"  src="https://www.dropbox.com/scl/fi/1exhwsllzqc41aw8ohlze/book1111-6_3_26-2.45-AM.mp3?rlkey=c6394iob4jgaihbvb2ylhxdf1&st=fjjlxtz8&raw=1" preload="none"></audio>
 
 <script>
