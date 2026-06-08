@@ -421,102 +421,118 @@ section[id].revealed::before{opacity:1;}
 }
 
 /* ── AP: AUDIO PLAYER BAR ── */
-body{padding-bottom:88px;}
-@media(max-width:640px){body{padding-bottom:148px;}}
+body{padding-bottom:112px;}
+@media(max-width:640px){body{padding-bottom:164px;}}
 @keyframes apIn{from{transform:translateY(100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
 #ap-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:950;
-  background:rgba(2,3,10,.96);
-  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border-top:1px solid rgba(201,168,76,.15);
+  position:fixed;bottom:40px;left:0;right:0;z-index:950;
+  background:linear-gradient(to bottom,rgba(6,8,18,.97),rgba(2,3,10,.99));
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  border-top:1px solid rgba(201,168,76,.18);
+  box-shadow:0 -8px 32px rgba(0,0,0,.45);
   display:flex;align-items:stretch;
-  height:80px;padding:0;
-  animation:apIn .35s ease-out both;
+  height:72px;padding:0;
+  animation:apIn .4s ease-out both;
+}
+#ap-seekbar-row{
+  position:fixed;bottom:0;left:0;right:0;z-index:951;
+  height:40px;
+  background:rgba(2,3,10,.99);
+  border-top:1px solid rgba(255,255,255,.05);
+  display:flex;align-items:center;
+  padding:0 22px;gap:14px;
+  animation:apIn .4s ease-out both;
 }
 .ap-panel{
   flex:1;min-width:0;
   display:flex;flex-direction:column;justify-content:center;
-  gap:5px;padding:12px 18px;
+  padding:0 20px;
 }
-#ap-music-panel{border-right:1px solid rgba(255,255,255,.05);}
-.ap-panel-row{display:flex;align-items:center;gap:10px;}
-.ap-seek-row{display:flex;align-items:center;gap:8px;}
+#ap-music-panel{border-right:1px solid rgba(255,255,255,.06);}
+.ap-panel-row{display:flex;align-items:center;gap:12px;}
 .ap-label{
-  font-family:"Cinzel",serif;font-size:.43rem;letter-spacing:.32em;
-  color:var(--gold-dim);white-space:nowrap;flex-shrink:0;
+  font-family:"Cinzel",serif;font-size:.38rem;letter-spacing:.38em;
+  color:var(--gold-dim);white-space:nowrap;flex-shrink:0;opacity:.7;
 }
 .ap-title{
-  font-family:"Cormorant Garamond",serif;font-size:.82rem;font-style:italic;
-  color:rgba(255,255,255,.32);
+  font-family:"Cormorant Garamond",serif;font-size:.88rem;font-style:italic;
+  color:rgba(255,255,255,.28);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   flex:1;min-width:0;transition:color .4s;
 }
-.ap-title.ap-playing{color:rgba(255,255,255,.82);}
+.ap-title.ap-playing{color:rgba(255,255,255,.85);}
 .ap-duck{
-  width:5px;height:5px;border-radius:50%;background:var(--gold);
+  width:4px;height:4px;border-radius:50%;background:var(--gold);
   flex-shrink:0;opacity:0;transition:opacity .5s;align-self:center;
 }
-.ap-duck.active{opacity:.6;}
+.ap-duck.active{opacity:.55;}
 .ap-btn{
-  flex-shrink:0;width:28px;height:28px;border-radius:50%;
-  background:none;border:1px solid rgba(201,168,76,.25);
+  flex-shrink:0;width:34px;height:34px;border-radius:50%;
+  background:rgba(201,168,76,.06);
+  border:1px solid rgba(201,168,76,.28);
   color:var(--gold);cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   transition:all .2s;outline:none;
 }
-.ap-btn:hover{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.6);}
-.ap-btn.ap-playing{border-color:var(--gold);box-shadow:0 0 10px rgba(201,168,76,.2);}
-.ap-icon{width:9px;height:9px;display:block;flex-shrink:0;}
-.ap-icon-sm{width:14px;height:14px;display:block;}
-.ap-vol,.ap-seek{
+.ap-btn:hover{background:rgba(201,168,76,.14);border-color:rgba(201,168,76,.7);box-shadow:0 0 14px rgba(201,168,76,.15);}
+.ap-btn.ap-playing{border-color:var(--gold);background:rgba(201,168,76,.1);box-shadow:0 0 16px rgba(201,168,76,.22);}
+.ap-icon{width:10px;height:10px;display:block;flex-shrink:0;}
+.ap-icon-sm{width:15px;height:15px;display:block;}
+.ap-vol{
   -webkit-appearance:none;appearance:none;
   height:3px;border-radius:2px;outline:none;cursor:pointer;border:none;
+  width:82px;flex-shrink:0;
 }
-.ap-vol{width:72px;flex-shrink:0;}
-.ap-seek{flex:1;min-width:50px;}
+.ap-seek{
+  -webkit-appearance:none;appearance:none;
+  height:4px;border-radius:2px;outline:none;cursor:pointer;border:none;
+  flex:1;
+}
 .ap-vol::-webkit-slider-thumb,.ap-seek::-webkit-slider-thumb{
-  -webkit-appearance:none;width:11px;height:11px;
+  -webkit-appearance:none;width:13px;height:13px;
   background:var(--gold);border-radius:50%;cursor:pointer;
-  box-shadow:0 0 5px rgba(201,168,76,.45);transition:transform .15s;
+  box-shadow:0 0 6px rgba(201,168,76,.5);transition:transform .15s;
 }
-.ap-vol::-webkit-slider-thumb:hover,.ap-seek::-webkit-slider-thumb:hover{transform:scale(1.4);}
+.ap-vol::-webkit-slider-thumb:hover,.ap-seek::-webkit-slider-thumb:hover{transform:scale(1.35);}
 .ap-vol::-moz-range-thumb,.ap-seek::-moz-range-thumb{
-  width:11px;height:11px;background:var(--gold);border-radius:50%;border:none;cursor:pointer;
+  width:13px;height:13px;background:var(--gold);border-radius:50%;border:none;cursor:pointer;
 }
 .ap-time{
-  font-family:"Cinzel",serif;font-size:.45rem;letter-spacing:.06em;
-  color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;
+  font-family:"Cinzel",serif;font-size:.44rem;letter-spacing:.06em;
+  color:rgba(255,255,255,.3);white-space:nowrap;flex-shrink:0;
 }
 .ap-mute{
   background:none;border:none;cursor:pointer;
-  color:rgba(255,255,255,.5);padding:3px;flex-shrink:0;
+  color:rgba(255,255,255,.45);padding:4px;flex-shrink:0;
   transition:opacity .2s;display:none;
   align-items:center;justify-content:center;
 }
-.ap-mute.muted{opacity:.22;}
+.ap-mute.muted{opacity:.2;}
 .ap-warn{
-  font-family:"Cinzel",serif;font-size:.37rem;letter-spacing:.14em;
-  color:rgba(255,255,255,.16);display:none;
-  padding:0 14px 6px;text-align:center;
+  font-family:"Cinzel",serif;font-size:.34rem;letter-spacing:.14em;
+  color:rgba(255,255,255,.14);display:none;
+  padding:0 14px 4px;text-align:center;
 }
 @media(min-width:641px){.ap-mobile{display:none!important;}}
 @media(max-width:640px){
   .ap-desktop{display:none!important;}
-  #ap-bar{height:auto;flex-direction:column;align-items:stretch;padding:10px 14px 6px;gap:2px;}
-  #ap-music-panel{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);padding:8px 0 10px;}
-  #ap-narr-panel{padding:8px 0 4px;}
-  .ap-panel-row{gap:8px;}
-  .ap-title{font-size:.78rem;}
-  .ap-label{font-size:.4rem;}
+  #ap-bar{height:auto;flex-direction:column;align-items:stretch;bottom:48px;padding:10px 16px 8px;gap:0;}
+  #ap-seekbar-row{height:48px;padding:0 16px;gap:12px;}
+  #ap-music-panel{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);padding:0 0 10px;}
+  #ap-narr-panel{padding:8px 0 2px;}
+  .ap-panel-row{gap:10px;}
+  .ap-title{font-size:.82rem;}
+  .ap-label{font-size:.36rem;}
   .ap-time{font-size:.43rem;}
+  .ap-btn{width:44px;height:44px;}
+  .ap-icon{width:11px;height:11px;}
   .ap-mute{display:flex!important;}
   .ap-warn{display:block!important;}
-  .ap-seek{height:4px;}
-  .ap-seek::-webkit-slider-thumb{width:16px;height:16px;}
-  .ap-seek::-moz-range-thumb{width:16px;height:16px;}
-  .ap-seek-row{margin-top:3px;}
-  .ap-btn{width:40px;height:40px;}
+  .ap-seek{height:5px;}
+  .ap-seek::-webkit-slider-thumb{width:20px;height:20px;}
+  .ap-seek::-moz-range-thumb{width:20px;height:20px;}
 }
+
 </style>
 </head>
 <body>
@@ -2141,17 +2157,18 @@ requestAnimationFrame(()=>{
         <svg class="ap-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
       </button>
     </div>
-    <div class="ap-seek-row">
-      <input type="range" class="ap-seek" id="ap-narr-seek" min="0" max="100" step="0.01" value="0" oninput="apSeekTo(this.value)" aria-label="Seek position">
-      <span class="ap-time" id="ap-narr-time">0:00:00</span>
-    </div>
   </div>
 
   <span class="ap-warn ap-mobile">Volume sliders unavailable on mobile</span>
 </div>
 
+<div id="ap-seekbar-row">
+  <input type="range" class="ap-seek" id="ap-narr-seek" min="0" max="100" step="0.01" value="0" oninput="apSeekTo(this.value)" aria-label="Seek position">
+  <span class="ap-time" id="ap-narr-time">0:00:00</span>
+</div>
+
 <!-- Replace these src values with your hosted audio file URLs -->
-<audio id="ap-music-el" src="https://www.dropbox.com/scl/fi/0qlwtc2v4izz08ju518j8/Music.mp3?rlkey=ct1o6fbqnvobe9zpn689ifkve&st=7hq0zxbj&raw=1" loop preload="none"></audio>
+<audio id="ap-music-el" src="https://www.dropbox.com/scl/fi/al1ffftjyn0dupphdemza/leberch-background-ambient-511854-1.mp3?rlkey=me4popcn977raqc1myk6f9j2z&st=bs69bng5&raw=1" loop preload="none"></audio>
 <audio id="ap-narr-el"  src="https://www.dropbox.com/scl/fi/1exhwsllzqc41aw8ohlze/book1111-6_3_26-2.45-AM.mp3?rlkey=c6394iob4jgaihbvb2ylhxdf1&st=fjjlxtz8&raw=1" preload="none"></audio>
 
 <script>
