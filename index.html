@@ -420,9 +420,31 @@ section[id].revealed::before{opacity:1;}
   #act-pill,#back-top,#resume-toast{transition:none!important;animation:none!important;}
 }
 
+/* ── CHAPTER MARKS ── */
+#ap-seek-wrap{flex:1;position:relative;display:flex;align-items:center;}
+#ap-seek-wrap .ap-seek{width:100%;}
+#ap-chapter-marks{position:absolute;left:0;right:0;top:50%;height:0;pointer-events:none;}
+.ap-cmark{position:absolute;width:2px;height:9px;background:rgba(201,168,76,.3);border-radius:1px;transform:translate(-50%,-50%);transition:background .2s;}
+/* Act jump toast */
+#act-jump{position:fixed;bottom:124px;left:20px;z-index:960;
+  background:rgba(2,3,10,.96);border:1px solid rgba(201,168,76,.28);
+  backdrop-filter:blur(16px);border-radius:3px;
+  display:flex;align-items:center;gap:12px;padding:9px 14px;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .3s ease,transform .3s ease;pointer-events:none;}
+#act-jump.visible{opacity:1;transform:translateY(0);pointer-events:all;}
+#act-jump-text{font-family:"Cinzel",serif;font-size:.44rem;letter-spacing:.18em;color:rgba(255,255,255,.6);}
+#act-jump-go{background:none;border:1px solid rgba(201,168,76,.35);color:var(--gold);
+  cursor:pointer;font-family:"Cinzel",serif;font-size:.42rem;letter-spacing:.12em;
+  padding:4px 10px;border-radius:2px;transition:all .2s;white-space:nowrap;}
+#act-jump-go:hover{background:rgba(201,168,76,.1);border-color:var(--gold);}
+#act-jump-close{background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:.8rem;padding:2px 4px;transition:color .2s;}
+#act-jump-close:hover{color:rgba(255,255,255,.7);}
+@media(max-width:640px){#act-jump{bottom:160px;left:10px;right:10px;}}
+
 /* ── AP: AUDIO PLAYER BAR ── */
 body{padding-bottom:112px;}
-@media(max-width:640px){body{padding-bottom:164px;}}
+@media(max-width:640px){body{padding-bottom:152px;}}
 @keyframes apIn{from{transform:translateY(100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
 #ap-bar{
   position:fixed;bottom:40px;left:0;right:0;z-index:950;
@@ -448,7 +470,8 @@ body{padding-bottom:112px;}
   display:flex;flex-direction:column;justify-content:center;
   padding:0 20px;
 }
-#ap-music-panel{border-right:1px solid rgba(255,255,255,.06);}
+#ap-narr-panel{border-right:1px solid rgba(255,255,255,.06);}
+#ap-music-panel{border-right:none;}
 .ap-panel-row{display:flex;align-items:center;gap:12px;}
 .ap-label{
   font-family:"Cinzel",serif;font-size:.38rem;letter-spacing:.38em;
@@ -514,23 +537,29 @@ body{padding-bottom:112px;}
   padding:0 14px 4px;text-align:center;
 }
 @media(min-width:641px){.ap-mobile{display:none!important;}}
+/* Desktop seek bar — more visible */
+#ap-seekbar-row{height:44px;}
+.ap-seek{height:5px;}
+.ap-seek::-webkit-slider-thumb{width:15px;height:15px;}
+.ap-seek::-moz-range-thumb{width:15px;height:15px;}
 @media(max-width:640px){
   .ap-desktop{display:none!important;}
-  #ap-bar{height:auto;flex-direction:column;align-items:stretch;bottom:48px;padding:10px 16px 8px;gap:0;}
-  #ap-seekbar-row{height:48px;padding:0 16px;gap:12px;}
-  #ap-music-panel{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);padding:0 0 10px;}
-  #ap-narr-panel{padding:8px 0 2px;}
+  #ap-bar{height:auto;flex-direction:column;align-items:stretch;bottom:40px;padding:8px 14px 6px;gap:0;}
+  #ap-seekbar-row{height:40px;padding:0 14px;gap:10px;}
+  #ap-music-panel{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);padding:0 0 8px;}
+  #ap-narr-panel{padding:6px 0 0;}
   .ap-panel-row{gap:10px;}
-  .ap-title{font-size:.82rem;}
-  .ap-label{font-size:.36rem;}
-  .ap-time{font-size:.43rem;}
-  .ap-btn{width:44px;height:44px;}
-  .ap-icon{width:11px;height:11px;}
+  .ap-title{font-size:.78rem;}
+  .ap-label{font-size:.34rem;}
+  .ap-time{font-size:.4rem;}
+  .ap-btn{width:34px;height:34px;position:relative;}
+  .ap-btn::after{content:'';position:absolute;inset:-8px;}
+  .ap-icon{width:10px;height:10px;}
   .ap-mute{display:flex!important;}
-  .ap-warn{display:block!important;}
-  .ap-seek{height:5px;}
-  .ap-seek::-webkit-slider-thumb{width:20px;height:20px;}
-  .ap-seek::-moz-range-thumb{width:20px;height:20px;}
+  .ap-warn{display:none!important;}
+  .ap-seek{height:6px;}
+  .ap-seek::-webkit-slider-thumb{width:22px;height:22px;}
+  .ap-seek::-moz-range-thumb{width:22px;height:22px;}
 }
 
 </style>
@@ -2123,10 +2152,31 @@ requestAnimationFrame(()=>{
 });
 </script>
 
+<div id="act-jump">
+  <span id="act-jump-text"></span>
+  <button id="act-jump-go">GO THERE</button>
+  <button id="act-jump-close">✕</button>
+</div>
+
 <div id="lb-overlay"><div id="lb-img-wrap"><img id="lb-img" alt=""><button id="lb-close">✕ CLOSE</button></div></div>
 
 <!-- ── AUDIO PLAYER BAR ── -->
 <div id="ap-bar">
+
+  <!-- NARRATION PANEL -->
+  <div class="ap-panel" id="ap-narr-panel">
+    <div class="ap-panel-row">
+      <span class="ap-label">AUDIO</span>
+      <span class="ap-title" id="ap-narr-title">Press play to begin</span>
+      <button class="ap-btn" id="ap-narr-btn" onclick="apNarrToggle()" aria-label="Toggle narration">
+        <svg class="ap-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+      </button>
+      <input type="range" class="ap-vol ap-desktop" id="ap-narr-vol" min="0" max="1" step="0.01" value="0.9" oninput="apSetNarrVol(this.value)" aria-label="Narration volume">
+      <button class="ap-mute ap-mobile" id="ap-narr-mute" onclick="apMuteToggle('narr')" aria-label="Mute narration">
+        <svg class="ap-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- MUSIC PANEL -->
   <div class="ap-panel" id="ap-music-panel">
@@ -2144,32 +2194,20 @@ requestAnimationFrame(()=>{
     </div>
   </div>
 
-  <!-- NARRATION PANEL -->
-  <div class="ap-panel" id="ap-narr-panel">
-    <div class="ap-panel-row">
-      <span class="ap-label">AUDIO</span>
-      <span class="ap-title" id="ap-narr-title">Press play to begin</span>
-      <button class="ap-btn" id="ap-narr-btn" onclick="apNarrToggle()" aria-label="Toggle narration">
-        <svg class="ap-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-      </button>
-      <input type="range" class="ap-vol ap-desktop" id="ap-narr-vol" min="0" max="1" step="0.01" value="0.9" oninput="apSetNarrVol(this.value)" aria-label="Narration volume">
-      <button class="ap-mute ap-mobile" id="ap-narr-mute" onclick="apMuteToggle('narr')" aria-label="Mute narration">
-        <svg class="ap-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
-      </button>
-    </div>
-  </div>
-
   <span class="ap-warn ap-mobile">Volume sliders unavailable on mobile</span>
 </div>
 
 <div id="ap-seekbar-row">
-  <input type="range" class="ap-seek" id="ap-narr-seek" min="0" max="100" step="0.01" value="0" oninput="apSeekTo(this.value)" aria-label="Seek position">
+  <div id="ap-seek-wrap">
+    <input type="range" class="ap-seek" id="ap-narr-seek" min="0" max="100" step="0.01" value="0" oninput="apSeekTo(this.value)" aria-label="Seek position">
+    <div id="ap-chapter-marks"></div>
+  </div>
   <span class="ap-time" id="ap-narr-time">0:00:00</span>
 </div>
 
 <!-- Replace these src values with your hosted audio file URLs -->
 <audio id="ap-music-el" src="https://www.dropbox.com/scl/fi/al1ffftjyn0dupphdemza/leberch-background-ambient-511854-1.mp3?rlkey=me4popcn977raqc1myk6f9j2z&st=bs69bng5&raw=1" loop preload="none"></audio>
-<audio id="ap-narr-el"  src="https://www.dropbox.com/scl/fi/1exhwsllzqc41aw8ohlze/book1111-6_3_26-2.45-AM.mp3?rlkey=c6394iob4jgaihbvb2ylhxdf1&st=fjjlxtz8&raw=1" preload="none"></audio>
+<audio id="ap-narr-el"  src="https://www.dropbox.com/scl/fi/idh89ymspzdzrfky2vt33/book1111-6_3_26-2.45-AMNew.mp3?rlkey=07dkcexd8stxief2wkdqln3vs&st=lds5cict&raw=1" preload="none"></audio>
 
 <script>
 (function(){
@@ -2246,21 +2284,50 @@ requestAnimationFrame(()=>{
     fill(musicVolEl,v*100);
   };
 
+  // track whether music was playing before narration started
+  let musicWasPlaying=false;
+
   window.apNarrToggle=function(){
     if(narrEl.paused){
+      musicWasPlaying=!musicEl.paused;
+      // start music too if not already playing
+      if(musicEl.paused&&!musicMuted){
+        musicEl.volume=DUCK_VOL;
+        musicEl.play().then(()=>{
+          musicTitle.textContent=MUSIC_NAME;
+          musicTitle.classList.add('ap-playing');
+          musicBtn.classList.add('ap-playing');
+          setPlayIcon(musicBtn,true);
+        }).catch(()=>{});
+      }
       narrEl.play().then(()=>{
         narrTitle.textContent=NARR_NAME;
         narrTitle.classList.add('ap-playing');
         narrBtn.classList.add('ap-playing');
         setPlayIcon(narrBtn,true);
         if(!musicEl.paused){rampTo(musicMuted?0:DUCK_VOL,RAMP_MS);duckDot.classList.add('active');}
+        // Media Session for lock screen
+        if('mediaSession' in navigator){
+          navigator.mediaSession.metadata=new MediaMetadata({title:NARR_NAME,artist:'One Promise'});
+          navigator.mediaSession.playbackState='playing';
+          navigator.mediaSession.setActionHandler('play',()=>{if(narrEl.paused)apNarrToggle();});
+          navigator.mediaSession.setActionHandler('pause',()=>{if(!narrEl.paused)apNarrToggle();});
+        }
       }).catch(()=>{});
     }else{
       narrEl.pause();
+      // pause music too
+      if(!musicEl.paused){
+        musicEl.pause();
+        musicTitle.classList.remove('ap-playing');
+        musicBtn.classList.remove('ap-playing');
+        setPlayIcon(musicBtn,false);
+        duckDot.classList.remove('active');
+      }
       narrTitle.classList.remove('ap-playing');
       narrBtn.classList.remove('ap-playing');
       setPlayIcon(narrBtn,false);
-      if(!musicEl.paused){rampTo(musicMuted?0:baseMusicVol,RAMP_MS);duckDot.classList.remove('active');}
+      if('mediaSession' in navigator) navigator.mediaSession.playbackState='paused';
     }
   };
 
@@ -2366,7 +2433,29 @@ requestAnimationFrame(()=>{
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLb(); });
 
   // ── SAVE & RESTORE POSITION ──
-  const POS_KEY = 'op_scroll_v1';
+  const POS_KEY   = 'op_scroll_v1';
+  const AUDIO_KEY = 'op_audio_v1';
+
+  // ── RESTORE AUDIO POSITION ──
+  const savedAudio = JSON.parse(localStorage.getItem(AUDIO_KEY) || 'null');
+  if(savedAudio && savedAudio.time > 10){
+    narrEl.addEventListener('loadedmetadata', ()=>{
+      narrEl.currentTime = savedAudio.time;
+    }, {once:true});
+  }
+
+  // ── SAVE AUDIO POSITION ──
+  const saveAudio = ()=>{
+    if(narrEl.currentTime > 0){
+      localStorage.setItem(AUDIO_KEY, JSON.stringify({time: narrEl.currentTime}));
+    }
+  };
+  narrEl.addEventListener('timeupdate', ()=>{
+    if(Math.floor(narrEl.currentTime) % 5 === 0) saveAudio();
+  }, {passive:true});
+  window.addEventListener('beforeunload', saveAudio);
+
+  // ── RESTORE SCROLL POSITION ──
   const saved = +(localStorage.getItem(POS_KEY) || 0);
   if(saved > 400){
     const toast = document.createElement('div');
@@ -2516,6 +2605,126 @@ requestAnimationFrame(()=>{
   });
   document.addEventListener('scroll', ()=>copyPill.classList.remove('visible'),{passive:true});
 
+})();
+</script>
+<script>
+(function(){
+  const narrEl = document.getElementById('ap-narr-el');
+  const narrTitle = document.getElementById('ap-narr-title');
+  const marksEl = document.getElementById('ap-chapter-marks');
+  const jumpEl = document.getElementById('act-jump');
+  const jumpText = document.getElementById('act-jump-text');
+  const jumpGo = document.getElementById('act-jump-go');
+  const jumpClose = document.getElementById('act-jump-close');
+
+  // ── CHAPTERS ──
+  const CH=[
+    {t:2,    l:'One Promise: Abraham, the Living God'},
+    {t:100,  l:'He Is Not a Force You Channel'},
+    {t:158,  l:'The Spirit Was There Before Everything'},
+    {t:204,  l:'The First Righteous Life Was Named Breath'},
+    {t:427,  l:'The Spirit Fills Makers'},
+    {t:818,  l:'When the Day of Pentecost Came'},
+    {t:1523, l:'He Found God in a Sky Everyone Else Slept Under'},
+    {t:1610, l:'Leave Your Country — The Call'},
+    {t:1650, l:'Faith Is Movement Toward a Voice You Trust'},
+    {t:1711, l:'The Gospel Was Not Invented at Calvary'},
+    {t:1736, l:'The Night God Signed Alone'},
+    {t:1843, l:'Believed — Credited as Righteousness'},
+    {t:1914, l:'God Did Not Choose Abraham Because He Was Impressive'},
+    {t:2022, l:'He Swore to Die Before He\'d Let the Promise Fail'},
+    {t:2740, l:'The Covenant Survived Despite Abraham'},
+    {t:3152, l:'El Roi — The God Who Sees Me'},
+    {t:3670, l:'God Heard the Boy Crying'},
+    {t:4238, l:'Abraham Rose Early in the Morning'},
+    {t:4464, l:'We Will Both Come Back — Confessing Resurrection'},
+    {t:4655, l:'Where Is the Lamb?'},
+    {t:4700, l:'What Are You Still Holding Back?'},
+    {t:4729, l:'And the Two of Them Went On Together'},
+    {t:4954, l:'Yahweh Yirah — The Lord Will Provide'},
+    {t:5099, l:'Abraham\'s Hand Was Stopped. God\'s Was Not.'},
+    {t:5888, l:'The Curtain Tore from the Top Down'},
+    {t:6093, l:'Today This Scripture Is Fulfilled'},
+    {t:6741, l:'Pentecost — Babel Reversed'},
+    {t:7461, l:'How Can I Unless Someone Guides Me?'},
+    {t:7552, l:'Look — Here Is Water'},
+    {t:7625, l:'He Went on His Way Rejoicing'},
+    {t:7693, l:'God Pulled His Best Man Out of a Revival'},
+    {t:7975, l:'The Spirit Does Not Calculate Worthiness'},
+    {t:9117, l:'No Migraine — The Ken Story'},
+    {t:9765, l:'The Color Line Washed Away in the Blood'},
+    {t:10336,l:'He Crossed a Closed Border'},
+    {t:10394,l:'More Muslims to Christ in 40 Years Than in 1,400'},
+    {t:11118,l:'Every Nation Before the Throne'},
+    {t:11292,l:'The Story Just Became Yours'},
+    {t:11320,l:'What Is Your Ishmael?'}
+  ];
+
+  // ── ACTS ──
+  const ACTS=[
+    {t:948,  id:'promise', label:'ACT I · The Promise'},
+    {t:2540, id:'mistake', label:'ACT II · The Mistake'},
+    {t:4122, id:'test',    label:'ACT III · The Test'},
+    {t:5750, id:'fulfillment', label:'ACT IV · The Fulfillment'},
+    {t:7136, id:'expansion',   label:'ACT V · The Expansion'},
+    {t:8292, id:'wildfire',    label:'ACT VI · The Wildfire'},
+    {t:9291, id:'fractures',   label:'ACT VII · The Fractures'},
+    {t:9898, id:'unfinished',  label:'ACT VIII · The Unfinished Story'}
+  ];
+
+  // ── RENDER CHAPTER MARKS ──
+  narrEl.addEventListener('loadedmetadata', ()=>{
+    const dur = narrEl.duration;
+    if(!dur) return;
+    marksEl.innerHTML='';
+    CH.forEach(c=>{
+      const d = document.createElement('div');
+      d.className='ap-cmark';
+      d.style.left=((c.t/dur)*100).toFixed(2)+'%';
+      d.title=c.l;
+      marksEl.appendChild(d);
+    });
+  });
+
+  // ── CHAPTER + ACT TRACKING ──
+  let lastChIdx=-1, lastActIdx=-1, jumpTimer=null, jumpActId=null;
+
+  jumpClose.addEventListener('click',()=>{
+    jumpEl.classList.remove('visible');
+    clearTimeout(jumpTimer);
+  });
+  jumpGo.addEventListener('click',()=>{
+    if(jumpActId){
+      const s=document.getElementById(jumpActId);
+      if(s) s.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    jumpEl.classList.remove('visible');
+    clearTimeout(jumpTimer);
+  });
+
+  narrEl.addEventListener('timeupdate',()=>{
+    const t=narrEl.currentTime;
+
+    // Chapter title
+    let ci=-1;
+    for(let i=0;i<CH.length;i++){ if(t>=CH[i].t) ci=i; else break; }
+    if(ci!==lastChIdx && ci>=0){
+      lastChIdx=ci;
+      narrTitle.textContent=CH[ci].l;
+    }
+
+    // Act notification
+    let ai=-1;
+    for(let i=0;i<ACTS.length;i++){ if(t>=ACTS[i].t) ai=i; else break; }
+    if(ai!==lastActIdx && ai>=0){
+      lastActIdx=ai;
+      jumpActId=ACTS[ai].id;
+      jumpText.textContent=ACTS[ai].label;
+      jumpEl.classList.add('visible');
+      clearTimeout(jumpTimer);
+      jumpTimer=setTimeout(()=>jumpEl.classList.remove('visible'),7000);
+    }
+  });
 })();
 </script>
 
