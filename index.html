@@ -2380,6 +2380,99 @@ requestAnimationFrame(()=>{
 
   // Init slider fills
   fill(narrSeek,0);fill(musicVolEl,80);fill(narrVolEl,90);
+
+  // ── CHAPTER TRACKING ──
+  const marksEl=$('ap-chapter-marks');
+  const jumpEl=$('act-jump');
+  const jumpText=$('act-jump-text');
+  const jumpGo=$('act-jump-go');
+  const jumpClose=$('act-jump-close');
+
+  const CH=[
+    {t:2,    l:'One Promise: Abraham, the Living God'},
+    {t:100,  l:'He Is Not a Force You Channel'},
+    {t:158,  l:'The Spirit Was There Before Everything'},
+    {t:204,  l:'The First Righteous Life Was Named Breath'},
+    {t:427,  l:'The Spirit Fills Makers'},
+    {t:818,  l:'When the Day of Pentecost Came'},
+    {t:1523, l:'He Found God in a Sky Everyone Else Slept Under'},
+    {t:1610, l:'Leave Your Country — The Call'},
+    {t:1650, l:'Faith Is Movement Toward a Voice You Trust'},
+    {t:1711, l:'The Gospel Was Not Invented at Calvary'},
+    {t:1736, l:'The Night God Signed Alone'},
+    {t:1843, l:'Believed — Credited as Righteousness'},
+    {t:1914, l:'God Did Not Choose Abraham Because He Was Impressive'},
+    {t:2022, l:'He Swore to Die Before He\'d Let the Promise Fail'},
+    {t:2740, l:'The Covenant Survived Despite Abraham'},
+    {t:3152, l:'El Roi — The God Who Sees Me'},
+    {t:3670, l:'God Heard the Boy Crying'},
+    {t:4238, l:'Abraham Rose Early in the Morning'},
+    {t:4464, l:'We Will Both Come Back — Confessing Resurrection'},
+    {t:4655, l:'Where Is the Lamb?'},
+    {t:4700, l:'What Are You Still Holding Back?'},
+    {t:4729, l:'And the Two of Them Went On Together'},
+    {t:4954, l:'Yahweh Yirah — The Lord Will Provide'},
+    {t:5099, l:'Abraham\'s Hand Was Stopped. God\'s Was Not.'},
+    {t:5888, l:'The Curtain Tore from the Top Down'},
+    {t:6093, l:'Today This Scripture Is Fulfilled'},
+    {t:6741, l:'Pentecost — Babel Reversed'},
+    {t:7461, l:'How Can I Unless Someone Guides Me?'},
+    {t:7552, l:'Look — Here Is Water'},
+    {t:7625, l:'He Went on His Way Rejoicing'},
+    {t:7693, l:'God Pulled His Best Man Out of a Revival'},
+    {t:7975, l:'The Spirit Does Not Calculate Worthiness'},
+    {t:9117, l:'No Migraine — The Ken Story'},
+    {t:9765, l:'The Color Line Washed Away in the Blood'},
+    {t:10336,l:'He Crossed a Closed Border'},
+    {t:10394,l:'More Muslims to Christ in 40 Years Than in 1,400'},
+    {t:11118,l:'Every Nation Before the Throne'},
+    {t:11292,l:'The Story Just Became Yours'},
+    {t:11320,l:'What Is Your Ishmael?'}
+  ];
+  const ACTS=[
+    {t:948,  id:'promise',     label:'ACT I · The Promise'},
+    {t:2540, id:'mistake',     label:'ACT II · The Mistake'},
+    {t:4122, id:'test',        label:'ACT III · The Test'},
+    {t:5750, id:'fulfillment', label:'ACT IV · The Fulfillment'},
+    {t:7136, id:'expansion',   label:'ACT V · The Expansion'},
+    {t:8292, id:'wildfire',    label:'ACT VI · The Wildfire'},
+    {t:9291, id:'fractures',   label:'ACT VII · The Fractures'},
+    {t:9898, id:'unfinished',  label:'ACT VIII · The Unfinished Story'}
+  ];
+
+  narrEl.addEventListener('loadedmetadata',()=>{
+    if(!narrEl.duration||!marksEl)return;
+    marksEl.innerHTML='';
+    CH.forEach(c=>{
+      const d=document.createElement('div');
+      d.className='ap-cmark';
+      d.style.left=((c.t/narrEl.duration)*100).toFixed(2)+'%';
+      d.title=c.l;
+      marksEl.appendChild(d);
+    });
+  });
+
+  let lastChIdx=-1,lastActIdx=-1,jumpTimer=null,jumpActId=null;
+  if(jumpClose) jumpClose.addEventListener('click',()=>{jumpEl.classList.remove('visible');clearTimeout(jumpTimer);});
+  if(jumpGo) jumpGo.addEventListener('click',()=>{
+    if(jumpActId){const s=document.getElementById(jumpActId);if(s)s.scrollIntoView({behavior:'smooth',block:'start'});}
+    jumpEl.classList.remove('visible');clearTimeout(jumpTimer);
+  });
+
+  narrEl.addEventListener('timeupdate',()=>{
+    const t=narrEl.currentTime;
+    let ci=-1;
+    for(let i=0;i<CH.length;i++){if(t>=CH[i].t)ci=i;else break;}
+    if(ci!==lastChIdx&&ci>=0){lastChIdx=ci;narrTitle.textContent=CH[ci].l;}
+    let ai=-1;
+    for(let i=0;i<ACTS.length;i++){if(t>=ACTS[i].t)ai=i;else break;}
+    if(ai!==lastActIdx&&ai>=0){
+      lastActIdx=ai;jumpActId=ACTS[ai].id;
+      if(jumpText)jumpText.textContent=ACTS[ai].label;
+      if(jumpEl){jumpEl.classList.add('visible');clearTimeout(jumpTimer);jumpTimer=setTimeout(()=>jumpEl.classList.remove('visible'),7000);}
+    }
+  });
+
 })();
 </script>
 <script>
@@ -2435,6 +2528,7 @@ requestAnimationFrame(()=>{
   // ── SAVE & RESTORE POSITION ──
   const POS_KEY   = 'op_scroll_v1';
   const AUDIO_KEY = 'op_audio_v1';
+  const narrEl    = document.getElementById('ap-narr-el');
 
   // ── RESTORE AUDIO POSITION ──
   const savedAudio = JSON.parse(localStorage.getItem(AUDIO_KEY) || 'null');
@@ -2607,126 +2701,5 @@ requestAnimationFrame(()=>{
 
 })();
 </script>
-<script>
-(function(){
-  const narrEl = document.getElementById('ap-narr-el');
-  const narrTitle = document.getElementById('ap-narr-title');
-  const marksEl = document.getElementById('ap-chapter-marks');
-  const jumpEl = document.getElementById('act-jump');
-  const jumpText = document.getElementById('act-jump-text');
-  const jumpGo = document.getElementById('act-jump-go');
-  const jumpClose = document.getElementById('act-jump-close');
-
-  // ── CHAPTERS ──
-  const CH=[
-    {t:2,    l:'One Promise: Abraham, the Living God'},
-    {t:100,  l:'He Is Not a Force You Channel'},
-    {t:158,  l:'The Spirit Was There Before Everything'},
-    {t:204,  l:'The First Righteous Life Was Named Breath'},
-    {t:427,  l:'The Spirit Fills Makers'},
-    {t:818,  l:'When the Day of Pentecost Came'},
-    {t:1523, l:'He Found God in a Sky Everyone Else Slept Under'},
-    {t:1610, l:'Leave Your Country — The Call'},
-    {t:1650, l:'Faith Is Movement Toward a Voice You Trust'},
-    {t:1711, l:'The Gospel Was Not Invented at Calvary'},
-    {t:1736, l:'The Night God Signed Alone'},
-    {t:1843, l:'Believed — Credited as Righteousness'},
-    {t:1914, l:'God Did Not Choose Abraham Because He Was Impressive'},
-    {t:2022, l:'He Swore to Die Before He\'d Let the Promise Fail'},
-    {t:2740, l:'The Covenant Survived Despite Abraham'},
-    {t:3152, l:'El Roi — The God Who Sees Me'},
-    {t:3670, l:'God Heard the Boy Crying'},
-    {t:4238, l:'Abraham Rose Early in the Morning'},
-    {t:4464, l:'We Will Both Come Back — Confessing Resurrection'},
-    {t:4655, l:'Where Is the Lamb?'},
-    {t:4700, l:'What Are You Still Holding Back?'},
-    {t:4729, l:'And the Two of Them Went On Together'},
-    {t:4954, l:'Yahweh Yirah — The Lord Will Provide'},
-    {t:5099, l:'Abraham\'s Hand Was Stopped. God\'s Was Not.'},
-    {t:5888, l:'The Curtain Tore from the Top Down'},
-    {t:6093, l:'Today This Scripture Is Fulfilled'},
-    {t:6741, l:'Pentecost — Babel Reversed'},
-    {t:7461, l:'How Can I Unless Someone Guides Me?'},
-    {t:7552, l:'Look — Here Is Water'},
-    {t:7625, l:'He Went on His Way Rejoicing'},
-    {t:7693, l:'God Pulled His Best Man Out of a Revival'},
-    {t:7975, l:'The Spirit Does Not Calculate Worthiness'},
-    {t:9117, l:'No Migraine — The Ken Story'},
-    {t:9765, l:'The Color Line Washed Away in the Blood'},
-    {t:10336,l:'He Crossed a Closed Border'},
-    {t:10394,l:'More Muslims to Christ in 40 Years Than in 1,400'},
-    {t:11118,l:'Every Nation Before the Throne'},
-    {t:11292,l:'The Story Just Became Yours'},
-    {t:11320,l:'What Is Your Ishmael?'}
-  ];
-
-  // ── ACTS ──
-  const ACTS=[
-    {t:948,  id:'promise', label:'ACT I · The Promise'},
-    {t:2540, id:'mistake', label:'ACT II · The Mistake'},
-    {t:4122, id:'test',    label:'ACT III · The Test'},
-    {t:5750, id:'fulfillment', label:'ACT IV · The Fulfillment'},
-    {t:7136, id:'expansion',   label:'ACT V · The Expansion'},
-    {t:8292, id:'wildfire',    label:'ACT VI · The Wildfire'},
-    {t:9291, id:'fractures',   label:'ACT VII · The Fractures'},
-    {t:9898, id:'unfinished',  label:'ACT VIII · The Unfinished Story'}
-  ];
-
-  // ── RENDER CHAPTER MARKS ──
-  narrEl.addEventListener('loadedmetadata', ()=>{
-    const dur = narrEl.duration;
-    if(!dur) return;
-    marksEl.innerHTML='';
-    CH.forEach(c=>{
-      const d = document.createElement('div');
-      d.className='ap-cmark';
-      d.style.left=((c.t/dur)*100).toFixed(2)+'%';
-      d.title=c.l;
-      marksEl.appendChild(d);
-    });
-  });
-
-  // ── CHAPTER + ACT TRACKING ──
-  let lastChIdx=-1, lastActIdx=-1, jumpTimer=null, jumpActId=null;
-
-  jumpClose.addEventListener('click',()=>{
-    jumpEl.classList.remove('visible');
-    clearTimeout(jumpTimer);
-  });
-  jumpGo.addEventListener('click',()=>{
-    if(jumpActId){
-      const s=document.getElementById(jumpActId);
-      if(s) s.scrollIntoView({behavior:'smooth',block:'start'});
-    }
-    jumpEl.classList.remove('visible');
-    clearTimeout(jumpTimer);
-  });
-
-  narrEl.addEventListener('timeupdate',()=>{
-    const t=narrEl.currentTime;
-
-    // Chapter title
-    let ci=-1;
-    for(let i=0;i<CH.length;i++){ if(t>=CH[i].t) ci=i; else break; }
-    if(ci!==lastChIdx && ci>=0){
-      lastChIdx=ci;
-      narrTitle.textContent=CH[ci].l;
-    }
-
-    // Act notification
-    let ai=-1;
-    for(let i=0;i<ACTS.length;i++){ if(t>=ACTS[i].t) ai=i; else break; }
-    if(ai!==lastActIdx && ai>=0){
-      lastActIdx=ai;
-      jumpActId=ACTS[ai].id;
-      jumpText.textContent=ACTS[ai].label;
-      jumpEl.classList.add('visible');
-      clearTimeout(jumpTimer);
-      jumpTimer=setTimeout(()=>jumpEl.classList.remove('visible'),7000);
-    }
-  });
-})();
-</script>
-
 </body>
 </html>
