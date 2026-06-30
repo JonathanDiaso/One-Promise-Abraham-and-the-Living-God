@@ -97,7 +97,7 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .act-title{font-family:"Cormorant SC",serif;font-weight:300;font-size:clamp(2rem,5.5vw,3.6rem);color:#ffffff;line-height:1.1;margin-bottom:16px;text-align:center;}
 section[id] .act-title{background:linear-gradient(90deg,var(--act-color,#fff) 0%,#ffffff 50%,var(--act-color,#fff) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .act-intro{font-size:clamp(1rem,2vw,1.2rem);font-style:italic;color:rgba(255,255,255,.55);max-width:660px;border-left:2px solid var(--act-color,rgba(255,255,255,.15));padding-left:20px;margin-bottom:48px;margin-left:auto;margin-right:auto;}
-.prose{font-size:clamp(1rem,1.8vw,1.15rem);line-height:1.9;color:var(--text);margin-bottom:28px;}
+.prose{font-size:clamp(1.15rem,2vw,1.32rem);line-height:1.9;color:var(--text);margin-bottom:28px;}
 .prose em{color:var(--act-color,#7eb8f7);font-style:italic;}
 .scripture{margin:36px 0;padding:24px 32px;background:transparent;border-left:3px solid var(--act-color,#c9a84c);position:relative;}
 .scripture::before{content:"\"";position:absolute;top:-14px;left:18px;font-family:"Cormorant Garamond",serif;font-size:5rem;color:var(--act-color,rgba(201,168,76,.3));opacity:.35;line-height:1;}
@@ -331,7 +331,7 @@ section[id] .act-title{background:linear-gradient(90deg,var(--act-color,#fff) 0%
   .scripture{padding:18px 20px;}
   .act-header{padding:70px 0 16px;}
   .hero h1{font-size:clamp(2rem,12vw,4rem);}
-  .prose{font-size:1rem;}
+  .prose{font-size:1.12rem;}
 }
 
 /* ── PER-ACT COLOR ACCENTS ── */
@@ -504,21 +504,29 @@ section[id].revealed::before{opacity:1;}
 .sleep-opt:hover{background:rgba(74,144,217,.1);border-color:var(--ap);color:var(--ap);}
 .sleep-opt.active{background:rgba(74,144,217,.12);border-color:var(--ap);color:var(--ap);}
 /* ── ONBOARDING ── */
-#onboard{position:fixed;inset:0;z-index:2900;background:rgba(2,3,10,.97);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .5s ease;}
+#onboard{position:fixed;inset:0;z-index:2900;background:rgba(2,3,10,.97);display:flex;align-items:flex-start;justify-content:center;padding:48px 24px;overflow-y:auto;transition:opacity .5s ease;}
 #onboard.hidden{opacity:0;pointer-events:none;}
-#onboard-inner{max-width:520px;width:100%;text-align:center;}
+#onboard-inner{max-width:580px;width:100%;text-align:center;margin:auto;}
 #onboard-mark{font-size:1.3rem;color:var(--ap);margin-bottom:14px;opacity:.65;}
-#onboard-title{font-family:"Cinzel",serif;font-size:clamp(1.3rem,4vw,1.9rem);letter-spacing:.1em;color:#fff;margin:0 0 6px;}
-#onboard-sub{font-family:"Cormorant Garamond",serif;font-size:clamp(.9rem,2vw,1.05rem);font-style:italic;color:rgba(255,255,255,.4);margin:0 0 22px;}
-#onboard-intro{font-family:"Cormorant Garamond",serif;font-size:clamp(.95rem,2vw,1.1rem);color:rgba(255,255,255,.58);line-height:1.75;margin:0 0 24px;border-top:1px solid rgba(74,144,217,.15);border-bottom:1px solid rgba(74,144,217,.15);padding:18px 0;}
+#onboard-title{font-family:"Cinzel",serif;font-size:clamp(1.7rem,5vw,2.5rem);letter-spacing:.1em;color:#fff;margin:0 0 6px;}
+#onboard-sub{font-family:"Cormorant Garamond",serif;font-size:clamp(1rem,2.2vw,1.2rem);font-style:italic;color:rgba(255,255,255,.4);margin:0 0 22px;}
+#onboard-intro{font-family:"Cormorant Garamond",serif;font-size:clamp(1.18rem,2.5vw,1.42rem);color:rgba(255,255,255,.78);line-height:1.8;margin:0 0 24px;border-top:1px solid rgba(74,144,217,.15);border-bottom:1px solid rgba(74,144,217,.15);padding:26px 0;text-align:left;}
+#onboard-lang{font-family:"Cormorant Garamond",serif;font-size:1rem;color:rgba(255,255,255,.4);margin:0 0 18px;line-height:1.6;}
+#onboard-lang strong{color:rgba(255,255,255,.65);}
+#onboard-lang em{display:block;font-size:.9rem;margin-top:6px;color:rgba(255,255,255,.28);}
+#ob-lang-toggle{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 26px;}
+.ob-lang-btn{background:none;border:1px solid rgba(74,144,217,.22);color:rgba(74,144,217,.4);cursor:pointer;font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.18em;padding:5px 14px;border-radius:2px;transition:all .2s;}
+.ob-lang-btn:hover{border-color:rgba(74,144,217,.6);color:rgba(74,144,217,.8);}
+.ob-lang-active{border-color:var(--ap)!important;color:var(--ap)!important;background:rgba(74,144,217,.06);}
+.ob-lang-sep{font-family:"Cinzel",serif;font-size:.5rem;color:rgba(74,144,217,.25);}
 #onboard-controls{margin:0 0 22px;display:flex;flex-direction:column;gap:9px;text-align:left;}
 .oc-row{display:flex;align-items:baseline;gap:14px;}
-.oc-key{font-family:"Cinzel",serif;font-size:.46rem;letter-spacing:.14em;color:var(--ap);white-space:nowrap;min-width:62px;flex-shrink:0;}
-.oc-val{font-family:"Cormorant Garamond",serif;font-size:.92rem;color:rgba(255,255,255,.5);}
-#onboard-footer{font-family:"Cormorant Garamond",serif;font-size:.95rem;font-style:italic;color:rgba(255,255,255,.3);margin:0 0 26px;}
-#onboard-begin{background:transparent;border:1px solid var(--ap);color:var(--ap);cursor:pointer;font-family:"Cinzel",serif;font-size:.56rem;letter-spacing:.35em;padding:14px 52px;border-radius:2px;transition:all .3s;}
+.oc-key{font-family:"Cinzel",serif;font-size:.64rem;letter-spacing:.14em;color:var(--ap);white-space:nowrap;min-width:72px;flex-shrink:0;}
+.oc-val{font-family:"Cormorant Garamond",serif;font-size:1.05rem;color:rgba(255,255,255,.5);}
+#onboard-footer{font-family:"Cormorant Garamond",serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.3);margin:0 0 26px;}
+#onboard-begin{background:transparent;border:1px solid var(--ap);color:var(--ap);cursor:pointer;font-family:"Cinzel",serif;font-size:.68rem;letter-spacing:.35em;padding:16px 60px;border-radius:2px;transition:all .3s;}
 #onboard-begin:hover{background:rgba(74,144,217,.1);box-shadow:0 0 24px rgba(74,144,217,.18);}
-@media(max-width:480px){.oc-key{min-width:50px;font-size:.4rem;}.oc-val{font-size:.82rem;}#onboard-begin{padding:12px 36px;}}
+@media(max-width:480px){.oc-key{min-width:56px;font-size:.5rem;}.oc-val{font-size:.95rem;}#onboard-begin{padding:14px 40px;}}
 
 /* ── AP: AUDIO PLAYER BAR ── */
 :root{--ap:#4a90d9;--ap-dim:rgba(74,144,217,.22);--ap-glow:rgba(74,144,217,.18);}
@@ -935,7 +943,7 @@ body{padding-bottom:112px;}
 
   <p class="prose">The Spirit didn't arrive at Pentecost. Pentecost changed where he lived — from upon to within. But he was always present. Always moving. Always carrying the covenant forward.</p>
 
-  <div class="sum9-wrapper">
+  <div class="sum9-wrapper" id="svg-spirit-moving">
     <div class="sum9-label">THE SPIRIT MOVING — BEFORE PENTECOST</div>
     <div class="sum9-title">Every Hinge Moment. Every Time.</div>
     <div class="sum9-grid">
@@ -1058,7 +1066,6 @@ body{padding-bottom:112px;}
   </div>
 
   <img src="https://i.ibb.co/4nx82cG7/Nimrod.jpg" id="img-nimrod" alt="" class="doc-img" loading="lazy">
-  <img src="https://i.ibb.co/MkSHz0pP/Babylon-Fall.jpg" id="img-babylon" alt="" class="doc-img" loading="lazy">
 
   <div class="divider"><span>THE MAN IN THE IDOL SHOP</span></div>
 
@@ -1346,7 +1353,7 @@ body{padding-bottom:112px;}
   <p class="prose">He named the place <em>Yahweh Yireh — The Lord Will Provide.</em> <span class="ref" title="Genesis 22:14">Gen 22:14</span> And the text says it became a saying: <em>"On the mountain of the LORD it will be provided."</em> A proverb born from the worst morning of one man's life. A truth that outlasted him by millennia — because the God who provided the ram in the thicket was not finished providing. He was only just beginning.</p>
   <img src="https://i.ibb.co/bMBc36kY/One-Ridge-Three-Alters.jpg" id="img-ridge" alt="" class="doc-img" loading="lazy">
 
-  <div class="sac2-wrapper">
+  <div class="sac2-wrapper" id="svg-shadow">
     <div class="sac2-title">✦ THE SHADOW AND THE SUBSTANCE ✦</div>
     <div class="sac2-container">
       <div class="sac2-card">
@@ -1460,11 +1467,7 @@ body{padding-bottom:112px;}
   <p class="prose">Crown of beauty instead of ashes. Oil of joy instead of mourning. Garment of praise instead of despair. Not just a ticket out of judgment — a complete exchange. The old thing taken. The new thing given.</p>
   <p class="prose"><em>He didn't promise to improve the old life. He promised to trade it. Most people are still negotiating to keep the ashes.</em></p>
 
-  <div class="coven1-wrapper" style="padding:32px 24px;">
-    <div class="coven1-title">✦ ONE ROOT — EVERY BRANCH ✦</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:rgba(255,255,255,.35);text-align:center;margin-bottom:20px;letter-spacing:.05em;">The complete genealogy of Abraham — every branch, every nation</div>
-    <div style="font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.18em;color:rgba(255,255,255,.2);text-align:center;margin-top:14px;">SOURCE: CONFORMINGTOJEUS.COM · GENESIS 11–50</div>
-  </div>
+
 
   <div class="divider"><span>THE NEW COVENANT — JEREMIAH 31</span></div>
 
@@ -1482,7 +1485,9 @@ body{padding-bottom:112px;}
 
   <p class="prose">The entire Bible is one story about God closing a distance. He walked with people in a garden, and that nearness was lost — and the ache you feel for something you can't name is the same ache the whole story is moving to heal. Every major movement in the covenant is God stepping closer.</p>
 
-  <div class="tab3-wrapper">
+  <img src="https://i.ibb.co/MkSHz0pP/Babylon-Fall.jpg" id="img-babylon" alt="" class="doc-img" loading="lazy">
+
+  <div class="tab3-wrapper" id="svg-tabernacle">
     <div class="tab3-title">✦ THE TABERNACLE PROGRESSION — GOD MOVING CLOSER ✦</div>
     <div class="tab3-steps">
       <div class="tab3-step">
@@ -1667,7 +1672,7 @@ body{padding-bottom:112px;}
   <p class="prose">Ethiopia's national epic — the <em>Kebra Nagast</em> — records that she returned carrying Solomon's son Menelik I, who later brought the Ark of the Covenant to Axum. The Ethiopian Orthodox Church claims to hold it today in the Chapel of the Tablet. Whether historically verifiable or not — <em>Ethiopia sees itself not as a late addition to the covenant story but as a covenant-carrying nation from Solomon's time forward.</em> The eunuch was a reconnection.</p>
   <p class="prose">Psalm 68:31 — <em>"Ethiopia will stretch out her hands to God"</em> — has been cited by Ethiopian Christians for 1,700 years as their national prophetic calling. Written by David. Fulfilled by Philip on a desert road.</p>
 
-  <div class="eth4-wrapper">
+  <div class="eth4-wrapper" id="svg-ethiopia">
     <div class="eth4-title">✦ ETHIOPIA AND THE COVENANT — A TIMELINE ✦</div>
     <div class="eth4-tl">
       <div class="eth4-item">
@@ -1735,7 +1740,7 @@ body{padding-bottom:112px;}
   <p class="prose">After Damascus, Paul withdrew to Arabia before returning — three years before his first Jerusalem visit. <span class="ref" title="Galatians 1:17">Gal 1:17</span> The apostle chosen to reach the Gentiles went first to Ishmael's territory. The Spirit was choreographing the same movement he had sent Philip on — covenant messengers to Ishmael's descendants first.</p>
   <img src="https://i.ibb.co/d0jS0tQM/Promise-Ismael-Map-Is-60.jpg" id="img-isaiah60" alt="" class="doc-img" loading="lazy">
 
-  <div class="geo5-wrapper">
+  <div class="geo5-wrapper" id="svg-jerusalem">
     <div class="geo5-grid">
       <div class="geo5-card">
         <div class="geo5-where">JERUSALEM — 33 AD</div>
@@ -1878,7 +1883,7 @@ body{padding-bottom:112px;}
   <img src="https://i.ibb.co/zh5HzsyX/Seymour.jpg" id="img-seymour" alt="" class="doc-img" loading="lazy">
   <p class="prose"><em>Every split in church history started with people who were sure they were right. The Spirit never fell on the ones who were right. He fell on the ones who stayed in the room.</em></p>
 
-  <div class="frac6-wrapper">
+  <div class="frac6-wrapper" id="svg-fractures-revivals">
     <div class="frac6-title">✦ THE FRACTURES AND REVIVALS — GOD ALWAYS RESPONDS ✦</div>
     <div class="frac6-tl">
       <div class="frac6-item">
@@ -1941,7 +1946,7 @@ body{padding-bottom:112px;}
 
   <p class="prose">Muhammad was born around 570 AD in Mecca — into the Quraysh tribe, guardians of the Kaaba, which by his time had been filled with 360 idols. The original monotheistic shrine Abraham and Ishmael had built had become a polytheistic temple. Arabia had already heard the gospel — it was represented at Pentecost <span class="ref" title="Acts 2:11">Acts 2:11</span> and Paul spent three years there after his conversion. <span class="ref" title="Galatians 1:17">Gal 1:17</span> Islam arose 600 years after the gospel had already been present in Ishmael's territory. The question of what happened in those 600 years — why the church failed to keep its presence among Abraham's other children — is one of the most sobering questions in church history.</p>
 
-  <div class="pil7-wrapper">
+  <div class="pil7-wrapper" id="svg-five-pillars">
     <div class="pil7-title">✦ THE FIVE PILLARS AS ABRAHAMIC RE-ENACTMENT ✦</div>
     <table class="pil7-table">
       <thead>
@@ -2053,7 +2058,7 @@ body{padding-bottom:112px;}
     </div>
   </div>
 
-  <div class="rel8-wrapper">
+  <div class="rel8-wrapper" id="svg-abrahamic-family">
     <div class="rel8-title">✦ THE ABRAHAMIC FAMILY — EVERY BRANCH FROM ONE ROOT ✦</div>
     <div class="rel8-grid">
       <div class="rel8-card">
@@ -2107,7 +2112,7 @@ body{padding-bottom:112px;}
 
 </section>
 
-<div class="closing" style="--act-color:#c9a84c;">
+<div class="closing" id="closing-section" style="--act-color:#c9a84c;">
 
   <div class="scripture" style="max-width:600px;margin:0 auto 56px;">
     <div class="scripture-text">"Above all else, guard your heart, for everything you do flows from it."</div>
@@ -2162,7 +2167,7 @@ body{padding-bottom:112px;}
     </div>
   </div>
 
-  <div class="poem-box">
+  <div class="poem-box" id="poem-ronald">
     <div class="poem-label">A POEM BY RONALD FLEMING</div>
     <div class="poem-text">
       And tell them what they are worth —<br>
@@ -2347,16 +2352,24 @@ requestAnimationFrame(()=>{
 <!-- ── ONBOARDING ── -->
 <div id="onboard" style="display:none">
   <div id="onboard-inner">
+    <div id="ob-lang-toggle">
+      <button class="ob-lang-btn ob-lang-active" id="ob-en" onclick="obSetLang('en')">EN</button>
+      <span class="ob-lang-sep">·</span>
+      <button class="ob-lang-btn" id="ob-es" onclick="obSetLang('es')">ES</button>
+    </div>
     <div id="onboard-mark">✦</div>
     <h2 id="onboard-title">One Promise</h2>
     <p id="onboard-sub">Abraham · The Living God · The Story That Never Ended</p>
-    <p id="onboard-intro">Four thousand years ago, God made one promise to one man — and signed it alone, so no human failure could ever break it. What followed changed every nation on earth. This is that story. Eight acts. Three hours. Now available in English and Spanish.</p>
+    <p id="onboard-intro">You've been waiting on a promise too.<br><br>You know the moment — when waiting starts to feel like being forgotten. When you decide that if God won't move, you will. So you reach for your own version of the answer.<br><br>Abraham did the same thing. His name for it was Ishmael.<br><br>But the promise wasn't late. It was being made unmistakable. A son born on schedule is ordinary. A son born decades past hope is a miracle no one can explain away. The wait wasn't God forgetting Abraham — it was God making sure that when the answer came, only he could get the credit.<br><br>And it came. Not because Abraham waited perfectly — he didn't. Ishmael was proof of that. It came because God had signed the covenant alone, and nothing in the waiting could break it.<br><br>Your Ishmael didn't disqualify you. Your wait isn't God forgetting you. It's the miracle being made unmistakable.<br><br><em>This is that story.</em></p>
+    <div id="onboard-lang">
+      Narrated in full in <strong>English</strong> and <strong>Spanish</strong> — tap <strong>EN · ES</strong> in the player to switch anytime.
+      <em>Chapter navigation follows the English narration.</em>
+    </div>
     <div id="onboard-controls">
       <div class="oc-row"><span class="oc-key">▶ AUDIO</span><span class="oc-val">Full narration — 3 hours across 8 acts. Resumes exactly where you left off.</span></div>
-      <div class="oc-row"><span class="oc-key">EN · ES</span><span class="oc-val">Narration available in English and Spanish. Tap EN or ES in the player to switch anytime.</span></div>
       <div class="oc-row"><span class="oc-key">▶ MUSIC</span><span class="oc-val">Ambient score. Fades automatically when narration plays.</span></div>
       <div class="oc-row"><span class="oc-key">−30 / +30</span><span class="oc-val">Skip back or forward 30 seconds in the narration.</span></div>
-      <div class="oc-row"><span class="oc-key">1×</span><span class="oc-val">Playback speed — 0.75× · 1× · 1.25× · 1.5×. Tap to cycle.</span></div>
+      <div class="oc-row"><span class="oc-key">1×</span><span class="oc-val">Playback speed — 0.8× · 0.9× · 1× · 1.1× · 1.2×. Tap to cycle.</span></div>
       <div class="oc-row"><span class="oc-key">ZZ</span><span class="oc-val">Sleep timer — choose 30, 60, or 90 minutes. Stops everything when it runs.</span></div>
       <div class="oc-row"><span class="oc-key">↓ FOLLOW</span><span class="oc-val">Page scrolls automatically with the audio. On by default — tap to turn off.</span></div>
     </div>
@@ -2365,6 +2378,41 @@ requestAnimationFrame(()=>{
   </div>
 </div>
 <script>
+// ── ONBOARDING BILINGUAL ──
+const OB_TEXT={
+  en:{
+    title:'One Promise',
+    sub:'Abraham · The Living God · The Story That Never Ended',
+    intro:`You've been waiting on a promise too.<br><br>You know the moment — when waiting starts to feel like being forgotten. When you decide that if God won't move, you will. So you reach for your own version of the answer.<br><br>Abraham did the same thing. His name for it was Ishmael.<br><br>But the promise wasn't late. It was being made unmistakable. A son born on schedule is ordinary. A son born decades past hope is a miracle no one can explain away. The wait wasn't God forgetting Abraham — it was God making sure that when the answer came, only he could get the credit.<br><br>And it came. Not because Abraham waited perfectly — he didn't. Ishmael was proof of that. It came because God had signed the covenant alone, and nothing in the waiting could break it.<br><br>Your Ishmael didn't disqualify you. Your wait isn't God forgetting you. It's the miracle being made unmistakable.<br><br><em>This is that story.</em>`,
+    lang:'Narrated in full in <strong>English</strong> and <strong>Spanish</strong> — tap <strong>EN · ES</strong> in the player to switch anytime.<em>Chapter navigation follows the English narration.</em>',
+    footer:`You don't have to read it all today. It will remember where you were.`,
+    begin:'BEGIN'
+  },
+  es:{
+    title:'Una Promesa',
+    sub:'Abraham · El Dios Viviente · La Historia Que Nunca Terminó',
+    intro:`Tú también has estado esperando una promesa.<br><br>Conoces ese momento — cuando la espera empieza a sentirse como olvido. Cuando decides que si Dios no actúa, lo harás tú. Entonces alcanzas tu propia versión de la respuesta.<br><br>Abraham hizo lo mismo. Su nombre para eso fue Ismael.<br><br>Pero la promesa no llegó tarde. Estaba siendo hecha inconfundible. Un hijo nacido a tiempo es ordinario. Un hijo nacido décadas después de toda esperanza es un milagro que nadie puede explicar. La espera no era Dios olvidando a Abraham — era Dios asegurándose de que cuando llegara la respuesta, solo él pudiera llevarse el crédito.<br><br>Y llegó. No porque Abraham esperó perfectamente — no lo hizo. Ismael fue prueba de eso. Llegó porque Dios había firmado el pacto solo, y nada en la espera podía romperlo.<br><br>Tu Ismael no te descalificó. Tu espera no es Dios olvidando. Es el milagro haciéndose inconfundible.<br><br><em>Esta es esa historia.</em>`,
+    lang:'Narrado en su totalidad en <strong>inglés</strong> y <strong>español</strong> — toca <strong>EN · ES</strong> en el reproductor para cambiar en cualquier momento.<em>La navegación por capítulos sigue la narración en inglés.</em>',
+    footer:`No tienes que leerlo todo hoy. Recordará dónde quedaste.`,
+    begin:'COMENZAR'
+  }
+};
+window.obSetLang=function(lang){
+  const t=OB_TEXT[lang];
+  const $=id=>document.getElementById(id);
+  $('onboard-title').textContent=t.title;
+  $('onboard-sub').textContent=t.sub;
+  $('onboard-intro').innerHTML=t.intro;
+  $('onboard-lang').innerHTML=t.lang;
+  $('onboard-footer').textContent=t.footer;
+  $('onboard-begin').textContent=t.begin;
+  ['ob-en','ob-es'].forEach(id=>$('ob-lang-toggle').querySelector('#'+id).classList.remove('ob-lang-active'));
+  document.getElementById('ob-'+lang).classList.add('ob-lang-active');
+  localStorage.setItem('op_ob_lang',lang);
+};
+// Restore language preference
+(function(){const l=localStorage.getItem('op_ob_lang');if(l&&l!=='en')obSetLang(l);})();
+
 if(!localStorage.getItem('op_welcomed_v1')){
   var ob=document.getElementById('onboard');
   ob.style.display='flex';ob.style.opacity='0';
@@ -2591,6 +2639,25 @@ if(!localStorage.getItem('op_welcomed_v1')){
     setTimeout(()=>{isSeeking=false;},150);
   };
 
+
+  // ── SLOW SCROLL ──
+  function slowScrollThrough(el){
+    const top=Math.max(0,el.getBoundingClientRect().top+window.scrollY-80);
+    window.scrollTo({top:top,behavior:'smooth'});
+    setTimeout(()=>{
+      const surplus=el.offsetHeight-window.innerHeight+160;
+      if(surplus>0){
+        const dur=Math.min(Math.max(surplus/50,3000),9000);
+        const sy=window.scrollY,ey=sy+surplus,t0=performance.now();
+        (function tick(now){
+          const p=Math.min((now-t0)/dur,1);
+          window.scrollTo(0,sy+(ey-sy)*p);
+          if(p<1)requestAnimationFrame(tick);
+        })(performance.now());
+      }
+    },700);
+  }
+
   narrEl.addEventListener('timeupdate',()=>{
     if(isSeeking||!narrEl.duration)return;
     const pct=(narrEl.currentTime/narrEl.duration)*100;
@@ -2619,7 +2686,7 @@ if(!localStorage.getItem('op_welcomed_v1')){
 
   // ── PLAYBACK SPEED ──
   const speedBtn=$('ap-speed');
-  const speeds=[1,1.25,1.5,0.75];
+  const speeds=[1,0.8,0.9,1.1,1.2];
   let speedIdx=0;
   window.apCycleSpeed=function(){
     speedIdx=(speedIdx+1)%speeds.length;
@@ -2734,97 +2801,80 @@ if(!localStorage.getItem('op_welcomed_v1')){
   }
 
   const CH=[
-    {t:64,   l:'The Spirit — Before We Embark',                  el:'spirit',           glow:null},
-    {t:242,  l:'Who He Is',                                      el:'div-who-he-is',    glow:null},
-    {t:343,  l:'He Was Always Moving',                           el:'div-always-moving',glow:null},
-    {t:549,  l:'From Upon to Within — Everything Changed',       el:'div-from-upon',    glow:null},
-    {t:594,  l:'Do Not Take Your Holy Spirit from Me',           el:'div-from-upon',    glow:'img-david'},
-    {t:689,  l:"Wait. You're Not Ready Yet.",                    el:'div-wait',         glow:null},
-    {t:800,  l:'The Condition That Changes Everything',          el:'div-wait',         glow:'box-condition'},
-    {t:943,  l:'Act One — The Promise',                          el:'promise',          glow:null},
-    {t:959,  l:"The Scattering — And God's Answer",              el:'div-scattering',   glow:null},
-    {t:962,  l:'Genesis 12 — God Calls One Man',                 el:'div-scattering',   glow:'img-babel'},
-    {t:1031, l:'The Tower — What Archaeology Found',             el:'div-scattering',   glow:'box-tower'},
-    {t:1199, l:'Genesis 10:10 — The Counterfeit Kingdom',       el:'div-scattering',   glow:'box-nimrod'},
-    {t:1221, l:'Nimrod — The First Empire',                      el:'div-scattering',   glow:'img-nimrod'},
-    {t:1454, l:'One Night He Burned the Idol House',             el:'div-go',           glow:'img-ziggurat'},
-    {t:1534, l:'The First Pattern — Seeking Before Found',       el:'div-go',           glow:'box-first-pattern'},
-    {t:1590, l:"Go. I'll Show You When You Get There.",          el:'div-go',           glow:null},
-    {t:1617, l:'No Map. No Destination. Just Go.',               el:'div-go',           glow:'img-journey'},
-    {t:1739, l:'The Night God Signed Alone',                     el:'div-night-god',    glow:null},
-    {t:1829, l:'Look Up and Count the Stars',                    el:'div-night-god',    glow:'img-stars'},
-    {t:1994, l:'Only God Moved — The Smoking Firepot',           el:'div-night-god',    glow:'img-covenant'},
-    {t:2175, l:'What Archaeology Confirmed',                     el:'div-stars',        glow:'box-archaeology'},
-    {t:2310, l:'The Stars and the Sand',                         el:'div-stars',        glow:null},
-    {t:2435, l:'The Hall of Fame — Hebrews 11',                  el:'div-stars',        glow:'box-hall-of-fame'},
-    {t:2539, l:'Act Two — The Mistake',                          el:'mistake',          glow:null},
-    {t:2644, l:'Three Times — God Secured It Anyway',            el:'mistake',          glow:'box-three-times'},
-    {t:2898, l:"Galatians 4 — Paul's Interpretation",            el:'mistake',          glow:'box-galatians'},
-    {t:3147, l:'Hagar — El Roi',                                 el:'div-hagar',        glow:null},
-    {t:3281, l:'Ishmael — Blessed and Expelled',                 el:'div-ishmael',      glow:null},
-    {t:3529, l:'Petra Is That Promise Carved in Stone',          el:'div-ishmael',      glow:'img-ishmael'},
-    {t:3661, l:'She Sat Down and Wept',                          el:'div-ishmael',      glow:'img-hagar-desert'},
-    {t:3827, l:'The Women Who Carried the Covenant',             el:'div-ishmael',      glow:null},
-    {t:4122, l:'Act Three — The Test',                           el:'test',             glow:null},
-    {t:4337, l:'Three Days',                                     el:'div-three-days',   glow:null},
-    {t:4338, l:'Three Days Walk from Beersheba',                 el:'div-three-days',   glow:'img-moriah'},
-    {t:4505, l:"The Third Day — God's Signature",                el:'div-three-days',   glow:'box-third-day'},
-    {t:4628, l:'The Ascent',                                     el:'div-ascent',       glow:null},
-    {t:5105, l:'He Is Not Here — He Has Risen',                  el:'div-silence',      glow:'img-tomb'},
-    {t:5166, l:'The Prophetic Gift — Under Pressure',            el:'div-silence',      glow:'box-prophetic'},
-    {t:5241, l:'Eid Al-Adha — Most Re-Enacted Moment',           el:'div-silence',      glow:'box-eid'},
-    {t:5346, l:'The Silence After',                              el:'div-silence',      glow:null},
-    {t:5468, l:'Rebekah — The Bride Chosen at the Well',         el:'div-silence',      glow:'box-rebekah'},
-    {t:5749, l:'Act Four — The Fulfillment',                     el:'fulfillment',      glow:null},
-    {t:5924, l:'The Great Isaiah Scroll — Sealed 2,000 Years',   el:'fulfillment',      glow:'box-scroll'},
-    {t:6016, l:'Two Prophets. Same Vision. One Tomb.',            el:'fulfillment',      glow:'img-scroll'},
-    {t:6159, l:'The New Covenant — Jeremiah 31',                 el:'fulfillment',      glow:null},
-    {t:6270, l:'The God Who Keeps Moving Closer',                el:'div-moving-closer',glow:null},
-    {t:6506, l:'What Secular History Confirmed',                 el:'div-moving-closer',glow:'img-pilate'},
-    {t:6731, l:'Most Powerful Secular Confirmation',             el:'div-pentecost',    glow:'box-secular'},
-    {t:6739, l:'Pentecost — Babel Reversed',                     el:'div-pentecost',    glow:'img-donkey'},
-    {t:6870, l:'Babel and Pentecost — The Exact Reversal',       el:'div-pentecost',    glow:null},
-    {t:6961, l:'What Pride Scattered the Spirit Gathered',       el:'div-pentecost',    glow:'img-babel-pent'},
-    {t:7015, l:'Undone in a Single Afternoon',                   el:'div-pentecost',    glow:'img-pentecost'},
-    {t:7022, l:'The Gifts at Pentecost — On Full Display',       el:'div-pentecost',    glow:'box-gifts'},
-    {t:7078, l:'The Covenant Open to Everyone — Romans 4',       el:'div-pentecost',    glow:'box-covenant-open'},
-    {t:7115, l:'Act Five — The Expansion',                       el:'expansion',        glow:null},
-    {t:7157, l:'Stephen — The Fracture That Became Mission',     el:'expansion',        glow:null},
-    {t:7249, l:'The Ethiopian Eunuch — Divine Choreography',     el:'div-ethiopian',    glow:null},
-    {t:7692, l:'God Pulled His Best Man Out of a Revival',       el:'div-ethiopian',    glow:'img-samaritan1'},
-    {t:7705, l:'The Woman at the Well — First Missionary',       el:'div-ethiopian',    glow:null},
-    {t:7871, l:"The First Missionary in John's Gospel",          el:'div-ethiopian',    glow:'box-first-missionary'},
-    {t:7979, l:'Ethiopia — 1,000 Years Deeper Than Acts 8',      el:'div-ethiopian',    glow:null},
-    {t:8290, l:'Act Six — The Wildfire',                         el:'wildfire',         glow:null},
-    {t:8310, l:'The Math of an Unstoppable Fire',                el:'wildfire',         glow:'box-math'},
-    {t:8338, l:"Even Rome's Enemies Confirmed It",               el:'wildfire',         glow:'box-rome'},
-    {t:8409, l:'Paul — To Ishmael First',                        el:'div-paul',         glow:null},
-    {t:8422, l:"The Apostle Went to Ishmael's Territory First",  el:'div-paul',         glow:'img-damascus'},
-    {t:8646, l:'Alexandria — Greatest Center of Theology',       el:'div-paul',         glow:'img-isaiah60'},
-    {t:8676, l:'Simon of Cyrene — An African Carried the Cross', el:'div-cornelius',    glow:'box-simon'},
-    {t:8732, l:'Cornelius — The Spirit Ahead of the Theology',   el:'div-cornelius',    glow:null},
-    {t:8821, l:'Jerusalem Council — Abrahamic Promise Defended', el:'div-cornelius',    glow:null},
-    {t:8917, l:'How Fast. How Impossible.',                      el:'div-sozo',         glow:null},
-    {t:8927, l:'The Harder Rome Pushed the Further It Went',     el:'div-sozo',         glow:'img-promise'},
-    {t:8977, l:'Sozo — Saved, Healed, Made Whole',               el:'div-sozo',         glow:null},
-    {t:8982, l:'Neato Burrito — The God Who Sees',               el:'div-sozo',         glow:'img-ken'},
-    {t:9291, l:'Act Seven — The Fractures',                      el:'fractures',        glow:null},
-    {t:9350, l:'The Fracture Pattern — It Never Changes',        el:'fractures',        glow:'box-fracture-pattern'},
-    {t:9441, l:'The Fire Fell on the Man They Shut Out',         el:'fractures',        glow:'img-seymour'},
-    {t:9468, l:'The Fractures and Revivals — God Responds',      el:'fractures',        glow:null},
-    {t:9897, l:'Act Eight — The Unfinished Story',               el:'unfinished',       glow:null},
-    {t:9922, l:'The Most Under-Reported Story in the World',     el:'unfinished',       glow:'box-under-reported'},
-    {t:9938, l:"Ishmael's Blessing — Never Revoked",             el:'div-other-half',   glow:null},
-    {t:9994, l:'What Islam Is — And Where It Comes From',        el:'div-other-half',   glow:null},
-    {t:10128,l:'The Personal God — What the Tabernacle Reveals', el:'div-other-half',   glow:null},
-    {t:10282,l:'The Other Half of the Family',                   el:'div-other-half',   glow:'img-isaac-ishmael'},
-    {t:10336,l:'He Crossed a Closed Border',                     el:'div-other-half',   glow:'img-iran'},
-    {t:10514,l:"The Spirit Is Moving in Ishmael's Territory",    el:'div-other-half',   glow:'box-spirit-ishmael'},
-    {t:10571,l:'The Root That Holds Everything',                 el:'div-every-nation', glow:null},
-    {t:10654,l:"Isaiah's Vision — The End of the Story",         el:'div-every-nation', glow:null},
-    {t:10759,l:'The Priest-King — Beginning and End',            el:'div-every-nation', glow:null},
-    {t:10807,l:'Melchizedek — The Beginning and the End',        el:'div-every-nation', glow:'box-melchizedek'},
-    {t:11098,l:'Every Nation. Every Tongue. Every Star.',        el:'div-every-nation', glow:'img-closing'},
+    // SPIRIT
+    {t:30,   l:'One Promise',                                       el:'spirit',              glow:'img-opening',      ss:false},
+    {t:55,   l:'Before We Embark — The Spirit',                    el:'spirit',              glow:null,               ss:false},
+    {t:345,  l:'The Spirit Moving — Before Pentecost',             el:'svg-spirit-moving',   glow:null,               ss:true},
+    {t:567,  l:'He Watched the Spirit Leave Saul',                 el:'div-from-upon',       glow:'img-david',        ss:false},
+    {t:744,  l:'The Condition That Changes Everything',             el:'box-condition',       glow:'box-condition',    ss:false},
+    // ACT ONE
+    {t:878,  l:'Act One — The Promise',                             el:'promise',             glow:null,               ss:false},
+    {t:916,  l:'Genesis 12 — God Calls One Man',                   el:'div-scattering',      glow:'img-babel',        ss:false},
+    {t:956,  l:'The Tower — What Archaeology Found',               el:'box-tower',           glow:'box-tower',        ss:false},
+    {t:1225, l:"Nimrod's Kingdom — The First Empire",              el:'div-scattering',      glow:'img-nimrod',       ss:false},
+    {t:1340, l:'One Night He Burned the Idol House',               el:'div-go',              glow:'img-ziggurat',     ss:false},
+    {t:1495, l:'No Map. No Destination. Just Go.',                 el:'div-go',              glow:'img-journey',      ss:false},
+    {t:1691, l:'Look Up and Count the Stars',                      el:'div-night-god',       glow:'img-stars',        ss:false},
+    {t:1800, l:'Only God Moved — The Smoking Firepot',             el:'div-night-god',       glow:'img-covenant',     ss:false},
+    {t:2025, l:'What Archaeology Confirmed — The World Was Real',  el:'box-archaeology',     glow:'box-archaeology',  ss:false},
+    {t:2275, l:'The Hall of Fame — Hebrews 11',                    el:'box-hall-of-fame',    glow:'box-hall-of-fame', ss:false},
+    // ACT TWO
+    {t:2370, l:'Act Two — The Mistake',                             el:'mistake',             glow:null,               ss:false},
+    {t:2466, l:'Three Times — God Secured It Anyway',              el:'box-three-times',     glow:'box-three-times',  ss:true},
+    {t:3300, l:'Petra Is That Promise Carved in Stone',            el:'div-ishmael',         glow:'img-ishmael',      ss:false},
+    {t:3390, l:'She Sat Down and Wept',                            el:'div-ishmael',         glow:'img-hagar-desert', ss:false},
+    // ACT THREE
+    {t:3855, l:'Act Three — The Test',                              el:'test',                glow:null,               ss:false},
+    {t:4020, l:'Three Days Walk from Beersheba',                   el:'div-three-days',      glow:'img-moriah',       ss:false},
+    {t:4200, l:"The Third Day — God's Signature",                  el:'box-third-day',       glow:'box-third-day',    ss:false},
+    {t:4695, l:'He Was Only Just Beginning',                       el:'div-ascent',          glow:'img-ridge',        ss:false},
+    {t:4702, l:'The Shadow and the Substance',                     el:'svg-shadow',          glow:null,               ss:true},
+    {t:4837, l:'Isaac Walked Free',                                el:'div-silence',         glow:'img-tomb',         ss:false},
+    {t:4882, l:'The Prophetic Gift — Operating Under Pressure',    el:'box-prophetic',       glow:'box-prophetic',    ss:false},
+    {t:4968, l:'Eid Al-Adha — Most Re-Enacted Moment',             el:'box-eid',             glow:'box-eid',          ss:false},
+    {t:5179, l:'Rebekah — The Bride Chosen at the Well',           el:'box-rebekah',         glow:'box-rebekah',      ss:false},
+    // ACT FOUR
+    {t:5454, l:'Act Four — The Fulfillment',                        el:'fulfillment',         glow:null,               ss:false},
+    {t:5620, l:'The Great Isaiah Scroll — Sealed 2,000 Years',     el:'box-scroll',          glow:'box-scroll',       ss:false},
+    {t:5713, l:"But Isaiah Wasn't Finished",                       el:'fulfillment',         glow:'img-scroll',       ss:false},
+    {t:5958, l:"The Ache You Feel for Something You Can't Name",   el:'div-moving-closer',   glow:'img-babylon',      ss:false},
+    {t:5986, l:'The Tabernacle Progression — God Moving Closer',   el:'svg-tabernacle',      glow:null,               ss:true},
+    {t:6181, l:'What Secular History Confirmed — The Cross Was Real',el:'box-secular',       glow:'img-pilate',       ss:true},
+    {t:6225, l:'The Alexamenos Graffito',                          el:'box-secular',         glow:'img-donkey',       ss:false},
+    {t:6516, l:'Babel and Pentecost — The Exact Reversal',         el:'div-pentecost',       glow:null,               ss:true},
+    {t:6602, l:'What Pride Scattered the Spirit Gathered',         el:'div-pentecost',       glow:'img-babel-pent',   ss:false},
+    // ACT FIVE
+    {t:6774, l:'Act Five — The Expansion',                          el:'expansion',           glow:null,               ss:false},
+    {t:7371, l:'The Woman at the Well — First Missionary',         el:'div-ethiopian',       glow:'img-samaritan1',   ss:false},
+    {t:7490, l:"The First Missionary in John's Gospel",            el:'box-first-missionary',glow:'box-first-missionary',ss:false},
+    {t:7722, l:'Ethiopia and the Covenant — A Timeline',           el:'svg-ethiopia',        glow:null,               ss:true},
+    // ACT SIX
+    {t:7909, l:'Act Six — The Wildfire',                            el:'wildfire',            glow:null,               ss:false},
+    {t:8028, l:'Paul — To Ishmael First',                          el:'div-paul',            glow:'img-damascus',     ss:false},
+    {t:8036, l:"The Apostle Went to Ishmael's Territory First",    el:'div-paul',            glow:'img-paul-map',     ss:false},
+    {t:8044, l:'Every Road Led Through Abraham',                   el:'div-paul',            glow:'img-isaiah60',     ss:false},
+    {t:8060, l:'Jerusalem — 33 AD',                                el:'svg-jerusalem',       glow:null,               ss:true},
+    {t:8211, l:"China — 635 AD — The Xi'an Stele",                el:'svg-jerusalem',       glow:'img-chinese',      ss:false},
+    {t:8560, l:'Equipping Ordinary People Across the Empire',      el:'div-sozo',            glow:'img-promise',      ss:false},
+    {t:8600, l:'Neato Burrito — The God Who Sees',                 el:'div-sozo',            glow:'img-ken',          ss:false},
+    // ACT SEVEN
+    {t:8908, l:'Act Seven — The Fractures',                         el:'fractures',           glow:null,               ss:false},
+    {t:8968, l:'The Fracture Pattern — It Never Changes',          el:'box-fracture-pattern',glow:'box-fracture-pattern',ss:false},
+    {t:9065, l:'It Washed the Color Line Away',                    el:'fractures',           glow:'img-seymour',      ss:false},
+    {t:9089, l:'The Fractures and Revivals — God Always Responds', el:'svg-fractures-revivals',glow:null,             ss:true},
+    // ACT EIGHT
+    {t:9515, l:'Act Eight — The Unfinished Story',                  el:'unfinished',          glow:null,               ss:false},
+    {t:9525, l:'The Five Pillars as Abrahamic Re-Enactment',       el:'svg-five-pillars',    glow:null,               ss:false},
+    {t:9900, l:'The Other Half of the Family',                     el:'div-other-half',      glow:'img-isaac-ishmael',ss:false},
+    {t:9968, l:'He Crossed a Closed Border',                       el:'div-other-half',      glow:'img-iran',         ss:false},
+    {t:10133,l:"The Spirit Is Moving in Ishmael's Territory",      el:'box-spirit-ishmael',  glow:'box-spirit-ishmael',ss:false},
+    {t:10425,l:'Melchizedek — The Beginning and the End',          el:'box-melchizedek',     glow:'box-melchizedek',  ss:true},
+    {t:10585,l:'The Abrahamic Family — Every Branch from One Root',el:'svg-abrahamic-family',glow:null,               ss:true},
+    {t:10716,l:'Every Nation. Every Tongue. Every Star.',           el:'div-every-nation',    glow:'img-closing',      ss:false},
+    {t:10876,l:'From Bondage to Freedom',                          el:'closing-section',     glow:null,               ss:false},
+    {t:10910,l:'The Story That Just Became Yours',                 el:'closing-section',     glow:null,               ss:true},
+    {t:11105,l:'A Poem by Ronald Fleming',                         el:'poem-ronald',         glow:null,               ss:false},
+    {t:11132,l:'God of Abraham, Isaac, and Ishmael',               el:'poem-ronald',         glow:null,               ss:false},
   ];
 
   narrEl.addEventListener('loadedmetadata',()=>{
@@ -2840,17 +2890,36 @@ if(!localStorage.getItem('op_welcomed_v1')){
   });
 
   const ACTS=[
-    {t:64,   id:'spirit'},
-    {t:943,  id:'promise'},
-    {t:2539, id:'mistake'},
-    {t:4122, id:'test'},
-    {t:5749, id:'fulfillment'},
-    {t:7115, id:'expansion'},
-    {t:8290, id:'wildfire'},
-    {t:9291, id:'fractures'},
-    {t:9897, id:'unfinished'}
+    {t:55,   id:'spirit'},
+    {t:878,  id:'promise'},
+    {t:2370, id:'mistake'},
+    {t:3855, id:'test'},
+    {t:5454, id:'fulfillment'},
+    {t:6774, id:'expansion'},
+    {t:7909, id:'wildfire'},
+    {t:8908, id:'fractures'},
+    {t:9515, id:'unfinished'}
   ];
   let lastChIdx=-1, lastActIdx=-1;
+
+
+  // ── SLOW SCROLL ──
+  function slowScrollThrough(el){
+    const top=Math.max(0,el.getBoundingClientRect().top+window.scrollY-80);
+    window.scrollTo({top:top,behavior:'smooth'});
+    setTimeout(()=>{
+      const surplus=el.offsetHeight-window.innerHeight+160;
+      if(surplus>0){
+        const dur=Math.min(Math.max(surplus/50,3000),9000);
+        const sy=window.scrollY,ey=sy+surplus,t0=performance.now();
+        (function tick(now){
+          const p=Math.min((now-t0)/dur,1);
+          window.scrollTo(0,sy+(ey-sy)*p);
+          if(p<1)requestAnimationFrame(tick);
+        })(performance.now());
+      }
+    },700);
+  }
 
   narrEl.addEventListener('timeupdate',()=>{
     const t=narrEl.currentTime;
@@ -2867,14 +2936,17 @@ if(!localStorage.getItem('op_welcomed_v1')){
         if(marksEl){marksEl.querySelectorAll('.ap-cmark').forEach((m,i)=>m.classList.toggle('ap-cmark-active',i===ci));}
         if(g){const ge=document.getElementById(g);if(ge){ge.classList.remove('ap-glow');void ge.offsetWidth;ge.classList.add('ap-glow');}}
       }
-      // Follow scroll — targets the glow element if present, else the section
+      // Follow scroll — 6s hold, slow scroll for large SVGs
       if(autoFollow){
         const now=Date.now();
-        if(!window._lastScroll||now-window._lastScroll>2500){
+        if(!window._lastScroll||now-window._lastScroll>6000){
           window._lastScroll=now;
-          const target=(g&&document.getElementById(g))||document.getElementById(CH[ci].el);
+          const target=CH[ci].ss
+            ?document.getElementById(CH[ci].el)
+            :(g&&document.getElementById(g))||document.getElementById(CH[ci].el);
           if(target){
-            target.scrollIntoView({behavior:'smooth',block:'center'});
+            if(CH[ci].ss){slowScrollThrough(target);}
+            else{target.scrollIntoView({behavior:'smooth',block:'center'});}
             const toast=document.getElementById('ap-follow-toast');
             if(toast){toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),1200);}
           }
