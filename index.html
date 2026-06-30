@@ -97,7 +97,7 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .act-title{font-family:"Cormorant SC",serif;font-weight:300;font-size:clamp(2rem,5.5vw,3.6rem);color:#ffffff;line-height:1.1;margin-bottom:16px;text-align:center;}
 section[id] .act-title{background:linear-gradient(90deg,var(--act-color,#fff) 0%,#ffffff 50%,var(--act-color,#fff) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .act-intro{font-size:clamp(1rem,2vw,1.2rem);font-style:italic;color:rgba(255,255,255,.55);max-width:660px;border-left:2px solid var(--act-color,rgba(255,255,255,.15));padding-left:20px;margin-bottom:48px;margin-left:auto;margin-right:auto;}
-.prose{font-size:clamp(1.15rem,2vw,1.32rem);line-height:1.9;color:var(--text);margin-bottom:28px;}
+.prose{font-size:clamp(1rem,1.8vw,1.15rem);line-height:1.9;color:var(--text);margin-bottom:28px;}
 .prose em{color:var(--act-color,#7eb8f7);font-style:italic;}
 .scripture{margin:36px 0;padding:24px 32px;background:transparent;border-left:3px solid var(--act-color,#c9a84c);position:relative;}
 .scripture::before{content:"\"";position:absolute;top:-14px;left:18px;font-family:"Cormorant Garamond",serif;font-size:5rem;color:var(--act-color,rgba(201,168,76,.3));opacity:.35;line-height:1;}
@@ -331,7 +331,7 @@ section[id] .act-title{background:linear-gradient(90deg,var(--act-color,#fff) 0%
   .scripture{padding:18px 20px;}
   .act-header{padding:70px 0 16px;}
   .hero h1{font-size:clamp(2rem,12vw,4rem);}
-  .prose{font-size:1.12rem;}
+  .prose{font-size:1rem;}
 }
 
 /* ── PER-ACT COLOR ACCENTS ── */
@@ -504,30 +504,21 @@ section[id].revealed::before{opacity:1;}
 .sleep-opt:hover{background:rgba(74,144,217,.1);border-color:var(--ap);color:var(--ap);}
 .sleep-opt.active{background:rgba(74,144,217,.12);border-color:var(--ap);color:var(--ap);}
 /* ── ONBOARDING ── */
-#onboard{position:fixed;inset:0;z-index:2900;background:rgba(2,3,10,.97);display:flex;align-items:flex-start;justify-content:center;padding:48px 24px;transition:opacity .5s ease;overflow-y:auto;}
-#onboard-inner{margin:auto;}
+#onboard{position:fixed;inset:0;z-index:2900;background:rgba(2,3,10,.97);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .5s ease;}
 #onboard.hidden{opacity:0;pointer-events:none;}
-#onboard-inner{max-width:580px;width:100%;text-align:center;margin:auto;}
-#onboard-mark{font-size:1.4rem;color:var(--ap);margin-bottom:18px;opacity:.65;}
-#onboard-title{font-family:"Cinzel",serif;font-size:clamp(1.7rem,5vw,2.5rem);letter-spacing:.1em;color:#fff;margin:0 0 10px;}
-#onboard-sub{font-family:"Cormorant Garamond",serif;font-size:clamp(1rem,2.2vw,1.2rem);font-style:italic;color:rgba(255,255,255,.4);margin:0 0 28px;}
-#onboard-intro{font-family:"Cormorant Garamond",serif;font-size:clamp(1.18rem,2.5vw,1.42rem);color:rgba(255,255,255,.78);line-height:1.9;margin:0 0 28px;border-top:1px solid rgba(74,144,217,.18);border-bottom:1px solid rgba(74,144,217,.18);padding:26px 0;}
-#onboard-intro em{font-style:italic;color:rgba(255,255,255,.55);}
-#onboard-lang{margin:0 0 26px;padding:18px 0;border-bottom:1px solid rgba(74,144,217,.12);font-family:"Cormorant Garamond",serif;font-size:clamp(1rem,2vw,1.15rem);color:rgba(255,255,255,.52);line-height:1.8;}
-#onboard-lang strong{color:var(--ap);font-weight:600;font-style:normal;}
-#onboard-lang em{font-size:.9em;color:rgba(255,255,255,.28);display:block;margin-top:8px;font-style:italic;}
-#onboard-controls{margin:0 0 28px;display:flex;flex-direction:column;gap:12px;text-align:left;}
+#onboard-inner{max-width:520px;width:100%;text-align:center;}
+#onboard-mark{font-size:1.3rem;color:var(--ap);margin-bottom:14px;opacity:.65;}
+#onboard-title{font-family:"Cinzel",serif;font-size:clamp(1.3rem,4vw,1.9rem);letter-spacing:.1em;color:#fff;margin:0 0 6px;}
+#onboard-sub{font-family:"Cormorant Garamond",serif;font-size:clamp(.9rem,2vw,1.05rem);font-style:italic;color:rgba(255,255,255,.4);margin:0 0 22px;}
+#onboard-intro{font-family:"Cormorant Garamond",serif;font-size:clamp(.95rem,2vw,1.1rem);color:rgba(255,255,255,.58);line-height:1.75;margin:0 0 24px;border-top:1px solid rgba(74,144,217,.15);border-bottom:1px solid rgba(74,144,217,.15);padding:18px 0;}
+#onboard-controls{margin:0 0 22px;display:flex;flex-direction:column;gap:9px;text-align:left;}
 .oc-row{display:flex;align-items:baseline;gap:14px;}
-.oc-key{font-family:"Cinzel",serif;font-size:.64rem;letter-spacing:.14em;color:var(--ap);white-space:nowrap;min-width:68px;flex-shrink:0;}
-.oc-val{font-family:"Cormorant Garamond",serif;font-size:1.05rem;color:rgba(255,255,255,.5);}
-#onboard-footer{font-family:"Cormorant Garamond",serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.3);margin:0 0 28px;}
-#onboard-begin{background:transparent;border:1px solid var(--ap);color:var(--ap);cursor:pointer;font-family:"Cinzel",serif;font-size:.68rem;letter-spacing:.35em;padding:16px 60px;border-radius:2px;transition:all .3s;}
+.oc-key{font-family:"Cinzel",serif;font-size:.46rem;letter-spacing:.14em;color:var(--ap);white-space:nowrap;min-width:62px;flex-shrink:0;}
+.oc-val{font-family:"Cormorant Garamond",serif;font-size:.92rem;color:rgba(255,255,255,.5);}
+#onboard-footer{font-family:"Cormorant Garamond",serif;font-size:.95rem;font-style:italic;color:rgba(255,255,255,.3);margin:0 0 26px;}
+#onboard-begin{background:transparent;border:1px solid var(--ap);color:var(--ap);cursor:pointer;font-family:"Cinzel",serif;font-size:.56rem;letter-spacing:.35em;padding:14px 52px;border-radius:2px;transition:all .3s;}
 #onboard-begin:hover{background:rgba(74,144,217,.1);box-shadow:0 0 24px rgba(74,144,217,.18);}
-@media(max-width:480px){.oc-key{min-width:54px;font-size:.56rem;}.oc-val{font-size:.96rem;}#onboard-begin{padding:14px 42px;}}
-#ob-lang-toggle{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:24px;}
-.ob-lang-btn{background:transparent;border:none;font-family:"Cinzel",serif;font-size:.65rem;letter-spacing:.22em;color:rgba(255,255,255,.25);cursor:pointer;padding:4px 10px;transition:color .2s;}
-.ob-lang-btn.ob-lang-active{color:var(--ap);}
-.ob-lang-sep{color:rgba(255,255,255,.12);font-size:.75rem;}
+@media(max-width:480px){.oc-key{min-width:50px;font-size:.4rem;}.oc-val{font-size:.82rem;}#onboard-begin{padding:12px 36px;}}
 
 /* ── AP: AUDIO PLAYER BAR ── */
 :root{--ap:#4a90d9;--ap-dim:rgba(74,144,217,.22);--ap-glow:rgba(74,144,217,.18);}
@@ -2356,19 +2347,16 @@ requestAnimationFrame(()=>{
 <!-- ── ONBOARDING ── -->
 <div id="onboard" style="display:none">
   <div id="onboard-inner">
-    <div id="ob-lang-toggle"><button class="ob-lang-btn ob-lang-active" id="ob-en" onclick="obSetLang('en')">EN</button><span class="ob-lang-sep">·</span><button class="ob-lang-btn" id="ob-es" onclick="obSetLang('es')">ES</button></div>
     <div id="onboard-mark">✦</div>
     <h2 id="onboard-title">One Promise</h2>
     <p id="onboard-sub">Abraham · The Living God · The Story That Never Ended</p>
-    <p id="onboard-intro">You've been waiting on a promise too.<br><br>You know the moment — when waiting starts to feel like being forgotten. When you decide that if God won't move, you will. So you reach for your own version of the answer.<br><br>Abraham did the same thing. His name for it was Ishmael.<br><br>But the promise wasn't late. It was being made unmistakable. A son born on schedule is ordinary. A son born decades past hope is a miracle no one can explain away. The wait wasn't God forgetting Abraham — it was God making sure that when the answer came, only he could get the credit.<br><br>And it came. Not because Abraham waited perfectly — he didn't. Ishmael was proof of that. It came because God had signed the covenant alone, and nothing in the waiting could break it.<br><br>Your Ishmael didn't disqualify you. Your wait isn't God forgetting you. It's the miracle being made unmistakable.<br><br><em>This is that story.</em></p>
-    <div id="onboard-lang">
-      Narrated in full in <strong>English</strong> and <strong>Spanish</strong> — tap <strong>EN · ES</strong> in the player to switch anytime.<em>Chapter navigation follows the English narration.</em>
-    </div>
+    <p id="onboard-intro">Four thousand years ago, God made one promise to one man — and signed it alone, so no human failure could ever break it. What followed changed every nation on earth. This is that story. Eight acts. Three hours. Now available in English and Spanish.</p>
     <div id="onboard-controls">
       <div class="oc-row"><span class="oc-key">▶ AUDIO</span><span class="oc-val">Full narration — 3 hours across 8 acts. Resumes exactly where you left off.</span></div>
+      <div class="oc-row"><span class="oc-key">EN · ES</span><span class="oc-val">Narration available in English and Spanish. Tap EN or ES in the player to switch anytime.</span></div>
       <div class="oc-row"><span class="oc-key">▶ MUSIC</span><span class="oc-val">Ambient score. Fades automatically when narration plays.</span></div>
       <div class="oc-row"><span class="oc-key">−30 / +30</span><span class="oc-val">Skip back or forward 30 seconds in the narration.</span></div>
-      <div class="oc-row"><span class="oc-key">1×</span><span class="oc-val">Playback speed — 0.75× · 1× · 1.10× · 1.20× · 1.30×. Tap to cycle.</span></div>
+      <div class="oc-row"><span class="oc-key">1×</span><span class="oc-val">Playback speed — 0.75× · 1× · 1.25× · 1.5×. Tap to cycle.</span></div>
       <div class="oc-row"><span class="oc-key">ZZ</span><span class="oc-val">Sleep timer — choose 30, 60, or 90 minutes. Stops everything when it runs.</span></div>
       <div class="oc-row"><span class="oc-key">↓ FOLLOW</span><span class="oc-val">Page scrolls automatically with the audio. On by default — tap to turn off.</span></div>
     </div>
@@ -2377,39 +2365,6 @@ requestAnimationFrame(()=>{
   </div>
 </div>
 <script>
-var OB_TEXT={
-  en:{
-    title:'One Promise',
-    sub:'Abraham \u00b7 The Living God \u00b7 The Story That Never Ended',
-    intro:'You\'ve been waiting on a promise too.<br><br>You know the moment \u2014 when waiting starts to feel like being forgotten. When you decide that if God won\'t move, you will. So you reach for your own version of the answer.<br><br>Abraham did the same thing. His name for it was Ishmael.<br><br>But the promise wasn\'t late. It was being made unmistakable. A son born on schedule is ordinary. A son born decades past hope is a miracle no one can explain away. The wait wasn\'t God forgetting Abraham \u2014 it was God making sure that when the answer came, only he could get the credit.<br><br>And it came. Not because Abraham waited perfectly \u2014 he didn\'t. Ishmael was proof of that. It came because God had signed the covenant alone, and nothing in the waiting could break it.<br><br>Your Ishmael didn\'t disqualify you. Your wait isn\'t God forgetting you. It\'s the miracle being made unmistakable.<br><br><em>This is that story.</em>',
-    lang:'Narrated in full in <strong>English</strong> and <strong>Spanish</strong> \u2014 tap <strong>EN \u00b7 ES</strong> in the player to switch anytime.<em>Chapter navigation follows the English narration.</em>',
-    controls:['Full narration \u2014 3 hours across 8 acts. Resumes exactly where you left off.','Ambient score. Fades automatically when narration plays.','Skip back or forward 30 seconds in the narration.','Playback speed \u2014 0.75\u00d7 \u00b7 1\u00d7 \u00b7 1.10\u00d7 \u00b7 1.20\u00d7 \u00b7 1.30\u00d7. Tap to cycle.','Sleep timer \u2014 choose 30, 60, or 90 minutes. Stops everything when it runs.','Page scrolls automatically with the audio. On by default \u2014 tap to turn off.'],
-    footer:'You don\'t have to read it all today. It will remember where you were.',
-    begin:'BEGIN'
-  },
-  es:{
-    title:'Una Promesa',
-    sub:'Abraham \u00b7 El Dios Viviente \u00b7 La Historia Que Nunca Termin\u00f3',
-    intro:'T\u00fambi\u00e9n t\u00fa has estado esperando una promesa.<br><br>Conoces ese momento \u2014 cuando esperar empieza a sentirse como ser olvidado. Cuando decides que si Dios no se mueve, lo har\u00e1s t\u00fa. As\u00ed que extiendes la mano hacia tu propia versi\u00f3n de la respuesta.<br><br>Abraham hizo lo mismo. Su nombre para eso fue Ismael.<br><br>Pero la promesa no lleg\u00f3 tarde. Se estaba haciendo inconfundible. Un hijo nacido a tiempo es algo ordinario. Un hijo nacido d\u00e9cadas despu\u00e9s de toda esperanza es un milagro que nadie puede explicar. La espera no fue Dios olvidando a Abraham \u2014 fue Dios asegur\u00e1ndose de que cuando llegara la respuesta, solo \u00e9l pudiera llevarse el cr\u00e9dito.<br><br>Y lleg\u00f3. No porque Abraham esper\u00f3 perfectamente \u2014 no lo hizo. Ismael era prueba de eso. Lleg\u00f3 porque Dios hab\u00eda firmado el pacto solo, y nada en la espera pod\u00eda quebrarlo.<br><br>Tu Ismael no te descalific\u00f3. Tu espera no es Dios olvidandote. Es el milagro haci\u00e9ndose inconfundible.<br><br><em>Esta es esa historia.</em>',
-    lang:'Narrado completo en <strong>ingl\u00e9s</strong> y <strong>espa\u00f1ol</strong> \u2014 toca <strong>EN \u00b7 ES</strong> en el reproductor para cambiar en cualquier momento.<em>La navegaci\u00f3n por cap\u00edtulos sigue la narraci\u00f3n en ingl\u00e9s.</em>',
-    controls:['Narraci\u00f3n completa \u2014 3 horas en 8 actos. Retoma exactamente donde lo dejaste.','M\u00fasica ambiental. Se reduce autom\u00e1ticamente cuando la narraci\u00f3n comienza.','Retrocede o avanza 30 segundos en la narraci\u00f3n.','Velocidad de reproducci\u00f3n \u2014 0.75\u00d7 \u00b7 1\u00d7 \u00b7 1.10\u00d7 \u00b7 1.20\u00d7 \u00b7 1.30\u00d7. Toca para cambiar.','Temporizador \u2014 elige 30, 60 o 90 minutos. Detiene todo cuando termina.','La p\u00e1gina se desplaza autom\u00e1ticamente con el audio. Activado por defecto \u2014 toca para desactivar.'],
-    footer:'No tienes que leerlo todo hoy. Recordar\u00e1 d\u00f3nde estabas.',
-    begin:'COMENZAR'
-  }
-};
-window.obSetLang=function(lang){
-  var t=OB_TEXT[lang];
-  document.getElementById('onboard-title').textContent=t.title;
-  document.getElementById('onboard-sub').textContent=t.sub;
-  document.getElementById('onboard-intro').innerHTML=t.intro;
-  document.getElementById('onboard-lang').innerHTML=t.lang;
-  var vals=document.querySelectorAll('#onboard-controls .oc-val');
-  for(var i=0;i<vals.length;i++)vals[i].innerHTML=t.controls[i];
-  document.getElementById('onboard-footer').textContent=t.footer;
-  document.getElementById('onboard-begin').textContent=t.begin;
-  document.getElementById('ob-en').classList.toggle('ob-lang-active',lang==='en');
-  document.getElementById('ob-es').classList.toggle('ob-lang-active',lang==='es');
-};
 if(!localStorage.getItem('op_welcomed_v1')){
   var ob=document.getElementById('onboard');
   ob.style.display='flex';ob.style.opacity='0';
@@ -2483,7 +2438,7 @@ if(!localStorage.getItem('op_welcomed_v1')){
 <div id="ap-follow-toast">↓ following</div>
 <!-- Replace these src values with your hosted audio file URLs -->
 <audio id="ap-music-el" src="https://www.dropbox.com/scl/fi/al1ffftjyn0dupphdemza/leberch-background-ambient-511854-1.mp3?rlkey=me4popcn977raqc1myk6f9j2z&st=bs69bng5&raw=1" loop preload="none"></audio>
-<audio id="ap-narr-el"  src="https://www.dropbox.com/scl/fi/idh89ymspzdzrfky2vt33/book1111-6_3_26-2.45-AMNew.mp3?rlkey=07dkcexd8stxief2wkdqln3vs&st=qkm4nron&raw=1" preload="none"></audio>
+<audio id="ap-narr-el"  src="https://www.dropbox.com/scl/fi/6hy6rkkplijlbofhib79p/book1111new-6_3_26-2.45-AM0630.mp3?rlkey=ngvvun64h2d5rjct6h0qgz8qf&st=f1ztu1lg&raw=1" preload="none"></audio>
 
 <script>
 (function(){
@@ -2664,7 +2619,7 @@ if(!localStorage.getItem('op_welcomed_v1')){
 
   // ── PLAYBACK SPEED ──
   const speedBtn=$('ap-speed');
-  const speeds=[1,1.1,1.2,1.3,0.75];
+  const speeds=[1,1.25,1.5,0.75];
   let speedIdx=0;
   window.apCycleSpeed=function(){
     speedIdx=(speedIdx+1)%speeds.length;
@@ -2723,7 +2678,7 @@ if(!localStorage.getItem('op_welcomed_v1')){
 
 
   // ── LANGUAGE SWITCH ──
-  const NARR_URLS={en:'https://www.dropbox.com/scl/fi/idh89ymspzdzrfky2vt33/book1111-6_3_26-2.45-AMNew.mp3?rlkey=07dkcexd8stxief2wkdqln3vs&st=qkm4nron&raw=1',es:'https://www.dropbox.com/scl/fi/lyw3jobd5mqiks2kl7xmt/Spanish.mp3?rlkey=uael9p05e8gc2pb6lv74b5gkg&st=bz71fze2&raw=1'};
+  const NARR_URLS={en:'https://www.dropbox.com/scl/fi/6hy6rkkplijlbofhib79p/book1111new-6_3_26-2.45-AM0630.mp3?rlkey=ngvvun64h2d5rjct6h0qgz8qf&st=f1ztu1lg&raw=1',es:'https://www.dropbox.com/scl/fi/lyw3jobd5mqiks2kl7xmt/Spanish.mp3?rlkey=uael9p05e8gc2pb6lv74b5gkg&st=bz71fze2&raw=1'};
   let currentLang='en';
   const savedLangPos={en:0,es:0};
   window.apLangSwitch=function(lang){
