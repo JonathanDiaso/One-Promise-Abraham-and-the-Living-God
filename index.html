@@ -78,6 +78,8 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;overflow:hidden;--act-color:#4a90d9;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(74,144,217,.09) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 15% 100%,rgba(27,188,156,.05) 0%,transparent 50%),radial-gradient(ellipse 35% 55% at 85% 80%,rgba(155,89,182,.06) 0%,transparent 50%);}
 .hero-stars{position:absolute;inset:0;overflow:hidden;will-change:transform;}
+#hero-moon{position:absolute;right:10%;top:10%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;}
+@media(max-width:600px){#hero-moon{width:95px;height:95px;right:6%;top:7%;}}
 .star{position:absolute;border-radius:50%;}
 @keyframes tw-dim{0%,100%{opacity:var(--o,.2);}50%{opacity:calc(var(--o,.2)*.25);}}
 @keyframes tw-mid{0%,100%{opacity:var(--o,.6);transform:scale(1);}50%{opacity:calc(var(--o,.6)*.18);transform:scale(.65);}}
@@ -500,6 +502,16 @@ section[id].revealed::before{opacity:1;}
 #sleep-sheet-inner{background:rgba(4,6,14,.98);border:1px solid rgba(74,144,217,.18);border-bottom:none;border-radius:14px 14px 0 0;padding:28px 24px 44px;width:100%;max-width:500px;transform:translateY(100%);transition:transform .35s ease;}
 #sleep-sheet.open #sleep-sheet-inner{transform:translateY(0);}
 #sleep-sheet-title{font-family:"Cinzel",serif;font-size:.52rem;letter-spacing:.32em;color:rgba(74,144,217,.65);text-align:center;margin-bottom:20px;}
+#audio-complete{position:fixed;inset:0;z-index:1800;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s ease;}
+#audio-complete.open{opacity:1;pointer-events:all;}
+#audio-complete-inner{background:rgba(4,6,14,.98);border:1px solid rgba(201,168,76,.2);border-bottom:none;border-radius:14px 14px 0 0;padding:36px 28px 52px;width:100%;max-width:500px;transform:translateY(100%);transition:transform .4s ease;text-align:center;}
+#audio-complete.open #audio-complete-inner{transform:translateY(0);}
+#audio-complete-mark{font-size:1.1rem;color:var(--gold);margin-bottom:20px;letter-spacing:.4em;}
+#audio-complete-title{font-family:"Cinzel",serif;font-size:1.05rem;letter-spacing:.12em;color:var(--gold);margin-bottom:10px;line-height:1.5;}
+#audio-complete-sub{font-family:"Cinzel",serif;font-size:.56rem;letter-spacing:.28em;color:rgba(255,255,255,.38);margin-bottom:32px;}
+#audio-complete-share{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.22em;color:var(--gold);background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);border-radius:6px;padding:14px 32px;cursor:pointer;margin-bottom:14px;width:100%;transition:all .2s;}
+#audio-complete-share:hover{background:rgba(201,168,76,.16);}
+#audio-complete-dismiss{font-family:"Cinzel",serif;font-size:.48rem;letter-spacing:.2em;color:rgba(255,255,255,.28);background:none;border:none;cursor:pointer;padding:8px;}
 .sleep-opt{display:block;width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(74,144,217,.18);color:rgba(255,255,255,.7);cursor:pointer;font-family:"Cinzel",serif;font-size:.88rem;letter-spacing:.18em;padding:16px;border-radius:6px;text-align:center;margin-bottom:10px;transition:all .2s;}
 .sleep-opt:hover{background:rgba(74,144,217,.1);border-color:var(--ap);color:var(--ap);}
 .sleep-opt.active{background:rgba(74,144,217,.12);border-color:var(--ap);color:var(--ap);}
@@ -625,6 +637,12 @@ body{padding-bottom:112px;}
 #ap-follow-btn.on{border-color:var(--ap);color:var(--ap);}
 #ap-follow-btn:hover{border-color:rgba(74,144,217,.5);color:rgba(74,144,217,.7);}
 .ap-cmark{position:absolute;width:1px;height:8px;background:rgba(74,144,217,.3);border-radius:1px;transform:translate(-50%,-50%);transition:background .2s;}
+#ap-act-marks{position:absolute;left:0;right:0;top:50%;height:0;pointer-events:none;}
+.ap-amark{position:absolute;transform:translate(-50%,-50%);cursor:pointer;pointer-events:all;display:flex;flex-direction:column;align-items:center;gap:2px;}
+.ap-amark-tick{width:1px;height:12px;background:rgba(201,168,76,.55);border-radius:1px;transition:background .2s;}
+.ap-amark-label{font-family:'Cinzel',serif;font-size:.38rem;letter-spacing:.08em;color:rgba(201,168,76,.55);line-height:1;transition:color .2s;white-space:nowrap;margin-top:4px;}
+.ap-amark:hover .ap-amark-tick{background:rgba(201,168,76,1);}
+.ap-amark:hover .ap-amark-label{color:rgba(201,168,76,1);}
 .ap-skip{background:none;border:1px solid rgba(74,144,217,.2);color:rgba(74,144,217,.55);cursor:pointer;font-family:"Cinzel",serif;font-size:.34rem;letter-spacing:.06em;padding:4px 7px;border-radius:2px;white-space:nowrap;transition:all .2s;flex-shrink:0;}
 .ap-skip:hover{border-color:var(--ap);color:var(--ap);}
 .ap-speed-btn,.ap-sleep-btn{background:none;border:1px solid rgba(74,144,217,.18);color:rgba(74,144,217,.45);cursor:pointer;font-family:"Cinzel",serif;font-size:.34rem;letter-spacing:.08em;padding:4px 7px;border-radius:2px;white-space:nowrap;transition:all .2s;flex-shrink:0;}
@@ -683,6 +701,7 @@ body{padding-bottom:112px;}
     <div id="stars-bg"     style="position:absolute;inset:-30px;will-change:transform;"></div>
     <div id="stars-mid"    style="position:absolute;inset:-30px;will-change:transform;"></div>
     <div id="stars-bright" style="position:absolute;inset:-30px;will-change:transform;"></div>
+    <img id="hero-moon" src="https://i.ibb.co/99f0xf81/hf-20260701-061150-4d983e2c-0c30-4c75-9084-10e1c6b28db9.png" alt="" aria-hidden="true">
   </div>
   <div class="hero-shema">HEAR O ISRAEL — THE LORD OUR GOD — THE LORD IS ONE — DEUTERONOMY 6:4</div>
   <h1>One Promise</h1>
@@ -2252,20 +2271,20 @@ const brightDefs=[
   {col:WHITE,      sc:'rgba(255,255,255,.8)'},
   {col:WHITE,      sc:'rgba(255,255,255,.75)'},
   {col:WARM_GOLD,  sc:'rgba(235,210,140,.85)'},
-  {col:WARM_GOLD,  sc:'rgba(235,210,140,.8)'},
-  {col:WARM_GOLD,  sc:'rgba(235,210,140,.75)'},
-  {col:BLUE_WHITE, sc:'rgba(180,215,255,.85)'},
-  {col:BLUE_WHITE, sc:'rgba(180,215,255,.8)'},
-  {col:COOL_BLUE,  sc:'rgba(150,200,255,.8)'},
-  {col:WHITE,      sc:'rgba(255,255,255,.9)'},
-  {col:WARM_GOLD,  sc:'rgba(235,210,140,.9)'},
-  {col:BLUE_WHITE, sc:'rgba(180,215,255,.9)'},
-  {col:WHITE,      sc:'rgba(255,255,255,.75)'},
-  {col:SOFT_WHITE, sc:'rgba(240,245,255,.8)'},
+  {col:WARM_GOLD,  sc:'rgba(235,210,140,.32)'},
+  {col:WARM_GOLD,  sc:'rgba(235,210,140,.28)'},
+  {col:BLUE_WHITE, sc:'rgba(180,215,255,.35)'},
+  {col:BLUE_WHITE, sc:'rgba(180,215,255,.30)'},
+  {col:COOL_BLUE,  sc:'rgba(150,200,255,.30)'},
+  {col:WHITE,      sc:'rgba(255,255,255,.38)'},
+  {col:WARM_GOLD,  sc:'rgba(235,210,140,.34)'},
+  {col:BLUE_WHITE, sc:'rgba(180,215,255,.36)'},
+  {col:WHITE,      sc:'rgba(255,255,255,.28)'},
+  {col:SOFT_WHITE, sc:'rgba(240,245,255,.32)'},
 ];
 brightDefs.forEach(def=>{
   const s=document.createElement('div');
-  const sz=(3.2+Math.random()*2.2).toFixed(1);
+  const sz=(1.8+Math.random()*0.9).toFixed(1);
   const op=(0.85+Math.random()*0.15).toFixed(2);
   const d=(3.5+Math.random()*5).toFixed(1);
   const del=(Math.random()*8).toFixed(1);
@@ -2330,10 +2349,16 @@ document.body.insertBefore(pageCanvas,document.body.firstChild);
 })();
 
 const prog=document.getElementById("progress");
-if(prog){
+const heroMoon=document.getElementById("hero-moon");
+if(prog||heroMoon){
   window.addEventListener("scroll",()=>{
-    const pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100).toFixed(1);
-    prog.style.width=pct+"%";
+    if(prog){
+      const pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100).toFixed(1);
+      prog.style.width=pct+"%";
+    }
+    if(heroMoon){
+      heroMoon.style.transform=`translateY(${(window.scrollY*0.06).toFixed(1)}px)`;
+    }
   },{passive:true});
 }
 
@@ -2413,7 +2438,7 @@ window.obSetLang=function(lang){
 // Restore language preference
 (function(){const l=localStorage.getItem('op_ob_lang');if(l&&l!=='en')obSetLang(l);})();
 
-if(!localStorage.getItem('op_welcomed_v1')){
+if(!localStorage.getItem('op_welcomed_v2')){
   var ob=document.getElementById('onboard');
   ob.style.display='flex';ob.style.opacity='0';
   setTimeout(function(){ob.style.opacity='1';},300);
@@ -2421,6 +2446,15 @@ if(!localStorage.getItem('op_welcomed_v1')){
 </script>
 
 <!-- ── SLEEP SHEET ── -->
+<div id="audio-complete">
+  <div id="audio-complete-inner">
+    <div id="audio-complete-mark">✦</div>
+    <div id="audio-complete-title">One promise. One Spirit.<br>Every nation.</div>
+    <div id="audio-complete-sub">THE STORY ISN'T FINISHED</div>
+    <button id="audio-complete-share">SHARE THIS</button>
+    <button id="audio-complete-dismiss">CLOSE</button>
+  </div>
+</div>
 <div id="sleep-sheet">
   <div id="sleep-sheet-inner">
     <div id="sleep-sheet-title">SLEEP TIMER</div>
@@ -2478,6 +2512,7 @@ if(!localStorage.getItem('op_welcomed_v1')){
   <div id="ap-seek-wrap">
     <input type="range" class="ap-seek" id="ap-narr-seek" min="0" max="100" step="0.01" value="0" oninput="apSeekTo(this.value)" aria-label="Seek position">
     <div id="ap-chapter-marks"></div>
+    <div id="ap-act-marks"></div>
   </div>
   <span class="ap-time" id="ap-narr-time">0:00:00</span>
   <div id="ap-lang-wrap"><button class="ap-lang-btn active" id="ap-lang-en" onclick="apLangSwitch('en')">EN</button><button class="ap-lang-btn" id="ap-lang-es" onclick="apLangSwitch('es')">ES</button></div><button id="ap-follow-btn" title="Auto-scroll follows audio">↓ FOLLOW</button>
@@ -2587,7 +2622,7 @@ if(!localStorage.getItem('op_welcomed_v1')){
         if(!musicEl.paused){rampTo(musicMuted?0:DUCK_VOL,RAMP_MS);duckDot.classList.add('active');}
         // Media Session for lock screen
         if('mediaSession' in navigator){
-          navigator.mediaSession.metadata=new MediaMetadata({title:NARR_NAME,artist:'One Promise'});
+          navigator.mediaSession.metadata=new MediaMetadata({title:NARR_NAME,artist:'One Promise',artwork:[{src:'https://raw.githubusercontent.com/JonathanDiaso/One-Promise-Abraham-and-the-Living-God/main/Abraham%20Stars.jpeg',sizes:'512x512',type:'image/jpeg'}]});
           navigator.mediaSession.playbackState='playing';
           navigator.mediaSession.setActionHandler('play',()=>{if(narrEl.paused)apNarrToggle();});
           navigator.mediaSession.setActionHandler('pause',()=>{if(!narrEl.paused)apNarrToggle();});
@@ -2674,7 +2709,18 @@ if(!localStorage.getItem('op_welcomed_v1')){
     narrBtn.classList.remove('ap-playing');
     setPlayIcon(narrBtn,false);
     if(!musicEl.paused){rampTo(musicMuted?0:baseMusicVol,RAMP_MS);duckDot.classList.remove('active');}
+    const cCard=$('audio-complete');
+    if(cCard) setTimeout(()=>cCard.classList.add('open'),600);
   });
+
+  const completeCard=$('audio-complete');
+  if(completeCard){
+    $('audio-complete-dismiss').addEventListener('click',()=>completeCard.classList.remove('open'));
+    $('audio-complete-share').addEventListener('click',()=>{
+      if(navigator.share){navigator.share({title:'One Promise — Abraham, the Living God, and the Story That Never Ended',text:'One promise. One Spirit. Every nation. The story isn\'t finished.',url:'https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/'});}
+      else{navigator.clipboard&&navigator.clipboard.writeText('https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/');}
+    });
+  }
 
   // Init slider fills
   fill(narrSeek,0);fill(musicVolEl,80);fill(narrVolEl,90);
@@ -2783,7 +2829,7 @@ if(!localStorage.getItem('op_welcomed_v1')){
     $('onboard-begin').addEventListener('click',()=>{
       ob.style.opacity='0';
       setTimeout(()=>{ob.style.display='none';},520);
-      localStorage.setItem('op_welcomed_v1','1');
+      localStorage.setItem('op_welcomed_v2','1');
     });
   })();
 
@@ -2877,18 +2923,6 @@ if(!localStorage.getItem('op_welcomed_v1')){
     {t:11132,l:'God of Abraham, Isaac, and Ishmael',               el:'poem-ronald',         glow:null,               ss:false},
   ];
 
-  narrEl.addEventListener('loadedmetadata',()=>{
-    if(!narrEl.duration||!marksEl)return;
-    marksEl.innerHTML='';
-    CH.forEach(c=>{
-      const d=document.createElement('div');
-      d.className='ap-cmark';
-      d.style.left=((c.t/narrEl.duration)*100).toFixed(2)+'%';
-      d.title=c.l;
-      marksEl.appendChild(d);
-    });
-  });
-
   const ACTS=[
     {t:55,   id:'spirit'},
     {t:878,  id:'promise'},
@@ -2901,6 +2935,32 @@ if(!localStorage.getItem('op_welcomed_v1')){
     {t:9515, id:'unfinished'}
   ];
   let lastChIdx=-1, lastActIdx=-1;
+
+  narrEl.addEventListener('loadedmetadata',()=>{
+    if(!narrEl.duration||!marksEl)return;
+    marksEl.innerHTML='';
+    CH.forEach(c=>{
+      const d=document.createElement('div');
+      d.className='ap-cmark';
+      d.style.left=((c.t/narrEl.duration)*100).toFixed(2)+'%';
+      d.title=c.l;
+      marksEl.appendChild(d);
+    });
+    const actMarksEl=$('ap-act-marks');
+    if(actMarksEl){
+      actMarksEl.innerHTML='';
+      const ACT_LABELS=['I','II','III','IV','V','VI','VII','VIII'];
+      ACTS.slice(1).forEach((a,i)=>{
+        const m=document.createElement('div');
+        m.className='ap-amark';
+        m.style.left=((a.t/narrEl.duration)*100).toFixed(2)+'%';
+        m.title='Act '+ACT_LABELS[i];
+        m.innerHTML=`<div class="ap-amark-tick"></div><div class="ap-amark-label">${ACT_LABELS[i]}</div>`;
+        m.addEventListener('click',()=>{ narrEl.currentTime=a.t; });
+        actMarksEl.appendChild(m);
+      });
+    }
+  });
 
 
   // ── SLOW SCROLL ──
