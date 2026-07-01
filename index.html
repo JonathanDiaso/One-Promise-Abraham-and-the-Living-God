@@ -2574,10 +2574,10 @@ if(!localStorage.getItem('op_welcomed_v2')){
   // ← Set your track display names here
   const MUSIC_NAME='Ambient Music';
   const NARR_NAME ='One Promise — Full Narration';
-  const DUCK_VOL  = 0.30;  // 30% music volume when narration plays
-  const RAMP_MS   = 800;   // ms to fade in/out duck
+  const DUCK_VOL  = 0.18;  // 18% music volume when narration plays
+  const RAMP_MS   = 1400;  // ms to fade in/out duck
 
-  let baseMusicVol=0.80, baseNarrVol=0.90;
+  let baseMusicVol=0.55, baseNarrVol=0.95;
   let musicMuted=false, narrMuted=false;
   let isSeeking=false, rampTimer=null;
 
@@ -2682,6 +2682,21 @@ if(!localStorage.getItem('op_welcomed_v2')){
     }
   };
 
+  // Interruption recovery — resume after system sounds (alarms, calls) if user didn't pause
+  let _userPaused=true;
+  const _origToggle=window.apNarrToggle;
+  window.apNarrToggle=function(){
+    _userPaused=!narrEl.paused;
+    _origToggle();
+  };
+  document.addEventListener('visibilitychange',()=>{
+    if(!document.hidden&&!_userPaused&&narrEl.paused){
+      narrEl.play().catch(()=>{});
+    }
+  });
+  narrEl.addEventListener('play',()=>{ _userPaused=false; });
+  narrEl.addEventListener('pause',()=>{}); // intentional pauses handled by toggle flag
+
   window.apSetNarrVol=function(v){
     baseNarrVol=parseFloat(v);
     if(!narrMuted)narrEl.volume=baseNarrVol;
@@ -2760,7 +2775,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
   }
 
   // Init slider fills
-  fill(narrSeek,0);fill(musicVolEl,80);fill(narrVolEl,90);
+  fill(narrSeek,0);fill(musicVolEl,55);fill(narrVolEl,95);
 
   // ── SKIP ±30s ──
   window.apSkip=function(sec){
