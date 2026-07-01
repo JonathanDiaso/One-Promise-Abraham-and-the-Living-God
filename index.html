@@ -76,7 +76,7 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .nav a{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.16em;color:rgba(255,255,255,.65);text-decoration:none;padding:4px 9px;border-radius:2px;transition:all .2s;white-space:nowrap;}
 .nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;--act-color:#4a90d9;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(74,144,217,.09) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 15% 100%,rgba(27,188,156,.05) 0%,transparent 50%),radial-gradient(ellipse 35% 55% at 85% 80%,rgba(155,89,182,.06) 0%,transparent 50%);}
+.hero-bg{display:none;}
 .hero-stars{position:absolute;inset:0;overflow:hidden;will-change:transform;}
 #hero-moon{position:absolute;right:10%;top:16%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;z-index:2;}
 @media(max-width:600px){#hero-moon{width:95px;height:95px;right:6%;top:12%;}}
@@ -2357,11 +2357,16 @@ function _onScroll(){
   requestAnimationFrame(()=>{
     const sy=window.scrollY;
     if(prog) prog.style.width=(sy/(document.documentElement.scrollHeight-window.innerHeight)*100).toFixed(1)+'%';
-    if(sy<window.innerHeight*1.5){
-      if(heroMoon) heroMoon.style.transform=`translateY(${(sy*0.04).toFixed(1)}px)`;
-      if(sBg)      sBg.style.transform=`translateY(${(sy*0.06).toFixed(1)}px)`;
-      if(sMid)     sMid.style.transform=`translateY(${(sy*0.10).toFixed(1)}px)`;
-      if(sBright)  sBright.style.transform=`translateY(${(sy*0.15).toFixed(1)}px)`;
+    if(sy<window.innerHeight){
+      if(heroMoon) heroMoon.style.transform=`translateY(${(sy*0.15).toFixed(1)}px)`;
+      if(sBg)      sBg.style.transform=`translateY(${(sy*0.20).toFixed(1)}px)`;
+      if(sMid)     sMid.style.transform=`translateY(${(sy*0.32).toFixed(1)}px)`;
+      if(sBright)  sBright.style.transform=`translateY(${(sy*0.45).toFixed(1)}px)`;
+    } else {
+      if(heroMoon) heroMoon.style.transform='';
+      if(sBg)      sBg.style.transform='';
+      if(sMid)     sMid.style.transform='';
+      if(sBright)  sBright.style.transform='';
     }
     _rafTick=false;
   });
