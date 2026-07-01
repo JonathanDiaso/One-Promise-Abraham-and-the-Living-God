@@ -78,7 +78,7 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;--act-color:#4a90d9;}
 .hero-bg{display:none;}
 .hero-stars{position:absolute;inset:0;overflow:hidden;will-change:transform;}
-#hero-moon{position:absolute;right:10%;top:16%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;z-index:2;}
+#hero-moon{position:fixed;right:10%;top:16%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;z-index:3;}
 @media(max-width:600px){#hero-moon{width:95px;height:95px;right:6%;top:12%;}}
 .star{position:absolute;border-radius:50%;}
 @keyframes tw-dim{0%,100%{opacity:var(--o,.2);}50%{opacity:calc(var(--o,.2)*.25);}}
@@ -2350,6 +2350,7 @@ document.body.insertBefore(pageCanvas,document.body.firstChild);
 
 const prog=document.getElementById("progress");
 const heroMoon=document.getElementById("hero-moon");
+const _heroEl=document.querySelector('.hero');
 let _rafTick=false;
 function _onScroll(){
   if(_rafTick)return;
@@ -2357,21 +2358,46 @@ function _onScroll(){
   requestAnimationFrame(()=>{
     const sy=window.scrollY;
     if(prog) prog.style.width=(sy/(document.documentElement.scrollHeight-window.innerHeight)*100).toFixed(1)+'%';
-    if(sy<window.innerHeight){
-      if(heroMoon) heroMoon.style.transform=`translateY(${(sy*0.15).toFixed(1)}px)`;
-      if(sBg)      sBg.style.transform=`translateY(${(sy*0.20).toFixed(1)}px)`;
-      if(sMid)     sMid.style.transform=`translateY(${(sy*0.32).toFixed(1)}px)`;
-      if(sBright)  sBright.style.transform=`translateY(${(sy*0.45).toFixed(1)}px)`;
+    const heroH=_heroEl?_heroEl.offsetHeight:window.innerHeight;
+    if(heroMoon){
+      const p=Math.min(sy/heroH,1);
+      heroMoon.style.transform=`translateY(${(sy*0.28).toFixed(1)}px)`;
+      heroMoon.style.opacity=(0.88*(1-p)).toFixed(3);
+    }
+    if(sy<heroH){
+      if(sBg)     sBg.style.transform=`translateY(${(sy*0.20).toFixed(1)}px)`;
+      if(sMid)    sMid.style.transform=`translateY(${(sy*0.32).toFixed(1)}px)`;
+      if(sBright) sBright.style.transform=`translateY(${(sy*0.45).toFixed(1)}px)`;
     } else {
-      if(heroMoon) heroMoon.style.transform='';
-      if(sBg)      sBg.style.transform='';
-      if(sMid)     sMid.style.transform='';
-      if(sBright)  sBright.style.transform='';
+      if(sBg)     sBg.style.transform='';
+      if(sMid)    sMid.style.transform='';
+      if(sBright) sBright.style.transform='';
     }
     _rafTick=false;
   });
 }
 window.addEventListener('scroll',_onScroll,{passive:true});
+
+// Touch sparkles
+document.addEventListener('touchstart',function(e){
+  const t=e.touches[0];
+  const cx=t.clientX,cy=t.clientY;
+  const count=7;
+  for(let i=0;i<count;i++){
+    const angle=(Math.PI*2/count)*i;
+    const dist=28+Math.random()*28;
+    const sz=(1.2+Math.random()*1.4).toFixed(1);
+    const col=Math.random()<0.4?'rgba(201,168,76,0.9)':'rgba(255,255,255,0.9)';
+    const s=document.createElement('div');
+    s.style.cssText=`position:fixed;left:${cx}px;top:${cy}px;width:${sz}px;height:${sz}px;background:${col};border-radius:50%;pointer-events:none;z-index:9999;opacity:0.9;transform:translate(-50%,-50%);transition:transform 0.55s ease-out,opacity 0.55s ease-out;`;
+    document.body.appendChild(s);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      s.style.transform=`translate(calc(-50% + ${(Math.cos(angle)*dist).toFixed(1)}px),calc(-50% + ${(Math.sin(angle)*dist).toFixed(1)}px))`;
+      s.style.opacity='0';
+    }));
+    setTimeout(()=>s.remove(),620);
+  }
+},{passive:true});
 
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target);}});
