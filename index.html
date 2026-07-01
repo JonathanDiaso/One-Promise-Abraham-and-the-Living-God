@@ -75,7 +75,7 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(2,3,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 16px;height:56px;display:flex;align-items:center;gap:2px;justify-content:center;flex-wrap:wrap;}
 .nav a{font-family:"Cinzel",serif;font-size:.58rem;letter-spacing:.16em;color:rgba(255,255,255,.65);text-decoration:none;padding:4px 9px;border-radius:2px;transition:all .2s;white-space:nowrap;}
 .nav a:hover{color:#fff;background:rgba(255,255,255,.06);}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;overflow:hidden;--act-color:#4a90d9;}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;--act-color:#4a90d9;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(74,144,217,.09) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 15% 100%,rgba(27,188,156,.05) 0%,transparent 50%),radial-gradient(ellipse 35% 55% at 85% 80%,rgba(155,89,182,.06) 0%,transparent 50%);}
 .hero-stars{position:absolute;inset:0;overflow:hidden;will-change:transform;}
 #hero-moon{position:absolute;right:10%;top:16%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;z-index:2;}
@@ -2350,17 +2350,23 @@ document.body.insertBefore(pageCanvas,document.body.firstChild);
 
 const prog=document.getElementById("progress");
 const heroMoon=document.getElementById("hero-moon");
-if(prog||heroMoon){
-  window.addEventListener("scroll",()=>{
-    if(prog){
-      const pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100).toFixed(1);
-      prog.style.width=pct+"%";
+let _rafTick=false;
+function _onScroll(){
+  if(_rafTick)return;
+  _rafTick=true;
+  requestAnimationFrame(()=>{
+    const sy=window.scrollY;
+    if(prog) prog.style.width=(sy/(document.documentElement.scrollHeight-window.innerHeight)*100).toFixed(1)+'%';
+    if(sy<window.innerHeight*1.5){
+      if(heroMoon) heroMoon.style.transform=`translateY(${(sy*0.04).toFixed(1)}px)`;
+      if(sBg)      sBg.style.transform=`translateY(${(sy*0.06).toFixed(1)}px)`;
+      if(sMid)     sMid.style.transform=`translateY(${(sy*0.10).toFixed(1)}px)`;
+      if(sBright)  sBright.style.transform=`translateY(${(sy*0.15).toFixed(1)}px)`;
     }
-    if(heroMoon){
-      heroMoon.style.transform=`translateY(${(window.scrollY*0.06).toFixed(1)}px)`;
-    }
-  },{passive:true});
+    _rafTick=false;
+  });
 }
+window.addEventListener('scroll',_onScroll,{passive:true});
 
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target);}});
