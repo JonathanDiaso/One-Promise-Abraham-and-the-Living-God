@@ -78,8 +78,8 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;z-index:2;overflow:hidden;--act-color:#4a90d9;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(74,144,217,.09) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 15% 100%,rgba(27,188,156,.05) 0%,transparent 50%),radial-gradient(ellipse 35% 55% at 85% 80%,rgba(155,89,182,.06) 0%,transparent 50%);}
 .hero-stars{position:absolute;inset:0;overflow:hidden;will-change:transform;}
-#hero-moon{position:absolute;right:10%;top:10%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;}
-@media(max-width:600px){#hero-moon{width:95px;height:95px;right:6%;top:7%;}}
+#hero-moon{position:absolute;right:10%;top:16%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;z-index:2;}
+@media(max-width:600px){#hero-moon{width:95px;height:95px;right:6%;top:12%;}}
 .star{position:absolute;border-radius:50%;}
 @keyframes tw-dim{0%,100%{opacity:var(--o,.2);}50%{opacity:calc(var(--o,.2)*.25);}}
 @keyframes tw-mid{0%,100%{opacity:var(--o,.6);transform:scale(1);}50%{opacity:calc(var(--o,.6)*.18);transform:scale(.65);}}
@@ -701,8 +701,8 @@ body{padding-bottom:112px;}
     <div id="stars-bg"     style="position:absolute;inset:-30px;will-change:transform;"></div>
     <div id="stars-mid"    style="position:absolute;inset:-30px;will-change:transform;"></div>
     <div id="stars-bright" style="position:absolute;inset:-30px;will-change:transform;"></div>
-    <img id="hero-moon" src="https://i.ibb.co/99f0xf81/hf-20260701-061150-4d983e2c-0c30-4c75-9084-10e1c6b28db9.png" alt="" aria-hidden="true">
   </div>
+  <img id="hero-moon" src="https://i.ibb.co/99f0xf81/hf-20260701-061150-4d983e2c-0c30-4c75-9084-10e1c6b28db9.png" alt="" aria-hidden="true">
   <div class="hero-shema">HEAR O ISRAEL — THE LORD OUR GOD — THE LORD IS ONE — DEUTERONOMY 6:4</div>
   <h1>One Promise</h1>
   <p class="hero-sub">Abraham, the living God, and the story that never ended</p>
