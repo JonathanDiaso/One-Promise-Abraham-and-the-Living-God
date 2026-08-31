@@ -1,0 +1,514 @@
+[
+ {
+  "t_old": 30,
+  "label": "One Promise",
+  "el": "spirit",
+  "t_new": 6.1,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 55,
+  "label": "Before We Embark \u2014 The Spirit",
+  "el": "spirit",
+  "t_new": 79.2,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 345,
+  "label": "The Spirit Moving \u2014 Before Pentecost",
+  "el": "svg-spirit-moving",
+  "t_new": 351.2,
+  "score": 1.0,
+  "ctx": "is the spirit moving joseph pharaoh a pagan king looked"
+ },
+ {
+  "t_old": 567,
+  "label": "He Watched the Spirit Leave Saul",
+  "el": "div-from-upon",
+  "t_new": 569.6,
+  "score": 1.0,
+  "ctx": "had watched the spirit leave saul he knew it could"
+ },
+ {
+  "t_old": 744,
+  "label": "The Condition That Changes Everything",
+  "el": "box-condition",
+  "t_new": 830.9,
+  "score": 0.432,
+  "ctx": "is the condition not uniformity they didn't all think the"
+ },
+ {
+  "t_old": 878,
+  "label": "Act One \u2014 The Promise",
+  "el": "promise",
+  "t_new": 910.9,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 916,
+  "label": "Genesis 12 \u2014 God Calls One Man",
+  "el": "div-scattering",
+  "t_new": 955.0,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 956,
+  "label": "The Tower \u2014 What Archaeology Found",
+  "el": "box-tower",
+  "t_new": 996.7,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 1225,
+  "label": "Nimrod's Kingdom \u2014 The First Empire",
+  "el": "div-scattering",
+  "t_new": 1176.7,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 1340,
+  "label": "One Night He Burned the Idol House",
+  "el": "div-go",
+  "t_new": 1399.1,
+  "score": 1.0,
+  "ctx": "went one night he burned his father's idol house to"
+ },
+ {
+  "t_old": 1495,
+  "label": "No Map. No Destination. Just Go.",
+  "el": "div-go",
+  "t_new": 1566.7,
+  "score": 1.0,
+  "ctx": "you no map no destination just go to a land"
+ },
+ {
+  "t_old": 1691,
+  "label": "Look Up and Count the Stars",
+  "el": "div-night-god",
+  "t_new": 1775.4,
+  "score": 1.0,
+  "ctx": "sky and count the stars if indeed you can count"
+ },
+ {
+  "t_old": 1800,
+  "label": "Only God Moved \u2014 The Smoking Firepot",
+  "el": "div-night-god",
+  "t_new": 1941.1,
+  "score": 1.0,
+  "ctx": "then only god moved a smoking fire pot and a"
+ },
+ {
+  "t_old": 2025,
+  "label": "What Archaeology Confirmed \u2014 The World Was Real",
+  "el": "box-archaeology",
+  "t_new": 2121.9,
+  "score": 1.0,
+  "ctx": "matter what archaeology confirmed the world was real josephus the"
+ },
+ {
+  "t_old": 2275,
+  "label": "The Hall of Fame \u2014 Hebrews 11",
+  "el": "box-hall-of-fame",
+  "t_new": 2381.2,
+  "score": 1.0,
+  "ctx": "counted the hall of fame hebrews the new testament's retrospective"
+ },
+ {
+  "t_old": 2370,
+  "label": "Act Two \u2014 The Mistake",
+  "el": "mistake",
+  "t_new": 2494.2,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 2466,
+  "label": "Three Times \u2014 God Secured It Anyway",
+  "el": "box-three-times",
+  "t_new": 2596.9,
+  "score": 1.0,
+  "ctx": "and god secured it anyway abraham surrendered the promise three"
+ },
+ {
+  "t_old": 3300,
+  "label": "Petra Is That Promise Carved in Stone",
+  "el": "div-ishmael",
+  "t_new": 3494.1,
+  "score": 1.0,
+  "ctx": "nation petra is that promise carved in stone isaac was"
+ },
+ {
+  "t_old": 3390,
+  "label": "She Sat Down and Wept",
+  "el": "div-ishmael",
+  "t_new": 3630.7,
+  "score": 1.0,
+  "ctx": "die she sat down and wept and then the most"
+ },
+ {
+  "t_old": 3855,
+  "label": "Act Three \u2014 The Test",
+  "el": "test",
+  "t_new": 4085.9,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 4020,
+  "label": "Three Days Walk from Beersheba",
+  "el": "div-three-days",
+  "t_new": 4307.8,
+  "score": 1.0,
+  "ctx": "a three days walk from beersheba three days of walking"
+ },
+ {
+  "t_old": 4200,
+  "label": "The Third Day \u2014 God's Signature",
+  "el": "box-third-day",
+  "t_new": 4471.0,
+  "score": 1.0,
+  "ctx": "possible the third day god's signature the writer of hebrews"
+ },
+ {
+  "t_old": 4695,
+  "label": "He Was Only Just Beginning",
+  "el": "div-ascent",
+  "t_new": 4954.3,
+  "score": 1.0,
+  "ctx": "providing he was only just beginning the shadow and the"
+ },
+ {
+  "t_old": 4702,
+  "label": "The Shadow and the Substance",
+  "el": "svg-shadow",
+  "t_new": 4962.5,
+  "score": 1.0,
+  "ctx": "beginning the shadow and the substance isaac your son your"
+ },
+ {
+  "t_old": 4837,
+  "label": "Isaac Walked Free",
+  "el": "div-silence",
+  "t_new": 5095.0,
+  "score": 1.0,
+  "ctx": "forever isaac walked free because someone would one day take"
+ },
+ {
+  "t_old": 4882,
+  "label": "The Prophetic Gift \u2014 Operating Under Pressure",
+  "el": "box-prophetic",
+  "t_new": 5143.1,
+  "score": 1.0,
+  "ctx": "god the prophetic gift operating under pressure god himself will"
+ },
+ {
+  "t_old": 4968,
+  "label": "Eid Al-Adha \u2014 Most Re-Enacted Moment",
+  "el": "box-eid",
+  "t_new": 5261.5,
+  "score": 1.0,
+  "ctx": "at eid al adha the feast of sacrifice two to"
+ },
+ {
+  "t_old": 5179,
+  "label": "Rebekah \u2014 The Bride Chosen at the Well",
+  "el": "box-rebekah",
+  "t_new": 5447.5,
+  "score": 1.0,
+  "ctx": "death rebekah the bride chosen at the well chosen by"
+ },
+ {
+  "t_old": 5454,
+  "label": "Act Four \u2014 The Fulfillment",
+  "el": "fulfillment",
+  "t_new": 5739.7,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 5620,
+  "label": "The Great Isaiah Scroll \u2014 Sealed 2,000 Years",
+  "el": "box-scroll",
+  "t_new": 5900.4,
+  "score": 1.0,
+  "ctx": "in the great isaiah scroll sealed for two thousand years"
+ },
+ {
+  "t_old": 5713,
+  "label": "But Isaiah Wasn't Finished",
+  "el": "fulfillment",
+  "t_new": 5997.7,
+  "score": 0.945,
+  "ctx": "tomb but isaiah wasn't finished eight chapters later he described"
+ },
+ {
+  "t_old": 5958,
+  "label": "The Ache You Feel for Something You Can't Name",
+  "el": "div-moving-closer",
+  "t_new": 6257.3,
+  "score": 1.0,
+  "ctx": "and the ache you feel for something you can't name"
+ },
+ {
+  "t_old": 5986,
+  "label": "The Tabernacle Progression \u2014 God Moving Closer",
+  "el": "svg-tabernacle",
+  "t_new": 6265.9,
+  "score": 1.0,
+  "ctx": "closer the tabernacle progression god moving closer creation the garden"
+ },
+ {
+  "t_old": 6181,
+  "label": "What Secular History Confirmed \u2014 The Cross Was Real",
+  "el": "box-secular",
+  "t_new": 6469.2,
+  "score": 1.0,
+  "ctx": "forever what secular history confirmed the cross was real the"
+ },
+ {
+  "t_old": 6225,
+  "label": "The Alexamenos Graffito",
+  "el": "box-secular",
+  "t_new": 6512.4,
+  "score": 1.0,
+  "ctx": "era the alexamenos graffito scratched into plaster on the palestine"
+ },
+ {
+  "t_old": 6516,
+  "label": "Babel and Pentecost \u2014 The Exact Reversal",
+  "el": "div-pentecost",
+  "t_new": 6948.0,
+  "score": 0.794,
+  "ctx": "home the reversal of babel was a historical event with"
+ },
+ {
+  "t_old": 6602,
+  "label": "What Pride Scattered the Spirit Gathered",
+  "el": "div-pentecost",
+  "t_new": 6960.9,
+  "score": 1.0,
+  "ctx": "when pride scattered the spirit gathered the thing that divided"
+ },
+ {
+  "t_old": 6774,
+  "label": "Act Five \u2014 The Expansion",
+  "el": "expansion",
+  "t_new": 7084.6,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 7371,
+  "label": "The Woman at the Well \u2014 First Missionary",
+  "el": "div-ethiopian",
+  "t_new": 7656.1,
+  "score": 1.0,
+  "ctx": "coincidence the woman at the well the first recorded missionary"
+ },
+ {
+  "t_old": 7490,
+  "label": "The First Missionary in John's Gospel",
+  "el": "box-first-missionary",
+  "t_new": 7826.2,
+  "score": 1.0,
+  "ctx": "was the first missionary in john's gospel she left her"
+ },
+ {
+  "t_old": 7722,
+  "label": "Ethiopia and the Covenant \u2014 A Timeline",
+  "el": "svg-ethiopia",
+  "t_new": 8054.3,
+  "score": 1.0,
+  "ctx": "road ethiopia and the covenant a timeline nine fifty bc"
+ },
+ {
+  "t_old": 7909,
+  "label": "Act Six \u2014 The Wildfire",
+  "el": "wildfire",
+  "t_new": 8263.8,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 8028,
+  "label": "Paul \u2014 To Ishmael First",
+  "el": "div-paul",
+  "t_new": 8401.6,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 8036,
+  "label": "The Apostle Went to Ishmael's Territory First",
+  "el": "div-paul",
+  "t_new": 8416.4,
+  "score": 1.0,
+  "ctx": "first to ishmael's territory the spirit was choreographing the same"
+ },
+ {
+  "t_old": 8044,
+  "label": "Every Road Led Through Abraham",
+  "el": "div-paul",
+  "t_new": 8421.8,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 8060,
+  "label": "Jerusalem \u2014 33 AD",
+  "el": "svg-jerusalem",
+  "t_new": 8433.9,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 8211,
+  "label": "China \u2014 635 AD \u2014 The Xi'an Stele",
+  "el": "svg-jerusalem",
+  "t_new": 8481.3,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 8560,
+  "label": "Equipping Ordinary People Across the Empire",
+  "el": "div-sozo",
+  "t_new": 8823.5,
+  "score": 1.0,
+  "ctx": "was equipping ordinary people across the empire to do exactly"
+ },
+ {
+  "t_old": 8600,
+  "label": "Neato Burrito \u2014 The God Who Sees",
+  "el": "div-sozo",
+  "t_new": 8878.6,
+  "score": 1.0,
+  "ctx": "whole nito burrito a story about the god who sees"
+ },
+ {
+  "t_old": 8908,
+  "label": "Act Seven \u2014 The Fractures",
+  "el": "fractures",
+  "t_new": 9206.7,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 8968,
+  "label": "The Fracture Pattern \u2014 It Never Changes",
+  "el": "box-fracture-pattern",
+  "t_new": 9266.5,
+  "score": 0.701,
+  "ctx": "him the pattern never changes spiritual life produces a movement"
+ },
+ {
+  "t_old": 9065,
+  "label": "It Washed the Color Line Away",
+  "el": "fractures",
+  "t_new": 9366.9,
+  "score": 0.85,
+  "ctx": "fell it washed the color line away in a city"
+ },
+ {
+  "t_old": 9089,
+  "label": "The Fractures and Revivals \u2014 God Always Responds",
+  "el": "svg-fractures-revivals",
+  "t_new": 9390.2,
+  "score": 1.0,
+  "ctx": "room the fractures and revivals god always responds ad council"
+ },
+ {
+  "t_old": 9515,
+  "label": "Act Eight \u2014 The Unfinished Story",
+  "el": "unfinished",
+  "t_new": 9839.8,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 9525,
+  "label": "The Five Pillars as Abrahamic Re-Enactment",
+  "el": "svg-five-pillars",
+  "t_new": 10003.0,
+  "score": 1.0,
+  "ctx": "history the five pillars as abrahamic reenactment every pillar of"
+ },
+ {
+  "t_old": 9900,
+  "label": "The Other Half of the Family",
+  "el": "div-other-half",
+  "t_new": 10184.1,
+  "score": 1.0,
+  "ctx": "come the other half of the family this is not"
+ },
+ {
+  "t_old": 9968,
+  "label": "He Crossed a Closed Border",
+  "el": "div-other-half",
+  "t_new": 10257.9,
+  "score": 1.0,
+  "ctx": "ask he crossed a closed border a death sentence and"
+ },
+ {
+  "t_old": 10133,
+  "label": "The Spirit Is Moving in Ishmael's Territory",
+  "el": "box-spirit-ishmael",
+  "t_new": 10448.4,
+  "score": 1.0,
+  "ctx": "season the spirit is moving in ishmael's territory the same"
+ },
+ {
+  "t_old": 10425,
+  "label": "Melchizedek \u2014 The Beginning and the End",
+  "el": "box-melchizedek",
+  "t_new": 10744.7,
+  "score": 1.0,
+  "ctx": "chosen melchizedek the beginning and the end the writer of"
+ },
+ {
+  "t_old": 10716,
+  "label": "Every Nation. Every Tongue. Every Star.",
+  "el": "div-every-nation",
+  "t_new": 10950.4,
+  "score": 0.979,
+  "ctx": "them every nation every tongue ishmael's children there isaac's children"
+ },
+ {
+  "t_old": 10876,
+  "label": "From Bondage to Freedom",
+  "el": "closing-section",
+  "t_new": 11059.8,
+  "score": 1.0,
+  "ctx": "read from bondage to freedom from freedom to promise a"
+ },
+ {
+  "t_old": 10910,
+  "label": "The Story That Just Became Yours",
+  "el": "closing-section",
+  "t_new": 11103.3,
+  "score": 1.0,
+  "ctx": "hand-verified from SRT"
+ },
+ {
+  "t_old": 11105,
+  "label": "A Poem by Ronald Fleming",
+  "el": "poem-ronald",
+  "t_new": 11338.0,
+  "score": 1.0,
+  "ctx": "today a poem by ronald fleming and tell them what"
+ },
+ {
+  "t_old": 11132,
+  "label": "God of Abraham, Isaac, and Ishmael",
+  "el": "poem-ronald",
+  "t_new": 11362.9,
+  "score": 1.0,
+  "ctx": "rebirth god of abraham isaac and ishmael you made a"
+ }
+]

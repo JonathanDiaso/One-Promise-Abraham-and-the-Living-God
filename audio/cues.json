@@ -1,0 +1,5147 @@
+{
+ "act01": {
+  "section": "spirit",
+  "blocks": [
+   {
+    "t": 0.0,
+    "gt": 0.0,
+    "conf": "edge",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "spirit-b001",
+    "preview": "BEFORE WE EMBARK"
+   },
+   {
+    "t": 86.02,
+    "gt": 86.02,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 28,
+    "existing_id": "spirit-b002",
+    "preview": "Before light, there was darkness. Before land, there was void. Before "
+   },
+   {
+    "t": 105.29,
+    "gt": 105.29,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 31,
+    "existing_id": "spirit-b003",
+    "preview": "You may have heard His name a thousand times. In church. In a song. Sp"
+   },
+   {
+    "t": 119.53,
+    "gt": 119.53,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 41,
+    "existing_id": "spirit-b004",
+    "preview": "He is not a force you channel. He is not a feeling you chase. He is no"
+   },
+   {
+    "t": 141.9,
+    "gt": 141.9,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 35,
+    "existing_id": "spirit-b005",
+    "preview": "\"In the beginning God created the heavens and the earth. Now the earth"
+   },
+   {
+    "t": 159.35,
+    "gt": 159.35,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 41,
+    "existing_id": "spirit-b006",
+    "preview": "The Hebrew word is merachefet. It appears only twice in all of scriptu"
+   },
+   {
+    "t": 182.35,
+    "gt": 182.35,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 45,
+    "existing_id": "spirit-b007",
+    "preview": "Before Abraham. Before Israel. Before the law, the temple, the church,"
+   },
+   {
+    "t": 210.57,
+    "gt": 210.57,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 117,
+    "existing_id": "spirit-b008",
+    "preview": "Hevel \u2014 the Hebrew name Eve gave Abel, the first righteous man on eart"
+   },
+   {
+    "t": 250.76,
+    "gt": 250.76,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "div-who-he-is",
+    "preview": "WHO HE IS"
+   },
+   {
+    "t": 251.79,
+    "gt": 251.79,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 57,
+    "existing_id": "spirit-b010",
+    "preview": "The Holy Spirit is not a doctrine to debate or a feeling you chase at "
+   },
+   {
+    "t": 271.36,
+    "gt": 271.36,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 67,
+    "existing_id": "spirit-b011",
+    "preview": "When scripture says God spoke \u2014 the Spirit carried the word. 2 Pet 1:2"
+   },
+   {
+    "t": 302.72,
+    "gt": 302.72,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 8,
+    "existing_id": "spirit-b012",
+    "preview": "He is the agent. Every time. Without exception."
+   },
+   {
+    "t": 308.94,
+    "gt": 308.94,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 67,
+    "existing_id": "spirit-b013",
+    "preview": "You can trace the genealogy, map the geography, memorize the facts \u2014 a"
+   },
+   {
+    "t": 330.66,
+    "gt": 330.66,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "div-always-moving",
+    "preview": "HE WAS ALWAYS MOVING"
+   },
+   {
+    "t": 331.96,
+    "gt": 331.96,
+    "conf": "interp",
+    "score": 0.234,
+    "tag": "p",
+    "w": 28,
+    "existing_id": "spirit-b015",
+    "preview": "The Spirit didn't arrive at Pentecost. Pentecost changed where he live"
+   },
+   {
+    "t": 341.03,
+    "gt": 341.03,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "spirit-b016",
+    "preview": "THE SPIRIT MOVING \u2014 BEFORE PENTECOST"
+   },
+   {
+    "t": 342.98,
+    "gt": 342.98,
+    "conf": "interp",
+    "score": 0.32,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "spirit-b017",
+    "preview": "Every Hinge Moment. Every Time."
+   },
+   {
+    "t": 344.6,
+    "gt": 344.6,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "spirit-b018",
+    "preview": "Creation \u2014 Genesis 1:2"
+   },
+   {
+    "t": 345.89,
+    "gt": 345.89,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 22,
+    "existing_id": "spirit-b019",
+    "preview": "Hovering over the waters. Present before anything existed. The first t"
+   },
+   {
+    "t": 358.26,
+    "gt": 358.26,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "spirit-b020",
+    "preview": "Joseph \u2014 Genesis 41:38"
+   },
+   {
+    "t": 360.51,
+    "gt": 360.51,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 39,
+    "existing_id": "spirit-b021",
+    "preview": "Pharaoh \u2014 a pagan king \u2014 looked at Joseph and said: \"Can we find anyon"
+   },
+   {
+    "t": 386.88,
+    "gt": 386.88,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "spirit-b022",
+    "preview": "Bezalel \u2014 Exodus 31:3"
+   },
+   {
+    "t": 389.58,
+    "gt": 389.58,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 44,
+    "existing_id": "spirit-b023",
+    "preview": "The first person in all of scripture explicitly described as filled wi"
+   },
+   {
+    "t": 413.43,
+    "gt": 413.43,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "spirit-b024",
+    "preview": "Moses \u2014 Numbers 11:29"
+   },
+   {
+    "t": 415.6,
+    "gt": 415.6,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 41,
+    "existing_id": "spirit-b025",
+    "preview": "Standing in the desert, watching two men prophesy outside the camp, Mo"
+   },
+   {
+    "t": 432.84,
+    "gt": 432.84,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "spirit-b026",
+    "preview": "Joel \u2014 c. 800 BC"
+   },
+   {
+    "t": 434.94,
+    "gt": 434.94,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 47,
+    "existing_id": "spirit-b027",
+    "preview": "\"I will pour out my Spirit on all people. Your sons and daughters will"
+   },
+   {
+    "t": 462.98,
+    "gt": 462.98,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "spirit-b028",
+    "preview": "Ezekiel \u2014 597 BC"
+   },
+   {
+    "t": 465.36,
+    "gt": 465.36,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 52,
+    "existing_id": "spirit-b029",
+    "preview": "\"I will give you a new heart. I will put my Spirit in you.\" Not upon. "
+   },
+   {
+    "t": 494.1,
+    "gt": 494.1,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 39,
+    "existing_id": "spirit-b030",
+    "preview": "Every one of these moments carries the same signature. An impossible s"
+   },
+   {
+    "t": 513.3,
+    "gt": 513.3,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 9,
+    "existing_id": "spirit-b031",
+    "preview": "That has always been the pattern. It still is."
+   },
+   {
+    "t": 517.73,
+    "gt": 517.73,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "div-from-upon",
+    "preview": "FROM UPON TO WITHIN \u2014 EVERYTHING CHANGED"
+   },
+   {
+    "t": 521.17,
+    "gt": 521.17,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 63,
+    "existing_id": "spirit-b033",
+    "preview": "In the Old Testament, the Spirit came upon people. Selectively. Tempor"
+   },
+   {
+    "t": 552.74,
+    "gt": 552.74,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 49,
+    "existing_id": "spirit-b034",
+    "preview": "David knew this firsthand. After his worst sin, his deepest prayer was"
+   },
+   {
+    "t": 576.83,
+    "gt": 576.83,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 8,
+    "existing_id": "spirit-b035",
+    "preview": "And then Jesus said something that changed everything."
+   },
+   {
+    "t": 576.83,
+    "gt": 576.83,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 52,
+    "existing_id": "spirit-b036",
+    "preview": "\"I will ask the Father, and he will give you another advocate to help "
+   },
+   {
+    "t": 598.35,
+    "gt": 598.35,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 54,
+    "existing_id": "spirit-b037",
+    "preview": "Forever. Not for a task. Not for a season. Forever. And not just with "
+   },
+   {
+    "t": 623.92,
+    "gt": 623.92,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 51,
+    "existing_id": "spirit-b038",
+    "preview": "Every other faith in the world places God above, beyond, outside \u2014 req"
+   },
+   {
+    "t": 655.95,
+    "gt": 655.95,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "div-wait",
+    "preview": "WAIT. YOU'RE NOT READY YET."
+   },
+   {
+    "t": 659.09,
+    "gt": 659.09,
+    "conf": "anchor",
+    "score": 0.809,
+    "tag": "p",
+    "w": 46,
+    "existing_id": "spirit-b040",
+    "preview": "Jesus died. Rose. Appeared to 500 people over 40 days. 1 Cor 15:6 And "
+   },
+   {
+    "t": 682.7,
+    "gt": 682.7,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 44,
+    "existing_id": "spirit-b041",
+    "preview": "\"Do not leave Jerusalem, but wait for the gift my Father promised... Y"
+   },
+   {
+    "t": 703.7,
+    "gt": 703.7,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "spirit-b042",
+    "preview": "Acts 1:4, 8"
+   },
+   {
+    "t": 705.13,
+    "gt": 705.13,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 31,
+    "existing_id": "spirit-b043",
+    "preview": "These were not new converts. They had seen every miracle, heard every "
+   },
+   {
+    "t": 722.66,
+    "gt": 722.66,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 74,
+    "existing_id": "spirit-b044",
+    "preview": "The Greek word for power is dunamis. It is the root of the English wor"
+   },
+   {
+    "t": 759.37,
+    "gt": 759.37,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 21,
+    "existing_id": "spirit-b045",
+    "preview": "Without it, they were just people with a story. With it \u2014 they were wi"
+   },
+   {
+    "t": 767.9,
+    "gt": 767.9,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "spirit-b046",
+    "preview": "THE CONDITION THAT CHANGES EVERYTHING"
+   },
+   {
+    "t": 769.92,
+    "gt": 769.92,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 231,
+    "existing_id": "spirit-b047",
+    "preview": "120 people. An upper room. Ten days of waiting. And one thing that had"
+   },
+   {
+    "t": 880.19,
+    "gt": 880.19,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 41,
+    "existing_id": "spirit-b048",
+    "preview": "And if you want what fell in that upper room \u2014 Jesus said it simply: \""
+   },
+   {
+    "t": 898.52,
+    "gt": 898.52,
+    "conf": "anchor",
+    "score": 0.804,
+    "tag": "p",
+    "w": 16,
+    "existing_id": "spirit-b049",
+    "preview": "He has been waiting for you to ask. That was always the only thing he "
+   }
+  ]
+ },
+ "act02": {
+  "section": "promise",
+  "blocks": [
+   {
+    "t": 8.01,
+    "gt": 918.87,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 19,
+    "existing_id": "promise-b001",
+    "preview": "Before God made the promise, he chose the man. And the man he chose wa"
+   },
+   {
+    "t": 18.75,
+    "gt": 929.61,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "div-scattering",
+    "preview": "THE SCATTERING \u2014 AND GOD'S ANSWER"
+   },
+   {
+    "t": 22.14,
+    "gt": 933.01,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 42,
+    "existing_id": "promise-b003",
+    "preview": "Genesis 11 ends with a scattering. The entire human race \u2014 one languag"
+   },
+   {
+    "t": 44.1,
+    "gt": 954.97,
+    "conf": "anchor",
+    "score": 0.876,
+    "tag": "p",
+    "w": 8,
+    "existing_id": "promise-b004",
+    "preview": "Genesis 12 opens with God calling one man."
+   },
+   {
+    "t": 48.75,
+    "gt": 959.62,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 76,
+    "existing_id": "promise-b005",
+    "preview": "The call of Abraham is God's direct response to the wound of Babel \u2014 n"
+   },
+   {
+    "t": 89.35,
+    "gt": 1000.21,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "promise-b006",
+    "preview": "THE TOWER \u2014 WHAT ARCHAEOLOGY FOUND"
+   },
+   {
+    "t": 92.56,
+    "gt": 1003.42,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 283,
+    "existing_id": "promise-b007",
+    "preview": "The Tower of Babel is not a myth. It has a name, a location, and an in"
+   },
+   {
+    "t": 351.11,
+    "gt": 1261.97,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "promise-b008",
+    "preview": "GENESIS 10:10 \u2014 THE COUNTERFEIT KINGDOM"
+   },
+   {
+    "t": 356.59,
+    "gt": 1267.46,
+    "conf": "interp",
+    "score": 0.337,
+    "tag": "td",
+    "w": 20,
+    "existing_id": "promise-b009",
+    "preview": "NIMROD'S KINGDOM Babel \u2014 man reaching up to GodBuilt by pride and rebe"
+   },
+   {
+    "t": 374.86,
+    "gt": 1285.73,
+    "conf": "anchor",
+    "score": 0.422,
+    "tag": "td",
+    "w": 22,
+    "existing_id": "promise-b010",
+    "preview": "GOD'S KINGDOM Moriah \u2014 God coming down to manBuilt through surrender a"
+   },
+   {
+    "t": 383.55,
+    "gt": 1294.41,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "promise-b011",
+    "preview": "THE MAN IN THE IDOL SHOP"
+   },
+   {
+    "t": 385.92,
+    "gt": 1296.78,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 63,
+    "existing_id": "promise-b012",
+    "preview": "The city of Ur sat on the banks of the Euphrates in what is now southe"
+   },
+   {
+    "t": 413.37,
+    "gt": 1324.24,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 45,
+    "existing_id": "promise-b013",
+    "preview": "Terah's son Abram grew up in the shop. He knew every idol by name, kne"
+   },
+   {
+    "t": 435.62,
+    "gt": 1346.48,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 115,
+    "existing_id": "promise-b014",
+    "preview": "The Book of Jubilees \u2014 found among the Dead Sea Scrolls, used as scrip"
+   },
+   {
+    "t": 492.63,
+    "gt": 1403.49,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 11,
+    "existing_id": "promise-b015",
+    "preview": "One night he burned his father's idol house to the ground."
+   },
+   {
+    "t": 498.72,
+    "gt": 1409.58,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 88,
+    "existing_id": "promise-b016",
+    "preview": "Not out of rebellion. Not out of anger. Out of the same conviction Pau"
+   },
+   {
+    "t": 538.14,
+    "gt": 1449.0,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 52,
+    "existing_id": "promise-b017",
+    "preview": "He was seventeen years old, according to some traditions. He had no co"
+   },
+   {
+    "t": 562.08,
+    "gt": 1472.94,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 24,
+    "existing_id": "promise-b018",
+    "preview": "He found God by paying attention to a sky everyone else slept under. T"
+   },
+   {
+    "t": 576.18,
+    "gt": 1487.04,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "promise-b019",
+    "preview": "THE FIRST PATTERN \u2014 SEEKING BEFORE FOUND"
+   },
+   {
+    "t": 580.29,
+    "gt": 1491.15,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 84,
+    "existing_id": "promise-b020",
+    "preview": "Abraham was moving toward God before God spoke to him. This pattern wi"
+   },
+   {
+    "t": 627.25,
+    "gt": 1538.12,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "div-go",
+    "preview": "GO. I'LL SHOW YOU WHEN YOU GET THERE."
+   },
+   {
+    "t": 631.73,
+    "gt": 1542.59,
+    "conf": "anchor",
+    "score": 0.804,
+    "tag": "p",
+    "w": 33,
+    "existing_id": "promise-b022",
+    "preview": "Abram was seventy-five when God spoke in Haran \u2014 halfway between Ur an"
+   },
+   {
+    "t": 650.85,
+    "gt": 1561.71,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 18,
+    "existing_id": "promise-b023",
+    "preview": "\"Leave your country, your people, your father's household \u2014 and go to "
+   },
+   {
+    "t": 659.29,
+    "gt": 1570.15,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 24,
+    "existing_id": "promise-b024",
+    "preview": "No map. No destination. Just \u2014 go. To a land I will show you. Present "
+   },
+   {
+    "t": 670.8,
+    "gt": 1581.66,
+    "conf": "anchor",
+    "score": 0.806,
+    "tag": "p",
+    "w": 48,
+    "existing_id": "promise-b025",
+    "preview": "Hebrews 11:8 says he left \"not knowing where he was going.\" That is wh"
+   },
+   {
+    "t": 700.83,
+    "gt": 1611.69,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 49,
+    "existing_id": "promise-b026",
+    "preview": "\"I will make you into a great nation and I will bless you; I will make"
+   },
+   {
+    "t": 722.47,
+    "gt": 1633.33,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 48,
+    "existing_id": "promise-b027",
+    "preview": "Not one family. Not one nation. All peoples on earth. Paul identifies "
+   },
+   {
+    "t": 750.28,
+    "gt": 1661.14,
+    "conf": "anchor",
+    "score": 0.806,
+    "tag": "p",
+    "w": 48,
+    "existing_id": "promise-b028",
+    "preview": "The gospel was not invented at Calvary. It was not launched at Penteco"
+   },
+   {
+    "t": 777.22,
+    "gt": 1688.09,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "div-night-god",
+    "preview": "THE NIGHT GOD SIGNED ALONE"
+   },
+   {
+    "t": 780.03,
+    "gt": 1690.89,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 103,
+    "existing_id": "promise-b030",
+    "preview": "Years passed. Abram reached Canaan, survived a famine in Egypt, parted"
+   },
+   {
+    "t": 834.08,
+    "gt": 1744.94,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 5,
+    "existing_id": "promise-b031",
+    "preview": "And still \u2014 no child."
+   },
+   {
+    "t": 836.7,
+    "gt": 1747.56,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 58,
+    "existing_id": "promise-b032",
+    "preview": "God spoke again and Abram answered honestly: \"What can you give me sin"
+   },
+   {
+    "t": 864.54,
+    "gt": 1775.4,
+    "conf": "anchor",
+    "score": 0.911,
+    "tag": "p",
+    "w": 23,
+    "existing_id": "promise-b033",
+    "preview": "\"Look up at the sky and count the stars \u2014 if indeed you can count them"
+   },
+   {
+    "t": 874.9,
+    "gt": 1785.76,
+    "conf": "anchor",
+    "score": 0.897,
+    "tag": "p",
+    "w": 85,
+    "existing_id": "promise-b034",
+    "preview": "And Abram believed. That single sentence \u2014 \"Abram believed God, and it"
+   },
+   {
+    "t": 919.4,
+    "gt": 1830.26,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 49,
+    "existing_id": "promise-b035",
+    "preview": "\"The LORD did not set his heart on you and choose you because you were"
+   },
+   {
+    "t": 941.34,
+    "gt": 1852.2,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 67,
+    "existing_id": "promise-b036",
+    "preview": "One old man. A barren wife. The smallest of all nations \u2014 before a nat"
+   },
+   {
+    "t": 980.03,
+    "gt": 1890.9,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 89,
+    "existing_id": "promise-b037",
+    "preview": "Then came the ceremony. God told Abram to cut animals in half and lay "
+   },
+   {
+    "t": 1022.46,
+    "gt": 1933.33,
+    "conf": "anchor",
+    "score": 0.823,
+    "tag": "p",
+    "w": 44,
+    "existing_id": "promise-b038",
+    "preview": "As the sun was setting, a deep sleep fell on him. A thick and dreadful"
+   },
+   {
+    "t": 1044.28,
+    "gt": 1955.15,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 42,
+    "existing_id": "promise-b039",
+    "preview": "Abram never walked through. Only God moved. In the one ceremony where "
+   },
+   {
+    "t": 1066.19,
+    "gt": 1977.06,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 122,
+    "existing_id": "promise-b040",
+    "preview": "The Hebrew word woven through every covenant promise from this moment "
+   },
+   {
+    "t": 1128.17,
+    "gt": 2039.03,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "promise-b041",
+    "preview": "\u2726 GOD SIGNED IT ALONE \u2014 GENESIS 15 \u2726"
+   },
+   {
+    "t": 1132.74,
+    "gt": 2043.61,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 68,
+    "existing_id": "promise-b042",
+    "preview": "This is the foundation of everything that follows. God bound only hims"
+   },
+   {
+    "t": 1168.13,
+    "gt": 2078.99,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 7,
+    "existing_id": "promise-b043",
+    "preview": "Which is to say: it is unbreakable."
+   },
+   {
+    "t": 1171.77,
+    "gt": 2082.64,
+    "conf": "anchor",
+    "score": 0.759,
+    "tag": "p",
+    "w": 17,
+    "existing_id": "promise-b044",
+    "preview": "Whatever you have done. Whatever has been done to you. The smoking fir"
+   },
+   {
+    "t": 1182.07,
+    "gt": 2092.94,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 74,
+    "existing_id": "promise-b045",
+    "preview": "But understand this clearly: the covenant was never designed to leave "
+   },
+   {
+    "t": 1222.27,
+    "gt": 2133.14,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "promise-b046",
+    "preview": "WHAT ARCHAEOLOGY CONFIRMED \u2014 THE WORLD WAS REAL"
+   },
+   {
+    "t": 1226.62,
+    "gt": 2137.48,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 206,
+    "existing_id": "promise-b047",
+    "preview": "Josephus \u2014 the first-century Jewish historian writing with no Christia"
+   },
+   {
+    "t": 1354.64,
+    "gt": 2265.5,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "div-stars",
+    "preview": "THE STARS AND THE SAND"
+   },
+   {
+    "t": 1357.75,
+    "gt": 2268.61,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 19,
+    "existing_id": "promise-b049",
+    "preview": "God gave Abraham the promise in two images \u2014 and they may not be point"
+   },
+   {
+    "t": 1367.19,
+    "gt": 2278.06,
+    "conf": "anchor",
+    "score": 0.924,
+    "tag": "p",
+    "w": 30,
+    "existing_id": "promise-b050",
+    "preview": "Genesis 15:5 \u2014 at night, looking up: \"Count the stars \u2014 so shall your "
+   },
+   {
+    "t": 1385.87,
+    "gt": 2296.74,
+    "conf": "anchor",
+    "score": 0.926,
+    "tag": "p",
+    "w": 45,
+    "existing_id": "promise-b051",
+    "preview": "Genesis 22:17 \u2014 after Moriah, after the knife was raised and the ram w"
+   },
+   {
+    "t": 1408.72,
+    "gt": 2319.59,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 90,
+    "existing_id": "promise-b052",
+    "preview": "Bible teachers including Derek Prince have taught this dual image as t"
+   },
+   {
+    "t": 1450.98,
+    "gt": 2361.85,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 50,
+    "existing_id": "promise-b053",
+    "preview": "When you stand before the throne in Revelation 7:9 \u2014 every nation, tri"
+   },
+   {
+    "t": 1481.35,
+    "gt": 2392.22,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "promise-b054",
+    "preview": "THE HALL OF FAME \u2014 HEBREWS 11"
+   },
+   {
+    "t": 1485.61,
+    "gt": 2396.47,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 186,
+    "existing_id": "promise-b055",
+    "preview": "The New Testament's retrospective on everything that follows. What was"
+   }
+  ]
+ },
+ "act03": {
+  "section": "mistake",
+  "blocks": [
+   {
+    "t": 9.41,
+    "gt": 2502.65,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 29,
+    "existing_id": "mistake-b001",
+    "preview": "God made the promise. Now came the waiting. And the waiting revealed e"
+   },
+   {
+    "t": 26.33,
+    "gt": 2519.57,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 62,
+    "existing_id": "mistake-b002",
+    "preview": "A year passed. Then five. Then ten. The stars Abraham had counted that"
+   },
+   {
+    "t": 54.12,
+    "gt": 2547.36,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 107,
+    "existing_id": "mistake-b003",
+    "preview": "He had already failed in the exact place God was asking him to trust. "
+   },
+   {
+    "t": 103.63,
+    "gt": 2596.87,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "mistake-b004",
+    "preview": "THREE TIMES \u2014 AND GOD SECURED IT ANYWAY"
+   },
+   {
+    "t": 111.0,
+    "gt": 2604.24,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 270,
+    "existing_id": "mistake-b005",
+    "preview": "Abraham surrendered the promise three separate times \u2014 and three times"
+   },
+   {
+    "t": 248.21,
+    "gt": 2741.45,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 76,
+    "existing_id": "mistake-b006",
+    "preview": "Sarai had an Egyptian servant named Hagar \u2014 likely acquired years earl"
+   },
+   {
+    "t": 289.28,
+    "gt": 2782.52,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 87,
+    "existing_id": "mistake-b007",
+    "preview": "It was the most sophisticated act of unbelief in the Bible \u2014 not a cru"
+   },
+   {
+    "t": 334.33,
+    "gt": 2827.57,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 61,
+    "existing_id": "mistake-b008",
+    "preview": "God had not called Abraham to reasonable solutions. He had called him "
+   },
+   {
+    "t": 369.64,
+    "gt": 2862.88,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "mistake-b009",
+    "preview": "GALATIANS 4 \u2014 PAUL'S INTERPRETATION"
+   },
+   {
+    "t": 372.53,
+    "gt": 2865.77,
+    "conf": "anchor",
+    "score": 0.809,
+    "tag": "div",
+    "w": 102,
+    "existing_id": "mistake-b010",
+    "preview": "Paul is not gentle about this in Galatians. He calls Hagar \"the covena"
+   },
+   {
+    "t": 427.05,
+    "gt": 2920.29,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "div-hagar",
+    "preview": "HAGAR \u2014 EL ROI"
+   },
+   {
+    "t": 429.19,
+    "gt": 2922.43,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 72,
+    "existing_id": "mistake-b012",
+    "preview": "Hagar conceived. The moment she did, something shifted between the two"
+   },
+   {
+    "t": 471.38,
+    "gt": 2964.62,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 45,
+    "existing_id": "mistake-b013",
+    "preview": "She ran into the desert. Toward Egypt, the scripture implies \u2014 toward "
+   },
+   {
+    "t": 494.03,
+    "gt": 2987.27,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 38,
+    "existing_id": "mistake-b014",
+    "preview": "An angel found her at a spring on the way to Shur. The desert. Alone. "
+   },
+   {
+    "t": 514.81,
+    "gt": 3008.05,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 7,
+    "existing_id": "mistake-b015",
+    "preview": "The angel spoke to her by name."
+   },
+   {
+    "t": 518.63,
+    "gt": 3011.87,
+    "conf": "anchor",
+    "score": 0.876,
+    "tag": "p",
+    "w": 17,
+    "existing_id": "mistake-b016",
+    "preview": "\"Hagar, servant of Sarai \u2014 where have you come from, and where are you"
+   },
+   {
+    "t": 524.94,
+    "gt": 3018.18,
+    "conf": "anchor",
+    "score": 0.873,
+    "tag": "p",
+    "w": 36,
+    "existing_id": "mistake-b017",
+    "preview": "He already knew the answers. He asked anyway \u2014 not for information. To"
+   },
+   {
+    "t": 541.49,
+    "gt": 3034.73,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 18,
+    "existing_id": "mistake-b018",
+    "preview": "Then he made her a promise that sounds almost identical to the one he "
+   },
+   {
+    "t": 548.32,
+    "gt": 3041.56,
+    "conf": "anchor",
+    "score": 0.897,
+    "tag": "p",
+    "w": 17,
+    "existing_id": "mistake-b019",
+    "preview": "\"I will increase your descendants so much that they will be too numero"
+   },
+   {
+    "t": 548.32,
+    "gt": 3041.56,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 97,
+    "existing_id": "mistake-b020",
+    "preview": "The same language. Too numerous to count. Stars you cannot count. What"
+   },
+   {
+    "t": 601.47,
+    "gt": 3094.71,
+    "conf": "anchor",
+    "score": 0.948,
+    "tag": "p",
+    "w": 31,
+    "existing_id": "mistake-b021",
+    "preview": "\"You are now pregnant and you will give birth to a son. You shall name"
+   },
+   {
+    "t": 613.12,
+    "gt": 3106.36,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 13,
+    "existing_id": "mistake-b022",
+    "preview": "And then Hagar did something no one else in the entire Bible does."
+   },
+   {
+    "t": 621.01,
+    "gt": 3114.25,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 3,
+    "existing_id": "mistake-b023",
+    "preview": "She named God."
+   },
+   {
+    "t": 622.83,
+    "gt": 3116.07,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 19,
+    "existing_id": "mistake-b024",
+    "preview": "\"You are the God who sees me \u2014 El Roi. I have now seen the One who see"
+   },
+   {
+    "t": 631.55,
+    "gt": 3124.79,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 67,
+    "existing_id": "mistake-b025",
+    "preview": "Not Abraham. Not Sarah. Not Moses. Not any of the patriarchs whose nam"
+   },
+   {
+    "t": 665.78,
+    "gt": 3159.02,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 7,
+    "existing_id": "mistake-b026",
+    "preview": "El Roi. The God who sees me."
+   },
+   {
+    "t": 669.35,
+    "gt": 3162.59,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 59,
+    "existing_id": "mistake-b027",
+    "preview": "She had not prayed. She had not fasted. She had performed no religious"
+   },
+   {
+    "t": 698.09,
+    "gt": 3191.33,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 13,
+    "existing_id": "mistake-b028",
+    "preview": "God heard the misery of a slave woman. He has not stopped hearing."
+   },
+   {
+    "t": 706.41,
+    "gt": 3199.65,
+    "conf": "anchor",
+    "score": 0.53,
+    "tag": "p",
+    "w": 17,
+    "existing_id": "mistake-b029",
+    "preview": "A slave nobody counted gave God a name. What makes you think you're th"
+   },
+   {
+    "t": 712.34,
+    "gt": 3205.58,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 29,
+    "existing_id": "mistake-b030",
+    "preview": "\"See, I am doing a new thing! Now it springs up; do you not perceive i"
+   },
+   {
+    "t": 732.41,
+    "gt": 3225.65,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 55,
+    "existing_id": "mistake-b031",
+    "preview": "Written seven centuries after Hagar \u2014 but describing the same God. The"
+   },
+   {
+    "t": 763.97,
+    "gt": 3257.21,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "div-ishmael",
+    "preview": "ISHMAEL \u2014 BLESSED AND EXPELLED"
+   },
+   {
+    "t": 766.84,
+    "gt": 3260.08,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 37,
+    "existing_id": "mistake-b033",
+    "preview": "Hagar returned. Ishmael was born. Abraham held his firstborn son \u2014 the"
+   },
+   {
+    "t": 787.99,
+    "gt": 3281.23,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 56,
+    "existing_id": "mistake-b034",
+    "preview": "For thirteen years, Ishmael was everything. The heir. The proof that A"
+   },
+   {
+    "t": 814.67,
+    "gt": 3307.91,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 32,
+    "existing_id": "mistake-b035",
+    "preview": "Then God appeared to Abraham again and told him that the covenant heir"
+   },
+   {
+    "t": 827.94,
+    "gt": 3321.18,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 10,
+    "existing_id": "mistake-b036",
+    "preview": "Abraham's response tells you everything about who he had become:"
+   },
+   {
+    "t": 831.52,
+    "gt": 3324.76,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "mistake-b037",
+    "preview": "\"If only Ishmael might live under your blessing!\""
+   },
+   {
+    "t": 834.38,
+    "gt": 3327.62,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 60,
+    "existing_id": "mistake-b038",
+    "preview": "Not \u2014 why not Ishmael? Not \u2014 after everything I've done, after the wai"
+   },
+   {
+    "t": 869.51,
+    "gt": 3362.75,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 123,
+    "existing_id": "mistake-b039",
+    "preview": "God answered the prayer. Every word of it. \"As for Ishmael, I have hea"
+   },
+   {
+    "t": 913.83,
+    "gt": 3407.07,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 69,
+    "existing_id": "mistake-b040",
+    "preview": "The covenant would pass through Isaac. But Ishmael was never abandoned"
+   },
+   {
+    "t": 955.31,
+    "gt": 3448.55,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 101,
+    "existing_id": "mistake-b041",
+    "preview": "Josephus \u2014 writing in the first century from Jerusalem, obtaining his "
+   },
+   {
+    "t": 1011.86,
+    "gt": 3505.1,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 46,
+    "existing_id": "mistake-b042",
+    "preview": "Isaac was born. Sarah's laughter \u2014 the laughter she had hidden when th"
+   },
+   {
+    "t": 1037.28,
+    "gt": 3530.52,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 59,
+    "existing_id": "mistake-b043",
+    "preview": "At Isaac's weaning feast she saw Ishmael mocking her son \u2014 the Hebrew "
+   },
+   {
+    "t": 1061.18,
+    "gt": 3554.42,
+    "conf": "anchor",
+    "score": 0.857,
+    "tag": "p",
+    "w": 74,
+    "existing_id": "mistake-b044",
+    "preview": "The text says Abraham was greatly distressed. Gen 21:11 Two words in t"
+   },
+   {
+    "t": 1101.37,
+    "gt": 3594.61,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 27,
+    "existing_id": "mistake-b045",
+    "preview": "God told him to listen to Sarah. He sent Hagar and Ishmael into the de"
+   },
+   {
+    "t": 1110.48,
+    "gt": 3603.72,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 14,
+    "existing_id": "mistake-b046",
+    "preview": "A skin of water. For a woman and a teenage boy. In the desert."
+   },
+   {
+    "t": 1119.28,
+    "gt": 3612.52,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 49,
+    "existing_id": "mistake-b047",
+    "preview": "The water ran out. Hagar did what a mother does when she has nothing l"
+   },
+   {
+    "t": 1143.76,
+    "gt": 3637.0,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 5,
+    "existing_id": "mistake-b048",
+    "preview": "She sat down and wept."
+   },
+   {
+    "t": 1146.26,
+    "gt": 3639.5,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 13,
+    "existing_id": "mistake-b049",
+    "preview": "And then \u2014 the most quietly devastating verse in the story of Ishmael:"
+   },
+   {
+    "t": 1154.44,
+    "gt": 3647.68,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "mistake-b050",
+    "preview": "\"God heard the boy crying.\""
+   },
+   {
+    "t": 1157.59,
+    "gt": 3650.83,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 75,
+    "existing_id": "mistake-b051",
+    "preview": "Not Hagar. The text says she wept \u2014 but God heard the boy. The boy who"
+   },
+   {
+    "t": 1191.52,
+    "gt": 3684.76,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 42,
+    "existing_id": "mistake-b052",
+    "preview": "The angel of God called to Hagar from heaven: \"What is the matter, Hag"
+   },
+   {
+    "t": 1206.92,
+    "gt": 3700.16,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 20,
+    "existing_id": "mistake-b053",
+    "preview": "God opened her eyes. She saw a well of water. She filled the skin. She"
+   },
+   {
+    "t": 1219.53,
+    "gt": 3712.77,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 11,
+    "existing_id": "mistake-b054",
+    "preview": "\"God was with the boy as he grew up.\" Gen 21:20"
+   },
+   {
+    "t": 1226.47,
+    "gt": 3719.71,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 59,
+    "existing_id": "mistake-b055",
+    "preview": "Five words. The entire inheritance of Ishmael contained in five words."
+   },
+   {
+    "t": 1257.23,
+    "gt": 3750.47,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 18,
+    "existing_id": "mistake-b056",
+    "preview": "His mother walked away so she wouldn't have to watch. God walked towar"
+   },
+   {
+    "t": 1266.62,
+    "gt": 3759.86,
+    "conf": "anchor",
+    "score": 0.857,
+    "tag": "p",
+    "w": 93,
+    "existing_id": "mistake-b057",
+    "preview": "Four thousand years later, 2-3 million Muslims performing Hajj walk be"
+   },
+   {
+    "t": 1312.27,
+    "gt": 3805.51,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "mistake-b058",
+    "preview": "THE WOMEN WHO CARRIED THE COVENANT"
+   },
+   {
+    "t": 1315.21,
+    "gt": 3808.45,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 48,
+    "existing_id": "mistake-b059",
+    "preview": "Hagar was the first woman to carry the promise \u2014 slave, foreigner, cho"
+   },
+   {
+    "t": 1337.23,
+    "gt": 3830.47,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 139,
+    "existing_id": "mistake-b060",
+    "preview": "Rebekah heard God speak before she married Isaac, before she had child"
+   },
+   {
+    "t": 1402.91,
+    "gt": 3896.15,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 69,
+    "existing_id": "mistake-b061",
+    "preview": "Tamar \u2014 Judah's twice-widowed daughter-in-law, denied what she was owe"
+   },
+   {
+    "t": 1435.79,
+    "gt": 3929.03,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 67,
+    "existing_id": "mistake-b062",
+    "preview": "Ruth was a Moabite \u2014 excluded by law to the tenth generation. Deut 23:"
+   },
+   {
+    "t": 1475.2,
+    "gt": 3968.44,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 126,
+    "existing_id": "mistake-b063",
+    "preview": "Mary of Nazareth was a teenager in a Roman-occupied village with no po"
+   },
+   {
+    "t": 1533.31,
+    "gt": 4026.55,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 79,
+    "existing_id": "mistake-b064",
+    "preview": "And Mary Magdalene \u2014 in a culture where a woman's testimony was inadmi"
+   },
+   {
+    "t": 1569.98,
+    "gt": 4063.22,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 37,
+    "existing_id": "mistake-b065",
+    "preview": "Five women. Five different centuries. Five different forms of exclusio"
+   }
+  ]
+ },
+ "act04": {
+  "section": "test",
+  "blocks": [
+   {
+    "t": 7.78,
+    "gt": 4093.72,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 18,
+    "existing_id": "test-b001",
+    "preview": "Everything Abraham had waited for finally existed. The son. The laught"
+   },
+   {
+    "t": 24.71,
+    "gt": 4110.65,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 65,
+    "existing_id": "test-b002",
+    "preview": "The rabbis say Abraham's greatest test was not Moriah. It was the twen"
+   },
+   {
+    "t": 55.98,
+    "gt": 4141.92,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 9,
+    "existing_id": "test-b003",
+    "preview": "But Moriah was the one that broke all categories."
+   },
+   {
+    "t": 60.31,
+    "gt": 4146.25,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 33,
+    "existing_id": "test-b004",
+    "preview": "\"Take your son, your only son, whom you love \u2014 Isaac \u2014 and go to the r"
+   },
+   {
+    "t": 78.32,
+    "gt": 4164.26,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 86,
+    "existing_id": "test-b005",
+    "preview": "Your son. Singular. As if Ishmael \u2014 the teenage boy Abraham had loved "
+   },
+   {
+    "t": 114.88,
+    "gt": 4200.82,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 7,
+    "existing_id": "test-b006",
+    "preview": "And then \u2014 three words in Hebrew:"
+   },
+   {
+    "t": 117.86,
+    "gt": 4203.8,
+    "conf": "anchor",
+    "score": 0.897,
+    "tag": "p",
+    "w": 10,
+    "existing_id": "test-b007",
+    "preview": "Vayashkem Avraham baboker. And Abraham rose early in the morning."
+   },
+   {
+    "t": 130.63,
+    "gt": 4216.57,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 114,
+    "existing_id": "test-b008",
+    "preview": "The root word is shakham \u2014 it means to load a burden onto the back of "
+   },
+   {
+    "t": 183.09,
+    "gt": 4269.03,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 69,
+    "existing_id": "test-b009",
+    "preview": "The man who had laughed when God said Sarah would conceive. The man wh"
+   },
+   {
+    "t": 214.71,
+    "gt": 4300.65,
+    "conf": "interp",
+    "score": 0.752,
+    "tag": "p",
+    "w": 10,
+    "existing_id": "test-b010",
+    "preview": "The region of Moriah was three days' walk from Beersheba."
+   },
+   {
+    "t": 219.29,
+    "gt": 4305.23,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 67,
+    "existing_id": "test-b011",
+    "preview": "Three days of walking \u2014 three sunrises, three nights of camp, three da"
+   },
+   {
+    "t": 263.1,
+    "gt": 4349.04,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 10,
+    "existing_id": "test-b012",
+    "preview": "For three days Abraham walked with him. And said nothing."
+   },
+   {
+    "t": 268.66,
+    "gt": 4354.6,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 91,
+    "existing_id": "test-b013",
+    "preview": "What did he think? Hebrews tells us: \"He reasoned that God could even "
+   },
+   {
+    "t": 313.5,
+    "gt": 4399.44,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 45,
+    "existing_id": "test-b014",
+    "preview": "Abraham reasoned his way to resurrection faith in the middle of the ha"
+   },
+   {
+    "t": 334.91,
+    "gt": 4420.85,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 41,
+    "existing_id": "test-b015",
+    "preview": "On the third day he saw the mountain. He turned to his servants and sa"
+   },
+   {
+    "t": 355.28,
+    "gt": 4441.22,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 69,
+    "existing_id": "test-b016",
+    "preview": "We. Both of us. He did not know how. He simply believed that they woul"
+   },
+   {
+    "t": 393.75,
+    "gt": 4479.69,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "test-b017",
+    "preview": "THE THIRD DAY \u2014 GOD'S SIGNATURE"
+   },
+   {
+    "t": 397.09,
+    "gt": 4483.03,
+    "conf": "anchor",
+    "score": 0.857,
+    "tag": "div",
+    "w": 212,
+    "existing_id": "test-b018",
+    "preview": "The writer of Hebrews calls what happened with Isaac a parabole \u2014 the "
+   },
+   {
+    "t": 511.09,
+    "gt": 4597.03,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 30,
+    "existing_id": "test-b019",
+    "preview": "He gave Isaac the wood to carry. He kept the fire and the knife himsel"
+   },
+   {
+    "t": 527.65,
+    "gt": 4613.59,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 12,
+    "existing_id": "test-b020",
+    "preview": "Isaac asked the question that has haunted readers for four thousand ye"
+   },
+   {
+    "t": 534.66,
+    "gt": 4620.6,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 19,
+    "existing_id": "test-b021",
+    "preview": "\"Father?\"\"Yes, my son?\"\"The fire and the wood are here \u2014 but where is "
+   },
+   {
+    "t": 540.99,
+    "gt": 4626.93,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 74,
+    "existing_id": "test-b022",
+    "preview": "He knew. He must have known. He had seen sacrifices. He understood wha"
+   },
+   {
+    "t": 580.08,
+    "gt": 4666.02,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 19,
+    "existing_id": "test-b023",
+    "preview": "He raised the knife on the only thing he loved. What are you still hol"
+   },
+   {
+    "t": 589.62,
+    "gt": 4675.56,
+    "conf": "anchor",
+    "score": 0.931,
+    "tag": "p",
+    "w": 16,
+    "existing_id": "test-b024",
+    "preview": "Abraham answered: \"God himself will provide the lamb for the burnt off"
+   },
+   {
+    "t": 597.82,
+    "gt": 4683.76,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 19,
+    "existing_id": "test-b025",
+    "preview": "Whatever Isaac heard in that answer, he kept walking. The boy who had "
+   },
+   {
+    "t": 607.44,
+    "gt": 4693.38,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 13,
+    "existing_id": "test-b026",
+    "preview": "And then the text says something that deserves to be read very slowly:"
+   },
+   {
+    "t": 611.19,
+    "gt": 4697.13,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 8,
+    "existing_id": "test-b027",
+    "preview": "And the two of them went on together."
+   },
+   {
+    "t": 613.5,
+    "gt": 4699.44,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 70,
+    "existing_id": "test-b028",
+    "preview": "That phrase \u2014 yachdav in Hebrew, together, as one \u2014 appears twice in t"
+   },
+   {
+    "t": 653.76,
+    "gt": 4739.7,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 6,
+    "existing_id": "test-b029",
+    "preview": "And they went on. Together. Still."
+   },
+   {
+    "t": 657.21,
+    "gt": 4743.15,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 82,
+    "existing_id": "test-b030",
+    "preview": "Whatever passed between them in those final steps up the mountain \u2014 wh"
+   },
+   {
+    "t": 685.15,
+    "gt": 4771.09,
+    "conf": "anchor",
+    "score": 0.857,
+    "tag": "p",
+    "w": 79,
+    "existing_id": "test-b031",
+    "preview": "He built the altar. Arranged the wood. And then \u2014 bound his son. The H"
+   },
+   {
+    "t": 729.31,
+    "gt": 4815.25,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 60,
+    "existing_id": "test-b032",
+    "preview": "Jewish tradition holds that Isaac was not a small child \u2014 that he was "
+   },
+   {
+    "t": 759.41,
+    "gt": 4845.35,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 8,
+    "existing_id": "test-b033",
+    "preview": "Abraham reached out his hand. Took the knife."
+   },
+   {
+    "t": 759.41,
+    "gt": 4845.35,
+    "conf": "anchor",
+    "score": 0.714,
+    "tag": "div",
+    "w": 50,
+    "existing_id": "test-b034",
+    "preview": "\"But the angel of the LORD called out to him from heaven: 'Abraham! Ab"
+   },
+   {
+    "t": 792.24,
+    "gt": 4878.18,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 43,
+    "existing_id": "test-b035",
+    "preview": "He looked up. A ram. Caught in a thicket by its horns. As if it had al"
+   },
+   {
+    "t": 811.54,
+    "gt": 4897.48,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 47,
+    "existing_id": "test-b036",
+    "preview": "\"Now I know that you fear God.\" Not terror \u2014 trust. Abraham had proved"
+   },
+   {
+    "t": 834.99,
+    "gt": 4920.93,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 24,
+    "existing_id": "test-b037",
+    "preview": "God stopped the knife at the last second \u2014 not because the cost didn't"
+   },
+   {
+    "t": 844.93,
+    "gt": 4930.87,
+    "conf": "anchor",
+    "score": 0.762,
+    "tag": "p",
+    "w": 69,
+    "existing_id": "test-b038",
+    "preview": "He named the place Yahweh Yireh \u2014 The Lord Will Provide. Gen 22:14 And"
+   },
+   {
+    "t": 876.26,
+    "gt": 4962.2,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "test-b039",
+    "preview": "\u2726 THE SHADOW AND THE SUBSTANCE \u2726"
+   },
+   {
+    "t": 879.44,
+    "gt": 4965.38,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "test-b040",
+    "preview": "ISAAC \u2014 GENESIS 22"
+   },
+   {
+    "t": 881.26,
+    "gt": 4967.2,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "test-b041",
+    "preview": "\"Your son, your only son, whom you love\""
+   },
+   {
+    "t": 884.89,
+    "gt": 4970.83,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "test-b042",
+    "preview": "Carried the wood for his own sacrifice up the mountain"
+   },
+   {
+    "t": 891.3,
+    "gt": 4977.24,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 12,
+    "existing_id": "test-b043",
+    "preview": "Mount Moriah \u2014 where Solomon's Temple would stand. Where Jesus would d"
+   },
+   {
+    "t": 900.95,
+    "gt": 4986.89,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "test-b044",
+    "preview": "The knife raised. Full obedience. Nothing held back."
+   },
+   {
+    "t": 906.92,
+    "gt": 4992.86,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 15,
+    "existing_id": "test-b045",
+    "preview": "A substitute provided \u2014 the ram in the thicket. \"God himself will prov"
+   },
+   {
+    "t": 911.5,
+    "gt": 4997.44,
+    "conf": "anchor",
+    "score": 0.842,
+    "tag": "div",
+    "w": 13,
+    "existing_id": "test-b046",
+    "preview": "Received back alive \u2014 \"in a manner of speaking, from death.\" Hebrews 1"
+   },
+   {
+    "t": 921.11,
+    "gt": 5007.05,
+    "conf": "anchor",
+    "score": 0.734,
+    "tag": "div",
+    "w": 13,
+    "existing_id": "test-b047",
+    "preview": "Never recorded speaking to his father again in Genesis. What cost that"
+   },
+   {
+    "t": 929.88,
+    "gt": 5015.82,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "test-b048",
+    "preview": "JESUS \u2014 THE CROSS"
+   },
+   {
+    "t": 932.58,
+    "gt": 5018.52,
+    "conf": "anchor",
+    "score": 0.757,
+    "tag": "div",
+    "w": 16,
+    "existing_id": "test-b049",
+    "preview": "\"This is my Son, whom I love \u2014 with him I am well pleased.\" Matthew 3:"
+   },
+   {
+    "t": 939.1,
+    "gt": 5025.04,
+    "conf": "anchor",
+    "score": 0.808,
+    "tag": "div",
+    "w": 12,
+    "existing_id": "test-b050",
+    "preview": "Carried his own cross up the hill to Golgotha \u2014 John 19:17"
+   },
+   {
+    "t": 943.33,
+    "gt": 5029.27,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 17,
+    "existing_id": "test-b051",
+    "preview": "Golgotha \u2014 the same region as Moriah. The shadow and the substance on "
+   },
+   {
+    "t": 951.64,
+    "gt": 5037.58,
+    "conf": "anchor",
+    "score": 0.68,
+    "tag": "div",
+    "w": 12,
+    "existing_id": "test-b052",
+    "preview": "\"Not my will but yours be done.\" Luke 22:42. Nothing held back."
+   },
+   {
+    "t": 959.87,
+    "gt": 5045.81,
+    "conf": "anchor",
+    "score": 0.876,
+    "tag": "div",
+    "w": 17,
+    "existing_id": "test-b053",
+    "preview": "No substitute. \"Behold the Lamb of God, who takes away the sin of the "
+   },
+   {
+    "t": 968.86,
+    "gt": 5054.8,
+    "conf": "anchor",
+    "score": 0.723,
+    "tag": "div",
+    "w": 47,
+    "existing_id": "test-b054",
+    "preview": "Romans 8:32 \u2014 \"He who did not spare his own Son\" uses the same Greek v"
+   },
+   {
+    "t": 994.48,
+    "gt": 5080.42,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 18,
+    "existing_id": "test-b055",
+    "preview": "Resurrection. \"He is not here \u2014 he has risen.\" The ram was the preview"
+   },
+   {
+    "t": 1005.03,
+    "gt": 5090.97,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "test-b056",
+    "preview": "Sent the Holy Spirit. Still speaking. The silence broken forever."
+   },
+   {
+    "t": 1015.12,
+    "gt": 5101.06,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 11,
+    "existing_id": "test-b057",
+    "preview": "ISAAC WALKED FREE BECAUSE SOMEONE WOULD ONE DAY TAKE HIS PLACE"
+   },
+   {
+    "t": 1021.29,
+    "gt": 5107.23,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 84,
+    "existing_id": "test-b058",
+    "preview": "Isaac asked his question \u2014 \"where is the lamb?\" \u2014 on the way up a moun"
+   },
+   {
+    "t": 1063.5,
+    "gt": 5149.44,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "test-b059",
+    "preview": "THE PROPHETIC GIFT \u2014 OPERATING UNDER PRESSURE"
+   },
+   {
+    "t": 1067.02,
+    "gt": 5152.96,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 170,
+    "existing_id": "test-b060",
+    "preview": "\"God himself will provide the lamb.\" Abraham said that before he saw t"
+   },
+   {
+    "t": 1144.94,
+    "gt": 5230.88,
+    "conf": "interp",
+    "score": 0.375,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "test-b061",
+    "preview": "EID AL-ADHA \u2014 THE MOST RE-ENACTED MOMENT IN HISTORY"
+   },
+   {
+    "t": 1149.07,
+    "gt": 5235.01,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "div",
+    "w": 182,
+    "existing_id": "test-b062",
+    "preview": "The Quran records this same test in Surah 37:100-111 but does not name"
+   },
+   {
+    "t": 1251.43,
+    "gt": 5337.37,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "div-silence",
+    "preview": "THE SILENCE AFTER"
+   },
+   {
+    "t": 1253.12,
+    "gt": 5339.06,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 50,
+    "existing_id": "test-b064",
+    "preview": "After the angel spoke, Abraham sacrificed the ram and named the place."
+   },
+   {
+    "t": 1272.11,
+    "gt": 5358.05,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 34,
+    "existing_id": "test-b065",
+    "preview": "\"Abraham returned to his servants.\" Gen 22:19 The Hebrew is singular. "
+   },
+   {
+    "t": 1291.11,
+    "gt": 5377.05,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 13,
+    "existing_id": "test-b066",
+    "preview": "The next time Isaac appears, the text places him far to the south."
+   },
+   {
+    "t": 1297.18,
+    "gt": 5383.12,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 39,
+    "existing_id": "test-b067",
+    "preview": "\"Now Isaac had come from Beer-lahai-roi, for he was dwelling in the Ne"
+   },
+   {
+    "t": 1315.94,
+    "gt": 5401.88,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 101,
+    "existing_id": "test-b068",
+    "preview": "The place name carries the weight. Beer-lahai-roi means \"Well of the L"
+   },
+   {
+    "t": 1369.53,
+    "gt": 5455.47,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "test-b069",
+    "preview": "REBEKAH \u2014 THE BRIDE CHOSEN AT THE WELL"
+   },
+   {
+    "t": 1373.77,
+    "gt": 5459.71,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 128,
+    "existing_id": "test-b070",
+    "preview": "Chosen by grace. Rebekah did not audition or seek Isaac out. The serva"
+   },
+   {
+    "t": 1442.26,
+    "gt": 5528.2,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 71,
+    "existing_id": "test-b071",
+    "preview": "Sarah died in the chapter between the mountain and the field. Genesis "
+   },
+   {
+    "t": 1481.72,
+    "gt": 5567.66,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 94,
+    "existing_id": "test-b072",
+    "preview": "Then comes a smaller detail, easy to read past. He had to negotiate wi"
+   },
+   {
+    "t": 1527.96,
+    "gt": 5613.9,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 57,
+    "existing_id": "test-b073",
+    "preview": "Scripture never records Isaac coming down from Moriah. It does not say"
+   },
+   {
+    "t": 1555.91,
+    "gt": 5641.85,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 43,
+    "existing_id": "test-b074",
+    "preview": "That silence sits over the rest of Genesis. It is not answered until a"
+   },
+   {
+    "t": 1581.18,
+    "gt": 5667.12,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 18,
+    "existing_id": "test-b075",
+    "preview": "Whatever it cost them both \u2014 they gave it. And God kept every word of "
+   },
+   {
+    "t": 1589.22,
+    "gt": 5675.16,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 77,
+    "existing_id": "test-b076",
+    "preview": "Genesis 24 opens with a single verdict on Abraham's entire life: \"Abra"
+   },
+   {
+    "t": 1621.8,
+    "gt": 5707.74,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 23,
+    "existing_id": "test-b077",
+    "preview": "The address of your provision is the address of His presence \u2014 and His"
+   },
+   {
+    "t": 1631.54,
+    "gt": 5717.48,
+    "conf": "anchor",
+    "score": 0.924,
+    "tag": "p",
+    "w": 21,
+    "existing_id": "test-b078",
+    "preview": "Some obedience leaves a mark that never fully heals on this side. He s"
+   }
+  ]
+ },
+ "act05": {
+  "section": "fulfillment",
+  "blocks": [
+   {
+    "t": 9.61,
+    "gt": 5748.25,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 38,
+    "existing_id": "fulfillment-b001",
+    "preview": "The ram in the thicket was only the preview. Seven hundred years befor"
+   },
+   {
+    "t": 33.08,
+    "gt": 5771.71,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 68,
+    "existing_id": "fulfillment-b002",
+    "preview": "\"He was despised and rejected by mankind, a man of suffering, and fami"
+   },
+   {
+    "t": 66.26,
+    "gt": 5804.89,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "fulfillment-b003",
+    "preview": "Isaiah 53:3, 5, 7 \u2014 written c. 700 BC"
+   },
+   {
+    "t": 70.65,
+    "gt": 5809.28,
+    "conf": "anchor",
+    "score": 0.878,
+    "tag": "p",
+    "w": 92,
+    "existing_id": "fulfillment-b004",
+    "preview": "This is the passage the Ethiopian eunuch was reading on his chariot wh"
+   },
+   {
+    "t": 116.92,
+    "gt": 5855.55,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 114,
+    "existing_id": "fulfillment-b005",
+    "preview": "For centuries a curtain sealed off the Holy of Holies \u2014 the one room w"
+   },
+   {
+    "t": 170.61,
+    "gt": 5909.24,
+    "conf": "anchor",
+    "score": 0.845,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "fulfillment-b006",
+    "preview": "THE GREAT ISAIAH SCROLL \u2014 SEALED FOR 2,000 YEARS"
+   },
+   {
+    "t": 176.67,
+    "gt": 5915.3,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 174,
+    "existing_id": "fulfillment-b007",
+    "preview": "In 1947, a Bedouin shepherd threw a rock into a cave near the Dead Sea"
+   },
+   {
+    "t": 268.01,
+    "gt": 6006.64,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 17,
+    "existing_id": "fulfillment-b008",
+    "preview": "But Isaiah wasn't finished. Eight chapters later, he described what th"
+   },
+   {
+    "t": 279.98,
+    "gt": 6018.61,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 73,
+    "existing_id": "fulfillment-b009",
+    "preview": "\"The Spirit of the Sovereign LORD is on me, because the LORD has anoin"
+   },
+   {
+    "t": 313.47,
+    "gt": 6052.11,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 85,
+    "existing_id": "fulfillment-b010",
+    "preview": "Seven hundred years later, Jesus stood in a synagogue in Nazareth and "
+   },
+   {
+    "t": 359.11,
+    "gt": 6097.75,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 5,
+    "existing_id": "fulfillment-b011",
+    "preview": "Every eye was on him."
+   },
+   {
+    "t": 361.8,
+    "gt": 6100.43,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 37,
+    "existing_id": "fulfillment-b012",
+    "preview": "Crown of beauty instead of ashes. Oil of joy instead of mourning. Garm"
+   },
+   {
+    "t": 382.03,
+    "gt": 6120.67,
+    "conf": "anchor",
+    "score": 0.58,
+    "tag": "p",
+    "w": 22,
+    "existing_id": "fulfillment-b013",
+    "preview": "He didn't promise to improve the old life. He promised to trade it. Mo"
+   },
+   {
+    "t": 398.95,
+    "gt": 6137.58,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "fulfillment-b014",
+    "preview": "THE NEW COVENANT \u2014 JEREMIAH 31"
+   },
+   {
+    "t": 403.56,
+    "gt": 6142.2,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 19,
+    "existing_id": "fulfillment-b015",
+    "preview": "The most important pre-Pentecost promise was not a prediction of a per"
+   },
+   {
+    "t": 413.84,
+    "gt": 6152.48,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 70,
+    "existing_id": "fulfillment-b016",
+    "preview": "\"This is the covenant I will make with the people of Israel after that"
+   },
+   {
+    "t": 442.17,
+    "gt": 6180.8,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 94,
+    "existing_id": "fulfillment-b017",
+    "preview": "Not stone tablets \u2014 hearts. Not external law \u2014 internal transformation"
+   },
+   {
+    "t": 494.15,
+    "gt": 6232.78,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 18,
+    "existing_id": "fulfillment-b018",
+    "preview": "You were never meant to know about him secondhand. The whole promise w"
+   },
+   {
+    "t": 504.1,
+    "gt": 6242.74,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "div-moving-closer",
+    "preview": "THE GOD WHO KEEPS MOVING CLOSER"
+   },
+   {
+    "t": 507.42,
+    "gt": 6246.05,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 55,
+    "existing_id": "fulfillment-b020",
+    "preview": "The entire Bible is one story about God closing a distance. He walked "
+   },
+   {
+    "t": 534.47,
+    "gt": 6273.1,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "fulfillment-b021",
+    "preview": "\u2726 THE TABERNACLE PROGRESSION \u2014 GOD MOVING CLOSER \u2726"
+   },
+   {
+    "t": 543.8,
+    "gt": 6282.43,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "fulfillment-b022",
+    "preview": "The Garden \u2014 God walks with humanity directly"
+   },
+   {
+    "t": 548.67,
+    "gt": 6287.3,
+    "conf": "anchor",
+    "score": 0.896,
+    "tag": "div",
+    "w": 17,
+    "existing_id": "fulfillment-b023",
+    "preview": "No barrier. No veil. God and man in the same space at evening. Perfect"
+   },
+   {
+    "t": 559.52,
+    "gt": 6298.15,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "fulfillment-b024",
+    "preview": "Separation \u2014 the wound that drives the whole story"
+   },
+   {
+    "t": 564.17,
+    "gt": 6302.8,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 17,
+    "existing_id": "fulfillment-b025",
+    "preview": "East of Eden. The cherubim and the flaming sword. Distance established"
+   },
+   {
+    "t": 576.04,
+    "gt": 6314.68,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "fulfillment-b026",
+    "preview": "The Tabernacle \u2014 God dwells among his people"
+   },
+   {
+    "t": 581.03,
+    "gt": 6319.67,
+    "conf": "anchor",
+    "score": 0.871,
+    "tag": "div",
+    "w": 55,
+    "existing_id": "fulfillment-b027",
+    "preview": "\"Have them make a sanctuary for me that I may dwell among them.\" Exodu"
+   },
+   {
+    "t": 606.04,
+    "gt": 6344.68,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 12,
+    "existing_id": "fulfillment-b028",
+    "preview": "The Glory departs \u2014 the most heartbreaking moment in the Old Testament"
+   },
+   {
+    "t": 612.07,
+    "gt": 6350.7,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 45,
+    "existing_id": "fulfillment-b029",
+    "preview": "Ezekiel watches the glory of God lift from the temple and leave before"
+   },
+   {
+    "t": 634.13,
+    "gt": 6372.77,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "fulfillment-b030",
+    "preview": "Jesus \u2014 God tabernacling in human flesh"
+   },
+   {
+    "t": 639.22,
+    "gt": 6377.86,
+    "conf": "anchor",
+    "score": 0.729,
+    "tag": "div",
+    "w": 31,
+    "existing_id": "fulfillment-b031",
+    "preview": "\"The Word became flesh and tabernacled among us.\" The Greek is esk\u0113n\u014ds"
+   },
+   {
+    "t": 658.52,
+    "gt": 6397.15,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "fulfillment-b032",
+    "preview": "The veil tears \u2014 from top to bottom"
+   },
+   {
+    "t": 663.5,
+    "gt": 6402.13,
+    "conf": "anchor",
+    "score": 0.874,
+    "tag": "div",
+    "w": 40,
+    "existing_id": "fulfillment-b033",
+    "preview": "The thick curtain separating the Holy of Holies torn from top to botto"
+   },
+   {
+    "t": 684.81,
+    "gt": 6423.45,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "fulfillment-b034",
+    "preview": "The Spirit within \u2014 God dwelling inside his people"
+   },
+   {
+    "t": 689.48,
+    "gt": 6428.12,
+    "conf": "anchor",
+    "score": 0.871,
+    "tag": "div",
+    "w": 45,
+    "existing_id": "fulfillment-b035",
+    "preview": "\"I will put my Spirit in you.\" Ezekiel 36:27 \u2014 promised centuries befo"
+   },
+   {
+    "t": 712.51,
+    "gt": 6451.14,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "fulfillment-b036",
+    "preview": "New Jerusalem \u2014 the tabernacle finally complete"
+   },
+   {
+    "t": 717.11,
+    "gt": 6455.75,
+    "conf": "anchor",
+    "score": 0.828,
+    "tag": "div",
+    "w": 33,
+    "existing_id": "fulfillment-b037",
+    "preview": "\"God's dwelling place is now among the people and he will dwell with t"
+   },
+   {
+    "t": 735.78,
+    "gt": 6474.41,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "fulfillment-b038",
+    "preview": "WHAT SECULAR HISTORY CONFIRMED \u2014 THE CROSS WAS REAL"
+   },
+   {
+    "t": 742.79,
+    "gt": 6481.43,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "div",
+    "w": 284,
+    "existing_id": "fulfillment-b039",
+    "preview": "The Pilate Stone. In June 1961, Italian archaeologist Antonio Frova ex"
+   },
+   {
+    "t": 956.82,
+    "gt": 6695.45,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "div-pentecost",
+    "preview": "PENTECOST \u2014 BABEL REVERSED"
+   },
+   {
+    "t": 959.83,
+    "gt": 6698.47,
+    "conf": "anchor",
+    "score": 0.774,
+    "tag": "p",
+    "w": 62,
+    "existing_id": "fulfillment-b041",
+    "preview": "Pentecost \u2014 Shavuot in Hebrew \u2014 was one of three mandatory pilgrimage "
+   },
+   {
+    "t": 993.16,
+    "gt": 6731.8,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 64,
+    "existing_id": "fulfillment-b042",
+    "preview": "Shavuot also commemorated the giving of the Torah at Sinai \u2014 fifty day"
+   },
+   {
+    "t": 1028.65,
+    "gt": 6767.29,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 71,
+    "existing_id": "fulfillment-b043",
+    "preview": "\"When the day of Pentecost came, they were all together in one place. "
+   },
+   {
+    "t": 1055.11,
+    "gt": 6793.75,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 52,
+    "existing_id": "fulfillment-b044",
+    "preview": "Every nation under heaven in Jerusalem heard in their own language. Pr"
+   },
+   {
+    "t": 1081.9,
+    "gt": 6820.53,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "fulfillment-b045",
+    "preview": "BABEL AND PENTECOST \u2014 THE EXACT REVERSAL"
+   },
+   {
+    "t": 1085.5,
+    "gt": 6824.14,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 270,
+    "existing_id": "fulfillment-b046",
+    "preview": "Genesis 11 and Acts 2 are mirror images \u2014 one the wound, one the heali"
+   },
+   {
+    "t": 1222.25,
+    "gt": 6960.89,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 19,
+    "existing_id": "fulfillment-b047",
+    "preview": "What pride scattered, the Spirit gathered. The thing that divided the "
+   },
+   {
+    "t": 1235.03,
+    "gt": 6973.67,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "fulfillment-b048",
+    "preview": "THE GIFTS AT PENTECOST \u2014 ON FULL DISPLAY"
+   },
+   {
+    "t": 1240.41,
+    "gt": 6979.05,
+    "conf": "anchor",
+    "score": 0.878,
+    "tag": "div",
+    "w": 101,
+    "existing_id": "fulfillment-b049",
+    "preview": "Tongues \u2014 speaking languages never learned. Babel reversed. Every nati"
+   },
+   {
+    "t": 1290.05,
+    "gt": 7028.69,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "fulfillment-b050",
+    "preview": "THE COVENANT OPEN TO EVERYONE \u2014 ROMANS 4"
+   },
+   {
+    "t": 1293.98,
+    "gt": 7032.62,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "div",
+    "w": 102,
+    "existing_id": "fulfillment-b051",
+    "preview": "Paul's central argument in Romans 4: Abraham was justified by faith be"
+   }
+  ]
+ },
+ "act06": {
+  "section": "expansion",
+  "blocks": [
+   {
+    "t": 7.55,
+    "gt": 7092.18,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 30,
+    "existing_id": "expansion-b001",
+    "preview": "The Spirit sent Philip to a desert road. He interrupted a successful r"
+   },
+   {
+    "t": 27.57,
+    "gt": 7112.2,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "expansion-b002",
+    "preview": "STEPHEN \u2014 THE FRACTURE THAT BECAME MISSION"
+   },
+   {
+    "t": 32.24,
+    "gt": 7116.87,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 87,
+    "existing_id": "expansion-b003",
+    "preview": "Just before the church scattered from Jerusalem, Stephen stood before "
+   },
+   {
+    "t": 70.12,
+    "gt": 7154.75,
+    "conf": "anchor",
+    "score": 0.878,
+    "tag": "p",
+    "w": 72,
+    "existing_id": "expansion-b004",
+    "preview": "They stoned Stephen. He became the first martyr. The persecution that "
+   },
+   {
+    "t": 101.67,
+    "gt": 7186.31,
+    "conf": "interp",
+    "score": 0.39,
+    "tag": "p",
+    "w": 25,
+    "existing_id": "expansion-b005",
+    "preview": "Every scattering in this book turned into a sending. The thing that br"
+   },
+   {
+    "t": 112.63,
+    "gt": 7197.27,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "div-ethiopian",
+    "preview": "THE ETHIOPIAN EUNUCH \u2014 DIVINE CHOREOGRAPHY"
+   },
+   {
+    "t": 115.26,
+    "gt": 7199.89,
+    "conf": "anchor",
+    "score": 0.879,
+    "tag": "p",
+    "w": 61,
+    "existing_id": "expansion-b007",
+    "preview": "Philip was in Samaria in the middle of a genuine revival. Not a manufa"
+   },
+   {
+    "t": 139.98,
+    "gt": 7224.61,
+    "conf": "anchor",
+    "score": 0.922,
+    "tag": "p",
+    "w": 19,
+    "existing_id": "expansion-b008",
+    "preview": "\"Go south to the road \u2014 the desert road \u2014 that goes down from Jerusale"
+   },
+   {
+    "t": 146.39,
+    "gt": 7231.02,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 30,
+    "existing_id": "expansion-b009",
+    "preview": "No name. No destination. No explanation. Just \u2014 the desert road. Leave"
+   },
+   {
+    "t": 166.65,
+    "gt": 7251.28,
+    "conf": "anchor",
+    "score": 0.878,
+    "tag": "p",
+    "w": 45,
+    "existing_id": "expansion-b010",
+    "preview": "Then the Holy Spirit spoke again \u2014 a second divine intervention for th"
+   },
+   {
+    "t": 185.81,
+    "gt": 7270.44,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 79,
+    "existing_id": "expansion-b011",
+    "preview": "This is the arithmetic of heaven: God pulled a revivalist out of a suc"
+   },
+   {
+    "t": 221.23,
+    "gt": 7305.87,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 69,
+    "existing_id": "expansion-b012",
+    "preview": "The man in the chariot was the treasurer of the Kandake \u2014 the queen mo"
+   },
+   {
+    "t": 249.78,
+    "gt": 7334.42,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 32,
+    "existing_id": "expansion-b013",
+    "preview": "He had crossed a desert and a lifetime to reach that gate. He stood at"
+   },
+   {
+    "t": 262.84,
+    "gt": 7347.48,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 78,
+    "existing_id": "expansion-b014",
+    "preview": "So he bought a scroll of Isaiah and began reading on the way home. Spe"
+   },
+   {
+    "t": 299.87,
+    "gt": 7384.51,
+    "conf": "anchor",
+    "score": 0.777,
+    "tag": "p",
+    "w": 41,
+    "existing_id": "expansion-b015",
+    "preview": "Philip ran to the chariot. Literally ran \u2014 the Greek word is prosdramo"
+   },
+   {
+    "t": 320.26,
+    "gt": 7404.9,
+    "conf": "anchor",
+    "score": 0.883,
+    "tag": "p",
+    "w": 20,
+    "existing_id": "expansion-b016",
+    "preview": "The answer is one of the most honest sentences in scripture: \"How can "
+   },
+   {
+    "t": 329.59,
+    "gt": 7414.22,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 43,
+    "existing_id": "expansion-b017",
+    "preview": "He invited Philip in. Philip sat beside him. And beginning with Isaiah"
+   },
+   {
+    "t": 350.45,
+    "gt": 7435.08,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 97,
+    "existing_id": "expansion-b018",
+    "preview": "The chariot rolled through the desert. Two men reading a scroll togeth"
+   },
+   {
+    "t": 402.33,
+    "gt": 7486.96,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 24,
+    "existing_id": "expansion-b019",
+    "preview": "Then the chariot passed water. And the man who had traveled hundreds o"
+   },
+   {
+    "t": 407.57,
+    "gt": 7492.2,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 15,
+    "existing_id": "expansion-b020",
+    "preview": "\"Look \u2014 here is water. What can stand in the way of my being baptized?"
+   },
+   {
+    "t": 422.39,
+    "gt": 7507.02,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 70,
+    "existing_id": "expansion-b021",
+    "preview": "Nothing. The law had said: you cannot enter. The temple had said: you "
+   },
+   {
+    "t": 464.21,
+    "gt": 7548.84,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 48,
+    "existing_id": "expansion-b022",
+    "preview": "They went down into the water together. Philip baptized him. And when "
+   },
+   {
+    "t": 486.74,
+    "gt": 7571.38,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 6,
+    "existing_id": "expansion-b023",
+    "preview": "He went on his way rejoicing."
+   },
+   {
+    "t": 489.56,
+    "gt": 7574.2,
+    "conf": "anchor",
+    "score": 0.925,
+    "tag": "p",
+    "w": 98,
+    "existing_id": "expansion-b024",
+    "preview": "Alone. On a desert road. Carrying in his chest the news that would rea"
+   },
+   {
+    "t": 544.13,
+    "gt": 7628.77,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 22,
+    "existing_id": "expansion-b025",
+    "preview": "The Spirit had interrupted a revival to light a different one. One per"
+   },
+   {
+    "t": 558.88,
+    "gt": 7643.52,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 29,
+    "existing_id": "expansion-b026",
+    "preview": "God pulled His best man out of a revival to find one stranger on an em"
+   },
+   {
+    "t": 575.85,
+    "gt": 7660.48,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "expansion-b027",
+    "preview": "THE WOMAN AT THE WELL \u2014 THE FIRST RECORDED MISSIONARY"
+   },
+   {
+    "t": 583.27,
+    "gt": 7667.91,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 39,
+    "existing_id": "expansion-b028",
+    "preview": "Before Philip ran to the chariot, before the Spirit fell at Pentecost "
+   },
+   {
+    "t": 603.66,
+    "gt": 7688.3,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 63,
+    "existing_id": "expansion-b029",
+    "preview": "Jews did not travel through Samaria if they could help it. Samaritans "
+   },
+   {
+    "t": 639.13,
+    "gt": 7723.77,
+    "conf": "anchor",
+    "score": 0.858,
+    "tag": "p",
+    "w": 13,
+    "existing_id": "expansion-b030",
+    "preview": "Jesus sat down at Jacob's well and asked her for water. John 4:7"
+   },
+   {
+    "t": 644.29,
+    "gt": 7728.93,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 94,
+    "existing_id": "expansion-b031",
+    "preview": "What followed was the longest recorded conversation Jesus had with any"
+   },
+   {
+    "t": 694.25,
+    "gt": 7778.89,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 7,
+    "existing_id": "expansion-b032",
+    "preview": "Jesus named them all. And kept talking."
+   },
+   {
+    "t": 697.97,
+    "gt": 7782.61,
+    "conf": "anchor",
+    "score": 0.919,
+    "tag": "p",
+    "w": 102,
+    "existing_id": "expansion-b033",
+    "preview": "He told her that the water she was drawing would leave her thirsty aga"
+   },
+   {
+    "t": 748.64,
+    "gt": 7833.27,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "expansion-b034",
+    "preview": "THE FIRST MISSIONARY IN JOHN'S GOSPEL"
+   },
+   {
+    "t": 751.62,
+    "gt": 7836.25,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 206,
+    "existing_id": "expansion-b035",
+    "preview": "She left her water jar. Went back to the city. And said: \"Come, see a "
+   },
+   {
+    "t": 861.38,
+    "gt": 7946.02,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "expansion-b036",
+    "preview": "ETHIOPIA \u2014 1,000 YEARS DEEPER THAN ACTS 8"
+   },
+   {
+    "t": 865.64,
+    "gt": 7950.28,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 106,
+    "existing_id": "expansion-b037",
+    "preview": "The eunuch's encounter was not Ethiopia's first contact with the coven"
+   },
+   {
+    "t": 919.01,
+    "gt": 8003.65,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 74,
+    "existing_id": "expansion-b038",
+    "preview": "Ethiopia's national epic \u2014 the Kebra Nagast \u2014 records that she returne"
+   },
+   {
+    "t": 957.18,
+    "gt": 8041.82,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 36,
+    "existing_id": "expansion-b039",
+    "preview": "Psalm 68:31 \u2014 \"Ethiopia will stretch out her hands to God\" \u2014 has been "
+   },
+   {
+    "t": 977.59,
+    "gt": 8062.22,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "expansion-b040",
+    "preview": "\u2726 ETHIOPIA AND THE COVENANT \u2014 A TIMELINE \u2726"
+   },
+   {
+    "t": 982.69,
+    "gt": 8067.32,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "expansion-b041",
+    "preview": "c. 950 BC \u2014 Queen of Sheba"
+   },
+   {
+    "t": 986.65,
+    "gt": 8071.29,
+    "conf": "anchor",
+    "score": 0.876,
+    "tag": "div",
+    "w": 14,
+    "existing_id": "expansion-b042",
+    "preview": "First covenant contact \u2014 \"The half was not told me\" \u2014 1 Kings 10:7"
+   },
+   {
+    "t": 995.12,
+    "gt": 8079.76,
+    "conf": "anchor",
+    "score": 0.944,
+    "tag": "div",
+    "w": 22,
+    "existing_id": "expansion-b043",
+    "preview": "Jesus cited her as a model of seeking wisdom. Ethiopia's covenant root"
+   },
+   {
+    "t": 1007.18,
+    "gt": 8091.82,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "expansion-b044",
+    "preview": "c. 33 AD \u2014 Philip and the Eunuch"
+   },
+   {
+    "t": 1011.56,
+    "gt": 8096.2,
+    "conf": "anchor",
+    "score": 0.845,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "expansion-b045",
+    "preview": "The gospel carried to the royal court \u2014 Acts 8"
+   },
+   {
+    "t": 1015.33,
+    "gt": 8099.97,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 23,
+    "existing_id": "expansion-b046",
+    "preview": "Two divine interventions \u2014 angel and Holy Spirit \u2014 to reach one man. E"
+   },
+   {
+    "t": 1029.49,
+    "gt": 8114.12,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "expansion-b047",
+    "preview": "c. 316 AD \u2014 Frumentius"
+   },
+   {
+    "t": 1032.56,
+    "gt": 8117.2,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "expansion-b048",
+    "preview": "A shipwrecked Syrian boy becomes the father of Ethiopian Christianity"
+   },
+   {
+    "t": 1039.53,
+    "gt": 8124.17,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 42,
+    "existing_id": "expansion-b049",
+    "preview": "Frumentius \u2014 young, Syrian, shipwrecked on the Ethiopian coast \u2014 was t"
+   },
+   {
+    "t": 1060.63,
+    "gt": 8145.26,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "expansion-b050",
+    "preview": "c. 328 AD \u2014 Athanasius Consecrates Frumentius"
+   },
+   {
+    "t": 1064.14,
+    "gt": 8148.78,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 11,
+    "existing_id": "expansion-b051",
+    "preview": "First Bishop of Ethiopia \u2014 Abba Salama \u2014 Father of Peace"
+   },
+   {
+    "t": 1078.07,
+    "gt": 8162.71,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 18,
+    "existing_id": "expansion-b052",
+    "preview": "Athanasius of Alexandria \u2014 the African theologian who shaped the Nicen"
+   },
+   {
+    "t": 1090.83,
+    "gt": 8175.47,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "expansion-b053",
+    "preview": "c. 330 AD \u2014 King Ezana"
+   },
+   {
+    "t": 1095.08,
+    "gt": 8179.72,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "expansion-b054",
+    "preview": "Ethiopia declared a Christian empire \u2014 before Rome"
+   },
+   {
+    "t": 1099.9,
+    "gt": 8184.54,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 48,
+    "existing_id": "expansion-b055",
+    "preview": "The crescent moon on Ethiopian coins replaced by the Christian cross \u2014"
+   },
+   {
+    "t": 1126.74,
+    "gt": 8211.38,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "expansion-b056",
+    "preview": "356 AD \u2014 Emperor Constantius II"
+   },
+   {
+    "t": 1130.09,
+    "gt": 8214.73,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "expansion-b057",
+    "preview": "A hostile Roman emperor confirms the Ethiopian church in writing"
+   },
+   {
+    "t": 1132.37,
+    "gt": 8217.01,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 71,
+    "existing_id": "expansion-b058",
+    "preview": "The pro-Arian Emperor Constantius II \u2014 who had just exiled Athanasius "
+   },
+   {
+    "t": 1148.52,
+    "gt": 8233.16,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "expansion-b059",
+    "preview": "1984\u20131991 \u2014 Operations Moses and Solomon"
+   },
+   {
+    "t": 1149.88,
+    "gt": 8234.52,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "expansion-b060",
+    "preview": "Israel airlifts Ethiopian Jews home"
+   },
+   {
+    "t": 1149.88,
+    "gt": 8234.52,
+    "conf": "anchor",
+    "score": 0.824,
+    "tag": "div",
+    "w": 34,
+    "existing_id": "expansion-b061",
+    "preview": "The Beta Israel \u2014 Ethiopian Jews who preserved Jewish practice in isol"
+   }
+  ]
+ },
+ "act07": {
+  "section": "wildfire",
+  "blocks": [
+   {
+    "t": 12.37,
+    "gt": 8274.32,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 33,
+    "existing_id": "wildfire-b001",
+    "preview": "The covenant did not spread by strategy. It spread like fire \u2014 Paul to"
+   },
+   {
+    "t": 32.13,
+    "gt": 8294.08,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "wildfire-b002",
+    "preview": "THE MATH OF AN UNSTOPPABLE FIRE"
+   },
+   {
+    "t": 35.72,
+    "gt": 8297.67,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 44,
+    "existing_id": "wildfire-b003",
+    "preview": "Rodney Stark calculated that Christianity grew at roughly 40% per deca"
+   },
+   {
+    "t": 63.88,
+    "gt": 8325.83,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "wildfire-b004",
+    "preview": "EVEN ROME'S ENEMIES CONFIRMED IT"
+   },
+   {
+    "t": 67.08,
+    "gt": 8329.03,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "div",
+    "w": 124,
+    "existing_id": "wildfire-b005",
+    "preview": "Tacitus \u2014 Rome's most trusted historian, hostile to Christianity \u2014 rec"
+   },
+   {
+    "t": 140.96,
+    "gt": 8402.92,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "div-paul",
+    "preview": "PAUL \u2014 TO ISHMAEL FIRST"
+   },
+   {
+    "t": 143.94,
+    "gt": 8405.9,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 49,
+    "existing_id": "wildfire-b007",
+    "preview": "After Damascus, Paul withdrew to Arabia before returning \u2014 three years"
+   },
+   {
+    "t": 171.96,
+    "gt": 8433.91,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "wildfire-b008",
+    "preview": "JERUSALEM \u2014 33 AD"
+   },
+   {
+    "t": 174.25,
+    "gt": 8436.2,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "wildfire-b009",
+    "preview": "Acts 2 \u2014 The Beginning"
+   },
+   {
+    "t": 177.11,
+    "gt": 8439.06,
+    "conf": "anchor",
+    "score": 0.948,
+    "tag": "div",
+    "w": 20,
+    "existing_id": "wildfire-b010",
+    "preview": "120 people. One accord. 3,000 added in a day. Every nation under heave"
+   },
+   {
+    "t": 180.58,
+    "gt": 8442.53,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "wildfire-b011",
+    "preview": "SAMARIA \u2014 33 AD"
+   },
+   {
+    "t": 181.28,
+    "gt": 8443.23,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 25,
+    "existing_id": "wildfire-b012",
+    "preview": "Philip preaches to the people the Jews despised. Signs and wonders. Gr"
+   },
+   {
+    "t": 185.62,
+    "gt": 8447.57,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "wildfire-b013",
+    "preview": "ETHIOPIA \u2014 c. 33 AD"
+   },
+   {
+    "t": 186.49,
+    "gt": 8448.44,
+    "conf": "interp",
+    "score": 0.179,
+    "tag": "div",
+    "w": 17,
+    "existing_id": "wildfire-b014",
+    "preview": "Two divine interventions for one man. Africa receives the covenant wit"
+   },
+   {
+    "t": 189.44,
+    "gt": 8451.39,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "wildfire-b015",
+    "preview": "ANTIOCH \u2014 c. 40 AD"
+   },
+   {
+    "t": 190.31,
+    "gt": 8452.26,
+    "conf": "interp",
+    "score": 0.223,
+    "tag": "div",
+    "w": 21,
+    "existing_id": "wildfire-b016",
+    "preview": "First Gentile church. First place followers of Jesus were called Chris"
+   },
+   {
+    "t": 193.96,
+    "gt": 8455.91,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "wildfire-b017",
+    "preview": "GREECE \u2014 c. 50 AD"
+   },
+   {
+    "t": 194.82,
+    "gt": 8456.77,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "wildfire-b018",
+    "preview": "Acts 16-18 \u2014 Paul's 2nd Journey"
+   },
+   {
+    "t": 195.87,
+    "gt": 8457.82,
+    "conf": "interp",
+    "score": 0.122,
+    "tag": "div",
+    "w": 24,
+    "existing_id": "wildfire-b019",
+    "preview": "Philippi, Thessalonica, Corinth, Athens. At the Areopagus Paul connect"
+   },
+   {
+    "t": 200.03,
+    "gt": 8461.98,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "wildfire-b020",
+    "preview": "ROME \u2014 c. 60 AD"
+   },
+   {
+    "t": 200.9,
+    "gt": 8462.85,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "wildfire-b021",
+    "preview": "Acts 28 \u2014 Paul arrives in chains"
+   },
+   {
+    "t": 202.12,
+    "gt": 8464.07,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 26,
+    "existing_id": "wildfire-b022",
+    "preview": "\"Your faith is being reported all over the world.\" Romans 1:8. Paul un"
+   },
+   {
+    "t": 206.63,
+    "gt": 8468.58,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "wildfire-b023",
+    "preview": "INDIA \u2014 1st century"
+   },
+   {
+    "t": 207.33,
+    "gt": 8469.28,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 62,
+    "existing_id": "wildfire-b024",
+    "preview": "Tradition documented by Origen, Eusebius, Ephrem the Syrian, Jerome, a"
+   },
+   {
+    "t": 218.09,
+    "gt": 8480.04,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "wildfire-b025",
+    "preview": "CHINA \u2014 635 AD"
+   },
+   {
+    "t": 218.79,
+    "gt": 8480.74,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "wildfire-b026",
+    "preview": "The Xi'an Stele"
+   },
+   {
+    "t": 219.31,
+    "gt": 8481.26,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 75,
+    "existing_id": "wildfire-b027",
+    "preview": "A 9-foot limestone block carved in Chinese and Syriac, erected 781 AD,"
+   },
+   {
+    "t": 271.17,
+    "gt": 8533.12,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "wildfire-b028",
+    "preview": "NORTH AFRICA \u2014 1st\u20133rd century"
+   },
+   {
+    "t": 274.62,
+    "gt": 8536.58,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "wildfire-b029",
+    "preview": "Alexandria and Carthage"
+   },
+   {
+    "t": 276.7,
+    "gt": 8538.65,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 49,
+    "existing_id": "wildfire-b030",
+    "preview": "Alexandria Egypt \u2014 greatest center of Christian theology for three cen"
+   },
+   {
+    "t": 306.81,
+    "gt": 8568.76,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "wildfire-b031",
+    "preview": "SIMON OF CYRENE \u2014 AN AFRICAN CARRIED THE CROSS"
+   },
+   {
+    "t": 312.97,
+    "gt": 8574.92,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 105,
+    "existing_id": "wildfire-b032",
+    "preview": "Mark 15:21 \u2014 \"A certain man from Cyrene, Simon, the father of Alexande"
+   },
+   {
+    "t": 368.28,
+    "gt": 8630.24,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "div-cornelius",
+    "preview": "CORNELIUS \u2014 THE SPIRIT AHEAD OF THE THEOLOGY"
+   },
+   {
+    "t": 372.5,
+    "gt": 8634.45,
+    "conf": "anchor",
+    "score": 0.857,
+    "tag": "p",
+    "w": 63,
+    "existing_id": "wildfire-b034",
+    "preview": "Acts 10 \u2014 a Roman centurion named Cornelius. Devout, God-fearing, gene"
+   },
+   {
+    "t": 404.93,
+    "gt": 8666.88,
+    "conf": "anchor",
+    "score": 0.876,
+    "tag": "p",
+    "w": 82,
+    "existing_id": "wildfire-b035",
+    "preview": "Peter arrived and began preaching. Then \u2014 before he finished \u2014 \"the Ho"
+   },
+   {
+    "t": 438.55,
+    "gt": 8700.5,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 26,
+    "existing_id": "wildfire-b036",
+    "preview": "God didn't wait for the room to approve him. He rarely does. He is usu"
+   },
+   {
+    "t": 449.22,
+    "gt": 8711.17,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "wildfire-b037",
+    "preview": "THE JERUSALEM COUNCIL \u2014 THE ABRAHAMIC PROMISE DEFENDED"
+   },
+   {
+    "t": 456.64,
+    "gt": 8718.59,
+    "conf": "anchor",
+    "score": 0.83,
+    "tag": "p",
+    "w": 48,
+    "existing_id": "wildfire-b038",
+    "preview": "Acts 15 \u2014 the first existential crisis of the church. Jewish Christian"
+   },
+   {
+    "t": 479.33,
+    "gt": 8741.28,
+    "conf": "anchor",
+    "score": 0.771,
+    "tag": "p",
+    "w": 119,
+    "existing_id": "wildfire-b039",
+    "preview": "Peter stood on what had happened at Cornelius' house: \"God made no dis"
+   },
+   {
+    "t": 548.08,
+    "gt": 8810.03,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "wildfire-b040",
+    "preview": "HOW FAST. HOW IMPOSSIBLE."
+   },
+   {
+    "t": 550.39,
+    "gt": 8812.34,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 51,
+    "existing_id": "wildfire-b041",
+    "preview": "The empire that crucified Jesus became the empire that could not conta"
+   },
+   {
+    "t": 574.4,
+    "gt": 8836.35,
+    "conf": "anchor",
+    "score": 0.879,
+    "tag": "p",
+    "w": 74,
+    "existing_id": "wildfire-b042",
+    "preview": "One discovery drove people toward a faith that cost them everything: t"
+   },
+   {
+    "t": 616.61,
+    "gt": 8878.56,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "div-sozo",
+    "preview": "SOZO \u2014 SAVED, HEALED, MADE WHOLE"
+   },
+   {
+    "t": 623.55,
+    "gt": 8885.5,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "wildfire-b044",
+    "preview": "NEATO BURRITO \u2014 A STORY ABOUT THE GOD WHO SEES"
+   },
+   {
+    "t": 630.01,
+    "gt": 8891.96,
+    "conf": "anchor",
+    "score": 0.809,
+    "tag": "div",
+    "w": 375,
+    "existing_id": "wildfire-b045",
+    "preview": "My friend Dimas, Jeff, and I were at Neato Burrito. Dimas \u2014 the kind o"
+   },
+   {
+    "t": 801.98,
+    "gt": 9063.93,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 73,
+    "existing_id": "wildfire-b046",
+    "preview": "What happened to Ken has a name. It is the same God Hagar met at the s"
+   },
+   {
+    "t": 834.47,
+    "gt": 9096.42,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "wildfire-b047",
+    "preview": "\"Daughter, take courage; your faith has made you well.\""
+   },
+   {
+    "t": 849.52,
+    "gt": 9111.47,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 83,
+    "existing_id": "wildfire-b048",
+    "preview": "The word translated well is sozo. Strong's defines it: to save, delive"
+   },
+   {
+    "t": 900.87,
+    "gt": 9162.82,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 36,
+    "existing_id": "wildfire-b049",
+    "preview": "Ken sat down to eat a burrito. He stood up having met the One who sees"
+   },
+   {
+    "t": 916.04,
+    "gt": 9177.99,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 60,
+    "existing_id": "wildfire-b050",
+    "preview": "That is still happening. In a burrito shop in our city. In a chariot o"
+   }
+  ]
+ },
+ "act08": {
+  "section": "fractures",
+  "blocks": [
+   {
+    "t": 8.08,
+    "gt": 9214.73,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 36,
+    "existing_id": "fractures-b001",
+    "preview": "The same night Jesus was betrayed he prayed for unity. It is the one p"
+   },
+   {
+    "t": 24.39,
+    "gt": 9231.04,
+    "conf": "anchor",
+    "score": 0.876,
+    "tag": "div",
+    "w": 57,
+    "existing_id": "fractures-b002",
+    "preview": "\"My prayer is not for them alone. I pray also for those who will belie"
+   },
+   {
+    "t": 55.14,
+    "gt": 9261.79,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 23,
+    "existing_id": "fractures-b003",
+    "preview": "It was the last thing he asked for before he died. It is the one thing"
+   },
+   {
+    "t": 67.37,
+    "gt": 9274.02,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "fractures-b004",
+    "preview": "THE FRACTURE PATTERN \u2014 IT NEVER CHANGES"
+   },
+   {
+    "t": 71.09,
+    "gt": 9277.74,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 88,
+    "existing_id": "fractures-b005",
+    "preview": "1. Spiritual life produces a movement. 2. The movement becomes an inst"
+   },
+   {
+    "t": 128.01,
+    "gt": 9334.66,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 104,
+    "existing_id": "fractures-b006",
+    "preview": "William Seymour was forced by Jim Crow law to sit outside the classroo"
+   },
+   {
+    "t": 172.12,
+    "gt": 9378.77,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 34,
+    "existing_id": "fractures-b007",
+    "preview": "Every split in church history started with people who were sure they w"
+   },
+   {
+    "t": 188.59,
+    "gt": 9395.24,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 10,
+    "existing_id": "fractures-b008",
+    "preview": "\u2726 THE FRACTURES AND REVIVALS \u2014 GOD ALWAYS RESPONDS \u2726"
+   },
+   {
+    "t": 195.4,
+    "gt": 9402.05,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "fractures-b009",
+    "preview": "325 AD \u2014 Council of Nicaea"
+   },
+   {
+    "t": 199.48,
+    "gt": 9406.13,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "fractures-b010",
+    "preview": "The church unified under one creed"
+   },
+   {
+    "t": 203.56,
+    "gt": 9410.21,
+    "conf": "anchor",
+    "score": 0.805,
+    "tag": "div",
+    "w": 46,
+    "existing_id": "fractures-b011",
+    "preview": "The Nicene Creed produced \u2014 still recited by Orthodox, Catholic, and m"
+   },
+   {
+    "t": 231.64,
+    "gt": 9438.29,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "fractures-b012",
+    "preview": "1054 \u2014 The Great Schism"
+   },
+   {
+    "t": 234.69,
+    "gt": 9441.34,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "fractures-b013",
+    "preview": "East and West divide \u2014 910 years of separation"
+   },
+   {
+    "t": 240.39,
+    "gt": 9447.04,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 80,
+    "existing_id": "fractures-b014",
+    "preview": "Cardinal Humbert placed a papal bull of excommunication on the altar o"
+   },
+   {
+    "t": 289.02,
+    "gt": 9495.67,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "fractures-b015",
+    "preview": "1517 \u2014 The Reformation"
+   },
+   {
+    "t": 291.45,
+    "gt": 9498.1,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "fractures-b016",
+    "preview": "Luther's moral outrage becomes a theological earthquake"
+   },
+   {
+    "t": 295.99,
+    "gt": 9502.64,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 68,
+    "existing_id": "fractures-b017",
+    "preview": "Tetzel's indulgence sales pitch: \"As soon as the coin in the coffer ri"
+   },
+   {
+    "t": 337.64,
+    "gt": 9544.29,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 4,
+    "existing_id": "fractures-b018",
+    "preview": "1727 \u2014 The Moravians"
+   },
+   {
+    "t": 340.09,
+    "gt": 9546.74,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 11,
+    "existing_id": "fractures-b019",
+    "preview": "The argument that became a prayer meeting that changed the world"
+   },
+   {
+    "t": 344.82,
+    "gt": 9551.47,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 151,
+    "existing_id": "fractures-b020",
+    "preview": "The Moravian community at Herrnhut, Germany had argued so bitterly ove"
+   },
+   {
+    "t": 435.13,
+    "gt": 9641.79,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "fractures-b021",
+    "preview": "1906 \u2014 Azusa Street, Los Angeles"
+   },
+   {
+    "t": 438.72,
+    "gt": 9645.37,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "fractures-b022",
+    "preview": "The color line washed away in the blood"
+   },
+   {
+    "t": 441.74,
+    "gt": 9648.39,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 148,
+    "existing_id": "fractures-b023",
+    "preview": "William Joseph Seymour \u2014 son of freed slaves from Louisiana \u2014 had stud"
+   },
+   {
+    "t": 520.96,
+    "gt": 9727.61,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "fractures-b024",
+    "preview": "1967 \u2014 Catholic Charismatic Renewal"
+   },
+   {
+    "t": 523.63,
+    "gt": 9730.28,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "fractures-b025",
+    "preview": "The Spirit crosses the Protestant-Catholic divide"
+   },
+   {
+    "t": 527.42,
+    "gt": 9734.07,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "div",
+    "w": 74,
+    "existing_id": "fractures-b026",
+    "preview": "February 1967 \u2014 Duquesne University, Pittsburgh. Catholic professors a"
+   },
+   {
+    "t": 566.4,
+    "gt": 9773.05,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "fractures-b027",
+    "preview": "Today \u2014 The Global South"
+   },
+   {
+    "t": 569.03,
+    "gt": 9775.68,
+    "conf": "anchor",
+    "score": 0.692,
+    "tag": "div",
+    "w": 11,
+    "existing_id": "fractures-b028",
+    "preview": "The center of Christianity has moved back toward where it began"
+   },
+   {
+    "t": 576.97,
+    "gt": 9783.62,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 90,
+    "existing_id": "fractures-b029",
+    "preview": "Philip Jenkins \u2014 The Next Christendom (2002, Oxford University Press):"
+   }
+  ]
+ },
+ "act09": {
+  "section": "unfinished",
+  "blocks": [
+   {
+    "t": 0.0,
+    "gt": 9839.75,
+    "conf": "edge",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "unfinished-b001",
+    "preview": "The Unfinished Story"
+   },
+   {
+    "t": 7.08,
+    "gt": 9846.83,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 43,
+    "existing_id": "unfinished-b002",
+    "preview": "The promise made to Abraham was never just for one people. The other h"
+   },
+   {
+    "t": 28.36,
+    "gt": 9868.11,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "unfinished-b003",
+    "preview": "THE MOST UNDER-REPORTED STORY IN THE WORLD"
+   },
+   {
+    "t": 31.83,
+    "gt": 9871.58,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 31,
+    "existing_id": "unfinished-b004",
+    "preview": "After thirteen centuries of almost nothing, the other half of Abraham'"
+   },
+   {
+    "t": 49.32,
+    "gt": 9889.07,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "unfinished-b005",
+    "preview": "ISHMAEL'S BLESSING \u2014 NEVER REVOKED"
+   },
+   {
+    "t": 52.14,
+    "gt": 9891.89,
+    "conf": "anchor",
+    "score": 0.857,
+    "tag": "p",
+    "w": 89,
+    "existing_id": "unfinished-b006",
+    "preview": "God said to Abraham: \"As for Ishmael, I have heard you. I will surely "
+   },
+   {
+    "t": 107.26,
+    "gt": 9947.01,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 9,
+    "existing_id": "unfinished-b007",
+    "preview": "WHAT ISLAM IS \u2014 AND WHERE IT COMES FROM"
+   },
+   {
+    "t": 112.83,
+    "gt": 9952.58,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 113,
+    "existing_id": "unfinished-b008",
+    "preview": "Muhammad was born around 570 AD in Mecca \u2014 into the Quraysh tribe, gua"
+   },
+   {
+    "t": 156.19,
+    "gt": 9995.94,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "unfinished-b009",
+    "preview": "\u2726 THE FIVE PILLARS AS ABRAHAMIC RE-ENACTMENT \u2726"
+   },
+   {
+    "t": 159.26,
+    "gt": 9999.01,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "td",
+    "w": 6,
+    "existing_id": "unfinished-b010",
+    "preview": "Declaration of faith in one God"
+   },
+   {
+    "t": 161.56,
+    "gt": 10001.31,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "td",
+    "w": 12,
+    "existing_id": "unfinished-b011",
+    "preview": "Abraham's declaration of monotheism \u2014 burning the idols, reasoning tow"
+   },
+   {
+    "t": 166.16,
+    "gt": 10005.92,
+    "conf": "interp",
+    "score": 0.192,
+    "tag": "td",
+    "w": 6,
+    "existing_id": "unfinished-b012",
+    "preview": "Prayer five times daily facing Mecca"
+   },
+   {
+    "t": 168.47,
+    "gt": 10008.22,
+    "conf": "interp",
+    "score": 0.226,
+    "tag": "td",
+    "w": 9,
+    "existing_id": "unfinished-b013",
+    "preview": "Abraham's posture of continual seeking and intercession before God"
+   },
+   {
+    "t": 171.92,
+    "gt": 10011.67,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "td",
+    "w": 8,
+    "existing_id": "unfinished-b014",
+    "preview": "Giving to the poor \u2014 2.5% of wealth"
+   },
+   {
+    "t": 174.99,
+    "gt": 10014.74,
+    "conf": "interp",
+    "score": 0.2,
+    "tag": "td",
+    "w": 9,
+    "existing_id": "unfinished-b015",
+    "preview": "Abraham's generosity \u2014 hospitality to strangers, tithe to Melchizedek"
+   },
+   {
+    "t": 178.44,
+    "gt": 10018.19,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "td",
+    "w": 3,
+    "existing_id": "unfinished-b016",
+    "preview": "Fasting during Ramadan"
+   },
+   {
+    "t": 179.59,
+    "gt": 10019.34,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "td",
+    "w": 11,
+    "existing_id": "unfinished-b017",
+    "preview": "Spiritual discipline \u2014 drawing near to God as Abraham drew near"
+   },
+   {
+    "t": 183.81,
+    "gt": 10023.57,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "td",
+    "w": 4,
+    "existing_id": "unfinished-b018",
+    "preview": "Annual pilgrimage to Mecca"
+   },
+   {
+    "t": 185.35,
+    "gt": 10025.1,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "td",
+    "w": 34,
+    "existing_id": "unfinished-b019",
+    "preview": "Re-enacts Hagar running between Safa and Marwa, the Zamzam well God pr"
+   },
+   {
+    "t": 198.39,
+    "gt": 10038.15,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "unfinished-b020",
+    "preview": "THE PERSONAL GOD \u2014 WHAT THE TABERNACLE REVEALS"
+   },
+   {
+    "t": 201.46,
+    "gt": 10041.22,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 47,
+    "existing_id": "unfinished-b021",
+    "preview": "Islam honors a transcendent God \u2014 vast, sovereign, holy beyond compreh"
+   },
+   {
+    "t": 229.38,
+    "gt": 10069.14,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 111,
+    "existing_id": "unfinished-b022",
+    "preview": "The New Testament word for God is Abba \u2014 the Aramaic word a small chil"
+   },
+   {
+    "t": 281.48,
+    "gt": 10121.24,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 127,
+    "existing_id": "unfinished-b023",
+    "preview": "The covenant with Abraham promised not just greatness and numbers but "
+   },
+   {
+    "t": 355.39,
+    "gt": 10195.15,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "div-other-half",
+    "preview": "THE OTHER HALF OF THE FAMILY"
+   },
+   {
+    "t": 358.89,
+    "gt": 10198.64,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 8,
+    "existing_id": "unfinished-b025",
+    "preview": "This is not history. This is happening tonight."
+   },
+   {
+    "t": 363.54,
+    "gt": 10203.29,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 50,
+    "existing_id": "unfinished-b026",
+    "preview": "Imagine you are a man in Tehran. You have never held a Bible. You have"
+   },
+   {
+    "t": 390.5,
+    "gt": 10230.25,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 6,
+    "existing_id": "unfinished-b027",
+    "preview": "And then you have a dream."
+   },
+   {
+    "t": 393.73,
+    "gt": 10233.48,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 43,
+    "existing_id": "unfinished-b028",
+    "preview": "A man in white appears. He says your name. He says: I love you. He say"
+   },
+   {
+    "t": 418.1,
+    "gt": 10257.85,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 10,
+    "existing_id": "unfinished-b029",
+    "preview": "You start asking questions you are not supposed to ask."
+   },
+   {
+    "t": 423.49,
+    "gt": 10263.24,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 31,
+    "existing_id": "unfinished-b030",
+    "preview": "He crossed a closed border, a death sentence, and 1,400 years of histo"
+   },
+   {
+    "t": 440.67,
+    "gt": 10280.42,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 88,
+    "existing_id": "unfinished-b031",
+    "preview": "This is happening to thousands of Iranians every year. Not hundreds. T"
+   },
+   {
+    "t": 489.22,
+    "gt": 10328.97,
+    "conf": "anchor",
+    "score": 0.879,
+    "tag": "p",
+    "w": 55,
+    "existing_id": "unfinished-b032",
+    "preview": "The primary factor reported by converts across every culture and count"
+   },
+   {
+    "t": 526.87,
+    "gt": 10366.62,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 39,
+    "existing_id": "unfinished-b033",
+    "preview": "Iran specifically: Open Doors, Elam Ministries, and Operation World in"
+   },
+   {
+    "t": 551.12,
+    "gt": 10390.87,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 24,
+    "existing_id": "unfinished-b034",
+    "preview": "The wall that Babel built, that empires reinforced, that centuries of "
+   },
+   {
+    "t": 564.7,
+    "gt": 10404.45,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 94,
+    "existing_id": "unfinished-b035",
+    "preview": "Isaiah 60:7 \u2014 \"All Kedar's flocks will be gathered to you.\" Kedar was "
+   },
+   {
+    "t": 613.67,
+    "gt": 10453.42,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "unfinished-b036",
+    "preview": "THE SPIRIT IS MOVING IN ISHMAEL'S TERRITORY"
+   },
+   {
+    "t": 617.32,
+    "gt": 10457.07,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 113,
+    "existing_id": "unfinished-b037",
+    "preview": "The same Spirit that sent Philip to a desert road for one Ethiopian eu"
+   },
+   {
+    "t": 674.86,
+    "gt": 10514.61,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 5,
+    "existing_id": "unfinished-b038",
+    "preview": "THE ROOT THAT HOLDS EVERYTHING"
+   },
+   {
+    "t": 677.41,
+    "gt": 10517.16,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 35,
+    "existing_id": "unfinished-b039",
+    "preview": "\"Did God reject his people? By no means!... The hardening in part has "
+   },
+   {
+    "t": 695.75,
+    "gt": 10535.5,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 3,
+    "existing_id": "unfinished-b040",
+    "preview": "Romans 11:1-2, 25-26"
+   },
+   {
+    "t": 697.33,
+    "gt": 10537.08,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 99,
+    "existing_id": "unfinished-b041",
+    "preview": "Paul's image: Israel is the cultivated olive tree. The Gentile church "
+   },
+   {
+    "t": 754.82,
+    "gt": 10594.57,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 8,
+    "existing_id": "unfinished-b042",
+    "preview": "ISAIAH'S VISION \u2014 THE END OF THE STORY"
+   },
+   {
+    "t": 759.47,
+    "gt": 10599.22,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 57,
+    "existing_id": "unfinished-b043",
+    "preview": "\"In that day there will be a highway from Egypt to Assyria... The Egyp"
+   },
+   {
+    "t": 796.57,
+    "gt": 10636.32,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 79,
+    "existing_id": "unfinished-b044",
+    "preview": "Egypt \u2014 Africa. Assyria \u2014 modern Iraq, Syria, Iran \u2014 the heart of the "
+   },
+   {
+    "t": 842.29,
+    "gt": 10682.05,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 11,
+    "existing_id": "unfinished-b045",
+    "preview": "THE PRIEST-KING \u2014 WHERE THE STORY BEGAN AND WHERE IT ENDS"
+   },
+   {
+    "t": 850.05,
+    "gt": 10689.81,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 74,
+    "existing_id": "unfinished-b046",
+    "preview": "Early in this story \u2014 before the covenant ceremony, before Isaac, befo"
+   },
+   {
+    "t": 886.38,
+    "gt": 10726.14,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 44,
+    "existing_id": "unfinished-b047",
+    "preview": "His name was Melchizedek. King of Salem \u2014 which would become Jerusalem"
+   },
+   {
+    "t": 913.55,
+    "gt": 10753.3,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 7,
+    "existing_id": "unfinished-b048",
+    "preview": "MELCHIZEDEK \u2014 THE BEGINNING AND THE END"
+   },
+   {
+    "t": 917.87,
+    "gt": 10757.62,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 299,
+    "existing_id": "unfinished-b049",
+    "preview": "The writer of Hebrews spends more time on Melchizedek than almost any "
+   },
+   {
+    "t": 1009.49,
+    "gt": 10849.24,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 11,
+    "existing_id": "unfinished-b050",
+    "preview": "\u2726 THE ABRAHAMIC FAMILY \u2014 EVERY BRANCH FROM ONE ROOT \u2726"
+   },
+   {
+    "t": 1012.86,
+    "gt": 10852.61,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 12,
+    "existing_id": "unfinished-b051",
+    "preview": "Abraham \u2192 Isaac \u2192 Jacob \u2192 Moses \u2192 David \u2192 the Torah"
+   },
+   {
+    "t": 1016.54,
+    "gt": 10856.29,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 28,
+    "existing_id": "unfinished-b052",
+    "preview": "The original covenant people. The root of the olive tree. 15 million p"
+   },
+   {
+    "t": 1025.12,
+    "gt": 10864.87,
+    "conf": "interp",
+    "score": 0.133,
+    "tag": "div",
+    "w": 14,
+    "existing_id": "unfinished-b053",
+    "preview": "Abraham is: The first Jew. Father of the nation. Friend of God. James "
+   },
+   {
+    "t": 1029.41,
+    "gt": 10869.16,
+    "conf": "interp",
+    "score": 0.275,
+    "tag": "div",
+    "w": 12,
+    "existing_id": "unfinished-b054",
+    "preview": "Abraham \u2192 Isaac \u2192 David \u2192 Jesus \u2192 every nation through faith"
+   },
+   {
+    "t": 1033.09,
+    "gt": 10872.84,
+    "conf": "interp",
+    "score": 0.127,
+    "tag": "div",
+    "w": 35,
+    "existing_id": "unfinished-b055",
+    "preview": "2.4 billion people. The covenant fulfilled and opened to every nation "
+   },
+   {
+    "t": 1043.81,
+    "gt": 10883.56,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 17,
+    "existing_id": "unfinished-b056",
+    "preview": "Abraham is: The father of faith. The model of salvation. The gospel pr"
+   },
+   {
+    "t": 1049.02,
+    "gt": 10888.77,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 11,
+    "existing_id": "unfinished-b057",
+    "preview": "Abraham \u2192 Ishmael \u2192 Arab peoples \u2192 Muhammad \u2192 the Quran"
+   },
+   {
+    "t": 1052.39,
+    "gt": 10892.14,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 36,
+    "existing_id": "unfinished-b058",
+    "preview": "1.8 billion people. The Hajj re-enacts Abraham's story annually for 2-"
+   },
+   {
+    "t": 1063.42,
+    "gt": 10903.17,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 18,
+    "existing_id": "unfinished-b059",
+    "preview": "Abraham is: Ibrahim \u2014 the first Muslim. The model of surrender to God."
+   },
+   {
+    "t": 1068.94,
+    "gt": 10908.69,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 11,
+    "existing_id": "unfinished-b060",
+    "preview": "Solomon \u2192 Queen of Sheba \u2192 Ethiopia \u2192 diaspora \u2192 Jamaica"
+   },
+   {
+    "t": 1072.31,
+    "gt": 10912.06,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 44,
+    "existing_id": "unfinished-b061",
+    "preview": "Born in Jamaica in the 1930s around Haile Selassie \u2014 who claimed desce"
+   },
+   {
+    "t": 1085.79,
+    "gt": 10925.54,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 20,
+    "existing_id": "unfinished-b062",
+    "preview": "Abraham is: The patriarch whose promise flows through Solomon to Afric"
+   },
+   {
+    "t": 1091.92,
+    "gt": 10931.67,
+    "conf": "interp",
+    "score": 0.634,
+    "tag": "div",
+    "w": 6,
+    "existing_id": "div-every-nation",
+    "preview": "EVERY NATION. EVERY TONGUE. EVERY STAR."
+   },
+   {
+    "t": 1093.76,
+    "gt": 10933.51,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "div",
+    "w": 32,
+    "existing_id": "unfinished-b064",
+    "preview": "\"After this I looked, and there before me was a great multitude that n"
+   },
+   {
+    "t": 1103.56,
+    "gt": 10943.32,
+    "conf": "anchor",
+    "score": 0.707,
+    "tag": "p",
+    "w": 27,
+    "existing_id": "unfinished-b065",
+    "preview": "Abraham looked up at stars he couldn't count. God said: that is how ma"
+   },
+   {
+    "t": 1110.6,
+    "gt": 10950.36,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 59,
+    "existing_id": "unfinished-b066",
+    "preview": "Every nation. Every tongue. Ishmael's children there. Isaac's children"
+   },
+   {
+    "t": 1145.91,
+    "gt": 10985.67,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 6,
+    "existing_id": "unfinished-b067",
+    "preview": "One promise. One Spirit. Every nation."
+   },
+   {
+    "t": 1147.68,
+    "gt": 10987.43,
+    "conf": "interp",
+    "score": 0.0,
+    "tag": "p",
+    "w": 19,
+    "existing_id": "unfinished-b068",
+    "preview": "And the writer of Hebrews makes one final statement that changes every"
+   },
+   {
+    "t": 1153.28,
+    "gt": 10993.03,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "div",
+    "w": 36,
+    "existing_id": "unfinished-b069",
+    "preview": "\"These were all commended for their faith, yet none of them received w"
+   },
+   {
+    "t": 1171.78,
+    "gt": 11011.53,
+    "conf": "anchor",
+    "score": 0.905,
+    "tag": "p",
+    "w": 29,
+    "existing_id": "unfinished-b070",
+    "preview": "Abraham didn't see the fulfillment. Isaac didn't. The Ethiopian eunuch"
+   },
+   {
+    "t": 1189.43,
+    "gt": 11029.18,
+    "conf": "anchor",
+    "score": 1.0,
+    "tag": "p",
+    "w": 18,
+    "existing_id": "unfinished-b071",
+    "preview": "You are one of those stars Abraham couldn't count. You were in this pr"
+   },
+   {
+    "t": 1198.52,
+    "gt": 11038.27,
+    "conf": "anchor",
+    "score": 0.952,
+    "tag": "p",
+    "w": 46,
+    "existing_id": "unfinished-b072",
+    "preview": "The same Spirit who hovered over the waters in Genesis 1, who spoke to"
+   }
+  ]
+ }
+}

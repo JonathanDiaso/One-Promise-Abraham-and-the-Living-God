@@ -1,0 +1,412 @@
+{
+ "act01": {
+  "num": 1,
+  "title": "Prologue \u2014 The Spirit",
+  "globalStart": 0.0,
+  "dur": 910.863,
+  "mb": 11.5,
+  "marks": 5,
+  "_marks": [
+   {
+    "t": 6.1,
+    "label": "One Promise",
+    "el": "spirit"
+   },
+   {
+    "t": 79.2,
+    "label": "Before We Embark \u2014 The Spirit",
+    "el": "spirit"
+   },
+   {
+    "t": 351.2,
+    "label": "The Spirit Moving \u2014 Before Pentecost",
+    "el": "svg-spirit-moving"
+   },
+   {
+    "t": 569.6,
+    "label": "He Watched the Spirit Leave Saul",
+    "el": "div-from-upon"
+   },
+   {
+    "t": 830.9,
+    "label": "The Condition That Changes Everything",
+    "el": "box-condition"
+   }
+  ]
+ },
+ "act02": {
+  "num": 2,
+  "title": "Act One \u2014 The Promise",
+  "globalStart": 910.863,
+  "dur": 1582.377,
+  "mb": 19.9,
+  "marks": 10,
+  "_marks": [
+   {
+    "t": 0.04,
+    "label": "Act One \u2014 The Promise",
+    "el": "promise"
+   },
+   {
+    "t": 44.14,
+    "label": "Genesis 12 \u2014 God Calls One Man",
+    "el": "div-scattering"
+   },
+   {
+    "t": 85.84,
+    "label": "The Tower \u2014 What Archaeology Found",
+    "el": "box-tower"
+   },
+   {
+    "t": 265.84,
+    "label": "Nimrod's Kingdom \u2014 The First Empire",
+    "el": "div-scattering"
+   },
+   {
+    "t": 488.24,
+    "label": "One Night He Burned the Idol House",
+    "el": "div-go"
+   },
+   {
+    "t": 655.84,
+    "label": "No Map. No Destination. Just Go.",
+    "el": "div-go"
+   },
+   {
+    "t": 864.54,
+    "label": "Look Up and Count the Stars",
+    "el": "div-night-god"
+   },
+   {
+    "t": 1030.24,
+    "label": "Only God Moved \u2014 The Smoking Firepot",
+    "el": "div-night-god"
+   },
+   {
+    "t": 1211.04,
+    "label": "What Archaeology Confirmed \u2014 The World Was Real",
+    "el": "box-archaeology"
+   },
+   {
+    "t": 1470.34,
+    "label": "The Hall of Fame \u2014 Hebrews 11",
+    "el": "box-hall-of-fame"
+   }
+  ]
+ },
+ "act03": {
+  "num": 3,
+  "title": "Act Two \u2014 The Mistake",
+  "globalStart": 2493.24,
+  "dur": 1592.7,
+  "mb": 20.1,
+  "marks": 5,
+  "_marks": [
+   {
+    "t": 0.96,
+    "label": "Act Two \u2014 The Mistake",
+    "el": "mistake"
+   },
+   {
+    "t": 103.66,
+    "label": "Three Times \u2014 God Secured It Anyway",
+    "el": "box-three-times"
+   },
+   {
+    "t": 1000.86,
+    "label": "Petra Is That Promise Carved in Stone",
+    "el": "div-ishmael"
+   },
+   {
+    "t": 1137.46,
+    "label": "She Sat Down and Wept",
+    "el": "div-ishmael"
+   },
+   {
+    "t": 1592.66,
+    "label": "Act Three \u2014 The Test",
+    "el": "test"
+   }
+  ]
+ },
+ "act04": {
+  "num": 4,
+  "title": "Act Three \u2014 The Test",
+  "globalStart": 4085.94,
+  "dur": 1652.696,
+  "mb": 20.8,
+  "marks": 8,
+  "_marks": [
+   {
+    "t": 221.86,
+    "label": "Three Days Walk from Beersheba",
+    "el": "div-three-days"
+   },
+   {
+    "t": 385.06,
+    "label": "The Third Day \u2014 God's Signature",
+    "el": "box-third-day"
+   },
+   {
+    "t": 868.36,
+    "label": "He Was Only Just Beginning",
+    "el": "div-ascent"
+   },
+   {
+    "t": 876.56,
+    "label": "The Shadow and the Substance",
+    "el": "svg-shadow"
+   },
+   {
+    "t": 1009.06,
+    "label": "Isaac Walked Free",
+    "el": "div-silence"
+   },
+   {
+    "t": 1057.16,
+    "label": "The Prophetic Gift \u2014 Operating Under Pressure",
+    "el": "box-prophetic"
+   },
+   {
+    "t": 1175.56,
+    "label": "Eid Al-Adha \u2014 Most Re-Enacted Moment",
+    "el": "box-eid"
+   },
+   {
+    "t": 1361.56,
+    "label": "Rebekah \u2014 The Bride Chosen at the Well",
+    "el": "box-rebekah"
+   }
+  ]
+ },
+ "act05": {
+  "num": 5,
+  "title": "Act Four \u2014 The Fulfillment",
+  "globalStart": 5738.636,
+  "dur": 1346.0,
+  "mb": 17.0,
+  "marks": 10,
+  "_marks": [
+   {
+    "t": 1.06,
+    "label": "Act Four \u2014 The Fulfillment",
+    "el": "fulfillment"
+   },
+   {
+    "t": 161.76,
+    "label": "The Great Isaiah Scroll \u2014 Sealed 2,000 Years",
+    "el": "box-scroll"
+   },
+   {
+    "t": 259.06,
+    "label": "But Isaiah Wasn't Finished",
+    "el": "fulfillment"
+   },
+   {
+    "t": 518.66,
+    "label": "The Ache You Feel for Something You Can't Name",
+    "el": "div-moving-closer"
+   },
+   {
+    "t": 527.26,
+    "label": "The Tabernacle Progression \u2014 God Moving Closer",
+    "el": "svg-tabernacle"
+   },
+   {
+    "t": 730.56,
+    "label": "What Secular History Confirmed \u2014 The Cross Was Real",
+    "el": "box-secular"
+   },
+   {
+    "t": 773.76,
+    "label": "The Alexamenos Graffito",
+    "el": "box-secular"
+   },
+   {
+    "t": 1209.36,
+    "label": "Babel and Pentecost \u2014 The Exact Reversal",
+    "el": "div-pentecost"
+   },
+   {
+    "t": 1222.26,
+    "label": "What Pride Scattered the Spirit Gathered",
+    "el": "div-pentecost"
+   },
+   {
+    "t": 1345.96,
+    "label": "Act Five \u2014 The Expansion",
+    "el": "expansion"
+   }
+  ]
+ },
+ "act06": {
+  "num": 6,
+  "title": "Act Five \u2014 The Expansion",
+  "globalStart": 7084.636,
+  "dur": 1177.315,
+  "mb": 14.9,
+  "marks": 3,
+  "_marks": [
+   {
+    "t": 571.46,
+    "label": "The Woman at the Well \u2014 First Missionary",
+    "el": "div-ethiopian"
+   },
+   {
+    "t": 741.56,
+    "label": "The First Missionary in John's Gospel",
+    "el": "box-first-missionary"
+   },
+   {
+    "t": 969.66,
+    "label": "Ethiopia and the Covenant \u2014 A Timeline",
+    "el": "svg-ethiopia"
+   }
+  ]
+ },
+ "act07": {
+  "num": 7,
+  "title": "Act Six \u2014 The Wildfire",
+  "globalStart": 8261.951,
+  "dur": 944.7,
+  "mb": 12.0,
+  "marks": 8,
+  "_marks": [
+   {
+    "t": 1.85,
+    "label": "Act Six \u2014 The Wildfire",
+    "el": "wildfire"
+   },
+   {
+    "t": 139.65,
+    "label": "Paul \u2014 To Ishmael First",
+    "el": "div-paul"
+   },
+   {
+    "t": 154.45,
+    "label": "The Apostle Went to Ishmael's Territory First",
+    "el": "div-paul"
+   },
+   {
+    "t": 159.85,
+    "label": "Every Road Led Through Abraham",
+    "el": "div-paul"
+   },
+   {
+    "t": 171.95,
+    "label": "Jerusalem \u2014 33 AD",
+    "el": "svg-jerusalem"
+   },
+   {
+    "t": 219.35,
+    "label": "China \u2014 635 AD \u2014 The Xi'an Stele",
+    "el": "svg-jerusalem"
+   },
+   {
+    "t": 561.55,
+    "label": "Equipping Ordinary People Across the Empire",
+    "el": "div-sozo"
+   },
+   {
+    "t": 616.65,
+    "label": "Neato Burrito \u2014 The God Who Sees",
+    "el": "div-sozo"
+   }
+  ]
+ },
+ "act08": {
+  "num": 8,
+  "title": "Act Seven \u2014 The Fractures",
+  "globalStart": 9206.651,
+  "dur": 633.1,
+  "mb": 8.0,
+  "marks": 4,
+  "_marks": [
+   {
+    "t": 0.05,
+    "label": "Act Seven \u2014 The Fractures",
+    "el": "fractures"
+   },
+   {
+    "t": 59.85,
+    "label": "The Fracture Pattern \u2014 It Never Changes",
+    "el": "box-fracture-pattern"
+   },
+   {
+    "t": 160.25,
+    "label": "It Washed the Color Line Away",
+    "el": "fractures"
+   },
+   {
+    "t": 183.55,
+    "label": "The Fractures and Revivals \u2014 God Always Responds",
+    "el": "svg-fractures-revivals"
+   }
+  ]
+ },
+ "act09": {
+  "num": 9,
+  "title": "Act Eight \u2014 The Unfinished Story",
+  "globalStart": 9839.751,
+  "dur": 1599.512,
+  "mb": 20.1,
+  "marks": 11,
+  "_marks": [
+   {
+    "t": 0.05,
+    "label": "Act Eight \u2014 The Unfinished Story",
+    "el": "unfinished"
+   },
+   {
+    "t": 163.25,
+    "label": "The Five Pillars as Abrahamic Re-Enactment",
+    "el": "svg-five-pillars"
+   },
+   {
+    "t": 344.35,
+    "label": "The Other Half of the Family",
+    "el": "div-other-half"
+   },
+   {
+    "t": 418.15,
+    "label": "He Crossed a Closed Border",
+    "el": "div-other-half"
+   },
+   {
+    "t": 608.65,
+    "label": "The Spirit Is Moving in Ishmael's Territory",
+    "el": "box-spirit-ishmael"
+   },
+   {
+    "t": 904.95,
+    "label": "Melchizedek \u2014 The Beginning and the End",
+    "el": "box-melchizedek"
+   },
+   {
+    "t": 1110.65,
+    "label": "Every Nation. Every Tongue. Every Star.",
+    "el": "div-every-nation"
+   },
+   {
+    "t": 1220.05,
+    "label": "From Bondage to Freedom",
+    "el": "closing-section"
+   },
+   {
+    "t": 1263.55,
+    "label": "The Story That Just Became Yours",
+    "el": "closing-section"
+   },
+   {
+    "t": 1498.25,
+    "label": "A Poem by Ronald Fleming",
+    "el": "poem-ronald"
+   },
+   {
+    "t": 1523.15,
+    "label": "God of Abraham, Isaac, and Ishmael",
+    "el": "poem-ronald"
+   }
+  ]
+ }
+}
