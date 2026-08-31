@@ -80,10 +80,31 @@ body{background:var(--bg);font-family:"Cormorant Garamond",serif;color:var(--tex
 .hero-stars{position:absolute;inset:0;overflow:hidden;will-change:transform;}
 #hero-moon{position:fixed;right:10%;top:16%;width:150px;height:150px;object-fit:contain;opacity:.88;filter:drop-shadow(0 0 18px rgba(255,248,220,.10)) drop-shadow(0 0 55px rgba(255,245,200,.05));pointer-events:none;will-change:transform;z-index:3;}
 @media(max-width:600px){#hero-moon{width:95px;height:95px;right:6%;top:12%;}}
-.star{position:absolute;border-radius:50%;}
-@keyframes tw-dim{0%,100%{opacity:var(--o,.2);}50%{opacity:calc(var(--o,.2)*.25);}}
-@keyframes tw-mid{0%,100%{opacity:var(--o,.6);transform:scale(1);}50%{opacity:calc(var(--o,.6)*.18);transform:scale(.65);}}
-@keyframes tw-bright{0%,100%{opacity:var(--o,.95);transform:scale(1);}40%,60%{opacity:calc(var(--o,.95)*.38);transform:scale(.78);}}
+.star{position:absolute;border-radius:50%;transform:translate(-50%,-50%);}
+/* Scintillation, not blinking. The old curves dropped a star to 18-38% of its
+   brightness and shrank it to two thirds its size twice a minute, which no star
+   does — atmospheric twinkle is a wobble of a few percent, and a star's angular
+   size never changes. Amplitude rises as stars get fainter, which is also true:
+   dim stars scintillate hardest. Irregular stops keep the field from pulsing in
+   unison. */
+@keyframes tw-dim{0%,100%{opacity:var(--o,.2);}27%{opacity:calc(var(--o,.2)*.74);}
+  49%{opacity:calc(var(--o,.2)*1.06);}71%{opacity:calc(var(--o,.2)*.8);}88%{opacity:calc(var(--o,.2)*.97);}}
+@keyframes tw-mid{0%,100%{opacity:var(--o,.6);}23%{opacity:calc(var(--o,.6)*.85);}
+  46%{opacity:calc(var(--o,.6)*1.04);}68%{opacity:calc(var(--o,.6)*.82);}86%{opacity:calc(var(--o,.6)*.98);}}
+@keyframes tw-bright{0%,100%{opacity:var(--o,.95);}19%{opacity:calc(var(--o,.95)*.91);}
+  41%{opacity:calc(var(--o,.95)*1);}63%{opacity:calc(var(--o,.95)*.88);}84%{opacity:calc(var(--o,.95)*.98);}}
+
+/* Diffraction spikes — a lens artifact, not something the sky does, but it is
+   how a bright star reads in every photograph anyone has seen. Six stars only. */
+.star-spike::before,.star-spike::after{
+  content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  pointer-events:none;opacity:.45;}
+.star-spike::before{width:26px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--sc,#fff) 50%,transparent);}
+.star-spike::after{width:1px;height:26px;
+  background:linear-gradient(180deg,transparent,var(--sc,#fff) 50%,transparent);}
+@media (prefers-reduced-motion:reduce){
+  .star{animation:none!important;}}
 @keyframes shoot{0%{transform:rotate(var(--a,-30deg)) scaleX(0);opacity:0;}8%{opacity:1;}85%{opacity:.7;}100%{transform:rotate(var(--a,-30deg)) scaleX(1);opacity:0;}}
 .hero-shema{font-family:"Cinzel",serif;font-size:clamp(.6rem,1.3vw,.75rem);letter-spacing:.4em;color:rgba(255,255,255,.65);margin-bottom:40px;position:relative;}
 .hero-shema::before,.hero-shema::after{content:"✦";margin:0 14px;color:rgba(74,144,217,.4);}
@@ -120,6 +141,14 @@ section[id] .act-title{background:linear-gradient(90deg,var(--act-color,#fff) 0%
 .divider{display:flex;align-items:center;gap:16px;margin:52px 0;color:var(--act-color,rgba(255,255,255,.2));}
 .divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(to right,transparent,var(--act-color,rgba(255,255,255,.15)),transparent);}
 .divider span{font-family:"Cinzel",serif;font-size:.56rem;letter-spacing:.3em;white-space:nowrap;background:linear-gradient(90deg,var(--act-color,rgba(255,255,255,.3)) 0%,#ffffff 50%,var(--act-color,rgba(255,255,255,.3)) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+/* On a phone the longest of these ran 451px wide inside a 390px screen. body has
+   overflow-x:hidden, so the page never scrolled sideways — it just cut the end of
+   the sentence off, silently. They wrap here instead. */
+@media(max-width:640px){
+  .divider{gap:10px;}
+  .divider span{white-space:normal;text-align:center;letter-spacing:.16em;
+    font-size:.5rem;line-height:1.7;min-width:0;}
+}
 .closing{padding:80px 0 100px;text-align:center;}
 .closing-verse{font-family:"Cormorant SC",serif;font-weight:300;font-size:clamp(1.3rem,3.5vw,2.2rem);color:#ffffff;line-height:1.6;margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;}
 .prayer-box{max-width:560px;margin:0 auto 48px;padding:36px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);}
@@ -676,6 +705,40 @@ body{padding-bottom:112px;}
   #ap-narr-panel{padding:0 12px;border-bottom:none;}
   body{padding-bottom:90px;}
 }
+
+    /* ── TOUCH TARGETS ──
+       The pill controls were 3px of padding around 0.28rem text — about 20px
+       tall, well under the 44px minimum and the hardest thing on the page to hit
+       on a phone. The pills stay visually small; an invisible ::after grows the
+       HIT area to 44px without moving the layout. */
+    .ap-skip,.ap-speed-btn,.ap-sleep-btn,#ap-follow-btn,.ap-lang-btn{position:relative;}
+    .ap-skip::after,.ap-speed-btn::after,.ap-sleep-btn::after,
+    #ap-follow-btn::after,.ap-lang-btn::after{
+      content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+      width:max(100%,44px);height:44px;}
+
+    /* ── THE FLOATING PLAY BUTTON ──
+       One target that is always in the same place and always big enough, so
+       starting and stopping the read never means aiming into the bar. */
+    #ap-fab{
+      position:fixed;right:18px;z-index:960;bottom:126px;
+      width:60px;height:60px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(8,12,24,.92);
+      backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      border:1px solid rgba(74,144,217,.45);
+      box-shadow:0 6px 28px rgba(0,0,0,.55);
+      color:var(--ap);cursor:pointer;outline:none;
+      transition:transform .18s ease,box-shadow .3s ease,border-color .3s ease,opacity .25s ease;
+    }
+    #ap-fab:active{transform:scale(.93);}
+    #ap-fab:focus-visible{border-color:var(--ap);box-shadow:0 0 0 3px rgba(74,144,217,.5);}
+    #ap-fab.ap-playing{border-color:var(--ap);box-shadow:0 6px 28px rgba(0,0,0,.55),0 0 22px rgba(74,144,217,.35);}
+    #ap-fab svg{width:20px;height:20px;display:block;pointer-events:none;}
+    #ap-fab.ap-hidden{opacity:0;pointer-events:none;transform:scale(.8);}
+    @media(max-width:640px){#ap-fab{bottom:142px;right:14px;width:58px;height:58px;}}
+    @media(orientation:landscape)and(max-height:500px){#ap-fab{bottom:100px;width:50px;height:50px;}}
+    @media (prefers-reduced-motion:reduce){#ap-fab{transition:none;}}
 
     /* the block being read right now — text sync, 510 cues */
     .ap-reading{background:linear-gradient(90deg,rgba(212,175,55,.13),rgba(212,175,55,.04) 70%,transparent);
@@ -2236,100 +2299,133 @@ const sMid    = document.getElementById('stars-mid');
 const sBright = document.getElementById('stars-bright');
 
 // ── STAR COLORS ──
-const WHITE      = '#ffffff';
-const BLUE_WHITE = 'rgba(180,215,255,1)';
-const WARM_GOLD  = 'rgba(235,210,140,1)';
-const COOL_BLUE  = 'rgba(150,200,255,1)';
-const SOFT_WHITE = 'rgba(240,245,255,1)';
-const midColors=[WHITE,WHITE,WHITE,SOFT_WHITE,BLUE_WHITE,BLUE_WHITE,WARM_GOLD,'rgba(200,180,255,1)'];
+// Stellar colour is temperature, not decoration. These are the sRGB values for
+// real spectral classes, hottest to coolest, so a blue star reads as O/B and an
+// amber one as K/M rather than as a tint chosen by eye.
+const SPEC=[
+  {c:'rgb(155,176,255)',w:0.06},  // O/B  hot blue
+  {c:'rgb(202,215,255)',w:0.14},  // A    blue-white
+  {c:'rgb(248,247,255)',w:0.20},  // F    white
+  {c:'rgb(255,244,234)',w:0.22},  // G    sun-yellow
+  {c:'rgb(255,222,180)',w:0.24},  // K    amber
+  {c:'rgb(255,190,140)',w:0.14},  // M    orange-red
+];
+// Brighter stars skew hot: bias picks from the blue end as brightness rises.
+function specColor(bright){
+  const r=Math.pow(Math.random(),1+bright*1.6);   // bright -> lower index -> bluer
+  let acc=0,t=r;
+  for(const s of SPEC){acc+=s.w;if(t<=acc)return s.c;}
+  return SPEC[SPEC.length-1].c;
+}
+const WHITE='#ffffff',BLUE_WHITE='rgba(180,215,255,1)';
 
-// ── HERO LAYER 1: Background — 160 tiny dim stars ──
-for(let i=0;i<160;i++){
-  const s=document.createElement('div');
-  const sz=(0.5+Math.random()*0.7).toFixed(1);
-  const op=(0.28+Math.random()*0.38).toFixed(2);
-  const d=(5+Math.random()*8).toFixed(1);
-  const del=(Math.random()*12).toFixed(1);
-  const col=Math.random()<0.15?BLUE_WHITE:WHITE;
+// A real sky is not evenly sprinkled. Most of these stars sit in a broad band —
+// the galactic plane — running across the frame, with the rest scattered. The
+// band is soft-edged, so it reads as depth rather than as a stripe.
+function place(){
+  const x=Math.random()*100;
+  if(Math.random()<0.55){
+    const band=52-(x-50)*0.34;                       // gentle diagonal
+    const spread=(Math.random()+Math.random()+Math.random()-1.5)*23; // ~gaussian
+    return [x,Math.max(0,Math.min(100,band+spread))];
+  }
+  return [x,Math.random()*100];
+}
+
+// Magnitude: faint stars vastly outnumber bright ones, so brightness is drawn
+// from a power law rather than flat random. b is 0 (faintest) to 1 (brightest).
+const mag=()=>Math.pow(Math.random(),2.6);
+
+// A star is a point with a halo, not a flat disc — the glow is what the eye
+// actually reads as "star". Bigger and brighter gets more halo.
+// The halo is drawn INSIDE the element's own gradient rather than with
+// filter:drop-shadow(). Six hundred-odd stars each running an animated
+// drop-shadow pins the main thread — enough, measured here, that the audio
+// element never got around to loading. A gradient costs nothing to animate.
+function paint(el,size,color,bright,op){
+  const box=size*(2.8+bright*2.6);            // core plus its halo
+  const core=Math.max(6,(size/box)*50);       // % of the box the solid core fills
+  const edge=Math.min(72,core*3.4);
+  el.style.background='radial-gradient(circle,'+color+' 0%,'+color+' '+core.toFixed(1)+
+                      '%,transparent '+edge.toFixed(1)+'%)';
+  el.style.width=el.style.height=box.toFixed(2)+'px';
+  el.style.setProperty('--o',op.toFixed(3));
+  el.style.opacity=op.toFixed(3);
+}
+
+// ── HERO LAYER 1: 200 faint stars ──
+for(let i=0;i<200;i++){
+  const s=document.createElement('div'),b=mag(),[x,y]=place();
+  const op=0.16+b*0.34, d=(7+Math.random()*9).toFixed(1);
   s.className='star';
-  s.style.cssText=`left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;width:${sz}px;height:${sz}px;background:${col};--o:${op};animation:tw-dim ${d}s ease-in-out ${del}s infinite;opacity:${op};`;
+  s.style.cssText=`left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;animation:tw-dim ${d}s ease-in-out ${(Math.random()*14).toFixed(1)}s infinite;`;
+  paint(s,0.5+b*0.8,specColor(b*0.4),b*0.3,op);
   sBg.appendChild(s);
 }
 
-// ── HERO LAYER 2: Mid — 65 normal stars ──
-for(let i=0;i<65;i++){
-  const s=document.createElement('div');
-  const sz=(1.1+Math.random()*1.1).toFixed(1);
-  const op=(0.55+Math.random()*0.35).toFixed(2);
-  const d=(2.5+Math.random()*4).toFixed(1);
-  const del=(Math.random()*10).toFixed(1);
-  const col=midColors[Math.floor(Math.random()*midColors.length)];
+// ── HERO LAYER 2: 70 mid stars ──
+for(let i=0;i<70;i++){
+  const s=document.createElement('div'),b=mag(),[x,y]=place();
+  const op=0.45+b*0.4, d=(3.5+Math.random()*5).toFixed(1);
   s.className='star';
-  s.style.cssText=`left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;width:${sz}px;height:${sz}px;background:${col};--o:${op};animation:tw-mid ${d}s ease-in-out ${del}s infinite;opacity:${op};`;
+  s.style.cssText=`left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;animation:tw-mid ${d}s ease-in-out ${(Math.random()*12).toFixed(1)}s infinite;`;
+  paint(s,1.0+b*1.5,specColor(b),b,op);
   sMid.appendChild(s);
 }
 
-// ── HERO LAYER 3: Bright — 14 anchor stars with glow ──
-const brightDefs=[
-  {col:WHITE,      sc:'rgba(255,255,255,.8)'},
-  {col:WHITE,      sc:'rgba(255,255,255,.8)'},
-  {col:WHITE,      sc:'rgba(255,255,255,.75)'},
-  {col:WARM_GOLD,  sc:'rgba(235,210,140,.85)'},
-  {col:WARM_GOLD,  sc:'rgba(235,210,140,.32)'},
-  {col:WARM_GOLD,  sc:'rgba(235,210,140,.28)'},
-  {col:BLUE_WHITE, sc:'rgba(180,215,255,.35)'},
-  {col:BLUE_WHITE, sc:'rgba(180,215,255,.30)'},
-  {col:COOL_BLUE,  sc:'rgba(150,200,255,.30)'},
-  {col:WHITE,      sc:'rgba(255,255,255,.38)'},
-  {col:WARM_GOLD,  sc:'rgba(235,210,140,.34)'},
-  {col:BLUE_WHITE, sc:'rgba(180,215,255,.36)'},
-  {col:WHITE,      sc:'rgba(255,255,255,.28)'},
-  {col:SOFT_WHITE, sc:'rgba(240,245,255,.32)'},
-];
-brightDefs.forEach(def=>{
+// ── HERO LAYER 3: 14 anchor stars, the ones that carry diffraction spikes ──
+// Spikes are a lens artifact, not something the sky does — but they are how a
+// bright star is read in every photograph anyone has seen, so the brightest few
+// get them and nothing else does.
+for(let i=0;i<14;i++){
   const s=document.createElement('div');
-  const sz=(1.8+Math.random()*0.9).toFixed(1);
-  const op=(0.85+Math.random()*0.15).toFixed(2);
-  const d=(3.5+Math.random()*5).toFixed(1);
-  const del=(Math.random()*8).toFixed(1);
-  s.className='star';
-  s.style.cssText=`left:${(Math.random()*95+2).toFixed(2)}%;top:${(Math.random()*90+2).toFixed(2)}%;width:${sz}px;height:${sz}px;background:${def.col};filter:drop-shadow(0 0 2px ${def.sc});--o:${op};animation:tw-bright ${d}s ease-in-out ${del}s infinite;opacity:${op};`;
+  const b=0.62+Math.random()*0.38;
+  const x=4+Math.random()*92, y=3+Math.random()*88;
+  const op=0.82+Math.random()*0.18, d=(4.5+Math.random()*5).toFixed(1);
+  const col=specColor(b);
+  s.className='star'+(i<6?' star-spike':'');
+  s.style.cssText=`left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;animation:tw-bright ${d}s ease-in-out ${(Math.random()*9).toFixed(1)}s infinite;`;
+  paint(s,2.0+b*2.0,col,b,op);
+  s.style.setProperty('--sc',col);
   sBright.appendChild(s);
-});
+}
 
 // ── PAGE STARS — fixed background throughout document ──
 const pageCanvas=document.createElement('div');
 pageCanvas.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:0;';
 for(let i=0;i<280;i++){
   const s=document.createElement('div');
-  const sz=(0.5+Math.random()*0.8).toFixed(1);
-  const op=(0.14+Math.random()*0.28).toFixed(2);
+  const b=mag(),[x,y]=place();
+  const op=0.14+b*0.28;
   const d=(6+Math.random()*10).toFixed(1);
   const del=(Math.random()*15).toFixed(1);
   s.className='star';
-  s.style.cssText=`position:absolute;left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;width:${sz}px;height:${sz}px;background:${Math.random()<0.12?BLUE_WHITE:WHITE};--o:${op};animation:tw-dim ${d}s ease-in-out ${del}s infinite;opacity:${op};`;
+  s.style.cssText=`position:absolute;left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;animation:tw-dim ${d}s ease-in-out ${del}s infinite;`;
+  paint(s,0.5+b*0.8,specColor(b*0.4),b*0.25,op);
   pageCanvas.appendChild(s);
 }
 for(let i=0;i<100;i++){
   const s=document.createElement('div');
-  const sz=(0.9+Math.random()*1.1).toFixed(1);
-  const op=(0.32+Math.random()*0.38).toFixed(2);
+  const b=mag();
+  const op=0.32+b*0.38;
   const d=(3+Math.random()*6).toFixed(1);
   const del=(Math.random()*12).toFixed(1);
-  const col=midColors[Math.floor(Math.random()*midColors.length)];
   s.className='star';
-  s.style.cssText=`position:absolute;left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;width:${sz}px;height:${sz}px;background:${col};--o:${op};animation:tw-mid ${d}s ease-in-out ${del}s infinite;opacity:${op};`;
+  s.style.cssText=`position:absolute;left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;animation:tw-mid ${d}s ease-in-out ${del}s infinite;`;
+  paint(s,0.9+b*1.3,specColor(b),b*0.7,op);
   pageCanvas.appendChild(s);
 }
 for(let i=0;i<22;i++){
-  const def=brightDefs[i%brightDefs.length];
   const s=document.createElement('div');
-  const sz=(2.2+Math.random()*1.6).toFixed(1);
-  const op=(0.62+Math.random()*0.28).toFixed(2);
+  const b=0.55+Math.random()*0.45;
+  const op=0.62+Math.random()*0.28;
   const d=(4+Math.random()*6).toFixed(1);
   const del=(Math.random()*10).toFixed(1);
+  const col=specColor(b);
   s.className='star';
-  s.style.cssText=`position:absolute;left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;width:${sz}px;height:${sz}px;background:${def.col};--sc:${def.sc};--o:${op};animation:tw-bright ${d}s ease-in-out ${del}s infinite;opacity:${op};`;
+  s.style.cssText=`position:absolute;left:${(Math.random()*100).toFixed(2)}%;top:${(Math.random()*100).toFixed(2)}%;animation:tw-bright ${d}s ease-in-out ${del}s infinite;`;
+  paint(s,2.0+b*1.6,col,b,op);
+  s.style.setProperty('--sc',col);
   pageCanvas.appendChild(s);
 }
 document.body.insertBefore(pageCanvas,document.body.firstChild);
@@ -2507,6 +2603,15 @@ if(!localStorage.getItem('op_welcomed_v2')){
 </div>
 
 <div id="lb-overlay"><div id="lb-img-wrap"><img id="lb-img" alt=""><button id="lb-close">✕ CLOSE</button></div></div>
+
+<!-- ── FLOATING PLAY BUTTON ──
+     A 60px target that never moves, for the one control people reach for most.
+     It mirrors the bar's play button rather than replacing it. -->
+<button id="ap-fab" class="ap-hidden" aria-label="Play narration" aria-pressed="false">
+  <svg id="ap-fab-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M8 5v14l11-7z"/>
+  </svg>
+</button>
 
 <!-- ── AUDIO PLAYER BAR ── -->
 <div id="ap-bar">
@@ -2809,6 +2914,34 @@ if(!localStorage.getItem('op_welcomed_v2')){
   });
   narrEl.addEventListener('play',()=>{ _userPaused=false; });
   narrEl.addEventListener('pause',()=>{}); // intentional pauses handled by toggle flag
+
+  // ── FLOATING PLAY BUTTON ──
+  // Mirrors the bar's play control. It follows the element's real state rather
+  // than tracking its own, so it stays correct however playback was changed —
+  // the bar, a keyboard shortcut, or the phone's lock screen.
+  (function(){
+    const fab=document.getElementById('ap-fab'),ic=document.getElementById('ap-fab-icon');
+    if(!fab||!ic)return;
+    const PLAY='M8 5v14l11-7z',PAUSE='M6 5h4v14H6zM14 5h4v14h-4z';
+    function sync(){
+      const playing=!narrEl.paused;
+      ic.firstElementChild.setAttribute('d',playing?PAUSE:PLAY);
+      fab.classList.toggle('ap-playing',playing);
+      fab.setAttribute('aria-label',playing?'Pause narration':'Play narration');
+      fab.setAttribute('aria-pressed',playing?'true':'false');
+    }
+    fab.addEventListener('click',()=>{window.apNarrToggle();setTimeout(sync,60);});
+    ['play','pause','ended','loadedmetadata'].forEach(e=>narrEl.addEventListener(e,sync));
+    // Stays hidden until the onboarding card is gone, so it never sits over it.
+    function reveal(){
+      const ob=document.getElementById('onboard');
+      const up=ob&&getComputedStyle(ob).display!=='none'&&ob.style.opacity!=='0'
+               &&!ob.classList.contains('hidden');
+      fab.classList.toggle('ap-hidden',!!up);
+    }
+    reveal();sync();
+    setInterval(reveal,600);
+  })();
 
   window.apSetNarrVol=function(v){
     baseNarrVol=parseFloat(v);
