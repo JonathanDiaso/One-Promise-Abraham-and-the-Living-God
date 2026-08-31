@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>One Promise — Abraham, the Living God, and the Story That Never Ended</title>
 <link rel="icon" id="favicon" type="image/png" href="">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060E">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- the apple- prefixed form is deprecated but still what older iOS reads -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="One Promise">
+<link rel="apple-touch-icon" href="icon-192.png">
 <script>
 (function(){
   const c=document.createElement('canvas');
@@ -531,6 +539,25 @@ section[id].revealed::before{opacity:1;}
 #sleep-sheet-inner{background:rgba(4,6,14,.98);border:1px solid rgba(74,144,217,.18);border-bottom:none;border-radius:14px 14px 0 0;padding:28px 24px 44px;width:100%;max-width:500px;transform:translateY(100%);transition:transform .35s ease;}
 #sleep-sheet.open #sleep-sheet-inner{transform:translateY(0);}
 #sleep-sheet-title{font-family:"Cinzel",serif;font-size:.52rem;letter-spacing:.32em;color:rgba(74,144,217,.65);text-align:center;margin-bottom:20px;}
+/* ── OFFLINE SHEET ── borrows the sleep sheet's shape so it reads as the same object */
+#offline-sheet{position:fixed;inset:0;z-index:1800;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+#offline-sheet.open{opacity:1;pointer-events:all;}
+#offline-sheet-inner{background:rgba(4,6,14,.98);border:1px solid rgba(74,144,217,.18);border-bottom:none;border-radius:14px 14px 0 0;padding:28px 20px 40px;width:100%;max-width:520px;max-height:82vh;overflow-y:auto;transform:translateY(100%);transition:transform .35s ease;}
+#offline-sheet.open #offline-sheet-inner{transform:translateY(0);}
+#offline-note{font-size:.82rem;color:rgba(255,255,255,.45);text-align:center;margin:0 0 18px;line-height:1.6;}
+.offline-row{display:flex;align-items:center;gap:12px;padding:9px 4px;border-bottom:1px solid rgba(255,255,255,.05);}
+.offline-row-t{flex:1;min-width:0;}
+.offline-row-n{font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.08em;color:rgba(255,255,255,.8);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.offline-row-s{font-size:.6rem;color:rgba(255,255,255,.32);margin-top:3px;letter-spacing:.08em;}
+.offline-act-btn{flex-shrink:0;min-height:44px;min-width:76px;padding:8px 14px;background:transparent;
+  border:1px solid rgba(74,144,217,.35);border-radius:4px;color:var(--ap);cursor:pointer;
+  font-family:"Cinzel",serif;font-size:.52rem;letter-spacing:.18em;transition:all .2s;}
+.offline-act-btn:hover{background:rgba(74,144,217,.12);border-color:rgba(74,144,217,.7);}
+.offline-act-btn[disabled]{opacity:.5;cursor:default;}
+.offline-act-btn.saved{color:var(--gold,#c9a84c);border-color:rgba(201,168,76,.5);}
+#offline-foot{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;justify-content:center;}
+#offline-foot .offline-act-btn{flex:1;min-width:120px;}
 #audio-complete{position:fixed;inset:0;z-index:1800;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s ease;}
 #audio-complete.open{opacity:1;pointer-events:all;}
 #audio-complete-inner{background:rgba(4,6,14,.98);border:1px solid rgba(201,168,76,.2);border-bottom:none;border-radius:14px 14px 0 0;padding:36px 28px 52px;width:100%;max-width:500px;transform:translateY(100%);transition:transform .4s ease;text-align:center;}
@@ -2592,6 +2619,22 @@ if(!localStorage.getItem('op_welcomed_v2')){
     <button id="audio-complete-dismiss">CLOSE</button>
   </div>
 </div>
+<!-- ── OFFLINE SHEET ──
+     Nine acts, downloaded one at a time so a listener can take Act Three on a
+     plane without taking all 138 MB of it. -->
+<div id="offline-sheet">
+  <div id="offline-sheet-inner">
+    <div id="sleep-sheet-title">SAVE FOR OFFLINE</div>
+    <p id="offline-note">Keep an act on this device and it plays with no connection.</p>
+    <div id="offline-list"></div>
+    <div id="offline-foot">
+      <button class="offline-act-btn" id="offline-all">SAVE ALL · 144 MB</button>
+      <button class="offline-act-btn" id="offline-none">REMOVE ALL</button>
+      <button class="offline-act-btn" id="offline-close" onclick="apCloseOffline()">DONE</button>
+    </div>
+  </div>
+</div>
+
 <div id="sleep-sheet">
   <div id="sleep-sheet-inner">
     <div id="sleep-sheet-title">SLEEP TIMER</div>
@@ -2628,6 +2671,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
       <button class="ap-skip" id="ap-skip-fwd" onclick="apSkip(30)" aria-label="Skip forward 30s">+30</button>
       <button class="ap-speed-btn" id="ap-speed" onclick="apCycleSpeed()" aria-label="Playback speed">1×</button>
       <button class="ap-sleep-btn" id="ap-sleep" onclick="apCycleSleep()" aria-label="Sleep timer">ZZ</button>
+      <button class="ap-sleep-btn" id="ap-offline" onclick="apOpenOffline()" aria-label="Save for offline listening">⤓</button>
       <input type="range" class="ap-vol ap-desktop" id="ap-narr-vol" min="0" max="1" step="0.01" value="0.9" oninput="apSetNarrVol(this.value)" aria-label="Narration volume">
       <button class="ap-mute ap-mobile" id="ap-narr-mute" onclick="apMuteToggle('narr')" aria-label="Mute narration">
         <svg class="ap-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
@@ -2941,6 +2985,78 @@ if(!localStorage.getItem('op_welcomed_v2')){
     }
     reveal();sync();
     setInterval(reveal,600);
+  })();
+
+  // Per-act sizes, so the sheet can say what a download will cost before it
+  // starts. Sourced from audio/manifest.json at build time.
+  window.__ACT_MB={"act01":11.5,"act02":19.9,"act03":20.1,"act04":20.8,"act05":17.0,
+                   "act06":14.9,"act07":12.0,"act08":8.0,"act09":20.1};
+
+  // ── OFFLINE ──
+  // The worker holds the acts; this is only the UI over it. Downloads are per
+  // act on purpose: someone who wants Act Three on a flight should not have to
+  // take all 138 MB to get it.
+  (function(){
+    const sheet=document.getElementById('offline-sheet');
+    const list=document.getElementById('offline-list');
+    if(!sheet||!list||!('serviceWorker' in navigator))return;
+    const state={};                       // src -> 'no' | 'busy' | 'yes'
+    const URLS=BOOK_ACTS.map(a=>a.src);
+    const MB=id=>{const m=window.__ACT_MB||{};return m[id]||0;};
+
+    function row(a){
+      const r=document.createElement('div');r.className='offline-row';
+      const t=document.createElement('div');t.className='offline-row-t';
+      const n=document.createElement('div');n.className='offline-row-n';n.textContent=a.title;
+      const s=document.createElement('div');s.className='offline-row-s';
+      s.textContent=Math.round(a.dur/60)+' MIN · '+MB(a.id)+' MB';
+      t.appendChild(n);t.appendChild(s);
+      const b=document.createElement('button');b.className='offline-act-btn';
+      b.addEventListener('click',()=>toggle(a.src));
+      r.appendChild(t);r.appendChild(b);
+      r._btn=b;r._src=a.src;return r;
+    }
+    const rows=BOOK_ACTS.map(a=>{const r=row(a);list.appendChild(r);return r;});
+
+    function paintRow(r){
+      const st=state[r._src]||'no';
+      r._btn.textContent=st==='yes'?'SAVED':st==='busy'?'…':'SAVE';
+      r._btn.disabled=st==='busy';
+      r._btn.classList.toggle('saved',st==='yes');
+    }
+    function paintAll(){rows.forEach(paintRow);}
+
+    function sw(){return navigator.serviceWorker.ready;}
+    function send(msg){sw().then(reg=>reg.active&&reg.active.postMessage(msg));}
+
+    function toggle(src){
+      const st=state[src]||'no';
+      if(st==='busy')return;
+      if(st==='yes'){state[src]='busy';paintAll();send({type:'remove',url:src});}
+      else{state[src]='busy';paintAll();send({type:'download',url:src});}
+    }
+
+    navigator.serviceWorker.addEventListener('message',e=>{
+      const d=e.data||{};
+      if(d.type==='downloaded'){state[d.url]=d.ok?'yes':'no';paintAll();}
+      else if(d.type==='removed'){state[d.url]='no';paintAll();}
+      else if(d.type==='removedAll'){URLS.forEach(u=>state[u]='no');paintAll();}
+      else if(d.type==='cached-state'){
+        d.urls.forEach((u,i)=>state[u]=d.cached[i]?'yes':'no');paintAll();}
+    });
+
+    function refresh(){send({type:'query',urls:URLS});}
+    document.getElementById('offline-all').addEventListener('click',()=>{
+      URLS.forEach(u=>{if((state[u]||'no')==='no'){state[u]='busy';send({type:'download',url:u});}});
+      paintAll();
+    });
+    document.getElementById('offline-none').addEventListener('click',()=>{
+      URLS.forEach(u=>state[u]='busy');paintAll();send({type:'removeAll'});
+    });
+    window.apOpenOffline=function(){sheet.classList.add('open');refresh();};
+    window.apCloseOffline=function(){sheet.classList.remove('open');};
+    sheet.addEventListener('click',e=>{if(e.target===sheet)window.apCloseOffline();});
+    paintAll();
   })();
 
   window.apSetNarrVol=function(v){
@@ -3597,6 +3713,20 @@ if(!localStorage.getItem('op_welcomed_v2')){
   document.addEventListener('scroll', ()=>copyPill.classList.remove('visible'),{passive:true});
 
 })();
+</script>
+
+<script>
+// ── SERVICE WORKER ──
+// Registered only over https (and localhost), so a file:// copy of the page is
+// unaffected. Everything it adds — offline reading, keeping acts on the device,
+// Range-sliced seeking out of the cache — is additive: if registration fails the
+// site behaves exactly as it did before.
+if ('serviceWorker' in navigator &&
+    (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
 </script>
 </body>
 </html>
