@@ -773,6 +773,35 @@ body{padding-bottom:112px;}
       transition:background .5s ease,box-shadow .5s ease;}
     @media (prefers-reduced-motion:reduce){.ap-reading{transition:none;}}
 
+    /* click a line to hear it — every one of the 510 cues is a seek point.
+       The whole block is the target, so there is nothing to aim at. The gold
+       caret in the margin is the affordance; it is a hover-only device and is
+       dropped under 900px, where a tap on the line is the whole interaction. */
+    .ap-cued{cursor:pointer;}
+    .ap-cued-mark{position:relative;}
+    .ap-cued-mark::before{content:"";position:absolute;left:-22px;top:.62em;
+      width:0;height:0;border-left:7px solid var(--gold);
+      border-top:5px solid transparent;border-bottom:5px solid transparent;
+      opacity:0;transform:translateX(-5px);pointer-events:none;
+      transition:opacity .18s ease,transform .18s ease;}
+    @media (hover:hover){
+      .ap-cued-mark:hover::before{opacity:.85;transform:none;}
+      .ap-cued-mark:hover{box-shadow:-2px 0 0 0 rgba(201,168,76,.3);border-radius:2px;}
+    }
+    @media (max-width:900px){.ap-cued-mark::before{display:none;}}
+    .ap-cue-flash{animation:apCueFlash 1s ease-out;}
+    @keyframes apCueFlash{0%{background:rgba(201,168,76,.24);}100%{background:transparent;}}
+    @media (prefers-reduced-motion:reduce){
+      .ap-cued-mark::before{transition:none;}
+      .ap-cue-flash{animation:none;}}
+
+    /* Spanish is one file on its own clock; the 510 cues are English timestamps.
+       Click-to-play is off there, so it must not go on advertising itself. */
+    body.op-lang-es .ap-cued{cursor:auto;}
+    body.op-lang-es .ap-cued-mark::before{display:none;}
+    body.op-lang-es .ap-cued-mark:hover{box-shadow:none;}
+    body.op-lang-es .ap-reading{background:none;box-shadow:none;}
+    body.op-lang-es #ap-follow-btn{opacity:.35;pointer-events:none;}
 
 </style>
 </head>
@@ -2561,6 +2590,7 @@ requestAnimationFrame(()=>{
       <div class="oc-row"><span class="oc-key">1×</span><span class="oc-val">Playback speed — 0.8× · 0.9× · 1× · 1.1× · 1.2×. Tap to cycle.</span></div>
       <div class="oc-row"><span class="oc-key">ZZ</span><span class="oc-val">Sleep timer — choose 30, 60, or 90 minutes. Stops everything when it runs.</span></div>
       <div class="oc-row"><span class="oc-key">↓ FOLLOW</span><span class="oc-val">The page reads along with you — the passage being spoken lights up and scrolls itself. On by default; tap to turn off.</span></div>
+      <div class="oc-row"><span class="oc-key">TAP A LINE</span><span class="oc-val">Tap any line of the book and the narration starts reading it aloud from there. On a keyboard, press <strong>P</strong>.</span></div>
     </div>
     <p id="onboard-footer">You don't have to read it all today. It will remember where you were.</p>
     <button id="onboard-begin">BEGIN</button>
@@ -2806,7 +2836,94 @@ if(!localStorage.getItem('op_welcomed_v2')){
         out.push({t:t0+b.t,id:b.existing_id});});
     });
     out.sort((x,y)=>x.t-y.t);CUES=out;
+    armCues();
   }).catch(()=>{});
+
+  // ── CLICK A LINE TO HEAR IT ──
+  // The same 510 cues that drive the highlight run the other direction too: every
+  // block that has a time is a seek point, and the whole block is the target. The
+  // caret only goes on blocks of running text — the dividers, timeline cells and
+  // table rows are still clickable, they just do not advertise it, because a
+  // caret in the margin of a nine-cell diagram is noise.
+  const CUEMAP=Object.create(null);
+  const MARKABLE='.prose,.act-intro,.scripture-text,.callout-text,.callout-title,'
+                +'.sac2-item,.story-text,.spirit-text,.sum9-what';
+
+  function armCues(){
+    CUES.forEach(c=>{
+      if(!(c.id in CUEMAP))CUEMAP[c.id]=c.t;   // first cue wins if an id repeats
+      const el=document.getElementById(c.id);
+      if(!el)return;
+      el.classList.add('ap-cued');
+      if(el.matches(MARKABLE))el.classList.add('ap-cued-mark');
+    });
+  }
+
+  // Walk up from whatever was clicked — a word in an <em>, a <span class="w">
+  // from the scripture reveal — to the block that owns the cue.
+  function cuedFrom(node){
+    for(let el=node;el&&el!==document.body;el=el.parentElement){
+      if(el.id&&el.id in CUEMAP)return el;
+    }
+    return null;
+  }
+
+  function playFrom(el){
+    const t=CUEMAP[el.id];
+    if(t===undefined)return;
+    if(window._cueHold)window._cueHold();       // don't let FOLLOW yank it back
+    // Play first, then seek. BOOK.go stashes the position and re-plays it once
+    // metadata lands, which only happens if it knows playback was wanted — and
+    // narrEl.paused is already false by the time play() returns.
+    if(narrEl.paused)window.apNarrToggle();
+    narrEl.currentTime=t+0.05;
+    document.querySelectorAll('.ap-reading').forEach(p=>p.classList.remove('ap-reading'));
+    el.classList.add('ap-reading');
+    el.classList.remove('ap-cue-flash');void el.offsetWidth;el.classList.add('ap-cue-flash');
+    // Claim the cue rather than resetting to -1. Between the click and the act
+    // file's metadata arriving, BOOK.t() still reads as the top of the act, and
+    // a -1 here would let the next timeupdate repaint the highlight onto the act
+    // opener for that gap. Naming the index holds it on the line that was tapped.
+    for(let i=0;i<CUES.length;i++){if(CUES[i].id===el.id){lastCue=i;break;}}
+  }
+
+  // Everything that owns its own click, plus every piece of chrome that floats
+  // over the text. Without this, closing the lightbox would also start the book.
+  const CUE_SKIP='a,button,input,select,textarea,label,summary,'
+                +'.doc-img,#ap-bar,#ap-fab,#ap-seekbar-row,.nav,#onboard,'
+                +'#sleep-sheet,#offline-sheet,#lb-overlay,#sel-copy,'
+                +'#resume-toast,#audio-complete';
+
+  let _dx=0,_dy=0;
+  document.addEventListener('pointerdown',e=>{_dx=e.clientX;_dy=e.clientY;},{passive:true});
+
+  document.addEventListener('click',e=>{
+    if(!CUES||!BOOK.en)return;
+    if(!e.target.closest)return;
+    if(e.target.closest(CUE_SKIP))return;
+    // A drag is someone pulling a quote out, not a tap.
+    if(Math.abs(e.clientX-_dx)>6||Math.abs(e.clientY-_dy)>6)return;
+    const sel=window.getSelection();
+    if(sel&&!sel.isCollapsed&&sel.toString().trim())return;
+    const el=cuedFrom(e.target);
+    if(el)playFrom(el);
+  });
+
+  // Keyboard equivalent (WCAG 2.1.1). Tabbing through 510 paragraphs would be a
+  // worse page, so the keyboard gets one key instead: P plays from the line
+  // nearest the top of the screen — the one you are actually reading.
+  window.apPlayFromView=function(){
+    if(!CUES)return;
+    const mark=window.innerHeight*0.28;
+    let best=null,bestD=Infinity;
+    for(const id in CUEMAP){
+      const el=document.getElementById(id);
+      if(!el||!el.offsetParent)continue;
+      const d=Math.abs(el.getBoundingClientRect().top-mark);
+      if(d<bestD){bestD=d;best=el;}
+    }
+    if(best){best.scrollIntoView({behavior:'smooth',block:'center'});playFrom(best);}
+  };
 
   window._cueHold=function(){cueSuppress=Date.now()+2500;};
 
@@ -2914,14 +3031,20 @@ if(!localStorage.getItem('op_welcomed_v2')){
         }).catch(()=>{});
       }
       narrEl.play().then(()=>{
-        narrTitle.textContent=NARR_NAME;
+        // Not always NARR_NAME — in Spanish the chapter tracker is switched off,
+        // so whatever is written here is what stays on the bar.
+        narrTitle.textContent=currentLang==='es'?ES_NAME:NARR_NAME;
         narrTitle.classList.add('ap-playing');
         narrBtn.classList.add('ap-playing');
         setPlayIcon(narrBtn,true);
         if(!musicEl.paused){rampTo(musicMuted?0:DUCK_VOL,RAMP_MS);duckDot.classList.add('active');}
         // Media Session for lock screen
         if('mediaSession' in navigator){
-          navigator.mediaSession.metadata=new MediaMetadata({title:NARR_NAME,artist:'One Promise',artwork:[{src:'https://raw.githubusercontent.com/JonathanDiaso/One-Promise-Abraham-and-the-Living-God/main/Abraham%20Stars.jpeg',sizes:'512x512',type:'image/jpeg'}]});
+          const es=currentLang==='es';
+          navigator.mediaSession.metadata=new MediaMetadata({
+            title:es?ES_NAME:NARR_NAME,
+            artist:es?'Una Promesa':'One Promise',
+            artwork:[{src:'https://raw.githubusercontent.com/JonathanDiaso/One-Promise-Abraham-and-the-Living-God/main/Abraham%20Stars.jpeg',sizes:'512x512',type:'image/jpeg'}]});
           navigator.mediaSession.playbackState='playing';
           navigator.mediaSession.setActionHandler('play',()=>{if(narrEl.paused)apNarrToggle();});
           navigator.mediaSession.setActionHandler('pause',()=>{if(!narrEl.paused)apNarrToggle();});
@@ -3205,22 +3328,139 @@ if(!localStorage.getItem('op_welcomed_v2')){
 
 
   // ── LANGUAGE SWITCH ──
-  const NARR_URLS={en:'https://www.dropbox.com/scl/fi/6hy6rkkplijlbofhib79p/book1111new-6_3_26-2.45-AM0630.mp3?rlkey=ngvvun64h2d5rjct6h0qgz8qf&st=f1ztu1lg&raw=1',es:'https://www.dropbox.com/scl/fi/lyw3jobd5mqiks2kl7xmt/Spanish.mp3?rlkey=uael9p05e8gc2pb6lv74b5gkg&st=bz71fze2&raw=1'};
+  // The two languages are not the same SHAPE of thing, and that is the whole
+  // reason this used to be broken. English is nine act files behind one synthetic
+  // clock (BOOK, above). Spanish is one 282 MB mp3 with a real clock. The old
+  // version assigned narrEl.src and then narrEl.currentTime — but currentTime is
+  // redefined to route through BOOK.seek, which turned around and loaded act01
+  // over the Spanish file. Tapping ES gave you English, every time.
+  //
+  // BOOK.en is the switch that was already built for this and never thrown: with
+  // it false, list()/t()/dur()/seek() all fall back to the raw element and the
+  // nine-act machinery stands down. So the fix is to throw it, and to put back
+  // everything else that is keyed to the English timeline.
+  //
+  // The en entry is gone from this map on purpose. It pointed at the old single
+  // 175 MB mp3 that the nine acts replaced; going back to English now means
+  // going back through BOOK, not re-fetching a file that is no longer the book.
+  // Dropbox's st= parameter is a short-lived token, so it is dropped here too —
+  // rlkey is the durable share key and the link resolves without it.
+  const NARR_URLS={es:'https://www.dropbox.com/scl/fi/lyw3jobd5mqiks2kl7xmt/Spanish.mp3?rlkey=uael9p05e8gc2pb6lv74b5gkg&raw=1'};
+  const ES_NAME='Una Promesa — Narración Completa';
   let currentLang='en';
   const savedLangPos={en:0,es:0};
+
+  // Everything below the player that assumes the English clock. Chapter marks,
+  // act marks, the 510 cues and the click-to-play they drive are all timed to
+  // the English narration; against Spanish audio they are not merely idle, they
+  // are wrong. The body class turns them off as a set.
+  function paintLangChrome(){
+    const en=currentLang==='en';
+    document.body.classList.toggle('op-lang-es',!en);
+    document.getElementById('ap-lang-en').classList.toggle('active',en);
+    document.getElementById('ap-lang-es').classList.toggle('active',!en);
+    document.getElementById('ap-lang-en').setAttribute('aria-pressed',en?'true':'false');
+    document.getElementById('ap-lang-es').setAttribute('aria-pressed',en?'false':'true');
+    if(!en){
+      // Drop the English marks off the seekbar rather than leave them sitting at
+      // percentages that mean nothing on a different-length file.
+      if(marksEl)marksEl.innerHTML='';
+      const am=$('ap-act-marks');if(am)am.innerHTML='';
+      const prev=document.querySelector('.ap-reading');
+      if(prev)prev.classList.remove('ap-reading');
+      lastCue=-1;lastChIdx=-1;lastActIdx=-1;
+    }else{
+      lastCue=-1;lastChIdx=-1;lastActIdx=-1;
+      // BOOK.en is already true by the time this runs on the way back, so the
+      // duration getter reports BOOK_DUR and the marks can be laid out at once
+      // without waiting for an act file's metadata.
+      if(window.__opBuildMarks)window.__opBuildMarks();
+    }
+  }
+
   window.apLangSwitch=function(lang){
+    if(lang!=='en'&&lang!=='es')return;
     if(lang===currentLang)return;
-    savedLangPos[currentLang]=narrEl.currentTime;
+    savedLangPos[currentLang]=narrEl.currentTime||0;
     const wasPlaying=!narrEl.paused;
     narrEl.pause();
     currentLang=lang;
-    narrEl.src=NARR_URLS[lang];
-    narrEl.load();
-    narrEl.currentTime=savedLangPos[lang]||0;
-    if(wasPlaying)narrEl.play().catch(()=>{});
-    document.getElementById('ap-lang-en').classList.toggle('active',lang==='en');
-    document.getElementById('ap-lang-es').classList.toggle('active',lang==='es');
+    // BOOK.en is flipped BEFORE the chrome is painted. paintLangChrome rebuilds
+    // the seekbar marks on the way back to English, and buildMarks reads both
+    // BOOK.en and the duration getter that hangs off it.
+    BOOK.en=(lang==='en');
+    paintLangChrome();
+
+    if(lang==='es'){
+      if(narrEl.preload==='none')narrEl.preload='metadata';
+      // Reuse the pending-position machinery: applyWant does a RAW seek, which is
+      // exactly right for a single file, and re-plays if playback was wanted.
+      BOOK.want=savedLangPos.es||0;
+      BOOK.wantPlay=wasPlaying;
+      narrEl.src=NARR_URLS.es;
+      narrEl.load();
+      narrTitle.textContent=ES_NAME;
+    }else{
+      const g=Math.max(0,Math.min(savedLangPos.en||0,BOOK_DUR-0.05));
+      const k=BOOK.idxFor(g);
+      // Straight to BOOK.go rather than through narrEl.currentTime: go() honours
+      // the play flag itself, so English never has to be started while the
+      // Spanish file is still the loaded source.
+      BOOK.go(k,g-BOOK.list()[k].t0,wasPlaying);
+      narrTitle.textContent=NARR_NAME;
+    }
+    saveLangPos();
   };
+
+  // Position is stored per language — the same number means a different place in
+  // each, and restoring an English offset into the Spanish file (or the reverse)
+  // drops the listener somewhere they have never been.
+  const LANG_KEY='op_lang_v1';
+  function saveLangPos(){
+    try{
+      // Do not sample the clock while a seek is still pending. BOOK.want already
+      // holds the position that was asked for, and until the file's metadata
+      // arrives narrEl.currentTime reads as the top of the act — so sampling here
+      // would overwrite a good position with one up to half an hour earlier.
+      // Switch to Spanish at 1:40:00 and straight back, and that is exactly the
+      // window you would lose your place in.
+      if(BOOK.want===null)savedLangPos[currentLang]=narrEl.currentTime||0;
+      localStorage.setItem(LANG_KEY,JSON.stringify(
+        {lang:currentLang,en:savedLangPos.en,es:savedLangPos.es}));
+    }catch(e){}
+  }
+  narrEl.addEventListener('timeupdate',()=>{
+    if(Math.floor(narrEl.currentTime)%5===0)saveLangPos();
+  },{passive:true});
+  window.addEventListener('beforeunload',saveLangPos);
+
+  // Come back in the language you left in, at the place you left it.
+  //
+  // This is the ONLY thing that restores a listening position. There used to be a
+  // second one further down the page (op_audio_v1) that stored a bare number, and
+  // a bare number is ambiguous the moment there are two narrations: 4000s is Act
+  // Five in English and somewhere else entirely in Spanish. That store is read
+  // once here, to carry an existing listener's place over, and then never again.
+  //
+  // Deferred a tick because paintLangChrome touches marksEl and the chapter
+  // counters, which are declared further down this same IIFE and are still in
+  // the temporal dead zone while this line runs.
+  setTimeout(function(){
+    let s=null;try{s=JSON.parse(localStorage.getItem(LANG_KEY)||'null');}catch(e){}
+    if(!s){
+      let old=null;try{old=JSON.parse(localStorage.getItem('op_audio_v1')||'null');}catch(e){}
+      if(old&&old.time>10)savedLangPos.en=+old.time||0;   // one-time migration
+      s={lang:'en'};
+    }else{
+      savedLangPos.en=+s.en||0;savedLangPos.es=+s.es||0;
+    }
+    if(s.lang==='es'){window.apLangSwitch('es');return;}
+    if(savedLangPos.en>10){
+      const g=Math.min(savedLangPos.en,BOOK_DUR-0.05);
+      const k=BOOK.idxFor(g);
+      BOOK.go(k,g-BOOK.list()[k].t0,false);
+    }
+  },0);
 
   // ── KEYBOARD SHORTCUTS ──
   document.addEventListener('keydown',e=>{
@@ -3229,6 +3469,8 @@ if(!localStorage.getItem('op_welcomed_v2')){
     else if(e.code==='ArrowLeft'){e.preventDefault();apSkip(-30);}
     else if(e.code==='ArrowRight'){e.preventDefault();apSkip(30);}
     else if(e.key.toLowerCase()==='m'){apMuteToggle('music');}
+    else if(e.key.toLowerCase()==='p'){e.preventDefault();
+      if(window.apPlayFromView)window.apPlayFromView();}
     else if(e.key.toLowerCase()==='f'){
       autoFollow=!autoFollow;
       const btn=document.getElementById('ap-follow-btn');
@@ -3244,6 +3486,11 @@ if(!localStorage.getItem('op_welcomed_v2')){
       ob.style.opacity='0';
       setTimeout(()=>{ob.style.display='none';},520);
       localStorage.setItem('op_welcomed_v2','1');
+      // The EN · ES toggle on the welcome card used to translate the card and
+      // nothing else — you could read the whole thing in Spanish, tap COMENZAR,
+      // and get English narration. It is the same choice; make it one choice.
+      let obLang=null;try{obLang=localStorage.getItem('op_ob_lang');}catch(e){}
+      if(obLang==='es'||obLang==='en')window.apLangSwitch(obLang);
     });
   })();
 
@@ -3349,8 +3596,11 @@ if(!localStorage.getItem('op_welcomed_v2')){
   ];
   let lastChIdx=-1, lastActIdx=-1;
 
-  narrEl.addEventListener('loadedmetadata',()=>{
-    if(!narrEl.duration||!marksEl)return;
+  // Marks are English timestamps. On the Spanish file they would be laid out as
+  // percentages of a different-length recording — every one of them wrong, and
+  // wrong in a way that looks authoritative. Build them for English only.
+  function buildMarks(){
+    if(!narrEl.duration||!marksEl||currentLang!=='en'||!BOOK.en)return;
     marksEl.innerHTML='';
     CH.forEach(c=>{
       const d=document.createElement('div');
@@ -3373,7 +3623,9 @@ if(!localStorage.getItem('op_welcomed_v2')){
         actMarksEl.appendChild(m);
       });
     }
-  });
+  }
+  narrEl.addEventListener('loadedmetadata',buildMarks);
+  window.__opBuildMarks=buildMarks;   // called again when English is switched back on
 
 
   // ── SLOW SCROLL ──
@@ -3395,6 +3647,11 @@ if(!localStorage.getItem('op_welcomed_v2')){
   }
 
   narrEl.addEventListener('timeupdate',()=>{
+    // The whole of this handler is the English clock: CH's timestamps, the glow
+    // targets, the FOLLOW scroll. The glow and scroll were already fenced off for
+    // Spanish, but the title above them was not — so Spanish audio scrolled past
+    // English chapter names, each announced at the wrong moment. Fence the lot.
+    if(currentLang!=='en'||!BOOK.en)return;
     const t=narrEl.currentTime;
 
     // Chapter title update + scroll (all 91 — FOLLOW tracks every chapter mark)
@@ -3482,27 +3739,13 @@ if(!localStorage.getItem('op_welcomed_v2')){
 
   // ── SAVE & RESTORE POSITION ──
   const POS_KEY   = 'op_scroll_v1';
-  const AUDIO_KEY = 'op_audio_v1';
-  const narrEl    = document.getElementById('ap-narr-el');
 
-  // ── RESTORE AUDIO POSITION ──
-  const savedAudio = JSON.parse(localStorage.getItem(AUDIO_KEY) || 'null');
-  if(savedAudio && savedAudio.time > 10){
-    narrEl.addEventListener('loadedmetadata', ()=>{
-      narrEl.currentTime = savedAudio.time;
-    }, {once:true});
-  }
-
-  // ── SAVE AUDIO POSITION ──
-  const saveAudio = ()=>{
-    if(narrEl.currentTime > 0){
-      localStorage.setItem(AUDIO_KEY, JSON.stringify({time: narrEl.currentTime}));
-    }
-  };
-  narrEl.addEventListener('timeupdate', ()=>{
-    if(Math.floor(narrEl.currentTime) % 5 === 0) saveAudio();
-  }, {passive:true});
-  window.addEventListener('beforeunload', saveAudio);
+  // The audio position used to be saved and restored HERE, as a bare number under
+  // op_audio_v1, and it was language-blind: it would restore an English offset
+  // into the Spanish file or the reverse, and its one-shot loadedmetadata listener
+  // fired on whichever narration happened to load first. Both jobs now belong to
+  // op_lang_v1 in the player IIFE above, which stores a position per language and
+  // migrates the old key on first run. Nothing to do here but the scroll.
 
   // ── RESTORE SCROLL POSITION ──
   const saved = +(localStorage.getItem(POS_KEY) || 0);
