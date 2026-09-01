@@ -48,8 +48,80 @@ Also done in the same pass: `sw.js`'s `SHELL` bumped to `v2` (a precached
 the old build forever), and the live URL, the publish steps and that cache rule
 written into the top of `index.html` and `README.md`.
 
-Still open: **A1**, **A2**, **A3**, a real third-party accessibility audit, and
-B2's full chapter split if the single file is ever broken up.
+---
+
+# The Spanish read-along — 1 September 2026
+
+**A3 is done, and it turned up something the write-up did not know.**
+
+## What the Spanish recording actually is
+
+It is not this book in Spanish. It is a different cut of it.
+
+The reader announces **Act 1**, then **Act II**, and then **Act 4**. There is no
+Acto 3. Measured block by block against the page:
+
+| Act | In the Spanish recording |
+|---|---|
+| Prologue — The Spirit | 48 / 49 |
+| Act One — The Promise | 54 / 55 |
+| Act Two — The Mistake | 65 / 65 |
+| **Act Three — The Test** | **0 / 78** |
+| Act Four — The Fulfillment | 51 / 51 |
+| Act Five — The Expansion | 61 / 61 |
+| Act Six — The Wildfire | 50 / 50 |
+| Act Seven — The Fractures | 29 / 29 |
+| Act Eight — The Unfinished Story | 72 / 72 |
+
+Moriah, the third day, the ram, Eid al-Adha, Rebekah at the well — 27 and a half
+minutes of English narration — are not in the Spanish edition. Some Moriah
+phrasing surfaces later inside its Act 4, but the act itself was never recorded.
+**That is an editorial decision waiting to be made, not a bug to fix.** Until it
+is, the page says so in Spanish on that act rather than letting the read-along
+quietly stop working for half an hour.
+
+## How the timing was found
+
+No Spanish transcript existed, so one was made — and made in English on purpose.
+
+1. `es_blocks.py` pulls the 510 blocks out of the page with their English times.
+2. whisper (`small`, translate task) turns the Spanish recording into English
+   text carrying Spanish timestamps — 11 minutes for the whole book. The turbo
+   models cannot do this; they are transcribe-only and hand back Spanish.
+3. `es_align.py` finds rare 4-grams that occur exactly once on each side, keeps
+   the longest run that never goes backwards, and gets 4,016 control points.
+4. `es_match.py` independently makes every block vote for a place in the audio
+   with its rare words, and refuses to guess when nothing wins clearly.
+5. `es_cues.py` maps a block only where an anchor is within 30 s to vouch for it
+   and the two methods agree to within a minute.
+
+**How good it is, measured rather than asserted.** Hold out a fifth of the
+anchors and predict them from the rest: median error **0.03 s**, 95th 0.95 s. And
+where the map puts each act start, against where the reader is actually heard
+saying it:
+
+| | map | announced | diff |
+|---|---|---|---|
+| Act One | 1112.4 | 1112.5 | −0.1 s |
+| Act Two | 3010.3 | 3019.6 | −9.3 s |
+| Act Four | 4933.4 | 4920.9 | +12.5 s |
+| Act Five | 6504.2 | 6509.2 | −5.0 s |
+| Act Six | 7951.5 | 7957.2 | −5.7 s |
+| Act Eight | 10085.2 | 10084.6 | +0.6 s |
+
+## What shipped
+
+`audio/cues_es.json` — 430 cues, 45 chapter marks, 7 act ticks (I, II, IV, V, VI,
+VII, VIII: no III, because there is no III). In Spanish the page now highlights,
+scrolls, tracks chapters and takes a tap on a line, exactly as it does in
+English. Checked in a browser against the real Dropbox file: 7 of 8 sampled cues
+land on the block they name, the eighth on its neighbour; tap-a-line lands within
+2 s; English restores completely on the way back.
+
+Still open: **A1** (the piano bed under the Spanish read), **A2** (cutting Spanish
+into acts, which is what would give it offline and end the Dropbox dependency), a
+real third-party accessibility audit, and B2's full chapter split if the single
+file is ever broken up. **And the Act Three question above.**
 
 ---
 

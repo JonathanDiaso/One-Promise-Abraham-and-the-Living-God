@@ -838,13 +838,19 @@ body{padding-bottom:112px;}
       .ap-cued-mark::before{transition:none;}
       .ap-cue-flash{animation:none;}}
 
-    /* Spanish is one file on its own clock; the 510 cues are English timestamps.
-       Click-to-play is off there, so it must not go on advertising itself. */
-    body.op-lang-es .ap-cued{cursor:auto;}
-    body.op-lang-es .ap-cued-mark::before{display:none;}
-    body.op-lang-es .ap-cued-mark:hover{box-shadow:none;}
-    body.op-lang-es .ap-reading{background:none;box-shadow:none;}
-    body.op-lang-es #ap-follow-btn{opacity:.35;pointer-events:none;}
+    /* Spanish has its own cue list now — 430 of the 510 blocks, timed against
+       the Spanish recording. A block the Spanish reader never reads simply does
+       not get .ap-cued, so it stops advertising itself on its own. The one thing
+       that needs saying out loud is the act that is not in that recording. */
+    #es-missing{display:none;}
+    body.op-lang-es #es-missing{
+      display:block;margin:0 auto 26px;max-width:620px;
+      border:1px solid rgba(201,168,76,.28);border-left:2px solid var(--gold);
+      border-radius:4px;background:rgba(201,168,76,.05);padding:16px 20px;}
+    #es-missing-t{font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.24em;
+      color:var(--gold);margin-bottom:8px;}
+    #es-missing-b{font-family:"Cormorant Garamond",serif;font-size:1rem;line-height:1.6;
+      color:var(--text-mid);}
 
     /* ── SKIP LINK (WCAG 2.4.1) ──
        Nine nav links stood between a keyboard user and the book on every load. */
@@ -1597,6 +1603,14 @@ body{padding-bottom:112px;}
     <div class="act-label" data-num="III">ACT THREE</div>
     <div class="act-title">The Test</div>
     <div id="test-b001" class="act-intro">Everything Abraham had waited for finally existed. The son. The laughter. The future. And then God spoke again.</div>
+  </div>
+
+  <!-- Shown only in Spanish. The Spanish recording runs Act Two straight into
+       Act Four; this act is not in it, so the page says so rather than letting
+       the read-along quietly stop working for half an hour. -->
+  <div id="es-missing">
+    <div id="es-missing-t">SOLO EN INGLÉS</div>
+    <div id="es-missing-b">La narración en español pasa del Acto Dos al Acto Cuatro — este acto no está grabado en español. Puedes leerlo aquí, o tocar <strong>EN</strong> en el reproductor para escucharlo en inglés.</div>
   </div>
 
   <p id="test-b002" class="prose">The rabbis say Abraham's greatest test was not Moriah. It was the twenty-five years before Moriah — the decades of waiting with an empty tent, the years of watching Sarai's face when she thought no one was looking, the slow erosion of a promise that hadn't arrived yet. The test of Moriah, they say, was only the final one. There had been nine before it.</p>
@@ -2757,7 +2771,7 @@ requestAnimationFrame(()=>{
     <p id="onboard-intro">You've been waiting on a promise too.<br><br>You know the moment — when waiting starts to feel like being forgotten. When you decide that if God won't move, you will. So you reach for your own version of the answer.<br><br>Abraham did the same thing. His name for it was Ishmael.<br><br>But the promise wasn't late. It was being made unmistakable. A son born on schedule is ordinary. A son born decades past hope is a miracle no one can explain away. The wait wasn't God forgetting Abraham — it was God making sure that when the answer came, only he could get the credit.<br><br>And it came. Not because Abraham waited perfectly — he didn't. Ishmael was proof of that. It came because God had signed the covenant alone, and nothing in the waiting could break it.<br><br>Your Ishmael didn't disqualify you. Your wait isn't God forgetting you. It's the miracle being made unmistakable.<br><br><em>This is that story.</em></p>
     <div id="onboard-lang">
       Narrated in full in <strong>English</strong> and <strong>Spanish</strong> — tap <strong>EN · ES</strong> in the player to switch anytime.
-      <em>Chapter navigation follows the English narration.</em>
+      <em>The page reads along with either one. The Spanish recording does not include Act Three — The Test; that act is English only.</em>
     </div>
     <div id="onboard-controls">
       <div class="oc-row"><span class="oc-key">▶ AUDIO</span><span class="oc-val">Full narration — 3 hours 10 minutes across 8 acts. Resumes exactly where you left off.</span></div>
@@ -2781,7 +2795,7 @@ const OB_TEXT={
     title:'One Promise',
     sub:'Abraham · The Living God · The Story That Never Ended',
     intro:`You've been waiting on a promise too.<br><br>You know the moment — when waiting starts to feel like being forgotten. When you decide that if God won't move, you will. So you reach for your own version of the answer.<br><br>Abraham did the same thing. His name for it was Ishmael.<br><br>But the promise wasn't late. It was being made unmistakable. A son born on schedule is ordinary. A son born decades past hope is a miracle no one can explain away. The wait wasn't God forgetting Abraham — it was God making sure that when the answer came, only he could get the credit.<br><br>And it came. Not because Abraham waited perfectly — he didn't. Ishmael was proof of that. It came because God had signed the covenant alone, and nothing in the waiting could break it.<br><br>Your Ishmael didn't disqualify you. Your wait isn't God forgetting you. It's the miracle being made unmistakable.<br><br><em>This is that story.</em>`,
-    lang:'Narrated in full in <strong>English</strong> and <strong>Spanish</strong> — tap <strong>EN · ES</strong> in the player to switch anytime.<em>Chapter navigation follows the English narration.</em>',
+    lang:'Narrated in full in <strong>English</strong> and <strong>Spanish</strong> — tap <strong>EN · ES</strong> in the player to switch anytime.<em>The page reads along with either one. The Spanish recording does not include Act Three — The Test; that act is English only.</em>',
     footer:`You don't have to read it all today. It will remember where you were.`,
     begin:'BEGIN',
     controls:[
@@ -2800,7 +2814,7 @@ const OB_TEXT={
     title:'Una Promesa',
     sub:'Abraham · El Dios Viviente · La Historia Que Nunca Terminó',
     intro:`Tú también has estado esperando una promesa.<br><br>Conoces ese momento — cuando la espera empieza a sentirse como olvido. Cuando decides que si Dios no actúa, lo harás tú. Entonces alcanzas tu propia versión de la respuesta.<br><br>Abraham hizo lo mismo. Su nombre para eso fue Ismael.<br><br>Pero la promesa no llegó tarde. Estaba siendo hecha inconfundible. Un hijo nacido a tiempo es ordinario. Un hijo nacido décadas después de toda esperanza es un milagro que nadie puede explicar. La espera no era Dios olvidando a Abraham — era Dios asegurándose de que cuando llegara la respuesta, solo él pudiera llevarse el crédito.<br><br>Y llegó. No porque Abraham esperó perfectamente — no lo hizo. Ismael fue prueba de eso. Llegó porque Dios había firmado el pacto solo, y nada en la espera podía romperlo.<br><br>Tu Ismael no te descalificó. Tu espera no es Dios olvidando. Es el milagro haciéndose inconfundible.<br><br><em>Esta es esa historia.</em>`,
-    lang:'Narrado en su totalidad en <strong>inglés</strong> y <strong>español</strong> — toca <strong>EN · ES</strong> en el reproductor para cambiar en cualquier momento.<em>La navegación por capítulos sigue la narración en inglés.</em>',
+    lang:'Narrado en su totalidad en <strong>inglés</strong> y <strong>español</strong> — toca <strong>EN · ES</strong> en el reproductor para cambiar en cualquier momento.<em>La página sigue la narración en ambos idiomas. El Acto Tres no está grabado en español; ese acto es solo en inglés.</em>',
     footer:`No tienes que leerlo todo hoy. Recordará dónde quedaste.`,
     begin:'COMENZAR',
     controls:[
@@ -2809,10 +2823,11 @@ const OB_TEXT={
       ['−30 / +30','Retrocede o avanza 30 segundos en la narración.'],
       ['1×','Velocidad de reproducción — 0.8× · 0.9× · 1× · 1.1× · 1.2×. Toca para cambiar.'],
       ['ZZ','Temporizador — 30, 60 o 90 minutos, o <strong>FIN DEL ACTO</strong> (solo en inglés).'],
+      ['♪ ACTO 3','La narración en español no incluye el Acto Tres — El Examen. Ese acto solo está en inglés.'],
       ['⌕ BUSCAR','Encuentra cualquier pasaje del libro. Con teclado, pulsa <strong>/</strong>.'],
       ['⛶ ENFOQUE','Guarda la página y solo escucha — capítulo, reloj y controles, nada más.'],
-      ['↓ FOLLOW','La página avanza contigo — el pasaje narrado se ilumina y se desplaza solo. Sigue la narración en inglés.'],
-      ['TOCA UNA LÍNEA','Toca cualquier línea y la narración en inglés empieza a leerla. Con teclado, pulsa <strong>P</strong>.']
+      ['↓ FOLLOW','La página avanza contigo — el pasaje narrado se ilumina y se desplaza solo, también en español.'],
+      ['TOCA UNA LÍNEA','Toca cualquier línea y la narración empieza a leerla en el idioma activo. Con teclado, pulsa <strong>P</strong>.']
     ]
   }
 };
@@ -3156,8 +3171,17 @@ if(!localStorage.getItem('op_welcomed_v2')){
   }
   ['progress','loadedmetadata','seeked','emptied'].forEach(e=>narrEl.addEventListener(e,paintBuffered));
 
-  // ── TEXT SYNC: 510 blocks, one every ~22s ──
+  // ── TEXT SYNC ──
+  // Two cue lists, not one. English is the 510 blocks timed against the nine act
+  // files. Spanish is 430 of those same blocks timed against the Spanish
+  // recording — built by aligning a machine translation of that recording to
+  // this page (see ~/Abraham/scripts/audio/es_*.py). The other 80 are blocks the
+  // Spanish reader never reads: the whole of Act Three, which that recording
+  // skips, plus a few passages it passes over. They are simply not cued in
+  // Spanish, so nothing highlights and nothing pretends to.
   let CUES=null,lastCue=-1,cueSuppress=0;
+  let CUES_EN=null,ES_DATA=null,esLoading=false;
+
   fetch('audio/cues.json').then(r=>r.json()).then(j=>{
     const out=[];
     Object.keys(j).sort().forEach(a=>{
@@ -3165,9 +3189,35 @@ if(!localStorage.getItem('op_welcomed_v2')){
       j[a].blocks.forEach(b=>{if(b.t!==null&&b.existing_id)
         out.push({t:t0+b.t,id:b.existing_id});});
     });
-    out.sort((x,y)=>x.t-y.t);CUES=out;
-    armCues();
+    out.sort((x,y)=>x.t-y.t);CUES_EN=out;
+    if(BOOK.en)setCues(out);
   }).catch(()=>{});
+
+  function loadES(done){
+    if(ES_DATA){done&&done();return;}
+    if(esLoading)return;
+    esLoading=true;
+    fetch('audio/cues_es.json').then(r=>r.json()).then(j=>{
+      const out=[];
+      Object.keys(j.cues||{}).forEach(id=>out.push({t:j.cues[id],id:id}));
+      out.sort((x,y)=>x.t-y.t);
+      ES_DATA={cues:out,marks:j.marks||[],acts:j.acts||[]};
+      esLoading=false;done&&done();
+    }).catch(()=>{esLoading=false;});
+  }
+
+  // Swapping languages swaps which blocks are seek points, so the caret and the
+  // pointer cursor have to be taken off the old set before the new one goes on.
+  function setCues(list){
+    document.querySelectorAll('.ap-cued').forEach(e=>{
+      e.classList.remove('ap-cued','ap-cued-mark');});
+    const prev=document.querySelector('.ap-reading');
+    if(prev)prev.classList.remove('ap-reading');
+    CUEMAP=Object.create(null);
+    CUES=list||[];
+    lastCue=-1;
+    armCues();
+  }
 
   // ── CLICK A LINE TO HEAR IT ──
   // The same 510 cues that drive the highlight run the other direction too: every
@@ -3175,11 +3225,12 @@ if(!localStorage.getItem('op_welcomed_v2')){
   // caret only goes on blocks of running text — the dividers, timeline cells and
   // table rows are still clickable, they just do not advertise it, because a
   // caret in the margin of a nine-cell diagram is noise.
-  const CUEMAP=Object.create(null);
+  let CUEMAP=Object.create(null);
   const MARKABLE='.prose,.act-intro,.scripture-text,.callout-text,.callout-title,'
                 +'.sac2-item,.story-text,.spirit-text,.sum9-what';
 
   function armCues(){
+    if(!CUES)return;
     CUES.forEach(c=>{
       if(!(c.id in CUEMAP))CUEMAP[c.id]=c.t;   // first cue wins if an id repeats
       const el=document.getElementById(c.id);
@@ -3228,7 +3279,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
   document.addEventListener('pointerdown',e=>{_dx=e.clientX;_dy=e.clientY;},{passive:true});
 
   document.addEventListener('click',e=>{
-    if(!CUES||!BOOK.en)return;
+    if(!CUES||!CUES.length)return;
     if(!e.target.closest)return;
     if(e.target.closest(CUE_SKIP))return;
     // A drag is someone pulling a quote out, not a tap.
@@ -3264,7 +3315,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
   window.opHasCue=function(id){return CUES&&(id in CUEMAP);};
 
   narrEl.addEventListener('timeupdate',()=>{
-    if(!CUES||!CUES.length||!BOOK.en)return;
+    if(!CUES||!CUES.length)return;
     const t=BOOK.t();
     let lo=0,hi=CUES.length-1,k=-1;
     while(lo<=hi){const m=(lo+hi)>>1;
@@ -3790,15 +3841,22 @@ if(!localStorage.getItem('op_welcomed_v2')){
     document.getElementById('ap-lang-en').setAttribute('aria-pressed',en?'true':'false');
     document.getElementById('ap-lang-es').setAttribute('aria-pressed',en?'false':'true');
     if(!en){
-      // Drop the English marks off the seekbar rather than leave them sitting at
-      // percentages that mean nothing on a different-length file.
+      // The English marks come off the bar at once — they are percentages of a
+      // different-length file — and the Spanish ones go on as soon as the cue
+      // file is in and the recording has reported its duration.
       if(marksEl)marksEl.innerHTML='';
       const am=$('ap-act-marks');if(am)am.innerHTML='';
-      const prev=document.querySelector('.ap-reading');
-      if(prev)prev.classList.remove('ap-reading');
       lastCue=-1;lastChIdx=-1;lastActIdx=-1;
+      loadES(function(){
+        if(BOOK.en)return;                    // switched back while it was loading
+        setCues(ES_DATA.cues);
+        buildMarks();
+      });
+      if(ES_DATA){setCues(ES_DATA.cues);buildMarks();}
+      else{setCues([]);}
     }else{
       lastCue=-1;lastChIdx=-1;lastActIdx=-1;
+      if(CUES_EN)setCues(CUES_EN);
       // BOOK.en is already true by the time this runs on the way back, so the
       // duration getter reports BOOK_DUR and the marks can be laid out at once
       // without waiting for an act file's metadata.
@@ -3839,8 +3897,8 @@ if(!localStorage.getItem('op_welcomed_v2')){
     }
     if(window.__opPaintDone)window.__opPaintDone();
     announce(lang==='es'
-      ?'Narración en español. La navegación por capítulos está desactivada.'
-      :'English narration. Chapter navigation is back on.');
+      ?'Narración en español. El texto sigue la narración, salvo el Acto Tres, que no está grabado en español.'
+      :'English narration. All nine acts, with the page reading along.');
     saveLangPos();
   };
 
@@ -4033,7 +4091,9 @@ if(!localStorage.getItem('op_welcomed_v2')){
   // percentages of a different-length recording — every one of them wrong, and
   // wrong in a way that looks authoritative. Build them for English only.
   function buildMarks(){
-    if(!narrEl.duration||!marksEl||currentLang!=='en'||!BOOK.en)return;
+    const dur=narrEl.duration;
+    if(!dur||!isFinite(dur)||!marksEl)return;
+    if(!BOOK.en){buildMarksES(dur);return;}
     marksEl.innerHTML='';
     CH.forEach(c=>{
       const d=document.createElement('div');
@@ -4057,8 +4117,36 @@ if(!localStorage.getItem('op_welcomed_v2')){
       });
     }
   }
+  // The Spanish recording has its own chapter marks — 45 of the 64, the ones
+  // that fall in passages it actually reads — and its own act ticks, which run
+  // I, II, IV, V ... because there is no Act Three in it to tick.
+  function buildMarksES(dur){
+    if(!ES_DATA){loadES(()=>buildMarks());return;}
+    marksEl.innerHTML='';
+    ES_DATA.marks.forEach(c=>{
+      const d=document.createElement('div');
+      d.className='ap-cmark';
+      d.style.left=((c.t/dur)*100).toFixed(2)+'%';
+      d.title=c.l;
+      marksEl.appendChild(d);
+    });
+    const actMarksEl=$('ap-act-marks');
+    if(actMarksEl){
+      actMarksEl.innerHTML='';
+      ES_DATA.acts.forEach(a=>{
+        const m=document.createElement('div');
+        m.className='ap-amark';
+        m.style.left=((a.t/dur)*100).toFixed(2)+'%';
+        m.title=a.title;
+        m.innerHTML='<div class="ap-amark-tick"></div><div class="ap-amark-label">'+a.label+'</div>';
+        m.addEventListener('click',()=>{narrEl.currentTime=a.t;});
+        actMarksEl.appendChild(m);
+      });
+    }
+  }
+
   narrEl.addEventListener('loadedmetadata',buildMarks);
-  window.__opBuildMarks=buildMarks;   // called again when English is switched back on
+  window.__opBuildMarks=buildMarks;   // called again when a language is switched on
 
 
   // ── SLOW SCROLL ──
@@ -4080,11 +4168,24 @@ if(!localStorage.getItem('op_welcomed_v2')){
   }
 
   narrEl.addEventListener('timeupdate',()=>{
-    // The whole of this handler is the English clock: CH's timestamps, the glow
-    // targets, the FOLLOW scroll. The glow and scroll were already fenced off for
-    // Spanish, but the title above them was not — so Spanish audio scrolled past
-    // English chapter names, each announced at the wrong moment. Fence the lot.
-    if(currentLang!=='en'||!BOOK.en)return;
+    // Spanish runs on its own chapter list. The glow targets and the slow-scroll
+    // below are keyed to English timestamps and stay English-only; the cue
+    // handler above is what scrolls the page in Spanish, and it is already
+    // running on Spanish times.
+    if(!BOOK.en){
+      if(!ES_DATA||!ES_DATA.marks.length)return;
+      const te=narrEl.currentTime;
+      let k=-1;
+      for(let i=0;i<ES_DATA.marks.length;i++){if(te>=ES_DATA.marks[i].t)k=i;else break;}
+      if(k!==lastChIdx&&k>=0){
+        lastChIdx=k;
+        narrTitle.textContent=ES_DATA.marks[k].l;
+        announce(ES_DATA.marks[k].l);
+        if(marksEl)marksEl.querySelectorAll('.ap-cmark')
+          .forEach((m,i)=>m.classList.toggle('ap-cmark-active',i===k));
+      }
+      return;
+    }
     const t=narrEl.currentTime;
 
     // Chapter title update + scroll (all 91 — FOLLOW tracks every chapter mark)

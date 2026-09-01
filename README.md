@@ -34,7 +34,8 @@ something Range-capable, then open `http://127.0.0.1:8765/`.
 |---|---|
 | `index.html` | **The site.** Text, styles, player, search, focus mode, all of it. |
 | `audio/act01…act09.m4a` | The nine act files. AAC 96 kbps mono, 138 MB, piano score baked in. |
-| `audio/cues.json` | 510 text-sync cue points, act-relative. Drives read-along and tap-a-line. |
+| `audio/cues.json` | 510 text-sync cue points, act-relative. Drives read-along and tap-a-line in English. |
+| `audio/cues_es.json` | The same blocks timed against the **Spanish** recording — 430 of the 510, plus 45 chapter marks and 7 act ticks. Built by `~/Abraham/scripts/audio/es_*.py`. |
 | `audio/marks_new.json`, `audio/manifest.json` | 64 chapter marks; act titles, durations, sizes. |
 | `sw.js` | Offline shell, per-act downloads, Range slicing out of the cache. |
 | `accessibility.html` | The accessibility statement — what works and what does not yet. |
@@ -43,6 +44,19 @@ something Range-capable, then open `http://127.0.0.1:8765/`.
 | `docs/UPGRADE.md` | The editorial plan for the book's prose. |
 
 The build scripts that produced the audio live in `~/Abraham/scripts/audio/`.
+The Spanish read-along is built there too, in four steps:
+
+```bash
+python3 ~/Abraham/scripts/audio/es_blocks.py   # page + cues.json -> en_blocks.json
+./transcribe.sh                                # whisper: Spanish audio -> English text, Spanish times
+python3 ~/Abraham/scripts/audio/es_align.py    # rare 4-grams -> a monotone anchor map
+python3 ~/Abraham/scripts/audio/es_match.py    # independent per-block match, catches divergence
+python3 ~/Abraham/scripts/audio/es_cues.py     # both together -> audio/cues_es.json
+```
+
+**The Spanish recording does not contain Act Three — The Test.** It runs Act Two
+straight into Act Four. That is why 80 of the 510 blocks have no Spanish cue and
+the page shows a Spanish-only note on that act.
 
 ## The one rule
 

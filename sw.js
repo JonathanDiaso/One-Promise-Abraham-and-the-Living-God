@@ -6,7 +6,7 @@
 //
 // Bump SHELL on every change to a precached file. Without a new cache name a
 // returning visitor is served the previous build out of the old cache forever.
-var SHELL = 'onepromise-shell-v2';
+var SHELL = 'onepromise-shell-v3';
 var AUDIO = 'onepromise-audio-v1';
 var FONTS = 'onepromise-fonts-v1';
 
@@ -15,7 +15,7 @@ var FONTS = 'onepromise-fonts-v1';
 // along; marks/manifest position the chapters.
 var PRECACHE = [
   './', 'index.html', 'manifest.webmanifest', 'accessibility.html', '404.html',
-  'audio/cues.json', 'audio/marks_new.json', 'audio/manifest.json',
+  'audio/cues.json', 'audio/cues_es.json', 'audio/marks_new.json', 'audio/manifest.json',
   'icon-192.png', 'icon-512.png', 'icon-512-maskable.png'
   // NOT here: the nine act files (138 MB — they are downloaded only when the
   // listener asks, see the 'download' message below) and Abraham Stars.jpeg,
