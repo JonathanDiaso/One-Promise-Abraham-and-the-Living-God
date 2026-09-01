@@ -4017,17 +4017,16 @@ if(!localStorage.getItem('op_welcomed_v2')){
     {t:11363,l:'God of Abraham, Isaac, and Ishmael',               el:'poem-ronald',         glow:null,               ss:false},
   ];
 
-  const ACTS=[
-    {t:55,   id:'spirit'},
-    {t:878,  id:'promise'},
-    {t:2370, id:'mistake'},
-    {t:3855, id:'test'},
-    {t:5454, id:'fulfillment'},
-    {t:6774, id:'expansion'},
-    {t:7909, id:'wildfire'},
-    {t:8908, id:'fractures'},
-    {t:9515, id:'unfinished'}
-  ];
+  // ── ACT MARKS ──
+  // These nine times used to be typed out, and they were left on the timeline
+  // the book had BEFORE the pacing pass and the music mix. Every gold tick on
+  // the seekbar sat early — 33 s at Act One, growing to 5 minutes 53 s by Act
+  // Six — and clicking one seeked to the wrong place by the same amount, while
+  // the 64 chapter marks beside them were right. The audio and the marks ship
+  // together: derive them from BOOK_ACTS so they cannot drift apart again.
+  const ACT_SECTIONS=['spirit','promise','mistake','test','fulfillment',
+                      'expansion','wildfire','fractures','unfinished'];
+  const ACTS=BOOK_ACTS.map((a,i)=>({t:a.t0,id:ACT_SECTIONS[i]}));
   let lastChIdx=-1, lastActIdx=-1;
 
   // Marks are English timestamps. On the Spanish file they would be laid out as
@@ -4720,5 +4719,7 @@ if ('serviceWorker' in navigator &&
   });
 }
 </script>
+
+
 </body>
 </html>
