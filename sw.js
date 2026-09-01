@@ -6,7 +6,7 @@
 //
 // Bump SHELL on every change to a precached file. Without a new cache name a
 // returning visitor is served the previous build out of the old cache forever.
-var SHELL = 'onepromise-shell-v1';
+var SHELL = 'onepromise-shell-v2';
 var AUDIO = 'onepromise-audio-v1';
 var FONTS = 'onepromise-fonts-v1';
 
@@ -14,7 +14,7 @@ var FONTS = 'onepromise-fonts-v1';
 // styles, the player and the text; audio/cues.json is what makes the page read
 // along; marks/manifest position the chapters.
 var PRECACHE = [
-  './', 'index.html', 'manifest.webmanifest',
+  './', 'index.html', 'manifest.webmanifest', 'accessibility.html', '404.html',
   'audio/cues.json', 'audio/marks_new.json', 'audio/manifest.json',
   'icon-192.png', 'icon-512.png', 'icon-512-maskable.png'
   // NOT here: the nine act files (138 MB — they are downloaded only when the

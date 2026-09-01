@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The book is a single page: one entry is the whole site. Per-chapter URLs
+     (c/01 … c/09) would add eight more, and are not built yet. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/accessibility.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

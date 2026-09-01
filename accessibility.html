@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility — One Promise</title>
+<meta name="description" content="What One Promise does for keyboard, screen reader and reduced-motion readers — and what it does not do yet.">
+<link rel="canonical" href="https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/accessibility.html">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#04060E">
+<style>
+  :root{--gold:#c9a84c;--gold-light:#e8d090;--blue:#4a90d9;
+        --bg:#02030a;--text:#f0f0f8;--text-mid:#b8bcd4;--rule:rgba(201,168,76,.18);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);
+       font-family:"Cormorant Garamond",Georgia,serif;padding:0 22px 90px;}
+  .wrap{max-width:44rem;margin:0 auto;}
+  header{padding:56px 0 32px;border-bottom:1px solid var(--rule);margin-bottom:36px;}
+  .kicker{font-family:"Cinzel",Georgia,serif;font-size:.6rem;letter-spacing:.36em;
+          color:var(--gold);margin-bottom:18px;}
+  h1{font-family:"Cinzel",Georgia,serif;font-weight:500;font-size:clamp(1.3rem,5vw,2rem);
+     letter-spacing:.08em;color:var(--gold-light);line-height:1.4;}
+  h2{font-family:"Cinzel",Georgia,serif;font-weight:500;font-size:.86rem;letter-spacing:.2em;
+     color:var(--gold);margin:40px 0 16px;}
+  p,li{font-size:1.1rem;line-height:1.78;color:var(--text-mid);}
+  p{margin-bottom:16px;}
+  ul{margin:0 0 16px 1.1rem;}
+  li{margin-bottom:10px;}
+  strong{color:var(--text);font-weight:600;}
+  kbd{font-family:"Cinzel",Georgia,serif;font-size:.72rem;letter-spacing:.1em;
+      border:1px solid var(--rule);border-radius:4px;padding:3px 8px;color:var(--gold);
+      background:rgba(201,168,76,.06);white-space:nowrap;}
+  a{color:var(--gold);}
+  a:focus-visible,.home:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;}
+  .home{display:inline-flex;align-items:center;justify-content:center;margin-top:40px;
+        min-height:48px;padding:14px 28px;font-family:"Cinzel",Georgia,serif;
+        font-size:.68rem;letter-spacing:.24em;color:var(--gold);text-decoration:none;
+        background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.42);border-radius:6px;}
+  .home:hover{background:rgba(201,168,76,.18);}
+  .known{border-left:2px solid rgba(74,144,217,.5);padding-left:18px;}
+  footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--rule);
+         font-size:.95rem;color:#8b90ab;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">ONE PROMISE</div>
+  <h1>Accessibility</h1>
+</header>
+
+<p>This is a three-hour book with a three-hour narration attached to it. The aim is
+that it can be read, heard and navigated without a mouse and without sight. What
+follows is what the page does today and what it does not do yet — the second list
+is the honest half.</p>
+
+<h2>The standard</h2>
+<p>The page targets <strong>WCAG 2.1 Level AA</strong>. It has not been through a
+formal third-party audit. The criteria named below are the ones that were worked
+against directly.</p>
+
+<h2>What is in place</h2>
+<ul>
+  <li><strong>Skip to the book.</strong> The first thing a keyboard reaches is a
+      link past the nine navigation links, straight to the text (2.4.1).</li>
+  <li><strong>A visible focus ring.</strong> Every link, button and control shows
+      where the keyboard is (2.4.7).</li>
+  <li><strong>Announcements.</strong> A polite live region speaks the chapter the
+      narration moved to, an act finishing, the sleep timer arming and expiring,
+      and the language it switched to (4.1.3).</li>
+  <li><strong>A seek slider that says where it is.</strong> It announces
+      “<em>Act Three — The Test, 1 hour 12 minutes of 3 hours 10 minutes</em>”
+      rather than a bare percentage (1.3.1, 4.1.2).</li>
+  <li><strong>Touch targets.</strong> The small pill controls in the player keep
+      their look but carry a 44 × 44 px hit area (2.5.5).</li>
+  <li><strong>Reduced motion.</strong> With the system setting on, the star field,
+      the word-by-word scripture reveal, the glows and every transition stand down
+      (2.3.3).</li>
+  <li><strong>Search and focus mode</strong> are dialogs that trap the keyboard
+      while open, close on <kbd>Esc</kbd>, and return focus to where it was.</li>
+  <li><strong>No audio autoplay.</strong> Nothing sounds until it is asked for
+      (1.4.2).</li>
+</ul>
+
+<h2>The keyboard</h2>
+<ul>
+  <li><kbd>Space</kbd> — play or pause the narration</li>
+  <li><kbd>←</kbd> <kbd>→</kbd> — back or forward 30 seconds</li>
+  <li><kbd>P</kbd> — play from the line nearest the top of the screen</li>
+  <li><kbd>/</kbd> — search the book</li>
+  <li><kbd>F</kbd> — turn the follow-along scroll on or off</li>
+  <li><kbd>M</kbd> — mute</li>
+  <li><kbd>Esc</kbd> — close search, focus mode or an opened image</li>
+</ul>
+
+<h2 class="known">What is not done yet</h2>
+<div class="known">
+<ul>
+  <li><strong>Tap-a-line has one keyboard equivalent, not 510.</strong> Every
+      paragraph is a seek point for a pointer. Making each one a tab stop would
+      put 510 stops between a keyboard user and the end of the page, so
+      <kbd>P</kbd> and search carry that job instead. It is a deliberate trade,
+      not an oversight.</li>
+  <li><strong>The Spanish narration has no text sync.</strong> The chapter marks,
+      the 510 cues and the follow-along scroll are timed to the English recording.
+      They are switched off in Spanish rather than shown at the wrong moments — so
+      a Spanish listener gets a plain audio bar under a page that does not move.</li>
+  <li><strong>The Spanish narration has no score</strong> and is not split into
+      acts, so it cannot be saved for offline listening the way English can.</li>
+  <li><strong>No formal audit.</strong> Colour contrast, heading order and the
+      long-form diagrams have been checked by hand, not by an auditor.</li>
+</ul>
+</div>
+
+<h2>Something wrong?</h2>
+<p>If any part of this book is unreachable for you, please
+<a href="https://github.com/JonathanDiaso/One-Promise-Abraham-and-the-Living-God/issues">open an issue</a>.
+Say which page, which control and what happened, and it will be fixed.</p>
+
+<a class="home" href="/One-Promise-Abraham-and-the-Living-God/">✦ BACK TO THE BOOK</a>
+
+<footer>One Promise — Abraham, the Living God, and the Story That Never Ended.<br>
+Statement last reviewed 1 September 2026.</footer>
+</div>
+</body>
+</html>

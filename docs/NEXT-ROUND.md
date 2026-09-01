@@ -21,6 +21,38 @@ against `~/Panim/Panim-site/`, which is the model this rebuild follows.
 
 ---
 
+---
+
+# Verified and shipped — 1 September 2026
+
+Every item below was checked against the running page before it was built. The
+three verdicts that came back different from the write-up are called out; the
+rest were accurate as written.
+
+| Item | Verdict | What shipped |
+|---|---|---|
+| **B1** Search | Confirmed — no search existed | Full-text search over every block of running text **plus all 64 chapters**, diacritic folding, AND-matching with a prefix on the last term, ranked by where the hit falls. `/` opens it. A passage result jumps the page; a chapter result seeks the narration. |
+| **B3** Missing site files | Confirmed — none of the four existed | `robots.txt`, `sitemap.xml`, `404.html`, `accessibility.html`, the last linked from a new page footer |
+| **B4** OG image on a third-party host | Confirmed | `og:image` and `twitter:image` now point at `Abraham Stars.jpeg` on the site's own domain, plus `og:image:alt`, a `description` and a canonical link |
+| **B5** Focus mode | Confirmed — none existed | Full-screen player: act, chapter, 88 px transport, ±30, seek, remaining time, sleep. Keyboard-trapped, `Esc` closes, focus restored on exit |
+| **B6** Accessibility | Confirmed on every point | Skip link, a polite live region (chapter, act finished, sleep armed, language switched), `aria-valuetext` on the seekbar — “Act Three — The Test, 1 hour 12 minutes of 3 hours 10 minutes” — and a visible focus ring, which the page had nowhere |
+| **B7** Seekbar | **Half wrong** | The buffered range shipped, drawn as a segment offset to the current act's place on the book timeline rather than growing from zero. The drag complaint does not hold: a native `input[type=range]` already takes implicit pointer capture, so a drag that leaves the 4 px track keeps tracking. Nothing to fix there. |
+| **B8** Sleep timer | Confirmed | **END OF ACT** joins 30 / 60 / 90. Caught a quarter-second before the file's own `ended`, so the next act never loads. English only — Spanish has no act boundaries to end at, and says so |
+| **B9** Per-act completion | Confirmed, **built differently** | A card at each of nine boundaries would stop a read the acts are deliberately built to run through. It ships as a toast — “✦ Act Three — The Test finished — 4 of 9” — and a spoken line |
+| **A4** Spanish gaps | Confirmed on all three | The welcome card's control rows, the end-of-book card and both share strings now follow the language |
+| **B2** Per-chapter URLs | **Revised** | `c/01 … c/09` as separate pages means nine copies of a 363 KB single-file site, and every future edit becomes ten edits. What shipped instead is `?t=SECONDS`, which opens the book at a point in the narration and can be sent to someone. The full split is still worth doing **only** if the page is ever broken out of one file. |
+| **A1–A3** Spanish audio | Confirmed, **not shippable from here** | Baking the score, cutting acts and building Spanish cues all need the 282 MB Dropbox file, a Spanish transcript and hours of `musicmix.py`/`level.py`. Nothing about it is a page change. Still the top of the list. |
+
+Also done in the same pass: `sw.js`'s `SHELL` bumped to `v2` (a precached
+`index.html` changed, and without a new cache name returning visitors are served
+the old build forever), and the live URL, the publish steps and that cache rule
+written into the top of `index.html` and `README.md`.
+
+Still open: **A1**, **A2**, **A3**, a real third-party accessibility audit, and
+B2's full chapter split if the single file is ever broken up.
+
+---
+
 ## If you only do three
 
 **#1 Music on the Spanish narration.** **#2 Split Spanish into acts.** **#3 Search.**

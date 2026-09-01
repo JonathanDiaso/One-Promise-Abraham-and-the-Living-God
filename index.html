@@ -1,4 +1,43 @@
 <!DOCTYPE html>
+<!--
+  ══════════════════════════════════════════════════════════════════════════════
+  ONE PROMISE — Abraham, the Living God, and the Story That Never Ended
+
+  LIVE SITE   https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/
+  REPO        https://github.com/JonathanDiaso/One-Promise-Abraham-and-the-Living-God
+  LOCAL       ~/One-Promise/index.html      <-- THIS FILE IS THE WHOLE SITE
+  HOST        GitHub Pages, from the default branch, repo root
+
+  TO CHANGE THE LIVE SITE
+      edit ~/One-Promise/index.html
+      cd ~/One-Promise && git add -A && git commit -m "..." && git push
+      Pages rebuilds in ~1 minute. Hard-refresh once (Cmd-Shift-R): a service
+      worker serves the old copy until sw.js's SHELL cache name is bumped.
+
+  IF YOU EDIT ANY PRECACHED FILE (index.html, accessibility.html, 404.html,
+  manifest.webmanifest, the icons, audio/*.json) BUMP `var SHELL` IN sw.js.
+  Without a new cache name, returning visitors are served the previous build
+  out of the old cache forever.
+
+  TO TEST BEFORE PUSHING
+      python3 -m http.server ignores Range, which makes Chrome mark every act
+      file unseekable and the player look broken when it is not. Use a
+      Range-capable server. Then open http://127.0.0.1:8765/
+
+  WHAT IS WHERE
+      index.html      text, styles, player, search, focus mode — all of it
+      audio/actNN.m4a nine act files, AAC 96k mono, 138 MB
+      audio/cues.json 510 text-sync cue points, act-relative
+      audio/marks_new.json / manifest.json   chapter marks, act titles+durations
+      sw.js           offline shell + per-act downloads + Range slicing
+      accessibility.html · robots.txt · sitemap.xml · 404.html
+      docs/NEXT-ROUND.md   what is still open, including the Spanish audio work
+
+  THE ONE RULE
+      The audio and the marks ship together. New marks with old audio, or new
+      audio with old marks, put every chapter in the wrong place.
+  ══════════════════════════════════════════════════════════════════════════════
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -51,13 +90,17 @@
 </script>
 <meta property="og:title" content="One Promise — Abraham, the Living God, and the Story That Never Ended">
 <meta property="og:description" content="A journey from Genesis to Pentecost — the covenant, the Spirit, and the story that includes you.">
-<meta property="og:image" content="https://i.ibb.co/PsN1Qvvy/Abraham-Stars.jpg">
+<meta property="og:image" content="https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/Abraham%20Stars.jpeg">
+<meta property="og:image:alt" content="Abraham under a sky of uncountable stars.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="One Promise — Abraham, the Living God, and the Story That Never Ended">
 <meta name="twitter:description" content="A journey from Genesis to Pentecost — the covenant, the Spirit, and the story that includes you.">
-<meta name="twitter:image" content="https://i.ibb.co/PsN1Qvvy/Abraham-Stars.jpg">
+<meta name="twitter:image" content="https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/Abraham%20Stars.jpeg">
+<meta name="twitter:image:alt" content="Abraham under a sky of uncountable stars.">
+<meta name="description" content="A journey from Genesis to Pentecost — the covenant, the Spirit, and the story that includes you. Read it, or hear the full 3-hour narration in English or Spanish.">
+<link rel="canonical" href="https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700&family=Cormorant+SC:wght@300;400;500;600&display=swap');
 :root{
@@ -803,9 +846,133 @@ body{padding-bottom:112px;}
     body.op-lang-es .ap-reading{background:none;box-shadow:none;}
     body.op-lang-es #ap-follow-btn{opacity:.35;pointer-events:none;}
 
+    /* ── SKIP LINK (WCAG 2.4.1) ──
+       Nine nav links stood between a keyboard user and the book on every load. */
+    .skip-link{position:absolute;left:-9999px;top:0;z-index:3000;
+      background:var(--bg2);color:var(--gold-light);text-decoration:none;
+      font-family:"Cinzel",serif;font-size:.62rem;letter-spacing:.2em;
+      padding:14px 24px;min-height:44px;display:inline-flex;align-items:center;
+      border:1px solid var(--gold);border-radius:4px;}
+    .skip-link:focus{left:12px;top:12px;}
+
+    /* Announced, not shown. Chapter changes, the sleep timer, an act finishing. */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;}
+
+    /* The page had no visible focus ring at all (WCAG 2.4.7). */
+    a:focus-visible,button:focus-visible,input:focus-visible,
+    [tabindex]:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;border-radius:2px;}
+
+    /* ── BUFFERED RANGE ──
+       Drawn as a segment starting at the current act's position, not at zero:
+       what has loaded is this act's stream, and a bar from 0 would claim the
+       whole book behind it was in hand. The seek track's unplayed colour is
+       7% white, so this reads through it. */
+    #ap-buffered{position:absolute;top:50%;height:4px;transform:translateY(-50%);
+      background:rgba(255,255,255,.17);border-radius:2px;pointer-events:none;
+      left:0;width:0;transition:width .35s linear,left .35s linear;}
+    #ap-seek-wrap .ap-seek{position:relative;z-index:2;}
+    @media(max-width:640px){#ap-buffered{height:7px;border-radius:4px;}}
+    @media(prefers-reduced-motion:reduce){#ap-buffered{transition:none;}}
+
+    /* ── ACT FINISHED ──
+       Nine acts, and finishing the third should feel like finishing something.
+       A card would stop the read; the acts run into each other on purpose. */
+    #ap-act-toast{position:fixed;left:50%;bottom:152px;z-index:1500;
+      transform:translateX(-50%) translateY(10px);
+      background:rgba(4,6,14,.97);border:1px solid rgba(201,168,76,.35);border-radius:6px;
+      padding:12px 20px;max-width:92vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+      font-family:"Cinzel",serif;font-size:.52rem;letter-spacing:.2em;color:var(--gold);
+      opacity:0;pointer-events:none;transition:opacity .4s ease,transform .4s ease;}
+    #ap-act-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+    @media(prefers-reduced-motion:reduce){#ap-act-toast{transition:none;}}
+
+    /* End of act is an English-timeline control; Spanish is one flat file. */
+    body.op-lang-es #sleep-act{opacity:.32;pointer-events:none;}
+
+    /* ── SEARCH ──
+       Three hours of book and no way to find a passage in it. */
+    #search-overlay{position:fixed;inset:0;z-index:2200;display:none;
+      background:rgba(2,3,10,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      flex-direction:column;align-items:center;padding:0 16px;}
+    #search-overlay.open{display:flex;}
+    #search-inner{width:100%;max-width:720px;height:100%;display:flex;flex-direction:column;
+      padding:max(28px,env(safe-area-inset-top)) 0 20px;}
+    #search-head{display:flex;gap:10px;align-items:center;}
+    #search-input{flex:1;min-height:48px;padding:12px 16px;border-radius:6px;outline:none;
+      background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.3);
+      color:var(--text);font-family:"Cormorant Garamond",serif;font-size:1.1rem;}
+    #search-input::placeholder{color:var(--text-dim);}
+    #search-input:focus{border-color:var(--gold);}
+    #search-close{min-width:48px;min-height:48px;cursor:pointer;border-radius:6px;
+      background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);font-size:1rem;}
+    #search-count{margin:12px 2px 12px;min-height:14px;
+      font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.24em;color:var(--text-mid);}
+    #search-results{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:24px;}
+    .search-hit{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+      background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);
+      border-left:2px solid rgba(201,168,76,.35);border-radius:4px;
+      padding:14px 16px;margin-bottom:8px;cursor:pointer;color:inherit;
+      transition:background .2s ease,border-color .2s ease;}
+    .search-hit:hover{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.35);}
+    .search-hit-body{flex:1;min-width:0;}
+    .search-hit-where{margin-bottom:6px;
+      font-family:"Cinzel",serif;font-size:.44rem;letter-spacing:.22em;color:var(--gold);}
+    .search-hit-text{font-family:"Cormorant Garamond",serif;font-size:1rem;line-height:1.55;color:var(--text-mid);}
+    .search-hit-text mark{background:rgba(201,168,76,.24);color:var(--gold-light);border-radius:2px;padding:0 2px;}
+    .search-hit-play{flex-shrink:0;width:44px;height:44px;border-radius:50%;cursor:pointer;
+      background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.4);color:var(--ap);
+      display:flex;align-items:center;justify-content:center;font-size:.72rem;}
+    .search-hit-play:hover{background:rgba(74,144,217,.2);}
+    #search-empty{padding:22px 4px;color:var(--text-mid);
+      font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1rem;}
+    @media(prefers-reduced-motion:reduce){.search-hit{transition:none;}}
+
+    /* ── FOCUS MODE ──
+       The book put down, and just the listening left. */
+    #focus-mode{position:fixed;inset:0;z-index:2300;display:none;background:#02030a;
+      flex-direction:column;align-items:center;justify-content:center;padding:32px 20px;}
+    #focus-mode.open{display:flex;}
+    #focus-act{margin-bottom:16px;text-align:center;
+      font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.34em;color:var(--gold);}
+    #focus-chapter{margin-bottom:36px;max-width:16em;text-align:center;line-height:1.4;
+      font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.6rem;color:rgba(255,255,255,.92);}
+    #focus-transport{display:flex;align-items:center;gap:26px;margin-bottom:32px;}
+    .focus-skip{min-width:56px;min-height:56px;border-radius:50%;cursor:pointer;
+      background:none;border:1px solid rgba(74,144,217,.35);color:var(--ap);
+      font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.06em;}
+    .focus-skip:hover{background:rgba(74,144,217,.1);}
+    #focus-play{width:88px;height:88px;border-radius:50%;cursor:pointer;
+      background:rgba(74,144,217,.1);border:1px solid var(--ap);color:var(--ap);
+      display:flex;align-items:center;justify-content:center;}
+    #focus-play svg{width:26px;height:26px;display:block;}
+    #focus-seek-row{width:100%;max-width:560px;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+    #focus-seek{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;
+      border:none;outline:none;cursor:pointer;background:rgba(255,255,255,.12);touch-action:pan-y;}
+    #focus-seek::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;
+      background:var(--ap);border-radius:50%;box-shadow:0 0 8px rgba(74,144,217,.6);}
+    #focus-seek::-moz-range-thumb{width:24px;height:24px;background:var(--ap);border-radius:50%;border:none;}
+    #focus-times{display:flex;justify-content:space-between;
+      font-family:"Cinzel",serif;font-size:.52rem;letter-spacing:.12em;color:var(--text-mid);}
+    #focus-foot{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+    .focus-btn{min-height:44px;padding:12px 20px;border-radius:4px;cursor:pointer;
+      background:none;border:1px solid rgba(255,255,255,.2);color:var(--text-mid);
+      font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.2em;}
+    .focus-btn:hover{border-color:var(--gold);color:var(--gold);}
+    @media(max-width:600px){
+      #focus-chapter{font-size:1.2rem;margin-bottom:28px;}
+      #focus-transport{gap:18px;margin-bottom:26px;}
+      #focus-play{width:78px;height:78px;}
+    }
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to the book</a>
+<!-- Everything the player changes without a visible caption: the chapter it
+     moved to, the sleep timer arming, an act finishing. Nothing was announced
+     before this (WCAG 4.1.3). -->
+<div id="ap-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 <div id="progress"></div>
 <nav class="nav">
   <a href="#spirit">The Spirit</a>
@@ -817,6 +984,7 @@ body{padding-bottom:112px;}
   <a href="#wildfire">The Wildfire</a>
   <a href="#fractures">The Fractures</a>
   <a href="#unfinished">Unfinished</a>
+  <a href="#search" id="nav-search" role="button">Search</a>
 </nav>
 <section class="hero">
   <div class="hero-bg"></div>
@@ -842,7 +1010,7 @@ body{padding-bottom:112px;}
   <div class="scroll-hint">✦ &nbsp; BEGIN &nbsp; ✦</div>
   <button id="hero-share" onclick="shareDoc()" aria-label="Share">SHARE ✦</button>
 </section>
-<div class="page">
+<div class="page" id="main" tabindex="-1">
 
 <!-- TIMELINE -->
 <div style="margin:60px 0 20px;overflow-x:auto;-webkit-overflow-scrolling:touch;">
@@ -2347,6 +2515,14 @@ body{padding-bottom:112px;}
   <div class="final-msg">✦ &nbsp; HEBREWS 11:39-40 &nbsp; ✦</div>
 </div>
 
+<footer style="max-width:640px;margin:0 auto;padding:36px 0 12px;text-align:center;
+               font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.24em;
+               color:var(--text-dim);border-top:1px solid rgba(201,168,76,.12);">
+  <a href="accessibility.html" style="color:var(--gold-dim);text-decoration:none;padding:12px 10px;display:inline-block;min-height:44px;">ACCESSIBILITY</a>
+  <span aria-hidden="true">·</span>
+  <a href="#" onclick="apOpenSearch();return false;" style="color:var(--gold-dim);text-decoration:none;padding:12px 10px;display:inline-block;min-height:44px;">SEARCH THE BOOK</a>
+</footer>
+
 </div><!-- /page -->
 
 <script>
@@ -2588,7 +2764,9 @@ requestAnimationFrame(()=>{
       <div class="oc-row"><span class="oc-key">♪ SCORE</span><span class="oc-val">A piano score is woven into the narration itself — a different arrangement under every act. Nothing to adjust.</span></div>
       <div class="oc-row"><span class="oc-key">−30 / +30</span><span class="oc-val">Skip back or forward 30 seconds in the narration.</span></div>
       <div class="oc-row"><span class="oc-key">1×</span><span class="oc-val">Playback speed — 0.8× · 0.9× · 1× · 1.1× · 1.2×. Tap to cycle.</span></div>
-      <div class="oc-row"><span class="oc-key">ZZ</span><span class="oc-val">Sleep timer — choose 30, 60, or 90 minutes. Stops everything when it runs.</span></div>
+      <div class="oc-row"><span class="oc-key">ZZ</span><span class="oc-val">Sleep timer — 30, 60 or 90 minutes, or <strong>END OF ACT</strong>: let this one finish, then stop.</span></div>
+      <div class="oc-row"><span class="oc-key">⌕ SEARCH</span><span class="oc-val">Find any passage in the book. On a keyboard, press <strong>/</strong>.</span></div>
+      <div class="oc-row"><span class="oc-key">⛶ FOCUS</span><span class="oc-val">Put the page away and just listen — chapter, clock and transport, nothing else.</span></div>
       <div class="oc-row"><span class="oc-key">↓ FOLLOW</span><span class="oc-val">The page reads along with you — the passage being spoken lights up and scrolls itself. On by default; tap to turn off.</span></div>
       <div class="oc-row"><span class="oc-key">TAP A LINE</span><span class="oc-val">Tap any line of the book and the narration starts reading it aloud from there. On a keyboard, press <strong>P</strong>.</span></div>
     </div>
@@ -2605,7 +2783,18 @@ const OB_TEXT={
     intro:`You've been waiting on a promise too.<br><br>You know the moment — when waiting starts to feel like being forgotten. When you decide that if God won't move, you will. So you reach for your own version of the answer.<br><br>Abraham did the same thing. His name for it was Ishmael.<br><br>But the promise wasn't late. It was being made unmistakable. A son born on schedule is ordinary. A son born decades past hope is a miracle no one can explain away. The wait wasn't God forgetting Abraham — it was God making sure that when the answer came, only he could get the credit.<br><br>And it came. Not because Abraham waited perfectly — he didn't. Ishmael was proof of that. It came because God had signed the covenant alone, and nothing in the waiting could break it.<br><br>Your Ishmael didn't disqualify you. Your wait isn't God forgetting you. It's the miracle being made unmistakable.<br><br><em>This is that story.</em>`,
     lang:'Narrated in full in <strong>English</strong> and <strong>Spanish</strong> — tap <strong>EN · ES</strong> in the player to switch anytime.<em>Chapter navigation follows the English narration.</em>',
     footer:`You don't have to read it all today. It will remember where you were.`,
-    begin:'BEGIN'
+    begin:'BEGIN',
+    controls:[
+      ['▶ AUDIO','Full narration — 3 hours 10 minutes across 8 acts. Resumes exactly where you left off.'],
+      ['♪ SCORE','A piano score is woven into the narration itself — a different arrangement under every act. Nothing to adjust.'],
+      ['−30 / +30','Skip back or forward 30 seconds in the narration.'],
+      ['1×','Playback speed — 0.8× · 0.9× · 1× · 1.1× · 1.2×. Tap to cycle.'],
+      ['ZZ','Sleep timer — 30, 60 or 90 minutes, or <strong>END OF ACT</strong>: let this one finish, then stop.'],
+      ['⌕ SEARCH','Find any passage in the book. On a keyboard, press <strong>/</strong>.'],
+      ['⛶ FOCUS','Put the page away and just listen — chapter, clock and transport, nothing else.'],
+      ['↓ FOLLOW','The page reads along with you — the passage being spoken lights up and scrolls itself. On by default; tap to turn off.'],
+      ['TAP A LINE','Tap any line of the book and the narration starts reading it aloud from there. On a keyboard, press <strong>P</strong>.']
+    ]
   },
   es:{
     title:'Una Promesa',
@@ -2613,7 +2802,18 @@ const OB_TEXT={
     intro:`Tú también has estado esperando una promesa.<br><br>Conoces ese momento — cuando la espera empieza a sentirse como olvido. Cuando decides que si Dios no actúa, lo harás tú. Entonces alcanzas tu propia versión de la respuesta.<br><br>Abraham hizo lo mismo. Su nombre para eso fue Ismael.<br><br>Pero la promesa no llegó tarde. Estaba siendo hecha inconfundible. Un hijo nacido a tiempo es ordinario. Un hijo nacido décadas después de toda esperanza es un milagro que nadie puede explicar. La espera no era Dios olvidando a Abraham — era Dios asegurándose de que cuando llegara la respuesta, solo él pudiera llevarse el crédito.<br><br>Y llegó. No porque Abraham esperó perfectamente — no lo hizo. Ismael fue prueba de eso. Llegó porque Dios había firmado el pacto solo, y nada en la espera podía romperlo.<br><br>Tu Ismael no te descalificó. Tu espera no es Dios olvidando. Es el milagro haciéndose inconfundible.<br><br><em>Esta es esa historia.</em>`,
     lang:'Narrado en su totalidad en <strong>inglés</strong> y <strong>español</strong> — toca <strong>EN · ES</strong> en el reproductor para cambiar en cualquier momento.<em>La navegación por capítulos sigue la narración en inglés.</em>',
     footer:`No tienes que leerlo todo hoy. Recordará dónde quedaste.`,
-    begin:'COMENZAR'
+    begin:'COMENZAR',
+    controls:[
+      ['▶ AUDIO','Narración completa — 3 horas 10 minutos en 8 actos. Continúa exactamente donde lo dejaste.'],
+      ['♪ MÚSICA','La partitura de piano está integrada en la narración en inglés — un arreglo distinto bajo cada acto. Nada que ajustar.'],
+      ['−30 / +30','Retrocede o avanza 30 segundos en la narración.'],
+      ['1×','Velocidad de reproducción — 0.8× · 0.9× · 1× · 1.1× · 1.2×. Toca para cambiar.'],
+      ['ZZ','Temporizador — 30, 60 o 90 minutos, o <strong>FIN DEL ACTO</strong> (solo en inglés).'],
+      ['⌕ BUSCAR','Encuentra cualquier pasaje del libro. Con teclado, pulsa <strong>/</strong>.'],
+      ['⛶ ENFOQUE','Guarda la página y solo escucha — capítulo, reloj y controles, nada más.'],
+      ['↓ FOLLOW','La página avanza contigo — el pasaje narrado se ilumina y se desplaza solo. Sigue la narración en inglés.'],
+      ['TOCA UNA LÍNEA','Toca cualquier línea y la narración en inglés empieza a leerla. Con teclado, pulsa <strong>P</strong>.']
+    ]
   }
 };
 window.obSetLang=function(lang){
@@ -2625,6 +2825,16 @@ window.obSetLang=function(lang){
   $('onboard-lang').innerHTML=t.lang;
   $('onboard-footer').textContent=t.footer;
   $('onboard-begin').textContent=t.begin;
+  const oc=$('onboard-controls');
+  if(oc&&t.controls){
+    oc.innerHTML='';
+    t.controls.forEach(function(r){
+      const row=document.createElement('div');row.className='oc-row';
+      const k=document.createElement('span');k.className='oc-key';k.textContent=r[0];
+      const v=document.createElement('span');v.className='oc-val';v.innerHTML=r[1];
+      row.appendChild(k);row.appendChild(v);oc.appendChild(row);
+    });
+  }
   ['ob-en','ob-es'].forEach(id=>$('ob-lang-toggle').querySelector('#'+id).classList.remove('ob-lang-active'));
   document.getElementById('ob-'+lang).classList.add('ob-lang-active');
   localStorage.setItem('op_ob_lang',lang);
@@ -2669,6 +2879,9 @@ if(!localStorage.getItem('op_welcomed_v2')){
   <div id="sleep-sheet-inner">
     <div id="sleep-sheet-title">SLEEP TIMER</div>
     <button class="sleep-opt" id="sleep-off"    onclick="apSetSleep(0)">OFF</button>
+    <!-- The one people actually want: not "stop in 30 minutes" but "let this
+         finish." The act boundaries are already in BOOK_ACTS. -->
+    <button class="sleep-opt" id="sleep-act"    onclick="apSetSleepAct()">END OF ACT</button>
     <button class="sleep-opt" id="sleep-30"     onclick="apSetSleep(30)">30 MIN</button>
     <button class="sleep-opt" id="sleep-60"     onclick="apSetSleep(60)">60 MIN</button>
     <button class="sleep-opt" id="sleep-90"     onclick="apSetSleep(90)">90 MIN</button>
@@ -2702,6 +2915,8 @@ if(!localStorage.getItem('op_welcomed_v2')){
       <button class="ap-speed-btn" id="ap-speed" onclick="apCycleSpeed()" aria-label="Playback speed">1×</button>
       <button class="ap-sleep-btn" id="ap-sleep" onclick="apCycleSleep()" aria-label="Sleep timer">ZZ</button>
       <button class="ap-sleep-btn" id="ap-offline" onclick="apOpenOffline()" aria-label="Save for offline listening">⤓</button>
+      <button class="ap-sleep-btn" id="ap-search" onclick="apOpenSearch()" aria-label="Search the book">⌕</button>
+      <button class="ap-sleep-btn" id="ap-focus" onclick="apOpenFocus()" aria-label="Focus mode — listen with the page out of the way">⛶</button>
       <input type="range" class="ap-vol ap-desktop" id="ap-narr-vol" min="0" max="1" step="0.01" value="0.9" oninput="apSetNarrVol(this.value)" aria-label="Narration volume">
       <button class="ap-mute ap-mobile" id="ap-narr-mute" onclick="apMuteToggle('narr')" aria-label="Mute narration">
         <svg class="ap-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
@@ -2714,6 +2929,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
 
 <div id="ap-seekbar-row">
   <div id="ap-seek-wrap">
+    <div id="ap-buffered" aria-hidden="true"></div>
     <input type="range" class="ap-seek" id="ap-narr-seek" min="0" max="100" step="0.01" value="0" oninput="apSeekTo(this.value)" aria-label="Seek position">
     <div id="ap-chapter-marks"></div>
     <div id="ap-act-marks"></div>
@@ -2723,6 +2939,45 @@ if(!localStorage.getItem('op_welcomed_v2')){
 </div>
 
 <div id="ap-follow-toast">↓ following</div>
+<div id="ap-act-toast" role="presentation"></div>
+
+<!-- ── SEARCH ──
+     Built from the page itself the first time it opens: every block of running
+     text is already an addressable element, because the 510 cues needed ids. -->
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search the book">
+  <div id="search-inner">
+    <div id="search-head">
+      <input id="search-input" type="search" autocomplete="off" autocorrect="off"
+             spellcheck="false" placeholder="Find a passage — Petra, Azusa, the firepot…"
+             aria-label="Search the book" aria-describedby="search-count">
+      <button id="search-close" aria-label="Close search">✕</button>
+    </div>
+    <div id="search-count" role="status" aria-live="polite"></div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- ── FOCUS MODE ──
+     Big transport, chapter, clock, seek, sleep. Nothing else. -->
+<div id="focus-mode" role="dialog" aria-modal="true" aria-label="Focus mode">
+  <div id="focus-act">✦</div>
+  <div id="focus-chapter">Press play to begin</div>
+  <div id="focus-transport">
+    <button class="focus-skip" id="focus-back" aria-label="Skip back 30 seconds">−30</button>
+    <button id="focus-play" aria-label="Play narration" aria-pressed="false">
+      <svg id="focus-play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <button class="focus-skip" id="focus-fwd" aria-label="Skip forward 30 seconds">+30</button>
+  </div>
+  <div id="focus-seek-row">
+    <input type="range" id="focus-seek" min="0" max="100" step="0.01" value="0" aria-label="Seek position">
+    <div id="focus-times"><span id="focus-elapsed">0:00:00</span><span id="focus-left">−0:00:00</span></div>
+  </div>
+  <div id="focus-foot">
+    <button class="focus-btn" id="focus-sleep">SLEEP TIMER</button>
+    <button class="focus-btn" id="focus-close">CLOSE</button>
+  </div>
+</div>
 <!-- Replace these src values with your hosted audio file URLs -->
 <audio id="ap-narr-el" preload="none"></audio>
 
@@ -2813,9 +3068,21 @@ if(!localStorage.getItem('op_welcomed_v2')){
   // An act ending is not the book ending. Advance and keep playing; only the last
   // act is allowed through to the real 'ended' handler below.
   narrEl.addEventListener('ended',e=>{
-    if(BOOK.en&&BOOK.i<BOOK_ACTS.length-1){
+    if(!BOOK.en)return;
+    const done=BOOK_ACTS[BOOK.i];
+    // "Stop at the end of this act" is caught on timeupdate a quarter-second
+    // early, but a stalled or throttled tab can miss that sample and land here
+    // instead. Either way the act does not roll into the next one.
+    if(sleepActEnd!==null){
+      e.stopImmediatePropagation();
+      sleepActEnd=null;clearSleepUI();
+      if(done)announce(done.title+' finished. Sleep timer stopped playback.');
+      return;
+    }
+    if(BOOK.i<BOOK_ACTS.length-1){
       e.stopImmediatePropagation();
       BOOK.go(BOOK.i+1,0,true);
+      if(done)actFinished(done);
     }
   },true);
 
@@ -2825,6 +3092,69 @@ if(!localStorage.getItem('op_welcomed_v2')){
     get(){return BOOK.dur();},configurable:true});
 
   BOOK.go(0,0,false);
+
+  // ── ANNOUNCEMENTS ──
+  // Nothing the player did was announced: not the chapter it moved to, not the
+  // sleep timer arming, not an act finishing (WCAG 4.1.3). The region is emptied
+  // first because a screen reader will not re-read a string it is already on.
+  const liveEl=$('ap-live');
+  let _liveT=null;
+  function announce(msg){
+    if(!liveEl||!msg)return;
+    clearTimeout(_liveT);liveEl.textContent='';
+    _liveT=setTimeout(()=>{liveEl.textContent=msg;},60);
+  }
+  window.opAnnounce=announce;
+
+  // "37" is not a position in a book. Neither is "1:04:12" read as digits.
+  function spoken(s){
+    if(!isFinite(s)||isNaN(s)||s<0)return 'unknown';
+    const h=Math.floor(s/3600),m=Math.floor((s%3600)/60);
+    const parts=[];
+    if(h)parts.push(h+(h===1?' hour':' hours'));
+    if(m||!h)parts.push(m+(m===1?' minute':' minutes'));
+    return parts.join(' ');
+  }
+
+  // ── AN ACT FINISHED ──
+  // Nine acts over three hours. Finishing the third is finishing something, and
+  // the only marker was one card at the very end of the book. A card here would
+  // stop a read that is meant to run on, so this is a toast and a spoken line.
+  const actToastEl=$('ap-act-toast');
+  function actFinished(a){
+    if(!a)return;
+    const done=BOOK_ACTS.indexOf(a)+1;
+    const msg=a.title+' finished — '+done+' of '+BOOK_ACTS.length;
+    if(actToastEl){
+      actToastEl.textContent='✦ '+msg;
+      actToastEl.classList.add('show');
+      clearTimeout(actToastEl._t);
+      actToastEl._t=setTimeout(()=>actToastEl.classList.remove('show'),4200);
+    }
+    announce(msg+'. Continuing.');
+  }
+
+  // ── BUFFERED RANGE ──
+  // narrEl.buffered is the CURRENT ACT's stream, in that file's own seconds, so
+  // it is drawn as a segment offset to the act's place on the book timeline. A
+  // bar growing from zero would claim every act behind it was in hand.
+  const bufEl=$('ap-buffered');
+  function paintBuffered(){
+    if(!bufEl)return;
+    const b=narrEl.buffered,d=BOOK.dur();
+    if(!b||!b.length||!d){bufEl.style.width='0';return;}
+    const here=rawT(narrEl);
+    let end=here;
+    for(let i=0;i<b.length;i++){
+      if(b.start(i)<=here+0.5&&b.end(i)>end)end=b.end(i);
+    }
+    const base=BOOK.en?BOOK.cur().t0:0;
+    const L=Math.max(0,Math.min(100,(base/d)*100));
+    const R=Math.max(L,Math.min(100,((base+end)/d)*100));
+    bufEl.style.left=L.toFixed(2)+'%';
+    bufEl.style.width=(R-L).toFixed(2)+'%';
+  }
+  ['progress','loadedmetadata','seeked','emptied'].forEach(e=>narrEl.addEventListener(e,paintBuffered));
 
   // ── TEXT SYNC: 510 blocks, one every ~22s ──
   let CUES=null,lastCue=-1,cueSuppress=0;
@@ -2892,7 +3222,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
   const CUE_SKIP='a,button,input,select,textarea,label,summary,'
                 +'.doc-img,#ap-bar,#ap-fab,#ap-seekbar-row,.nav,#onboard,'
                 +'#sleep-sheet,#offline-sheet,#lb-overlay,#sel-copy,'
-                +'#resume-toast,#audio-complete';
+                +'#resume-toast,#audio-complete,#search-overlay,#focus-mode';
 
   let _dx=0,_dy=0;
   document.addEventListener('pointerdown',e=>{_dx=e.clientX;_dy=e.clientY;},{passive:true});
@@ -2926,6 +3256,12 @@ if(!localStorage.getItem('op_welcomed_v2')){
   };
 
   window._cueHold=function(){cueSuppress=Date.now()+2500;};
+  // Search results play from a line the same way a tap on it does.
+  window.opPlayFromId=function(id){
+    const el=document.getElementById(id);
+    if(el&&(id in CUEMAP))playFrom(el);
+  };
+  window.opHasCue=function(id){return CUES&&(id in CUEMAP);};
 
   narrEl.addEventListener('timeupdate',()=>{
     if(!CUES||!CUES.length||!BOOK.en)return;
@@ -3230,11 +3566,26 @@ if(!localStorage.getItem('op_welcomed_v2')){
     },700);
   }
 
+  let _lastVT=-1;
   narrEl.addEventListener('timeupdate',()=>{
     if(isSeeking||!narrEl.duration)return;
-    const pct=(narrEl.currentTime/narrEl.duration)*100;
+    const t=narrEl.currentTime,d=narrEl.duration;
+    const pct=(t/d)*100;
     narrSeek.value=pct;fill(narrSeek,pct);
-    narrTime.textContent=fmt(narrEl.currentTime)+' / '+fmt(narrEl.duration);
+    narrTime.textContent=fmt(t)+' / '+fmt(d);
+    paintBuffered();
+    // The slider announced a bare percentage — "37" — which is not a position in
+    // a book. Refreshed every 5 s rather than four times a second, so a reader
+    // moving through it is not interrupted mid-word (WCAG 1.3.1, 4.1.2).
+    const bucket=Math.floor(t/5);
+    if(bucket!==_lastVT){
+      _lastVT=bucket;
+      const where=(narrTitle.textContent||'').trim();
+      narrSeek.setAttribute('aria-valuetext',
+        (where&&where!=='Press play to begin'?where+', ':'')+
+        spoken(t)+' of '+spoken(d));
+    }
+    if(window.__opFocusSync)window.__opFocusSync();
   });
 
   narrEl.addEventListener('loadedmetadata',()=>{
@@ -3250,12 +3601,37 @@ if(!localStorage.getItem('op_welcomed_v2')){
     if(cCard) setTimeout(()=>cCard.classList.add('open'),600);
   });
 
+  // The completion card was English-only — the last thing a Spanish listener
+  // saw after three hours was in the other language.
+  const DONE_TEXT={
+    en:{title:'One promise. One Spirit.<br>Every nation.',sub:"THE STORY ISN'T FINISHED",
+        share:'SHARE THIS',close:'CLOSE',
+        shareTitle:'One Promise — Abraham, the Living God, and the Story That Never Ended',
+        shareText:"One promise. One Spirit. Every nation. The story isn't finished."},
+    es:{title:'Una promesa. Un Espíritu.<br>Todas las naciones.',sub:'LA HISTORIA NO HA TERMINADO',
+        share:'COMPARTIR',close:'CERRAR',
+        shareTitle:'Una Promesa — Abraham, el Dios Viviente, y la Historia Que Nunca Terminó',
+        shareText:'Una promesa. Un Espíritu. Todas las naciones. La historia no ha terminado.'}
+  };
+  const SITE_URL='https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/';
+  function paintCompleteCard(){
+    const t=DONE_TEXT[currentLang]||DONE_TEXT.en;
+    const ti=$('audio-complete-title'),su=$('audio-complete-sub');
+    const sh=$('audio-complete-share'),cl=$('audio-complete-dismiss');
+    if(ti)ti.innerHTML=t.title;
+    if(su)su.textContent=t.sub;
+    if(sh)sh.textContent=t.share;
+    if(cl)cl.textContent=t.close;
+  }
+  window.__opPaintDone=paintCompleteCard;
+
   const completeCard=$('audio-complete');
   if(completeCard){
     $('audio-complete-dismiss').addEventListener('click',()=>completeCard.classList.remove('open'));
     $('audio-complete-share').addEventListener('click',()=>{
-      if(navigator.share){navigator.share({title:'One Promise — Abraham, the Living God, and the Story That Never Ended',text:'One promise. One Spirit. Every nation. The story isn\'t finished.',url:'https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/'});}
-      else{navigator.clipboard&&navigator.clipboard.writeText('https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/');}
+      const t=DONE_TEXT[currentLang]||DONE_TEXT.en;
+      if(navigator.share){navigator.share({title:t.shareTitle,text:t.shareText,url:SITE_URL}).catch(()=>{});}
+      else{navigator.clipboard&&navigator.clipboard.writeText(SITE_URL);}
     });
   }
 
@@ -3292,7 +3668,58 @@ if(!localStorage.getItem('op_welcomed_v2')){
     if(e.target===sleepSheet) sleepSheet.classList.remove('open');
   });
 
+  // Playback stops when the book passes this point on the global timeline.
+  // null means nothing is armed.
+  let sleepActEnd=null;
+
+  function clearSleepUI(){
+    document.querySelectorAll('.sleep-opt').forEach(b=>b.classList.remove('active'));
+    if(sleepBtn){sleepBtn.textContent='ZZ';sleepBtn.classList.remove('active');}
+  }
+
+  function stopForSleep(){
+    narrEl.pause();musicEl.pause();
+    narrTitle.classList.remove('ap-playing');narrBtn.classList.remove('ap-playing');setPlayIcon(narrBtn,false);
+    musicTitle.classList.remove('ap-playing');musicBtn.classList.remove('ap-playing');setPlayIcon(musicBtn,false);
+    clearSleepUI();
+  }
+
+  // "Let this finish" — the option people actually reach for. English only: the
+  // Spanish narration is one flat file with no act boundaries to end at.
+  window.apSetSleepAct=function(){
+    if(sleepTimer){clearTimeout(sleepTimer);sleepTimer=null;}
+    if(sleepCountInterval){clearInterval(sleepCountInterval);sleepCountInterval=null;}
+    if(sleepSheet)sleepSheet.classList.remove('open');
+    clearSleepUI();
+    if(!BOOK.en){
+      sleepActEnd=null;
+      announce('End of act is available in the English narration only.');
+      return;
+    }
+    const a=BOOK.cur();
+    if(!a){sleepActEnd=null;return;}
+    sleepActEnd=a.t0+a.dur-0.25;
+    $('sleep-act')&&$('sleep-act').classList.add('active');
+    if(sleepBtn){sleepBtn.textContent='ACT';sleepBtn.classList.add('active');}
+    const left=Math.max(0,sleepActEnd-BOOK.t());
+    announce('Sleep timer set. Playback stops at the end of '+a.title+
+             ', about '+spoken(left)+' from now.');
+  };
+
+  // Caught a quarter-second before the file's own 'ended', so the next act is
+  // never loaded and no fade of the following opening is heard.
+  narrEl.addEventListener('timeupdate',()=>{
+    if(sleepActEnd===null||!BOOK.en)return;
+    if(BOOK.t()>=sleepActEnd){
+      const a=BOOK.cur();
+      sleepActEnd=null;
+      stopForSleep();
+      announce((a?a.title:'The act')+' finished. Sleep timer stopped playback.');
+    }
+  });
+
   window.apSetSleep=function(mins){
+    sleepActEnd=null;
     if(sleepTimer){clearTimeout(sleepTimer);sleepTimer=null;}
     if(sleepCountInterval){clearInterval(sleepCountInterval);sleepCountInterval=null;}
     if(sleepSheet) sleepSheet.classList.remove('open');
@@ -3305,20 +3732,21 @@ if(!localStorage.getItem('op_welcomed_v2')){
         const rem=Math.ceil((endTime-Date.now())/60000);
         if(rem>0&&sleepBtn) sleepBtn.textContent=rem+'m';
       },30000);
+      announce('Sleep timer set for '+mins+' minutes.');
       sleepTimer=setTimeout(()=>{
         clearInterval(sleepCountInterval);
-        narrEl.pause();musicEl.pause();
-        narrTitle.classList.remove('ap-playing');narrBtn.classList.remove('ap-playing');setPlayIcon(narrBtn,false);
-        musicTitle.classList.remove('ap-playing');musicBtn.classList.remove('ap-playing');setPlayIcon(musicBtn,false);
-        if(sleepBtn){sleepBtn.textContent='ZZ';sleepBtn.classList.remove('active');}
-        document.querySelectorAll('.sleep-opt').forEach(b=>b.classList.remove('active'));
+        stopForSleep();
+        announce('Sleep timer finished. Playback stopped.');
       },mins*60*1000);
+    }else{
+      announce('Sleep timer off.');
     }
   };
 
   // ── NATIVE SHARE ──
   window.shareDoc=function(){
-    const data={title:'One Promise — Abraham, the Living God, and the Story That Never Ended',url:window.location.href};
+    const d=DONE_TEXT[currentLang]||DONE_TEXT.en;
+    const data={title:d.shareTitle,text:d.shareText,url:window.location.href};
     if(navigator.share){navigator.share(data).catch(()=>{});}
     else{navigator.clipboard.writeText(window.location.href).then(()=>{
       const btn=document.getElementById('hero-share');
@@ -3409,6 +3837,10 @@ if(!localStorage.getItem('op_welcomed_v2')){
       BOOK.go(k,g-BOOK.list()[k].t0,wasPlaying);
       narrTitle.textContent=NARR_NAME;
     }
+    if(window.__opPaintDone)window.__opPaintDone();
+    announce(lang==='es'
+      ?'Narración en español. La navegación por capítulos está desactivada.'
+      :'English narration. Chapter navigation is back on.');
     saveLangPos();
   };
 
@@ -3461,6 +3893,8 @@ if(!localStorage.getItem('op_welcomed_v2')){
       BOOK.go(k,g-BOOK.list()[k].t0,false);
     }
   },0);
+
+  setTimeout(function(){if(window.__opPaintDone)window.__opPaintDone();},0);
 
   // ── KEYBOARD SHORTCUTS ──
   document.addEventListener('keydown',e=>{
@@ -3660,6 +4094,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
     if(ci!==lastChIdx&&ci>=0){
       lastChIdx=ci;
       narrTitle.textContent=CH[ci].l;
+      announce(CH[ci].l);
       // Active seekbar mark + glow (English only — timestamps tied to EN narration)
       const g=currentLang==='en'?CH[ci].glow:null;
       if(currentLang==='en'){
@@ -3684,6 +4119,320 @@ if(!localStorage.getItem('op_welcomed_v2')){
       }
     }
   });
+
+  // ── FOCUS MODE ──
+  // A full-screen minimal player: transport, chapter, clock, seek, sleep. It
+  // drives the same element the bar does and holds no state of its own, so
+  // whatever changed it — the bar, the lock screen, a keyboard — it is right.
+  (function(){
+    const fm=$('focus-mode');
+    if(!fm)return;
+    const fPlay=$('focus-play'),fIcon=$('focus-play-icon'),fSeek=$('focus-seek');
+    const fChap=$('focus-chapter'),fAct=$('focus-act');
+    const fEl=$('focus-elapsed'),fLeft=$('focus-left');
+    const PLAY_D='M8 5v14l11-7z',PAUSE_D='M6 5h4v14H6zM14 5h4v14h-4z';
+    let fSeeking=false,lastFocused=null;
+
+    function sync(){
+      if(!fm.classList.contains('open'))return;
+      const playing=!narrEl.paused;
+      fIcon.firstElementChild.setAttribute('d',playing?PAUSE_D:PLAY_D);
+      fPlay.setAttribute('aria-label',playing?'Pause narration':'Play narration');
+      fPlay.setAttribute('aria-pressed',playing?'true':'false');
+      const t=narrEl.currentTime,d=narrEl.duration;
+      fChap.textContent=narrTitle.textContent||'Press play to begin';
+      fAct.textContent=BOOK.en?(BOOK.cur().title||'✦'):'Una Promesa';
+      if(d&&isFinite(d)){
+        if(!fSeeking){const pct=(t/d)*100;fSeek.value=pct;
+          fSeek.setAttribute('aria-valuetext',spoken(t)+' of '+spoken(d));}
+        fEl.textContent=fmt(t);
+        fLeft.textContent='−'+fmt(Math.max(0,d-t));
+      }
+    }
+    window.__opFocusSync=sync;
+
+    fPlay.addEventListener('click',()=>{window.apNarrToggle();setTimeout(sync,60);});
+    $('focus-back').addEventListener('click',()=>{window.apSkip(-30);sync();});
+    $('focus-fwd').addEventListener('click',()=>{window.apSkip(30);sync();});
+    fSeek.addEventListener('input',()=>{
+      fSeeking=true;
+      if(narrEl.duration)narrEl.currentTime=(parseFloat(fSeek.value)/100)*narrEl.duration;
+      setTimeout(()=>{fSeeking=false;},150);
+    });
+    $('focus-sleep').addEventListener('click',()=>{window.apCycleSleep();});
+    $('focus-close').addEventListener('click',close);
+    ['play','pause','ended','loadedmetadata'].forEach(e=>narrEl.addEventListener(e,sync));
+
+    function open(){
+      lastFocused=document.activeElement;
+      fm.classList.add('open');
+      document.body.style.overflow='hidden';
+      sync();
+      fPlay.focus();
+      announce('Focus mode. Press Escape to leave it.');
+    }
+    function close(){
+      fm.classList.remove('open');
+      document.body.style.overflow='';
+      if(lastFocused&&lastFocused.focus)lastFocused.focus();
+    }
+    window.apOpenFocus=open;
+    window.apCloseFocus=close;
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape'&&fm.classList.contains('open')){e.preventDefault();close();}
+    });
+
+    // A dialog that traps nothing is a dialog a keyboard falls out of the back of.
+    fm.addEventListener('keydown',e=>{
+      if(e.key==='Escape'){e.preventDefault();close();return;}
+      if(e.key!=='Tab')return;
+      const f=[...fm.querySelectorAll('button,input')].filter(x=>!x.disabled);
+      if(!f.length)return;
+      const first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    });
+  })();
+
+  // ── SEARCH ──
+  // Three hours of book and no way to find a passage in it. The index is the
+  // page itself, built on first open: every block of running text is already an
+  // addressable element because the 510 cues needed ids.
+  (function(){
+    const ov=$('search-overlay');
+    if(!ov)return;
+    const input=$('search-input'),resultsEl=$('search-results'),countEl=$('search-count');
+    const BLOCKS='.prose,.act-intro,.scripture-text,.callout-text,.callout-title,'
+                +'.sac2-item,.story-text,.spirit-text,.sum9-what,.frac6-note';
+    let INDEX=null,lastFocused=null;
+
+    // Fold accents and curly punctuation, so "Sa'i" is found by typing "sai"
+    // and "décadas" by typing "decadas".
+    const fold=t=>t.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+      .replace(/[\u2018\u2019\u201c\u201d]/g,"'")
+      .replace(/\s+/g,' ');
+
+    function build(){
+      if(INDEX)return INDEX;
+      INDEX=[];
+      document.querySelectorAll(BLOCKS).forEach(el=>{
+        if(el.closest('#search-overlay,#onboard,#focus-mode'))return;
+        const text=(el.textContent||'').replace(/\s+/g,' ').trim();
+        if(text.length<12)return;
+        const sec=el.closest('section[id]');
+        let where='';
+        if(sec){
+          const lab=sec.querySelector('.act-label'),ti=sec.querySelector('.act-title');
+          where=[lab&&lab.textContent.trim(),ti&&ti.textContent.trim()]
+                .filter(Boolean).join(' · ')||sec.id;
+        }
+        INDEX.push({el:el,id:el.id||'',text:text,f:fold(text),where:where.toUpperCase(),
+                    title:el.classList.contains('callout-title')});
+      });
+      CH.forEach(function(c){
+        INDEX.push({el:document.getElementById(c.el)||null,id:'',text:c.l,f:fold(c.l),
+                    where:'CHAPTER',title:true,t:c.t});
+      });
+      return INDEX;
+    }
+
+    // Terms match at the start of a word, never in the middle of one: a plain
+    // substring search turns "sai" into 39 hits on the word "said". Every term
+    // but the last must also END on a word boundary; the last one is left as a
+    // prefix, so results narrow while the word is still being typed.
+    const WORD=/[a-z0-9]/;
+    function findTerm(f,term,whole,from){
+      let i=f.indexOf(term,from||0);
+      while(i>=0){
+        const before=i===0?' ':f.charAt(i-1);
+        const after=f.charAt(i+term.length);
+        if(!WORD.test(before)&&(!whole||!after||!WORD.test(after)))return i;
+        i=f.indexOf(term,i+1);
+      }
+      return -1;
+    }
+
+    // Every term must be present.
+    function run(q){
+      const terms=fold(q).trim().split(' ').filter(Boolean);
+      if(!terms.length)return [];
+      const last=terms.length-1;
+      const out=[];
+      for(const it of build()){
+        let ok=true,first=Infinity;
+        for(let i=0;i<terms.length;i++){
+          const at=findTerm(it.f,terms[i],i!==last,0);
+          if(at<0){ok=false;break;}
+          if(at<first)first=at;
+        }
+        if(!ok)continue;
+        // Where the hit is matters more than that it happened: a callout title
+        // beats a mention 900 characters into a paragraph.
+        const score=(it.title?-4000:0)+first+(it.f.length>1200?400:0);
+        out.push({it:it,score:score,at:first,term:terms[0]});
+      }
+      out.sort((a,b)=>a.score-b.score);
+      return out.slice(0,40);
+    }
+
+    function esc(t){return t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+    function snippet(hit){
+      const t=hit.it.text,at=hit.at;
+      if(hit.it.t!==undefined&&t.length<120){
+        const f0=fold(t),L0=hit.term.length,sp=findTerm(f0,hit.term,false,0);
+        return sp<0?esc(t)
+          :esc(t.slice(0,sp))+'<mark>'+esc(t.slice(sp,sp+L0))+'</mark>'+esc(t.slice(sp+L0));
+      }
+      const start=Math.max(0,at-90);
+      const end=Math.min(t.length,at+180);
+      let out=(start?'… ':'')+t.slice(start,end)+(end<t.length?' …':'');
+      // Mark on the folded copy's offsets, working back to front so earlier
+      // offsets stay valid.
+      const f=fold(out),L=hit.term.length;
+      const spots=[];
+      let i=findTerm(f,hit.term,false,0);
+      while(i>=0&&spots.length<12){spots.push(i);i=findTerm(f,hit.term,false,i+L);}
+      let html=esc(out);
+      if(spots.length&&f.length===out.length){
+        html='';let prev=0;
+        spots.forEach(sp=>{html+=esc(out.slice(prev,sp))+'<mark>'+esc(out.slice(sp,sp+L))+'</mark>';prev=sp+L;});
+        html+=esc(out.slice(prev));
+      }
+      return html;
+    }
+
+    function jump(el){
+      close();
+      el.scrollIntoView({behavior:'smooth',block:'center'});
+      el.classList.remove('ap-cue-flash');void el.offsetWidth;el.classList.add('ap-cue-flash');
+      if(el.tabIndex<0)el.tabIndex=-1;
+      el.focus({preventScroll:true});
+    }
+
+    function render(q){
+      const hits=run(q);
+      resultsEl.innerHTML='';
+      if(!q.trim()){countEl.textContent='';return;}
+      countEl.textContent=hits.length?hits.length+(hits.length===1?' PASSAGE':' PASSAGES'):'NO PASSAGES';
+      if(!hits.length){
+        const d=document.createElement('div');d.id='search-empty';
+        d.textContent='Nothing in the book matches “'+q.trim()+'”.';
+        resultsEl.appendChild(d);return;
+      }
+      hits.forEach(h=>{
+        const row=document.createElement('div');
+        row.className='search-hit';
+        const body=document.createElement('button');
+        body.className='search-hit-body';
+        body.style.cssText='background:none;border:none;padding:0;text-align:left;cursor:pointer;font:inherit;color:inherit;width:100%;';
+        body.innerHTML='<div class="search-hit-where">'+esc(h.it.where||'THE BOOK')+'</div>'
+                      +'<div class="search-hit-text">'+snippet(h)+'</div>';
+        if(h.it.t!==undefined){
+          body.addEventListener('click',()=>{
+            close();
+            if(BOOK.en)narrEl.currentTime=h.it.t;
+            if(h.it.el)h.it.el.scrollIntoView({behavior:'smooth',block:'center'});
+            announce('Chapter — '+h.it.text+', at '+spoken(h.it.t)+'.');
+          });
+        }else{
+          body.addEventListener('click',()=>jump(h.it.el));
+        }
+        row.appendChild(body);
+        if(h.it.t!==undefined&&BOOK.en){
+          const go=document.createElement('button');
+          go.className='search-hit-play';
+          go.innerHTML='▶';
+          go.setAttribute('aria-label','Play the narration from this chapter');
+          go.addEventListener('click',e=>{
+            e.stopPropagation();close();
+            if(narrEl.paused)window.apNarrToggle();
+            narrEl.currentTime=h.it.t;
+          });
+          row.appendChild(go);
+        }
+        if(h.it.id&&window.opHasCue&&window.opHasCue(h.it.id)&&BOOK.en){
+          const play=document.createElement('button');
+          play.className='search-hit-play';
+          play.innerHTML='▶';
+          play.setAttribute('aria-label','Play the narration from this passage');
+          play.addEventListener('click',e=>{
+            e.stopPropagation();close();
+            h.it.el.scrollIntoView({behavior:'smooth',block:'center'});
+            window.opPlayFromId(h.it.id);
+          });
+          row.appendChild(play);
+        }
+        resultsEl.appendChild(row);
+      });
+    }
+
+    let t=null;
+    input.addEventListener('input',()=>{
+      clearTimeout(t);t=setTimeout(()=>render(input.value),120);
+    });
+    input.addEventListener('keydown',e=>{
+      if(e.key==='Enter'){
+        const first=resultsEl.querySelector('.search-hit-body');
+        if(first){e.preventDefault();first.click();}
+      }
+    });
+
+    function open(){
+      lastFocused=document.activeElement;
+      ov.classList.add('open');
+      document.body.style.overflow='hidden';
+      build();
+      input.value='';render('');
+      setTimeout(()=>input.focus(),40);
+      announce('Search the book. Type to find a passage.');
+    }
+    function close(){
+      ov.classList.remove('open');
+      document.body.style.overflow='';
+      if(lastFocused&&lastFocused.focus)lastFocused.focus();
+    }
+    window.apOpenSearch=open;
+    window.apCloseSearch=close;
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape'&&ov.classList.contains('open')){e.preventDefault();close();}
+    });
+    $('search-close').addEventListener('click',close);
+    ov.addEventListener('click',e=>{if(e.target===ov)close();});
+    ov.addEventListener('keydown',e=>{
+      if(e.key==='Escape'){e.preventDefault();close();return;}
+      if(e.key!=='Tab')return;
+      const f=[...ov.querySelectorAll('input,button')].filter(x=>!x.disabled&&x.offsetParent!==null);
+      if(!f.length)return;
+      const first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    });
+    const navBtn=$('nav-search');
+    if(navBtn)navBtn.addEventListener('click',e=>{e.preventDefault();open();});
+    // "/" is the shortcut every reader already knows.
+    document.addEventListener('keydown',e=>{
+      if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+      if(e.key==='/'){e.preventDefault();open();}
+    });
+  })();
+
+  // ── DEEP LINK ──
+  // ?t=4086 opens the book at that second of the narration, so a passage can be
+  // sent to someone. Registered after the resume block above, and both run on
+  // the same tick, so an explicit link wins over a stored position.
+  setTimeout(function(){
+    let t=null;
+    try{
+      const q=new URLSearchParams(location.search);
+      if(q.has('t'))t=parseFloat(q.get('t'));
+      else if(/^#t=\d/.test(location.hash))t=parseFloat(location.hash.slice(3));
+    }catch(e){}
+    if(t===null||!isFinite(t)||t<0)return;
+    narrEl.currentTime=Math.min(t,BOOK.dur()-1);
+    announce('Opened at '+spoken(t)+' into the narration.');
+  },0);
 
 })();
 </script>

@@ -1,0 +1,7 @@
+# One Promise — Abraham, the Living God, and the Story That Never Ended
+# The whole book is one page and it is meant to be read. Nothing is disallowed.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jonathandiaso.github.io/One-Promise-Abraham-and-the-Living-God/sitemap.xml
