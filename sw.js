@@ -6,7 +6,7 @@
 //
 // Bump SHELL on every change to a precached file. Without a new cache name a
 // returning visitor is served the previous build out of the old cache forever.
-var SHELL = 'onepromise-shell-v3';
+var SHELL = 'onepromise-shell-v4';
 var AUDIO = 'onepromise-audio-v1';
 var FONTS = 'onepromise-fonts-v1';
 

@@ -838,19 +838,9 @@ body{padding-bottom:112px;}
       .ap-cued-mark::before{transition:none;}
       .ap-cue-flash{animation:none;}}
 
-    /* Spanish has its own cue list now — 430 of the 510 blocks, timed against
+    /* Spanish has its own cue list now — 502 of the 510 blocks, timed against
        the Spanish recording. A block the Spanish reader never reads simply does
-       not get .ap-cued, so it stops advertising itself on its own. The one thing
-       that needs saying out loud is the act that is not in that recording. */
-    #es-missing{display:none;}
-    body.op-lang-es #es-missing{
-      display:block;margin:0 auto 26px;max-width:620px;
-      border:1px solid rgba(201,168,76,.28);border-left:2px solid var(--gold);
-      border-radius:4px;background:rgba(201,168,76,.05);padding:16px 20px;}
-    #es-missing-t{font-family:"Cinzel",serif;font-size:.5rem;letter-spacing:.24em;
-      color:var(--gold);margin-bottom:8px;}
-    #es-missing-b{font-family:"Cormorant Garamond",serif;font-size:1rem;line-height:1.6;
-      color:var(--text-mid);}
+       not get .ap-cued, so it stops advertising itself on its own. */
 
     /* ── SKIP LINK (WCAG 2.4.1) ──
        Nine nav links stood between a keyboard user and the book on every load. */
@@ -1603,14 +1593,6 @@ body{padding-bottom:112px;}
     <div class="act-label" data-num="III">ACT THREE</div>
     <div class="act-title">The Test</div>
     <div id="test-b001" class="act-intro">Everything Abraham had waited for finally existed. The son. The laughter. The future. And then God spoke again.</div>
-  </div>
-
-  <!-- Shown only in Spanish. The Spanish recording runs Act Two straight into
-       Act Four; this act is not in it, so the page says so rather than letting
-       the read-along quietly stop working for half an hour. -->
-  <div id="es-missing">
-    <div id="es-missing-t">SOLO EN INGLÉS</div>
-    <div id="es-missing-b">La narración en español pasa del Acto Dos al Acto Cuatro — este acto no está grabado en español. Puedes leerlo aquí, o tocar <strong>EN</strong> en el reproductor para escucharlo en inglés.</div>
   </div>
 
   <p id="test-b002" class="prose">The rabbis say Abraham's greatest test was not Moriah. It was the twenty-five years before Moriah — the decades of waiting with an empty tent, the years of watching Sarai's face when she thought no one was looking, the slow erosion of a promise that hadn't arrived yet. The test of Moriah, they say, was only the final one. There had been nine before it.</p>
@@ -2814,7 +2796,7 @@ const OB_TEXT={
     title:'Una Promesa',
     sub:'Abraham · El Dios Viviente · La Historia Que Nunca Terminó',
     intro:`Tú también has estado esperando una promesa.<br><br>Conoces ese momento — cuando la espera empieza a sentirse como olvido. Cuando decides que si Dios no actúa, lo harás tú. Entonces alcanzas tu propia versión de la respuesta.<br><br>Abraham hizo lo mismo. Su nombre para eso fue Ismael.<br><br>Pero la promesa no llegó tarde. Estaba siendo hecha inconfundible. Un hijo nacido a tiempo es ordinario. Un hijo nacido décadas después de toda esperanza es un milagro que nadie puede explicar. La espera no era Dios olvidando a Abraham — era Dios asegurándose de que cuando llegara la respuesta, solo él pudiera llevarse el crédito.<br><br>Y llegó. No porque Abraham esperó perfectamente — no lo hizo. Ismael fue prueba de eso. Llegó porque Dios había firmado el pacto solo, y nada en la espera podía romperlo.<br><br>Tu Ismael no te descalificó. Tu espera no es Dios olvidando. Es el milagro haciéndose inconfundible.<br><br><em>Esta es esa historia.</em>`,
-    lang:'Narrado en su totalidad en <strong>inglés</strong> y <strong>español</strong> — toca <strong>EN · ES</strong> en el reproductor para cambiar en cualquier momento.<em>La página sigue la narración en ambos idiomas. El Acto Tres no está grabado en español; ese acto es solo en inglés.</em>',
+    lang:'Narrado en su totalidad en <strong>inglés</strong> y <strong>español</strong> — toca <strong>EN · ES</strong> en el reproductor para cambiar en cualquier momento.<em>La página sigue la narración en ambos idiomas, acto por acto.</em>',
     footer:`No tienes que leerlo todo hoy. Recordará dónde quedaste.`,
     begin:'COMENZAR',
     controls:[
@@ -2823,7 +2805,6 @@ const OB_TEXT={
       ['−30 / +30','Retrocede o avanza 30 segundos en la narración.'],
       ['1×','Velocidad de reproducción — 0.8× · 0.9× · 1× · 1.1× · 1.2×. Toca para cambiar.'],
       ['ZZ','Temporizador — 30, 60 o 90 minutos, o <strong>FIN DEL ACTO</strong> (solo en inglés).'],
-      ['♪ ACTO 3','La narración en español no incluye el Acto Tres — El Examen. Ese acto solo está en inglés.'],
       ['⌕ BUSCAR','Encuentra cualquier pasaje del libro. Con teclado, pulsa <strong>/</strong>.'],
       ['⛶ ENFOQUE','Guarda la página y solo escucha — capítulo, reloj y controles, nada más.'],
       ['↓ FOLLOW','La página avanza contigo — el pasaje narrado se ilumina y se desplaza solo, también en español.'],
@@ -3824,7 +3805,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
   // going back through BOOK, not re-fetching a file that is no longer the book.
   // Dropbox's st= parameter is a short-lived token, so it is dropped here too —
   // rlkey is the durable share key and the link resolves without it.
-  const NARR_URLS={es:'https://www.dropbox.com/scl/fi/lyw3jobd5mqiks2kl7xmt/Spanish.mp3?rlkey=uael9p05e8gc2pb6lv74b5gkg&raw=1'};
+  const NARR_URLS={es:'https://www.dropbox.com/scl/fi/rfhjftxep1ksaees1640l/Spanish-v2.mp3?rlkey=6a1jzenlx5nk7jagbg5bgfg1v&raw=1'};
   const ES_NAME='Una Promesa — Narración Completa';
   let currentLang='en';
   const savedLangPos={en:0,es:0};
@@ -3897,7 +3878,7 @@ if(!localStorage.getItem('op_welcomed_v2')){
     }
     if(window.__opPaintDone)window.__opPaintDone();
     announce(lang==='es'
-      ?'Narración en español. El texto sigue la narración, salvo el Acto Tres, que no está grabado en español.'
+      ?'Narración en español. El texto sigue la narración.'
       :'English narration. All nine acts, with the page reading along.');
     saveLangPos();
   };
